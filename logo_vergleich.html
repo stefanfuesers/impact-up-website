@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Logo-Vergleich · Impact Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #2D4A2B;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #F4ECD8;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 32px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .variant {
+      background: #1F3320;
+      padding: 32px;
+      border: 1px solid rgba(201,169,97,0.3);
+      text-align: center;
+    }
+    .variant h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      color: #C9A961;
+      margin: 0 0 8px;
+    }
+    .variant .desc {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+    .variant img {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .filename {
+      margin-top: 16px;
+      font-family: monospace;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logo-Varianten · Impact Up</h1>
+
+  <div class="grid">
+    <div class="variant">
+      <h2>Variante A · Original</h2>
+      <p class="desc">Pergament-Halbkreis · grüne Kuppel · Schriftzug ∩ · Tagline lila/tinte</p>
+      <img src="assets/logo.svg" alt="Logo Original">
+      <p class="filename">assets/logo.svg</p>
+    </div>
+
+    <div class="variant">
+      <h2>Variante B · Alternative</h2>
+      <p class="desc">Weißer Halbkreis · Pergament-Kuppel · Schriftzug ∪ (umgekehrt) · Tagline in Gold direkt unter den Steinen</p>
+      <img src="assets/logo_alt.svg" alt="Logo Alternative">
+      <p class="filename">assets/logo_alt.svg</p>
+    </div>
+  </div>
+</body>
+</html>

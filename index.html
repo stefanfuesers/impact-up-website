@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Up – Institut für Systems Change</title>
+  <meta name="description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die ihre Wirkung im System verankern wollen.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo_alt.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Impact Up – Institut für Systems Change">
+  <meta property="og:description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die ihre Wirkung im System verankern wollen.">
+  <meta property="og:url" content="https://impact-up.org/">
+  <meta property="og:image" content="https://impact-up.org/assets/stefan_neu.png">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- 1 · HERO                                     -->
+  <!-- ============================================ -->
+  <header id="top" class="hero">
+    <nav class="nav">
+      <ul class="nav__links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#quellen">Wirkungsfelder</a></li>
+        <li><a href="#weitergehen">Prozess</a></li>
+        <li><a href="#angebote">Angebote</a></li>
+        <li class="nav__item--has-dropdown">
+          <a href="#philosophie">Philosophie</a>
+          <ul class="nav__dropdown">
+            <li><a href="systems-change.html">Systems Change</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">Wer wir sind</a></li>
+      </ul>
+      <ul class="nav__links nav__links--right">
+        <li><a href="impulse.html">Impulse</a></li>
+        <li><a href="#angebote">Kontakt</a></li>
+        <li class="nav__lang"><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero__inner">
+      <div class="hero__text">
+        <p class="eyebrow eyebrow--light">Impact Up – Institut für Systems Change</p>
+        <h1 class="hero__claim">
+          Wir geben<br>
+          <em>eurer Wirkung</em><br>
+          Raum.
+        </h1>
+        <p class="hero__sub">
+          Für Initiativen, Organisationen und Netzwerke,<br>die ihre Wirkung im System verankern wollen.
+        </p>
+      </div>
+      <a href="#" class="hero__logo-link" aria-label="Impact Up – Startseite">
+        <img src="assets/logo_alt.svg" alt="Impact Up Logo" class="hero__logo">
+      </a>
+    </div>
+
+  </header>
+
+  <!-- Steinrelief: Übergang Hero → Quellen -->
+  <div class="trenner trenner--steine" aria-hidden="true">
+    <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
+      <rect x="0"    y="0" width="80"  height="24" fill="#B8855E"/>
+      <rect x="84"   y="0" width="40"  height="24" fill="#A87850"/>
+      <rect x="128"  y="0" width="120" height="24" fill="#C9A47E"/>
+      <rect x="252"  y="0" width="60"  height="24" fill="#B8855E"/>
+      <rect x="316"  y="0" width="200" height="24" fill="#A87850"/>
+      <rect x="520"  y="0" width="80"  height="24" fill="#C9A47E"/>
+      <rect x="604"  y="0" width="160" height="24" fill="#B8855E"/>
+      <rect x="768"  y="0" width="100" height="24" fill="#8A5E3B"/>
+      <rect x="872"  y="0" width="180" height="24" fill="#B8855E"/>
+      <rect x="1056" y="0" width="64"  height="24" fill="#A87850"/>
+      <rect x="1124" y="0" width="76"  height="24" fill="#C9A47E"/>
+    </svg>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 2 · DREI QUELLEN (3D-Netz)                   -->
+  <!-- ============================================ -->
+  <section id="quellen" class="quellen">
+    <p class="netz-lead">Die drei Wirkungsfelder von Impact Up</p>
+    <div id="netz" class="netz">
+      <canvas id="netz-canvas"></canvas>
+      <div class="netz__hint">↻ Mit der Maus drehen</div>
+    </div>
+
+    <div class="quellen__caption">
+      <strong>Impact Up</strong> – Das Institut für Systems Change – möchte über drei zentrale <strong>Wirkungsfelder</strong> mit euch im System ansetzen und gestalten:
+    </div>
+
+    <div class="quellen__legende">
+      <div class="quelle" style="--c:#2D4A2B">
+        <span class="quelle__dot"></span>
+        <h3>Ökosystem Erde</h3>
+        <p>Die Erde ist ein Ökosystem mit planetaren Grenzen, die auch wirtschaftliches Wachstum begrenzen und Gerechtigkeit vielschichtig auf dieser Erde herausfordern. Wir starten in den Prozess der harmonischen (Re-)Integration des menschlichen Lebens in das Ökosystem Erde.</p>
+      </div>
+      <div class="quelle" style="--c:#1F1A14">
+        <span class="quelle__dot"></span>
+        <h3>Frieden &amp; Gewaltfreiheit</h3>
+        <p>Gewaltfreiheit ist die Grundlage für die Würde des Menschen und den Frieden zwischen den Menschen. Strukturelle und kulturelle Gewaltfreiheit ist ein wichtiger, wenn auch oft nicht sichtbarer, Teil davon. Wir starten in den Prozess, die Gewalt in verschiedenen Formen bewusster zu machen, und Konflikte konstruktiv zu transformieren.</p>
+      </div>
+      <div class="quelle" style="--c:#4A2B5C">
+        <span class="quelle__dot"></span>
+        <h3>Soziale Teilhabe</h3>
+        <p>Die soziale Teilhabe ist die Grundvoraussetzung für ein gemeinschaftliches Leben. Jede:r braucht Teilhabe, Gemeinwohlorientierung und individuelle Absicherung bspw. durch ein Grundeinkommen. Wir starten in den Prozess, die soziale Teilhabe als Grundvoraussetzung für Demokratie und gesellschaftlichen Zusammenhalt zu gestalten und Menschlichkeit ins Zentrum zu stellen.</p>
+      </div>
+    </div>
+
+    <p class="quellen__schluss"><em>Dies sind nur drei von zahlreichen Wirkungsfeldern. Uns scheinen sie zentral und wichtig, weswegen wir hier mit euch ansetzen wollen. Wir starten in bestehende Systeme, in denen es auch andere Wirkungsfelder gibt. Wir bieten eine erste Orientierung, um mit euch gemeinsam die Ansätze konstruktiver Veränderung zu identifizieren und ko-kreativ zu nutzen. Wo genau wir ankommen, entsteht erst im Prozess mit euch. Wo sollen wir starten?</em></p>
+  </section>
+
+  <!-- Übergang Quellen → Weitergehen: reine Gold-Linien-Landschaft -->
+  <div class="trenner trenner--skyline trenner--skyline-a" aria-hidden="true">
+    <svg viewBox="0 0 2000 100" preserveAspectRatio="xMidYMid meet" fill="none" stroke="#C9A961">
+
+      <!-- Pagode 3-tier (links) – nur Konturen -->
+      <g transform="translate(150,40)" stroke-width="1">
+        <path d="M -22 52 L -18 36 Q -16 28 -10 26 L 10 26 Q 16 28 18 36 L 22 52"/>
+        <path d="M -16 26 L -13 14 Q -11 8 -6 6 L 6 6 Q 11 8 13 14 L 16 26"/>
+        <path d="M -10 6 L -8 -4 Q -6 -8 -3 -10 L 3 -10 Q 6 -8 8 -4 L 10 6"/>
+        <line x1="0" y1="-10" x2="0" y2="-22" stroke-width="1.4"/>
+        <circle cx="0" cy="-25" r="1.8" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Säulen-Trio – dünne Goldlinien -->
+      <g transform="translate(310,40)" stroke-width="0.9">
+        <line x1="-14" y1="20" x2="-14" y2="52"/>
+        <line x1="0"   y1="14" x2="0"   y2="52"/>
+        <line x1="14"  y1="20" x2="14"  y2="52"/>
+        <circle cx="-14" cy="22" r="1.4" fill="#C9A961" stroke="none"/>
+        <circle cx="0"   cy="14" r="1.7" fill="#C9A961" stroke="none"/>
+        <circle cx="14"  cy="22" r="1.4" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 150 18 Q 230 8 310 26" stroke-width="0.8" opacity="0.7"/>
+
+      <!-- Stupa -->
+      <g transform="translate(440,40)" stroke-width="0.9">
+        <path d="M -18 52 A 18 14 0 0 1 18 52"/>
+        <line x1="0" y1="38" x2="0" y2="20"/>
+        <circle cx="0" cy="18" r="2.2" fill="#C9A961" stroke="none"/>
+        <circle cx="0" cy="13" r="1.4" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 310 14 Q 380 -2 440 16" stroke-width="0.7" opacity="0.6"/>
+
+      <!-- Bogen (klein) -->
+      <g transform="translate(560,52)" stroke-width="0.9">
+        <path d="M -28 40 A 28 28 0 0 1 28 40" opacity="0.85"/>
+        <path d="M -20 40 A 20 20 0 0 1 20 40" stroke-width="0.6" opacity="0.55"/>
+        <line x1="0" y1="12" x2="0" y2="24" stroke-width="1.1"/>
+        <circle cx="0" cy="10" r="1.7" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Pagode 2-tier -->
+      <g transform="translate(700,40)" stroke-width="1">
+        <path d="M -20 52 L -16 32 Q -14 24 -8 22 L 8 22 Q 14 24 16 32 L 20 52"/>
+        <path d="M -13 22 L -10 8 Q -8 2 -3 0 L 3 0 Q 8 2 10 8 L 13 22"/>
+        <line x1="0" y1="0" x2="0" y2="-18" stroke-width="1.4"/>
+        <circle cx="0" cy="-21" r="2" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 560 38 Q 620 22 700 -10" stroke-width="0.7" opacity="0.6"/>
+
+      <!-- Säulenpaar mit Bogen -->
+      <g transform="translate(840,40)" stroke-width="0.9">
+        <line x1="-8" y1="22" x2="-8" y2="52"/>
+        <line x1="8"  y1="22" x2="8"  y2="52"/>
+        <path d="M -10 22 Q 0 14 10 22"/>
+        <circle cx="0" cy="13" r="1.5" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Mini-Stupa -->
+      <g transform="translate(960,40)" stroke-width="0.9">
+        <path d="M -12 52 A 12 10 0 0 1 12 52"/>
+        <line x1="0" y1="42" x2="0" y2="32"/>
+        <circle cx="0" cy="30" r="1.5" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Lange Goldlinien (Skyline-Verbindung) -->
+      <path d="M 700 -22 Q 870 -8 960 28" stroke-width="0.8" opacity="0.55"/>
+      <path d="M 840 12 L 960 30" stroke-width="0.6" opacity="0.5"/>
+
+      <!-- Pagode 3-tier (rechts mitte) -->
+      <g transform="translate(1100,40)" stroke-width="1">
+        <path d="M -24 52 L -20 34 Q -18 26 -11 24 L 11 24 Q 18 26 20 34 L 24 52"/>
+        <path d="M -17 24 L -14 12 Q -12 6 -7 4 L 7 4 Q 12 6 14 12 L 17 24"/>
+        <path d="M -10 4 L -8 -6 Q -6 -10 -3 -12 L 3 -12 Q 6 -10 8 -6 L 10 4"/>
+        <line x1="0" y1="-12" x2="0" y2="-26" stroke-width="1.4"/>
+        <circle cx="0" cy="-29" r="2.1" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Säulen-Quintett -->
+      <g transform="translate(1280,40)" stroke-width="0.85">
+        <line x1="-24" y1="28" x2="-24" y2="52"/>
+        <line x1="-12" y1="22" x2="-12" y2="52"/>
+        <line x1="0"   y1="18" x2="0"   y2="52"/>
+        <line x1="12"  y1="22" x2="12"  y2="52"/>
+        <line x1="24"  y1="28" x2="24"  y2="52"/>
+        <path d="M -28 28 Q 0 8 28 28" stroke-width="0.9" opacity="0.85"/>
+        <circle cx="-24" cy="28" r="1.2" fill="#C9A961" stroke="none"/>
+        <circle cx="0"   cy="9"  r="1.8" fill="#C9A961" stroke="none"/>
+        <circle cx="24"  cy="28" r="1.2" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 1100 -28 Q 1180 -18 1280 6" stroke-width="0.85" opacity="0.65"/>
+
+      <!-- Großer Dom (nur Linien) -->
+      <g transform="translate(1480,52)" stroke-width="1">
+        <path d="M -36 40 A 36 36 0 0 1 36 40"/>
+        <path d="M -28 40 A 28 28 0 0 1 28 40" stroke-width="0.6" opacity="0.6"/>
+        <line x1="0" y1="4" x2="0" y2="-14" stroke-width="1.4"/>
+        <circle cx="0" cy="-17" r="2.2" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Mini Pagode -->
+      <g transform="translate(1640,40)" stroke-width="0.9">
+        <path d="M -14 52 L -11 38 Q -9 32 -5 30 L 5 30 Q 9 32 11 38 L 14 52"/>
+        <line x1="0" y1="30" x2="0" y2="20"/>
+        <circle cx="0" cy="18" r="1.4" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 1280 4 Q 1380 -10 1480 14" stroke-width="0.85" opacity="0.6"/>
+      <path d="M 1480 38 Q 1560 28 1640 32" stroke-width="0.7" opacity="0.55"/>
+
+      <!-- Säulen-Paar mit Bogen -->
+      <g transform="translate(1780,40)" stroke-width="0.9">
+        <line x1="-10" y1="24" x2="-10" y2="52"/>
+        <line x1="10"  y1="24" x2="10"  y2="52"/>
+        <path d="M -12 24 Q 0 14 12 24"/>
+        <circle cx="0" cy="13" r="1.6" fill="#C9A961" stroke="none"/>
+      </g>
+
+      <!-- Mini Stupa rechts -->
+      <g transform="translate(1900,40)" stroke-width="0.9">
+        <path d="M -10 52 A 10 8 0 0 1 10 52"/>
+        <line x1="0" y1="44" x2="0" y2="36"/>
+        <circle cx="0" cy="34" r="1.3" fill="#C9A961" stroke="none"/>
+      </g>
+      <path d="M 1640 30 Q 1720 12 1780 26" stroke-width="0.7" opacity="0.55"/>
+      <path d="M 1780 12 Q 1840 18 1900 32" stroke-width="0.7" opacity="0.55"/>
+
+      <!-- Boden-Linie (Goldlinie statt Steine) -->
+      <line x1="0" y1="92" x2="2000" y2="92" stroke-width="0.7" opacity="0.5"/>
+      <line x1="0" y1="78" x2="2000" y2="78" stroke-width="0.4" opacity="0.35" stroke-dasharray="2 4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 3 · WIE WIR MIT EUCH WEITERGEHEN             -->
+  <!-- ============================================ -->
+  <section id="weitergehen" class="weitergehen">
+    <div class="container">
+      <p class="eyebrow">Der Idealprozess</p>
+      <h2 class="section-title">Von der Wirkung zum Systems Change.<br>Eure Wirkung kann noch viel mehr.</h2>
+
+      <p class="lead lead--full">
+        Hier zeigen wir den idealtypischen Prozess von der Wirkung zum Systems Change. Wirkung will nicht nur angestrebt, sondern auch klar formuliert, mit dem Team in Einklang gebracht, mit anderen abgestimmt und ins Feld eingebettet sein. Was wir damit jeweils meinen, entfalten die vier Schritte.
+      </p>
+
+      <div class="prozess">
+        <div class="prozess__faden" aria-hidden="true"></div>
+
+        <article class="prozess__step">
+          <div class="prozess__visual">
+            <svg viewBox="0 0 120 120">
+              <!-- Resonanz – konzentrische Kreise -->
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A961" stroke-width="0.6" opacity="0.25"/>
+              <circle cx="60" cy="60" r="38" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.4"/>
+              <circle cx="60" cy="60" r="26" fill="none" stroke="#C9A961" stroke-width="0.9" opacity="0.6"/>
+              <circle cx="60" cy="60" r="14" fill="none" stroke="#C9A961" stroke-width="1.1" opacity="0.85"/>
+              <circle cx="60" cy="60" r="5"  fill="#C9A961"/>
+            </svg>
+            <span class="prozess__num">01</span>
+          </div>
+          <p class="prozess__axis">innen</p>
+          <h3>Orientierung durch<br>Resonanz</h3>
+          <p class="prozess__text">Wir glauben, dass eine Wirkung nach innen viel Gutes bringen kann. Der Sinn in der eigenen Arbeit wird durch die Wirkung erzielt, das ist die beste Motivation. Wenn es allen Mitarbeiter:innen oder Projektbeteiligten gelingt, in Resonanz zur Wirkung ihren eigenen Sinn zu finden, gibt dies zusätzlich die Orientierung, die gute Teamarbeit ermöglicht. Als Erstes im Prozess starten wir, die Wirkung so zu gestalten, dass sie die Arbeit für alle unterstützen kann.</p>
+          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+        </article>
+
+        <article class="prozess__step">
+          <div class="prozess__visual">
+            <svg viewBox="0 0 120 120">
+              <!-- Kohärenz – Knoten, die sich verbinden -->
+              <line x1="60" y1="60" x2="22" y2="36" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="60" y1="60" x2="98" y2="32" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="60" y1="60" x2="20" y2="86" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="60" y1="60" x2="100" y2="90" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="60" y1="60" x2="60" y2="14" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="60" y1="60" x2="60" y2="106" stroke="#C9A961" stroke-width="0.9"/>
+              <line x1="22" y1="36" x2="60" y2="14" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+              <line x1="98" y1="32" x2="60" y2="14" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+              <line x1="20" y1="86" x2="60" y2="106" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+              <line x1="100" y1="90" x2="60" y2="106" stroke="#C9A961" stroke-width="0.5" opacity="0.5"/>
+              <circle cx="22" cy="36"  r="4" fill="#C9A961"/>
+              <circle cx="98" cy="32"  r="4" fill="#C9A961"/>
+              <circle cx="20" cy="86"  r="4" fill="#C9A961"/>
+              <circle cx="100" cy="90" r="4" fill="#C9A961"/>
+              <circle cx="60" cy="14"  r="4" fill="#C9A961"/>
+              <circle cx="60" cy="106" r="4" fill="#C9A961"/>
+              <circle cx="60" cy="60"  r="7" fill="#C9A961"/>
+            </svg>
+            <span class="prozess__num">02</span>
+          </div>
+          <p class="prozess__axis">innen</p>
+          <h3>Kohärenz durch<br>Struktur</h3>
+          <p class="prozess__text">Die konkrete Wirkung, die einem Team Orientierung bieten kann, ist nur für ein Projekt, eine Abteilung oder eine andere kleine Teameinheit. Häufig sind Innenstrukturen aber größer: zahlreiche Projekte in einem Programm, viele Abteilungen in einer Organisation oder auch andere Konstrukte. Die Wirkung kann nach innen orientieren, aber nach außen braucht es eine übergeordnete Wirkungslogik, die wiederum wichtigen Fokus für mehrere Teams bringt – was zur Kooperation führt anstatt zur Konkurrenz. Als Zweites im Prozess starten wir, die Strukturen der unterschiedlichen Wirkungen zu bauen, sodass sich größere Kooperationseinheiten bilden und ganze Organisationen als eine Einheit wirken können. Das stärkt Zusammenhalt und Erfolg – weniger Reibung, klare Abstimmung, ein Ganzes, das mehr ist als die Summe seiner Teile.</p>
+          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+        </article>
+
+        <article class="prozess__step">
+          <div class="prozess__visual">
+            <svg viewBox="0 0 120 120">
+              <!-- Anbindung – inneres Cluster reicht nach außen -->
+              <circle cx="50" cy="62" r="18" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.45"/>
+              <circle cx="50" cy="62" r="6"  fill="#C9A961"/>
+              <line x1="50" y1="62" x2="14"  y2="22"  stroke="#C9A961" stroke-width="0.8"/>
+              <line x1="50" y1="62" x2="106" y2="20"  stroke="#C9A961" stroke-width="0.8"/>
+              <line x1="50" y1="62" x2="14"  y2="100" stroke="#C9A961" stroke-width="0.8"/>
+              <line x1="50" y1="62" x2="110" y2="58"  stroke="#C9A961" stroke-width="0.8"/>
+              <line x1="50" y1="62" x2="100" y2="104" stroke="#C9A961" stroke-width="0.8"/>
+              <line x1="14"  y1="22"  x2="106" y2="20"  stroke="#C9A961" stroke-width="0.4" opacity="0.4"/>
+              <line x1="106" y1="20"  x2="110" y2="58"  stroke="#C9A961" stroke-width="0.4" opacity="0.4"/>
+              <line x1="110" y1="58"  x2="100" y2="104" stroke="#C9A961" stroke-width="0.4" opacity="0.4"/>
+              <line x1="100" y1="104" x2="14"  y2="100" stroke="#C9A961" stroke-width="0.4" opacity="0.4"/>
+              <circle cx="14"  cy="22"  r="4" fill="#C9A961"/>
+              <circle cx="106" cy="20"  r="4" fill="#C9A961"/>
+              <circle cx="14"  cy="100" r="4" fill="#C9A961"/>
+              <circle cx="110" cy="58"  r="4" fill="#C9A961"/>
+              <circle cx="100" cy="104" r="4" fill="#C9A961"/>
+            </svg>
+            <span class="prozess__num">03</span>
+          </div>
+          <p class="prozess__axis">außen</p>
+          <h3>Kohärenz im<br>Feld</h3>
+          <p class="prozess__text">Wenn die gesamte Organisation oder ein ganzes Programm die eigene Wirkung so gestaltet hat, dass alle Beteiligten daraus ihren Sinn finden, ist schon viel erreicht. Trotzdem: Es ist leicht, zwei gute Wirkungen nebeneinander anzustreben, die eben nicht in Kohärenz und Komplementarität funktionieren. Im Gegenteil – wer sich in einem Stadtteil oder Themenfeld nicht abspricht, kann unbeabsichtigt gegeneinander wirken oder bestehende Machtungleichgewichte verstärken. Als Drittes im Prozess starten wir, eure Wirkung bewusst ins Feld einzufügen: Wer wirkt neben euch? Wer im Anschluss? Wo verschiebt sich Macht, wenn ihr euch klar positioniert? Was braucht es, damit im System erstmal alle gemeinsam in eine Richtung arbeiten? Die Grundvoraussetzung für Systems Change.</p>
+          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+        </article>
+
+        <article class="prozess__step">
+          <div class="prozess__visual">
+            <svg viewBox="0 0 120 120">
+              <!-- Cluster außen (drei Akteure / Quellen) -->
+              <g fill="#C9A961">
+                <circle cx="22" cy="24" r="3"/>
+                <circle cx="14" cy="34" r="2"/>
+                <circle cx="30" cy="36" r="2.2"/>
+                <circle cx="98" cy="24" r="3"/>
+                <circle cx="106" cy="34" r="2"/>
+                <circle cx="90" cy="36" r="2.2"/>
+                <circle cx="60" cy="100" r="3"/>
+                <circle cx="50" cy="106" r="2"/>
+                <circle cx="70" cy="106" r="2"/>
+              </g>
+              <!-- Zentrale Moderationsform: konzentrische Bögen -->
+              <g fill="none" stroke="#C9A961">
+                <circle cx="60" cy="60" r="22" stroke-width="0.7" opacity="0.4" stroke-dasharray="3 3"/>
+                <circle cx="60" cy="60" r="14" stroke-width="0.9" opacity="0.7"/>
+              </g>
+              <circle cx="60" cy="60" r="6" fill="#C9A961"/>
+              <!-- Verbindungen Zentrum → Cluster -->
+              <g stroke="#C9A961" stroke-width="0.7" opacity="0.6">
+                <line x1="60" y1="60" x2="22" y2="28"/>
+                <line x1="60" y1="60" x2="98" y2="28"/>
+                <line x1="60" y1="60" x2="60" y2="100"/>
+              </g>
+              <!-- Cluster untereinander (das Systemische) -->
+              <g stroke="#C9A961" stroke-width="0.4" opacity="0.4" stroke-dasharray="2 3">
+                <line x1="22" y1="28" x2="98" y2="28"/>
+                <line x1="98" y1="28" x2="60" y2="100"/>
+                <line x1="60" y1="100" x2="22" y2="28"/>
+              </g>
+            </svg>
+            <span class="prozess__num">04</span>
+          </div>
+          <p class="prozess__axis">außen</p>
+          <h3>Systems Change<br>Moderation</h3>
+          <p class="prozess__text">Wenn Akteure in einem Feld bereits nebeneinander wirken, ist der nächste Schritt, dass sie miteinander wirken – nicht nur kohärent, sondern in geteilter Bewegung. Das passiert nicht von selbst. Es braucht jemanden, der den Raum hält, in dem unterschiedliche Logiken, Mandate und Machtverhältnisse zueinander finden können, ohne sich gegenseitig zu glätten. Als Vierten Schritt im Prozess moderieren wir solche Räume – netzwerkförmig, machtbewusst, mit der Geduld für Beziehungen, die tragen müssen. Wir arbeiten mit dem, was sich zeigt: gemeinsame mentale Modelle, neue Praktiken, verschobene Ressourcenflüsse. Systems Change passiert nicht durch Moderation, aber er wird wahrscheinlicher, wenn jemand den Prozess hält. Das ist unsere Rolle hier.</p>
+          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+        </article>
+      </div>
+
+      <p class="weitergehen__bridge">Aus vielen solchen Prozessen wollen wir Systems Change entstehen lassen und freuen uns, wenn dein Prozess Teil von Impact Up und Impact Up Teil von deinem Prozess wird.</p>
+    </div>
+  </section>
+
+  <!-- Übergang Weitergehen → Angebote: Tempel-Skyline mit Doms (gespiegelte Variante) -->
+  <div class="trenner trenner--skyline trenner--skyline-b" aria-hidden="true">
+    <svg viewBox="0 0 2000 100" preserveAspectRatio="xMidYMid meet">
+      <g fill="#B8855E">
+        <rect x="0"    y="92" width="100" height="8" fill="#A87850"/>
+        <rect x="104"  y="92" width="160" height="8"/>
+        <rect x="268"  y="92" width="60"  height="8" fill="#C9A47E"/>
+        <rect x="332"  y="92" width="180" height="8" fill="#8A5E3B"/>
+        <rect x="516"  y="92" width="120" height="8"/>
+        <rect x="640"  y="92" width="200" height="8" fill="#A87850"/>
+        <rect x="844"  y="92" width="80"  height="8" fill="#C9A47E"/>
+        <rect x="928"  y="92" width="160" height="8"/>
+        <rect x="1092" y="92" width="100" height="8" fill="#8A5E3B"/>
+        <rect x="1196" y="92" width="180" height="8" fill="#A87850"/>
+        <rect x="1380" y="92" width="80"  height="8"/>
+        <rect x="1464" y="92" width="160" height="8" fill="#C9A47E"/>
+        <rect x="1628" y="92" width="120" height="8"/>
+        <rect x="1752" y="92" width="160" height="8" fill="#A87850"/>
+        <rect x="1916" y="92" width="84"  height="8"/>
+      </g>
+      <!-- Großer Dom links -->
+      <g transform="translate(180,52)">
+        <path d="M -42 40 A 42 42 0 0 1 42 40" fill="#2D4A2B" stroke="#C9A961" stroke-width="1"/>
+        <path d="M -32 40 A 32 32 0 0 1 32 40" fill="none" stroke="#C9A961" stroke-width="0.6" opacity="0.6"/>
+        <line x1="0" y1="-2" x2="0" y2="-22" stroke="#C9A961" stroke-width="1.7"/>
+        <circle cx="0" cy="-25" r="2.6" fill="#C9A961"/>
+        <ellipse cx="0" cy="0" rx="7" ry="2" fill="#C9A961"/>
+      </g>
+      <!-- Mini-Doms (Reihe) -->
+      <g transform="translate(330,52)">
+        <path d="M -16 40 A 16 16 0 0 1 16 40" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="24" x2="0" y2="14" stroke="#C9A961" stroke-width="1"/>
+        <circle cx="0" cy="12" r="1.5" fill="#C9A961"/>
+      </g>
+      <g transform="translate(390,52)">
+        <path d="M -20 40 A 20 20 0 0 1 20 40" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.8"/>
+        <line x1="0" y1="20" x2="0" y2="6" stroke="#C9A961" stroke-width="1.2"/>
+        <circle cx="0" cy="4" r="1.7" fill="#C9A961"/>
+      </g>
+      <!-- Goldene Linien zwischen Spitzen -->
+      <path d="M 180 27 Q 240 10 330 40" fill="none" stroke="#C9A961" stroke-width="0.9" opacity="0.7"/>
+      <path d="M 330 36 Q 360 28 390 32" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.55"/>
+
+      <!-- Säulenpaar -->
+      <g transform="translate(490,40)">
+        <line x1="-10" y1="20" x2="-10" y2="52" stroke="#8A5E3B" stroke-width="1.8"/>
+        <line x1="10"  y1="20" x2="10"  y2="52" stroke="#8A5E3B" stroke-width="1.8"/>
+        <path d="M -14 20 Q 0 8 14 20" fill="none" stroke="#C9A961" stroke-width="1"/>
+        <circle cx="0" cy="6" r="1.8" fill="#C9A961"/>
+      </g>
+
+      <!-- Pagode 2-tier -->
+      <g transform="translate(620,40)">
+        <path d="M -18 52 L -15 32 Q -13 24 -7 22 L 7 22 Q 13 24 15 32 L 18 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <path d="M -12 22 L -9 8 Q -7 2 -3 0 L 3 0 Q 7 2 9 8 L 12 22 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="0" x2="0" y2="-14" stroke="#C9A961" stroke-width="1.4"/>
+        <circle cx="0" cy="-17" r="2" fill="#C9A961"/>
+      </g>
+      <path d="M 490 6 Q 555 -6 620 -16" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.6"/>
+
+      <!-- Stupa-Reihe -->
+      <g transform="translate(740,40)">
+        <path d="M -14 52 A 14 11 0 0 1 14 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="41" x2="0" y2="30" stroke="#C9A961" stroke-width="1.1"/>
+        <circle cx="0" cy="28" r="1.5" fill="#C9A961"/>
+      </g>
+      <g transform="translate(810,40)">
+        <path d="M -10 52 A 10 8 0 0 1 10 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="44" x2="0" y2="36" stroke="#C9A961" stroke-width="1"/>
+        <circle cx="0" cy="34" r="1.3" fill="#C9A961"/>
+      </g>
+      <g transform="translate(870,40)">
+        <path d="M -16 52 A 16 13 0 0 1 16 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="39" x2="0" y2="26" stroke="#C9A961" stroke-width="1.2"/>
+        <circle cx="0" cy="24" r="1.6" fill="#C9A961"/>
+      </g>
+      <path d="M 740 28 L 810 34 L 870 24" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.6"/>
+
+      <!-- Mittlerer Dom -->
+      <g transform="translate(1000,52)">
+        <path d="M -32 40 A 32 32 0 0 1 32 40" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.9"/>
+        <path d="M -24 40 A 24 24 0 0 1 24 40" fill="none" stroke="#C9A961" stroke-width="0.6" opacity="0.55"/>
+        <line x1="0" y1="8" x2="0" y2="-10" stroke="#C9A961" stroke-width="1.6"/>
+        <circle cx="0" cy="-13" r="2.2" fill="#C9A961"/>
+      </g>
+
+      <!-- Säulen-Trio -->
+      <g transform="translate(1140,40)">
+        <line x1="-16" y1="22" x2="-16" y2="52" stroke="#8A5E3B" stroke-width="1.7"/>
+        <line x1="0"   y1="14" x2="0"   y2="52" stroke="#8A5E3B" stroke-width="2"/>
+        <line x1="16"  y1="22" x2="16"  y2="52" stroke="#8A5E3B" stroke-width="1.7"/>
+        <path d="M -20 22 Q 0 4 20 22" fill="none" stroke="#C9A961" stroke-width="1"/>
+        <circle cx="0" cy="3" r="2" fill="#C9A961"/>
+      </g>
+      <path d="M 1000 -14 Q 1080 -22 1140 4" fill="none" stroke="#C9A961" stroke-width="0.9" opacity="0.7"/>
+
+      <!-- Pagode 3-tier -->
+      <g transform="translate(1310,40)">
+        <path d="M -22 52 L -18 36 Q -16 28 -10 26 L 10 26 Q 16 28 18 36 L 22 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <path d="M -16 26 L -13 14 Q -11 8 -6 6 L 6 6 Q 11 8 13 14 L 16 26 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <path d="M -10 6 L -8 -4 Q -6 -8 -3 -10 L 3 -10 Q 6 -8 8 -4 L 10 6 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="-10" x2="0" y2="-22" stroke="#C9A961" stroke-width="1.4"/>
+        <circle cx="0" cy="-25" r="2" fill="#C9A961"/>
+      </g>
+
+      <!-- Bogen + Säule -->
+      <g transform="translate(1480,52)">
+        <path d="M -22 40 A 22 22 0 0 1 22 40" fill="none" stroke="#C9A961" stroke-width="1.1" opacity="0.85"/>
+        <line x1="0" y1="18" x2="0" y2="6" stroke="#C9A961" stroke-width="1.3"/>
+        <circle cx="0" cy="4" r="1.7" fill="#C9A961"/>
+      </g>
+      <path d="M 1310 -25 Q 1400 -8 1480 14" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.6"/>
+
+      <!-- Stupa -->
+      <g transform="translate(1620,40)">
+        <path d="M -14 52 A 14 11 0 0 1 14 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="41" x2="0" y2="28" stroke="#C9A961" stroke-width="1.2"/>
+        <circle cx="0" cy="26" r="1.6" fill="#C9A961"/>
+      </g>
+
+      <!-- Säulen-Quartett klein -->
+      <g transform="translate(1780,40)">
+        <line x1="-18" y1="28" x2="-18" y2="52" stroke="#8A5E3B" stroke-width="1.5"/>
+        <line x1="-6"  y1="22" x2="-6"  y2="52" stroke="#8A5E3B" stroke-width="1.6"/>
+        <line x1="6"   y1="22" x2="6"   y2="52" stroke="#8A5E3B" stroke-width="1.6"/>
+        <line x1="18"  y1="28" x2="18"  y2="52" stroke="#8A5E3B" stroke-width="1.5"/>
+        <path d="M -22 28 Q 0 14 22 28" fill="none" stroke="#C9A961" stroke-width="0.9"/>
+        <circle cx="0" cy="13" r="1.7" fill="#C9A961"/>
+      </g>
+      <!-- Mini Pagode rechts -->
+      <g transform="translate(1920,40)">
+        <path d="M -10 52 L -8 38 Q -6 32 -3 30 L 3 30 Q 6 32 8 38 L 10 52 Z" fill="#2D4A2B" stroke="#C9A961" stroke-width="0.7"/>
+        <line x1="0" y1="30" x2="0" y2="22" stroke="#C9A961" stroke-width="1"/>
+        <circle cx="0" cy="20" r="1.3" fill="#C9A961"/>
+      </g>
+      <path d="M 1620 26 Q 1720 6 1780 14" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.55"/>
+      <path d="M 1780 14 Q 1860 24 1920 22" fill="none" stroke="#C9A961" stroke-width="0.7" opacity="0.55"/>
+
+      <line x1="0" y1="78" x2="2000" y2="78" stroke="#C9A961" stroke-width="0.4" opacity="0.3" stroke-dasharray="2 4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 4 · ANGEBOTE                                 -->
+  <!-- ============================================ -->
+  <section id="angebote" class="angebote">
+    <div class="container">
+      <h2 class="section-title">Unser Angebot an euch:</h2>
+      <p class="lead lead--full angebote__intro">
+        Drei konkrete Angebote – mit unterschiedlichem Schwerpunkt im Prozess. <strong>01</strong> verankert Wirkung im Team. <strong>02 Kohärenz gestalten</strong> ist unser Hauptangebot: es deckt die Prozessschritte 02 und 03 ab – Kohärenz nach innen (Programme, Abteilungen) und Kohärenz nach außen (ans Feld). Beides geht oft zusammen. <strong>03</strong> moderieren wir Kooperation zwischen Akteuren – dort, wo das Feld bereits zusammenwirken will.
+      </p>
+
+      <div class="angebote__cards">
+        <article class="card">
+          <span class="card__num">01</span>
+          <p class="card__axis">innen</p>
+          <h3>Wirkung verankern</h3>
+          <p class="card__tag">Planungsworkshops · Wirkungsformulierung · Ziele · Teamentwicklung · Sinnorientierung · Stakeholder-Bezug</p>
+          <p>Wir helfen Teams und Projekten, ihre Wirkung so zu setzen, dass sie tragfähig nach innen wird – verständlich für die, auf die es ankommt.</p>
+          <p class="card__result"><em>Ergebnis: eine Wirkung, an der sich alle ausrichten können.</em></p>
+        </article>
+
+        <article class="card">
+          <span class="card__num">02</span>
+          <p class="card__axis">dazwischen</p>
+          <h3>Kohärenz gestalten</h3>
+          <p class="card__tag">Programmaufbau · Organisationsentwicklung · Abteilungsabstimmung · Substruktur · Wirkungslogik · Anbindung ans Feld · Stakeholder-Mapping · Komplementarität · machtbewusste Positionierung</p>
+          <p>Mehrere Wirkungen kohärent machen – nach innen und nach außen. Nach innen: aus Projekten ein Programm, aus Abteilungen ein Ganzes. Nach außen: anschlussfähig ans Feld, komplementär zu denen, die schon dort wirken. Beides geht oft zusammen – ein Projekt kohärent zur Partnerorganisation, das Programm kohärent zwischen den Partnern, und nach außen kohärent ins Feld. Womit wir Kohärenz aufbauen, hängt davon ab, wo eure Wirkung gerade steht.</p>
+          <p class="card__result"><em>Ergebnis: eine Wirkung, die in ihrer Vielfalt kohärent ist – nach innen wie nach außen.</em></p>
+        </article>
+
+        <article class="card">
+          <span class="card__num">03</span>
+          <p class="card__axis">außen</p>
+          <h3>Moderation zur Kooperation</h3>
+          <p class="card__tag">Multi-Stakeholder-Moderation · Ko-Kreation · Konflikttransformation · Netzwerkmoderation · Dialogformate · Action Research</p>
+          <p>Wenn Akteure im Feld kooperieren wollen, moderieren wir den Raum dazwischen. Es geht um Impact-Kooperation – verschiedene Logiken, Mandate und Machtverhältnisse zueinander finden lassen, ohne sie zu glätten. Ko-kreativ, machtbewusst, mit der Geduld für Prozesse, die tragen müssen.</p>
+          <p class="card__result"><em>Ergebnis: eine Kooperation zwischen Akteuren, die das Feld systemisch trägt.</em></p>
+        </article>
+      </div>
+
+      <div class="erstgespraech erstgespraech--compact">
+        <button id="erst-open" class="btn btn--primary btn--big" type="button">
+          Erstgespräch vereinbaren
+        </button>
+        <p class="erst-open__note">kostenlos und unverbindlich</p>
+
+        <form id="erst-form" class="erst-form" hidden>
+          <div class="erst-form__progress" aria-hidden="true">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <fieldset class="erst-step active" data-step="1">
+            <legend>Welcher Zugang spricht dich an?</legend>
+            <div class="erst-choices">
+              <label class="erst-card"><input type="radio" name="zugang" value="Ökosystem Erde"><span>Ökosystem Erde</span></label>
+              <label class="erst-card"><input type="radio" name="zugang" value="Frieden &amp; Gewaltfreiheit"><span>Frieden &amp; Gewaltfreiheit</span></label>
+              <label class="erst-card"><input type="radio" name="zugang" value="Soziale Teilhabe"><span>Soziale Teilhabe</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="erst-step" data-step="2">
+            <legend>Was trifft dein Anliegen am ehesten?</legend>
+            <div class="erst-choices">
+              <label class="erst-card"><input type="radio" name="anliegen" value="01 Wirkung verankern"><span><strong>01</strong> Wirkung verankern</span></label>
+              <label class="erst-card"><input type="radio" name="anliegen" value="02 Kohärenz gestalten"><span><strong>02</strong> Kohärenz gestalten</span></label>
+              <label class="erst-card"><input type="radio" name="anliegen" value="03 Moderation zur Kooperation"><span><strong>03</strong> Moderation zur Kooperation</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="erst-step" data-step="3">
+            <legend>Eure Webseite <small>(optional)</small></legend>
+            <input type="url" name="webseite" placeholder="https://…" class="erst-input">
+            <div class="erst-actions">
+              <button type="button" class="btn btn--ghost erst-skip" data-skip>überspringen</button>
+              <button type="button" class="btn btn--primary" data-next>weiter</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="erst-step" data-step="4">
+            <legend>Wie erreichen wir dich?</legend>
+            <input type="email" name="email" required placeholder="eure@mail.de" class="erst-input">
+            <textarea name="bemerkung" rows="2" placeholder="Was sollen wir vorher wissen? (optional)" class="erst-input erst-input--textarea"></textarea>
+            <label class="erst-consent">
+              <input type="checkbox" name="datenschutz" required>
+              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Mehr in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
+            </label>
+            <div class="erst-actions">
+              <button type="submit" class="btn btn--primary">Anfrage senden</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steinrelief: Übergang Angebote → Philosophie -->
+  <div class="trenner trenner--steine trenner--steine--dunkel" aria-hidden="true">
+    <svg viewBox="0 0 1200 18" preserveAspectRatio="none">
+      <rect x="0"    y="0" width="120" height="18" fill="#5C3A1F"/>
+      <rect x="124"  y="0" width="60"  height="18" fill="#3E2812"/>
+      <rect x="188"  y="0" width="160" height="18" fill="#5C3A1F"/>
+      <rect x="352"  y="0" width="80"  height="18" fill="#8A5E3B"/>
+      <rect x="436"  y="0" width="220" height="18" fill="#5C3A1F"/>
+      <rect x="660"  y="0" width="100" height="18" fill="#3E2812"/>
+      <rect x="764"  y="0" width="180" height="18" fill="#5C3A1F"/>
+      <rect x="948"  y="0" width="80"  height="18" fill="#8A5E3B"/>
+      <rect x="1032" y="0" width="168" height="18" fill="#5C3A1F"/>
+    </svg>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 5 · PHILOSOPHIE                              -->
+  <!-- ============================================ -->
+  <section id="philosophie" class="philosophie">
+    <div class="container">
+      <p class="eyebrow eyebrow--light">Die Philosophie</p>
+
+      <div class="philo-leitsatz">
+        <p class="philo-name">Impact Up – Institut für Systems Change</p>
+        <p class="philo-claim-line">Wir geben <em>eurer Wirkung</em> Raum.</p>
+      </div>
+
+      <div class="philo-text">
+        <p>Wir wollen mit Menschen arbeiten, die wirken wollen, die die Welt zu einer besseren und gemeinschaftlicheren Welt gestalten wollen. Wir kennen uns mit dieser Art von Wirkungsorientierung aus, aber da sind wir nicht die Einzigen. Uns gibt es, weil wir ein klares Problem wahrnehmen.</p>
+
+        <p>Impact beschreibt die gesellschaftliche Veränderung, die durch ein Projekt ausgelöst wurde. Wenn aber viele dieser Veränderungen zusammenkommen und aufeinandertreffen, wirken sie nicht unabhängig voneinander, sondern bringen eine gemeinsame Wirkung hervor, die in einer dynamischen Welt zum neuen Ausgangspunkt wird. Man sollte also den Anspruch haben, mit seinem Projekt sinnvoll zum Ganzen beigetragen zu haben. Dazu braucht es Systems Change.</p>
+
+        <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
+
+        <div class="philo-more">
+          <p>Im deutschsprachigen Raum gibt es diesen Anspruch kaum. Wirkungsmessung, Evaluationslogik, Projekttools – alles endet beim Impact. Wie aus vielen Impacts ein gemeinsames Ganzes wird, ist eine Frage, die hier kaum gestellt wird. Im englischen Diskurs schon. Dort ist klar: Systems Change ist nicht planbar, oft unsichtbar, aber seine Bedingungen sind benennbar – stabile Beziehungen, geteilter Kontext, verschobene Macht. Genau dort wollen wir mit Impact Up ansetzen – als deutschsprachiges <em>Institut für Systems Change</em>.</p>
+
+          <p class="philo-break" aria-hidden="true">·</p>
+
+          <p>Wir wollen praxisnah mit euch gemeinsam Systems Change erreichen. Wie wir das verstehen – mit den Six Conditions von Kania/Kramer/Senge, mit Rayner und Bonnicis <em>Context, Connection, Power</em>, mit den Praktiken der School of System Change – findet ihr ausführlich auf der Seite <a href="systems-change.html" class="philo-link">Systems Change →</a>.</p>
+
+          <p class="philo-break" aria-hidden="true">·</p>
+
+          <p>Aus dem Friedensdienst und der systemischen Organisationsentwicklung bringen wir genau die Methodenbreite mit, die für Systems Change zählt – Methoden, die Beziehungen tragen, Machtdynamiken einbeziehen, Konflikte ernst nehmen und in heterogenen Akteurskonstellationen kontextspezifisch arbeiten. Konfliktsensitiv. Partizipativ. Genau auf der mittleren Ebene – Beziehungen und Macht – entscheidet sich, ob Veränderung systemisch hält oder verloren geht. Hier ist unser Zuhause, methodisch und biografisch.</p>
+
+          <p>Das Thema und das Anliegen bereiten bei uns den Weg zur Methode, nicht andersherum.</p>
+
+          <blockquote><p><strong>Wir wollen die Wirkung ins Zentrum bringen, angemessen am Kontext, mit Fokus auf Macht und Verbindungen, und einfach nur einen Beitrag leisten.</strong></p></blockquote>
+
+          <p class="philo-break" aria-hidden="true">·</p>
+
+          <p>Praktisch heißt das: Wir schauen uns gemeinsam mit euch eure Wirkung an. Und dann begleiten wir sie dorthin, wo Raum für sie ist – in Netzwerke, in machtbewusste Räume, in Verbindung und Kohärenz mit anderen Wirkungen. So wird Systems Change wahrscheinlicher. Wo es passt, moderieren wir auch, was sich daraus ergibt.</p>
+
+          <p>Aber wir sind hier nicht diejenigen, die Systems Change machen. Wir gehen den Weg gemeinsam mit euch, schauen, was sich zeigt, und gestalten mit. Systems Change passiert nicht durch uns – er passiert mit denen, die das System bewohnen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Übergang Philosophie → About: Skyline mit goldenem Linien-Schwerpunkt (von Tinte zu Pergament) -->
+  <div class="trenner trenner--skyline trenner--skyline-c" aria-hidden="true">
+    <svg viewBox="0 0 2000 80" preserveAspectRatio="xMidYMid meet">
+      <!-- Goldene Linien quer (durcheinander, asymmetrisch) -->
+      <path d="M 0    20 Q 200 6  400 24" fill="none" stroke="#C9A961" stroke-width="0.9" opacity="0.7"/>
+      <path d="M 380  18 Q 540 -4 720 22" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.6"/>
+      <path d="M 700  20 Q 880 36 1060 14" fill="none" stroke="#C9A961" stroke-width="1"   opacity="0.7"/>
+      <path d="M 1040 16 Q 1200 -2 1380 22" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.6"/>
+      <path d="M 1360 20 Q 1540 6  1720 26" fill="none" stroke="#C9A961" stroke-width="0.9" opacity="0.7"/>
+      <path d="M 1700 22 Q 1860 8  2000 30" fill="none" stroke="#C9A961" stroke-width="0.8" opacity="0.6"/>
+
+      <!-- Goldknoten an Schnittpunkten -->
+      <circle cx="0"    cy="20" r="2"   fill="#C9A961"/>
+      <circle cx="200"  cy="11" r="2.5" fill="#C9A961"/>
+      <circle cx="400"  cy="22" r="2"   fill="#C9A961"/>
+      <circle cx="540"  cy="3"  r="3"   fill="#C9A961"/>
+      <circle cx="720"  cy="20" r="2"   fill="#C9A961"/>
+      <circle cx="880"  cy="32" r="2.5" fill="#C9A961"/>
+      <circle cx="1060" cy="14" r="2"   fill="#C9A961"/>
+      <circle cx="1200" cy="3"  r="3"   fill="#C9A961"/>
+      <circle cx="1380" cy="22" r="2"   fill="#C9A961"/>
+      <circle cx="1540" cy="11" r="2.5" fill="#C9A961"/>
+      <circle cx="1720" cy="24" r="2"   fill="#C9A961"/>
+      <circle cx="1860" cy="13" r="2.5" fill="#C9A961"/>
+      <circle cx="2000" cy="28" r="2"   fill="#C9A961"/>
+
+      <!-- Kleine angedeutete Tempel-Spitzen (Stäbe + Knöpfe) durcheinander -->
+      <g stroke="#C9A961" stroke-width="1.2">
+        <line x1="120"  y1="32" x2="120"  y2="48"/><circle cx="120"  cy="30" r="1.6" fill="#C9A961"/>
+        <line x1="320"  y1="38" x2="320"  y2="54"/><circle cx="320"  cy="36" r="1.6" fill="#C9A961"/>
+        <line x1="620"  y1="36" x2="620"  y2="54"/><circle cx="620"  cy="34" r="1.6" fill="#C9A961"/>
+        <line x1="820"  y1="42" x2="820"  y2="58"/><circle cx="820"  cy="40" r="1.6" fill="#C9A961"/>
+        <line x1="980"  y1="32" x2="980"  y2="50"/><circle cx="980"  cy="30" r="1.6" fill="#C9A961"/>
+        <line x1="1140" y1="38" x2="1140" y2="54"/><circle cx="1140" cy="36" r="1.6" fill="#C9A961"/>
+        <line x1="1320" y1="34" x2="1320" y2="50"/><circle cx="1320" cy="32" r="1.6" fill="#C9A961"/>
+        <line x1="1480" y1="40" x2="1480" y2="56"/><circle cx="1480" cy="38" r="1.6" fill="#C9A961"/>
+        <line x1="1660" y1="36" x2="1660" y2="52"/><circle cx="1660" cy="34" r="1.6" fill="#C9A961"/>
+        <line x1="1820" y1="42" x2="1820" y2="58"/><circle cx="1820" cy="40" r="1.6" fill="#C9A961"/>
+      </g>
+
+      <!-- Sparsame Stein-Reihe unten -->
+      <g fill="#B8855E">
+        <rect x="0"    y="74" width="80"  height="6"/>
+        <rect x="84"   y="74" width="160" height="6" fill="#A87850"/>
+        <rect x="248"  y="74" width="100" height="6" fill="#C9A47E"/>
+        <rect x="352"  y="74" width="220" height="6"/>
+        <rect x="576"  y="74" width="80"  height="6" fill="#8A5E3B"/>
+        <rect x="660"  y="74" width="180" height="6" fill="#A87850"/>
+        <rect x="844"  y="74" width="120" height="6"/>
+        <rect x="968"  y="74" width="200" height="6" fill="#C9A47E"/>
+        <rect x="1172" y="74" width="100" height="6" fill="#A87850"/>
+        <rect x="1276" y="74" width="160" height="6"/>
+        <rect x="1440" y="74" width="80"  height="6" fill="#8A5E3B"/>
+        <rect x="1524" y="74" width="180" height="6" fill="#A87850"/>
+        <rect x="1708" y="74" width="120" height="6"/>
+        <rect x="1832" y="74" width="168" height="6" fill="#C9A47E"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- 6 · ABOUT                                    -->
+  <!-- ============================================ -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about__intro">
+        <p class="eyebrow">Wer wir sind</p>
+
+        <p>Die Webseite ist im „Wir" verfasst, denn Impact Up ist eine Idee, die nur in Gemeinschaft entstehen kann. Dieser Gemeinsinn ist von Anfang an Teil von Impact Up – dem Institut für Systems Change. Wir starten die Idee mit dieser Seite und bauen Impact Up Schritt für Schritt mit euch zusammen auf.</p>
+
+        <p>Momentan suchen wir hier nicht in erster Linie Kund:innen, sondern Prozessinitiator:innen, die wir mit Impact Up begleiten – bzw. andersherum. Das ist häufig austauschbar. So gibt es zum Beispiel die <a href="https://agenturfuerzukunftsgestaltung.de" target="_blank" rel="noopener">Agentur für Zukunftsgestaltung</a>, die wir begleiten und die uns begleitet; den <a href="https://cocreators.circle.so" target="_blank" rel="noopener">Co-Creators Circle</a>, in dem Impact Up mitläuft; und einen größeren Prozess mit <a href="https://ubie.org" target="_blank" rel="noopener">UBIE</a>.</p>
+
+        <p>Wir verstehen uns immer als Teil von etwas Größerem.</p>
+
+        <p>Wir nennen uns <em>Institut</em>, aber nicht im Sinne eines Universitäts-Departments mit Expertise als Ware. Im Systemischen kann ohnehin niemand wirklich steuern – welche Expertin oder welcher Experte gerade dazukommt, ist häufig zweitrangig. Hauptsache, jemand bringt Breite mit, und jemand fragt: <em>„Frag ich mal xy, dann kriegen wir das schon hin."</em> Wir verstehen Impact Up als organisierende Akteurin im System, nicht als anbietendes Beratungs-Institut. Wir bauen Netzwerke in viele Richtungen – und wollen vor allem beteiligt sein.</p>
+
+        <p>Das heißt aber auch: Du bist herzlich willkommen, dich hier einzubringen. Sag einfach Bescheid, wie du Teil werden magst: <a class="about__mail" href="mailto:info@impact-up.org"><strong>info@impact-up.org</strong></a>.</p>
+      </div>
+
+      <div class="about__bio">
+        <div class="about__photo">
+          <img class="about__photo-img" src="assets/stefan_neu.png" alt="Stefan Füsers" />
+        </div>
+        <div class="about__text">
+          <p><strong>Stefan</strong> hat Impact Up – das Institut für Systems Change – gegründet. Zuletzt war er sechs Jahre Berater für Planung, Monitoring und Evaluierung im Zivilen Friedensdienst der GIZ. Seine Arbeit bestand aus unzähligen Workshops, Meetings und Trainings mit ebenso vielfältigen Planungs-, Bildungs-, Entwicklungs-, Austausch- und Absprachebedarfen. Aus jährlichen Projektplanungen mit acht diversen Partnerorganisationen heraus hat er Organisationsentwicklung mitgestaltet, Netzwerke weiterentwickelt und gestärkt und Menschen so zusammengebracht, wie sie gerade zusammenkommen mussten. In solche Workshops fließen immer wieder seine Erfahrung als ausgebildeter Yogalehrer und als Übungsgruppenleiter für Gewaltfreie Kommunikation mit ein.</p>
+
+          <p>Nach der Rückkehr nach Deutschland 2025 hatte Stefan Zeit und Lust, seine Praxis auszubauen und zu reflektieren. Er macht derzeit eine Ausbildung in systemischer Organisationsentwicklung, um als zertifizierter Systemiker arbeiten zu können – und hat in der Literatur zum Systems Change und zur Ko-Kreation viel Resonanz zu sich und seiner Arbeit gefunden. Die Methoden zum Planen, Monitoren, Reflektieren und Evaluieren, zusammen mit den Methoden der Friedensarbeit aus Dialog, Konflikttransformation, Vergangenheits- und Traumaaufarbeitung, nimmt Stefan nun mit in die systemische Ausbildung. Im Rahmen des Instituts für Systems Change entwickelt er Ansätze für Wirkungsarbeit in sinnorientierten Netzwerken. Klarheit wird dabei keinesfalls vorgegeben, sondern allenfalls als Ziel der Prozessarbeit ausgegeben und gemeinschaftlich gestaltet. Stefan bringt eine Breite an Methoden mit, ein Netzwerk, um diese weiter zu ergänzen, und bereitet die Methodik kontextspezifisch und ko-kreativ mit seinem Gegenüber auf. Dazu kommen die Menschlichkeit, die Empathie und das Gespür, die es braucht, um wirklich zu hören, zu sehen und zu fühlen, worum es geht.</p>
+
+          <p>Stefan hat International Business, Europäische Studien und Internationale Studien in vier Ländern studiert; seine Arbeitserfahrung in weiteren Ländern kommt hinzu, sodass er seine Qualitäten auch interkulturell in der Praxis weiterentwickeln konnte. Deshalb möchte er Impact Up nicht ausschließlich auf Deutsch belassen, sondern auch auf Englisch und Spanisch zur Verfügung stellen. Um das umzusetzen, hat er sich zuletzt intensiv mit KI auseinandergesetzt – und bringt diese Kenntnisse gern ein, um gemeinsam den Systems Change, den wir als wichtig ansehen, zu erreichen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- 7 · STIMMEN / REFERENZEN                     -->
+  <!-- ============================================ -->
+  <section id="stimmen" class="stimmen">
+    <div class="container">
+      <p class="eyebrow">Referenzen</p>
+      <h2 class="section-title">Wie andere unsere Arbeit sehen.</h2>
+
+      <div class="stimmen__list">
+        <blockquote class="stimme">
+          <p>„His ability to bring together diverse actors, identify synergies, and facilitate constructive collaboration in a politically sensitive environment had a direct impact on the quality and sustainability of partner activities."</p>
+          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
+        </blockquote>
+
+        <blockquote class="stimme">
+          <p>„Mr. Füsers combined systemic process consulting, organizational development, and impact-oriented PME in a way that significantly enhanced the program's internal coherence and external relevance."</p>
+          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
+        </blockquote>
+
+        <blockquote class="stimme">
+          <p>„Through partner-driven and joint learning processes, he promoted plural narratives, participatory approaches, and context-sensitive engagement in a field shaped by historical sensitivities and evolving political conditions."</p>
+          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Impact Up – Institut für Systems Change · Hamburg</p>
+    <p class="foot__small">© 2026 · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+  <script src="main.js"></script>
+
+  <script>
+    // Prozess-Texte aufklappen
+    document.querySelectorAll('[data-prozess-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.previousElementSibling;
+        const open = text.classList.toggle('expanded');
+        btn.classList.toggle('expanded', open);
+        btn.textContent = open ? 'einklappen' : 'weiterlesen';
+      });
+    });
+
+    // Philosophie-Text aufklappen
+    document.querySelectorAll('[data-philo-toggle]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const more = btn.nextElementSibling;
+        const open = more.classList.toggle('expanded');
+        btn.classList.toggle('expanded', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'einklappen' : 'weiterlesen';
+      });
+    });
+
+    // Auto-Einklappen, wenn Maus die Karte verlässt
+    document.querySelectorAll('.prozess__step').forEach(step => {
+      step.addEventListener('mouseleave', () => {
+        const text = step.querySelector('.prozess__text');
+        const btn = step.querySelector('.prozess__more');
+        if (text && text.classList.contains('expanded')) {
+          text.classList.remove('expanded');
+          if (btn) {
+            btn.classList.remove('expanded');
+            btn.textContent = 'weiterlesen';
+          }
+        }
+      });
+    });
+
+    (function () {
+      const open = document.getElementById('erst-open');
+      const form = document.getElementById('erst-form');
+      if (!open || !form) return;
+      const steps = form.querySelectorAll('.erst-step');
+      const dots = form.querySelectorAll('.erst-form__progress .dot');
+      let cur = 0;
+
+      function show(i) {
+        cur = i;
+        steps.forEach((s, k) => s.classList.toggle('active', k === i));
+        dots.forEach((d, k) => d.classList.toggle('active', k <= i));
+        const focusable = steps[i].querySelector('input, textarea');
+        if (focusable && i >= 2) setTimeout(() => focusable.focus(), 250);
+      }
+
+      open.addEventListener('click', () => {
+        form.hidden = false;
+        open.style.display = 'none';
+        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      // Auto-Advance bei Klick auf Klick-Karten in Step 1 + 2
+      form.querySelectorAll('input[type=radio]').forEach(r => {
+        r.addEventListener('change', () => {
+          if (cur < 2) setTimeout(() => show(cur + 1), 180);
+        });
+      });
+
+      form.querySelectorAll('[data-next]').forEach(b =>
+        b.addEventListener('click', () => show(cur + 1))
+      );
+      form.querySelectorAll('[data-skip]').forEach(b =>
+        b.addEventListener('click', () => {
+          form.querySelector('input[name=webseite]').value = '';
+          show(cur + 1);
+        })
+      );
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const d = new FormData(form);
+        const body = [
+          'Hallo Impact Up,', '',
+          'Bevorzugter Zugang: ' + (d.get('zugang') || '–'),
+          'Anliegen: '          + (d.get('anliegen') || '–'),
+          'Webseite: '          + (d.get('webseite') || '–'),
+          'Bemerkung: '         + (d.get('bemerkung') || '–'),
+          '',
+          'E-Mail: '            + (d.get('email') || '–')
+        ].join('\n');
+        location.href = 'mailto:info@impact-up.org?subject=' +
+          encodeURIComponent('Erstgespräch-Anfrage') +
+          '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>
