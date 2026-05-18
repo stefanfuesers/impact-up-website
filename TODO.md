@@ -40,6 +40,13 @@ Was noch offen ist, sortiert nach Priorität. Wahrheit der Texte lebt in den HTM
 
 ---
 
+## Erledigt seit 2026-05-18
+
+- ✅ Begriffs-Konsistenz „Wirkungsfeld" – Formular-Legende + Mailbody (DE)
+- ✅ `logo_vergleich.html` aus dem Webordner in den ImpactUp-Hauptordner verschoben
+- ✅ og:image für `impulse.*` und `systems-change.*` auf `stefan_neu.png` (statt SVG-Logo) – konsistent mit Index, bis Yara ein dediziertes Bild liefert
+- ✅ Nav-Dropdown mit nur einem Eintrag aufgelöst: „Systems Change" als eigener Nav-Punkt neben „Philosophie" (alle 8 HTML-Dateien, DE+EN)
+
 ## Erledigt seit 2026-05-02
 
 - ✅ Prozess Schritt 04 mit Text

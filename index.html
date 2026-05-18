@@ -31,12 +31,8 @@
         <li><a href="#quellen">Wirkungsfelder</a></li>
         <li><a href="#weitergehen">Prozess</a></li>
         <li><a href="#angebote">Angebote</a></li>
-        <li class="nav__item--has-dropdown">
-          <a href="#philosophie">Philosophie</a>
-          <ul class="nav__dropdown">
-            <li><a href="systems-change.html">Systems Change</a></li>
-          </ul>
-        </li>
+        <li><a href="#philosophie">Philosophie</a></li>
+        <li><a href="systems-change.html">Systems Change</a></li>
         <li><a href="#about">Wer wir sind</a></li>
       </ul>
       <ul class="nav__links nav__links--right">
@@ -584,7 +580,7 @@
           </div>
 
           <fieldset class="erst-step active" data-step="1">
-            <legend>Welcher Zugang spricht dich an?</legend>
+            <legend>Welches Wirkungsfeld spricht dich an?</legend>
             <div class="erst-choices">
               <label class="erst-card"><input type="radio" name="zugang" value="Ökosystem Erde"><span>Ökosystem Erde</span></label>
               <label class="erst-card"><input type="radio" name="zugang" value="Frieden &amp; Gewaltfreiheit"><span>Frieden &amp; Gewaltfreiheit</span></label>
@@ -895,7 +891,7 @@
         const d = new FormData(form);
         const body = [
           'Hallo Impact Up,', '',
-          'Bevorzugter Zugang: ' + (d.get('zugang') || '–'),
+          'Wirkungsfeld: ' + (d.get('zugang') || '–'),
           'Anliegen: '          + (d.get('anliegen') || '–'),
           'Webseite: '          + (d.get('webseite') || '–'),
           'Bemerkung: '         + (d.get('bemerkung') || '–'),
