@@ -2014,10 +2014,8 @@ a { color: inherit; text-decoration: none; }
   .page .page__inner { padding-left: 0; padding-right: 0; }
 }
 
-/* Blocksatz auf sehr schmalen Spalten erzeugt große Wortlücken → linksbündig */
-@media (max-width: 480px) {
-  .lead { text-align: left; }
-}
+/* Blocksatz bleibt auch mobil (Stefans Wunsch) – die Wortlücken werden
+   stattdessen über breitere Spalten (schmalere Ränder) entschärft. */
 
 /* Hero-Lockup: auf sehr schmalen Screens gezielt verkleinern, damit
    Wortmarke + Tagline sicher in einer Zeile bleiben (nie umbrechen) */
@@ -2081,4 +2079,20 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .sub-section { padding-left: 20px; padding-right: 20px; }
   .sub-section > .container { padding-left: 4px; padding-right: 4px; }
+}
+
+/* --- 4) Mobil kompakter: Texte näher an die Ränder, Karten breiter,
+   kürzere Sektionsabstände gegen das lange Scrollen (Stefans Runde 2).
+   Blocksatz bleibt erhalten; breitere Spalten glätten die Wortlücken. --- */
+@media (max-width: 760px) {
+  .container { padding-left: 18px; padding-right: 18px; }
+  .intro { padding: 44px 0 40px; }
+  .weitergehen { padding: 48px 18px; }
+  .weitergehen__notiz { margin-bottom: 22px; }
+  .angebote { padding: 48px 18px 44px; }
+  .angebote .lead { margin-bottom: 32px; }
+  .card { padding: 26px 20px; }
+  .about { padding: 48px 18px 36px; }
+  .stimmen { padding: 24px 0 48px; }
+  .zettel { padding: 24px 20px; }
 }
