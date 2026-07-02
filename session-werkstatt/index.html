@@ -245,6 +245,13 @@ button:disabled{opacity:.45;cursor:not-allowed}
 "use strict";
 const FEATURE_NAME = "Session-Werkstatt";
 const LS_RUNS = "iu_sw_runs";
+const LS_FREI = "iu_sw_frei";
+/* Freischalt-Link: ?frei=wirkungsraum schaltet diesen Browser dauerhaft
+   für beliebig viele Sessions frei (Button "Neue Session planen"). */
+try{
+  const _p = new URLSearchParams(location.search);
+  if(_p.get("frei")==="wirkungsraum"){ localStorage.setItem(LS_FREI,"1"); history.replaceState(null,"",location.pathname); }
+}catch(e){}
 let _runCounted = false;
 /* =====================================================================
    Session-Werkstatt · Version 2 (Engine V2)
@@ -1408,9 +1415,13 @@ function renderLeitfaden(){
 
 /* ---------- Aktionen: Download & Kontakt ---------- */
 function aktionenHtml(){
+  const frei = (function(){ try{ return localStorage.getItem(LS_FREI)==="1"; }catch(e){ return false; } })();
+  const zweitButton = frei
+    ? `<button class="secondary" onclick="A=leereAntworten();schritt=0;try{localStorage.removeItem(LS_KEY)}catch(e){};window.scrollTo(0,0);render()">Neue Session planen</button>`
+    : `<button class="secondary" onclick="location.href='../kontakt.html'">Weitere Session planen? Kontaktiere uns</button>`;
   return `<div class="aktionen">
     <button class="primary" onclick="downloadPdf(this)">Download</button>
-    <button class="secondary" onclick="location.href='../kontakt.html'">Weitere Session planen? Kontaktiere uns</button>
+    ${zweitButton}
   </div>`;
 }
 

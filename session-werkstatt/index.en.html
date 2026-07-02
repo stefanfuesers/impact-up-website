@@ -245,6 +245,13 @@ button:disabled{opacity:.45;cursor:not-allowed}
 "use strict";
 const FEATURE_NAME = "Session Builder";
 const LS_RUNS = "iu_sw_runs";
+const LS_FREI = "iu_sw_frei";
+/* Unlock link: ?frei=wirkungsraum permanently unlocks this browser
+   for any number of sessions (button "Plan a new session"). */
+try{
+  const _p = new URLSearchParams(location.search);
+  if(_p.get("frei")==="wirkungsraum"){ localStorage.setItem(LS_FREI,"1"); history.replaceState(null,"",location.pathname); }
+}catch(e){}
 let _runCounted = false;
 /* =====================================================================
    Session-Werkstatt · Version 2 (Engine V2)
@@ -1408,9 +1415,13 @@ function renderLeitfaden(){
 
 /* ---------- Actions: Download & Contact ---------- */
 function aktionenHtml(){
+  const frei = (function(){ try{ return localStorage.getItem(LS_FREI)==="1"; }catch(e){ return false; } })();
+  const zweitButton = frei
+    ? `<button class="secondary" onclick="A=leereAntworten();schritt=0;try{localStorage.removeItem(LS_KEY)}catch(e){};window.scrollTo(0,0);render()">Plan a new session</button>`
+    : `<button class="secondary" onclick="location.href='../kontakt.en.html'">Planning another session? Contact us</button>`;
   return `<div class="aktionen">
     <button class="primary" onclick="downloadPdf(this)">Download</button>
-    <button class="secondary" onclick="location.href='../kontakt.en.html'">Planning another session? Contact us</button>
+    ${zweitButton}
   </div>`;
 }
 
