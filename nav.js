@@ -58,6 +58,26 @@
   }
   toggle.addEventListener('click', () => drawer.classList.contains('open') ? shut() : open());
   close.addEventListener('click', shut);
-  drawer.addEventListener('click', e => { if (e.target.tagName === 'A') shut(); });
+  drawer.addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    const href = a.getAttribute('href') || '';
+    // Anker auf derselben Seite: erst Menü schließen (Scroll-Sperre lösen),
+    // dann explizit scrollen – der Standard-Sprung scheitert sonst in iOS Safari
+    // an der noch aktiven overflow:hidden-Sperre.
+    if (href.startsWith('#')) {
+      const ziel = document.getElementById(href.slice(1));
+      if (ziel) {
+        e.preventDefault();
+        shut();
+        requestAnimationFrame(() => {
+          ziel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', href);
+        });
+        return;
+      }
+    }
+    shut();
+  });
   window.addEventListener('keydown', e => { if (e.key === 'Escape') shut(); });
 })();

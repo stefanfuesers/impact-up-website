@@ -2044,8 +2044,8 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .hero--band { padding-top: 72px; padding-bottom: 32px; }
   .hero__inner--v2 { gap: 10px; }
-  .lockup-img { width: min(88vw, 420px); margin-bottom: 12px; }
-  .hero__claim-col { justify-self: stretch; text-align: right; padding-top: 0; }
+  .lockup-img { width: calc(100% + 26px); max-width: none; margin-left: -13px; margin-bottom: 12px; }
+  .hero__claim-col { justify-self: stretch; text-align: right; padding-top: 0; padding-right: 14px; }
   .hero__inner--v2 .hero__claim {
     text-align: right;
     font-size: clamp(1.3rem, 6vw, 1.7rem);
@@ -2070,6 +2070,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .hero--sub { overflow-x: clip; }
 }
+
+/* Anker-Ziele nicht unter der fixierten Nav verschwinden lassen */
+[id] { scroll-margin-top: 72px; }
 
 /* --- 3) Konstrukt-Seiten: .sub-section (32px Padding) + .container (32px
    Padding) verdoppeln sich auf schmalen Phones und lassen nur ~230px
