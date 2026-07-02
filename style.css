@@ -1736,6 +1736,36 @@ a { color: inherit; text-decoration: none; }
   padding-left: 18px;
   opacity: 0.72;
 }
+/* Zugeklappte Dropdown-Gruppen im Drawer: Text navigiert, Pfeil klappt aus */
+.nav__drawer .drawer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+}
+.nav__drawer .drawer-row a { flex: 1; border-bottom: none; }
+.nav__drawer .drawer-toggle {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 20px;
+  padding: 8px 6px 8px 22px;
+  cursor: pointer;
+  line-height: 1;
+}
+.nav__drawer .drawer-toggle span {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+.nav__drawer .drawer-group.open .drawer-toggle span { transform: rotate(180deg); }
+.nav__drawer .drawer-subs {
+  display: none;
+  border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+  padding-bottom: 6px;
+}
+.nav__drawer .drawer-group.open .drawer-subs { display: block; }
+.nav__drawer .drawer-subs a { border-bottom: none; padding: 8px 0 8px 18px; }
+
 .nav__drawer a.lang {
   margin-top: 22px;
   border: 1px solid var(--gold);
