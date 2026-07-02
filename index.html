@@ -3,65 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impact Up – Institut für Systems Change</title>
-  <meta name="description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die ihre Wirkung im System verankern wollen.">
-  <link rel="icon" type="image/svg+xml" href="assets/logo_alt.svg">
+  <title>Impact Up – Institut für systemische Wirkungsorientierung</title>
+  <meta name="description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die Wirkung ins System bringen wollen.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
+  <link rel="canonical" href="https://impact-up.org/">
+  <link rel="alternate" hreflang="de" href="https://impact-up.org/">
+  <link rel="alternate" hreflang="en" href="https://impact-up.org/index.en.html">
+  <link rel="alternate" hreflang="x-default" href="https://impact-up.org/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Impact Up – Institut für Systems Change">
-  <meta property="og:description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die ihre Wirkung im System verankern wollen.">
+  <meta property="og:title" content="Impact Up – Institut für systemische Wirkungsorientierung">
+  <meta property="og:description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die Wirkung ins System bringen wollen.">
   <meta property="og:url" content="https://impact-up.org/">
-  <meta property="og:image" content="https://impact-up.org/assets/stefan_neu.png">
+  <meta property="og:image" content="https://impact-up.org/assets/share.png">
   <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Impact Up – Institut für systemische Wirkungsorientierung">
+  <meta name="twitter:description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die Wirkung ins System bringen wollen.">
+  <meta name="twitter:image" content="https://impact-up.org/assets/share.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
   <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
 </head>
 <body>
-
-  <!-- ============================================ -->
-  <!-- 1 · HERO                                     -->
-  <!-- ============================================ -->
-  <header id="top" class="hero">
     <nav class="nav">
-      <ul class="nav__links">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#quellen">Wirkungsfelder</a></li>
-        <li><a href="#weitergehen">Prozess</a></li>
-        <li><a href="#angebote">Angebote</a></li>
-        <li><a href="#philosophie">Philosophie</a></li>
-        <li><a href="systems-change.html">Systems Change</a></li>
-        <li><a href="#about">Wer wir sind</a></li>
-      </ul>
+      <div class="nav__left">
+        <a class="nav__wordmark" href="#top" aria-label="Impact Up – zum Seitenanfang">
+          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="">
+          <span class="nav__wordmark-name">Impact <em>Up</em></span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="#weitergehen">Perspektiven</a></li>
+          <li><a href="#angebote">Angebote</a></li>
+          <li><a href="#quellen">Wirkungsfelder</a></li>
+          <li><a href="#about">Über Uns</a></li>
+        </ul>
+      </div>
       <ul class="nav__links nav__links--right">
-        <li><a href="impulse.html">Impulse</a></li>
-        <li><a href="#angebote">Kontakt</a></li>
+        <li class="nav__item--has-dropdown">
+          <a href="impulse.html">Impulse</a>
+          <ul class="nav__dropdown">
+            <li><a href="impulse.html">Der erste Impuls folgt bald</a></li>
+          </ul>
+        </li>
+        <li class="nav__item--has-dropdown">
+          <a href="konstrukte.html">Konstrukte</a>
+          <ul class="nav__dropdown">
+            <li><a href="impact-up-philosophie.html">Impact Up Philosophie</a></li>
+            <li><a href="systemische-wirkungsorientierung.html">Systemische Wirkungsorientierung</a></li>
+            <li><a href="systems-change.html">Systems Change</a></li>
+          </ul>
+        </li>
+        <li><a href="session-werkstatt/index.html">Session-Werkstatt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
         <li class="nav__lang"><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></li>
       </ul>
     </nav>
 
-    <div class="hero__inner">
-      <div class="hero__text">
-        <p class="eyebrow eyebrow--light">Impact Up – Institut für Systems Change</p>
-        <h1 class="hero__claim">
-          Wir geben<br>
-          <em>eurer Wirkung</em><br>
-          Raum.
-        </h1>
-        <p class="hero__sub">
-          Für Initiativen, Organisationen und Netzwerke,<br>die ihre Wirkung im System verankern wollen.
-        </p>
+
+  <!-- ============================================ -->
+  <!-- 1 · HERO                                     -->
+  <!-- ============================================ -->
+  <header id="top" class="hero hero--band">
+
+    <img class="hero-field hero-field--far" src="assets/field_far.svg" alt="" aria-hidden="true">
+    <img class="hero-field hero-field--near" src="assets/field_near.svg" alt="" aria-hidden="true">
+
+    <div class="hero__inner hero__inner--v2">
+      <div class="hero__lockup-col">
+        <div class="lockup">
+          <img class="lmark" src="assets/favicon.svg" alt="Impact Up">
+          <div>
+            <div class="lname">Impact <em>Up</em></div>
+            <div class="ltag"><div class="ltag-row"><span>Institut</span><span>für systemische</span></div><span class="ltag-2">Wirkungsorientierung</span></div>
+          </div>
+        </div>
       </div>
-      <a href="#" class="hero__logo-link" aria-label="Impact Up – Startseite">
-        <img src="assets/logo_alt.svg" alt="Impact Up Logo" class="hero__logo">
-      </a>
+      <div class="hero__claim-col">
+        <h1 class="hero__claim">Wir geben <em>eurer Wirkung</em><br>Raum</h1>
+        <p class="hero__sub">Für Initiativen, Organisationen und Netzwerke,<br>die Wirkung ins System bringen wollen</p>
+      </div>
     </div>
 
   </header>
 
-  <!-- Steinrelief: Übergang Hero → Quellen -->
+  <!-- ============================================ -->
+  <!-- 1b · WILLKOMMEN / GRÜNDUNGSIMPULS            -->
+  <!-- ============================================ -->
+  <section id="willkommen" class="intro">
+    <div class="intro__seam intro__seam--l" aria-hidden="true"></div>
+    <div class="intro__seam intro__seam--r" aria-hidden="true"></div>
+    <div class="container intro__layout">
+      <div class="intro__center">
+      <p class="intro__lead">
+        <strong class="intro__brand">Impact Up</strong> möchte ein Ort für alle sein, die mit ihrer Arbeit und ihrem Engagement etwas in der Gesellschaft bewegen wollen. Damit uns mit diesen gesellschaftlichen Wirkungen auch tatsächlich eine bessere Gesellschaft gelingen kann, wollen wir uns gemeinsam mit euch auf diese langsamen und hoffentlich schönen Prozesswege begeben. Mach es dir also einen Moment bequem und schau dich erstmal um.
+      </p>
+      <p class="intro__lead">
+        Wir wollen für systemische Wirkungsorientierung stehen und damit einen Beitrag für diese tatsächlich bessere Gesellschaft leisten. Dazu wollen wir uns viel mit euch austauschen, Resonanzen erzeugen, viele Perspektiven verstehen und verständlich machen und viele Menschen einbinden, beteiligen und vernetzen. Wir freuen uns schon auf euch.
+      </p>
+
+      <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
+
+      <div class="philo-more intro__more">
+        <p>Wie eine Wirkung formuliert ist, wirkt bereits – nach innen auf alle, die zum Vorhaben gehören, und nach außen auf alle, die sie lesen, sehen, hören. Sie tritt in Beziehung zu anderen Wirkungen. An einer Wirkung hängt viel mehr, als ein oder zwei Sätze fassen können: nach innen, nach außen, ins Feld, in die Gesellschaft hinein. Um Wirkungen herum existieren bereits komplexe Kommunikationssysteme in einer Organisation. In der Gesellschaft, wo Impact wirken soll, sind diese Kommunikationssysteme um ein Vielfaches komplexer.</p>
+
+        <p>Wir als Impact Up, wir streben systemischen Impact an. Aber ein angestrebter Impact steht in einer Gesellschaft nicht allein. Was passiert hier eigentlich noch? Was hat das mit mir zu tun? Was passiert, wenn viele Wirkungen ineinandergreifen? Was passiert, wenn wir wieder gehen? Langfristig, gemeinsam getragener Impact auf die gesamte Gesellschaft – also kohärent in Kooperation mit anderen – ist dann sowas wie ein vorläufig finaler Bezugspunkt. Wie solche Verschiebungen im Feld gelingen, dazu gibt es verschiedene Ansätze – Systems Change ist einer davon. Aber wir arbeiten systemisch, also starten wir selbstverständlich bei euren Anliegen. Unser Zugang bleibt eine einfache Wirkung, ganz nah bei den Menschen und den Projekten – so öffnen sich Wege hin zu diesem systemischen Impact. Davon sind wir überzeugt.</p>
+
+        <p>Als systemisch arbeitendes Institut wollen wir natürlich viele Dinge mit vielen Systemen ausprobieren: wie systemisches Arbeiten wirkungsorientierter wird und wie Wirkungsorientierung systemischer wird. Systemische Beratung zu Wirkungsorientierung, systemische Organisationsentwicklung, aber gern mit Wirkungsorientierung.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steinrelief: Übergang Willkommen → Perspektiven -->
   <div class="trenner trenner--steine" aria-hidden="true">
     <svg viewBox="0 0 1200 24" preserveAspectRatio="none">
       <rect x="0"    y="0" width="80"  height="24" fill="#B8855E"/>
@@ -79,182 +135,15 @@
   </div>
 
   <!-- ============================================ -->
-  <!-- 2 · DREI QUELLEN (3D-Netz)                   -->
+  <!-- 2 · WIE WIR MIT EUCH WEITERGEHEN             -->
   <!-- ============================================ -->
-  <section id="quellen" class="quellen">
-    <p class="netz-lead">Die drei Wirkungsfelder von Impact Up</p>
-    <div id="netz" class="netz">
-      <canvas id="netz-canvas"></canvas>
-      <div class="netz__hint">↻ Mit der Maus drehen</div>
-    </div>
-
-    <div class="quellen__caption">
-      <strong>Impact Up</strong> – Das Institut für Systems Change – möchte über drei zentrale <strong>Wirkungsfelder</strong> mit euch im System ansetzen und gestalten:
-    </div>
-
-    <div class="quellen__legende">
-      <div class="quelle" style="--c:#2D4A2B">
-        <span class="quelle__dot"></span>
-        <h3>Ökosystem Erde</h3>
-        <p>Die Erde ist ein Ökosystem mit planetaren Grenzen, die auch wirtschaftliches Wachstum begrenzen und Gerechtigkeit vielschichtig auf dieser Erde herausfordern. Wir starten in den Prozess der harmonischen (Re-)Integration des menschlichen Lebens in das Ökosystem Erde.</p>
-      </div>
-      <div class="quelle" style="--c:#1F1A14">
-        <span class="quelle__dot"></span>
-        <h3>Frieden &amp; Gewaltfreiheit</h3>
-        <p>Gewaltfreiheit ist die Grundlage für die Würde des Menschen und den Frieden zwischen den Menschen. Strukturelle und kulturelle Gewaltfreiheit ist ein wichtiger, wenn auch oft nicht sichtbarer, Teil davon. Wir starten in den Prozess, die Gewalt in verschiedenen Formen bewusster zu machen, und Konflikte konstruktiv zu transformieren.</p>
-      </div>
-      <div class="quelle" style="--c:#4A2B5C">
-        <span class="quelle__dot"></span>
-        <h3>Soziale Teilhabe</h3>
-        <p>Die soziale Teilhabe ist die Grundvoraussetzung für ein gemeinschaftliches Leben. Jede:r braucht Teilhabe, Gemeinwohlorientierung und individuelle Absicherung bspw. durch ein Grundeinkommen. Wir starten in den Prozess, die soziale Teilhabe als Grundvoraussetzung für Demokratie und gesellschaftlichen Zusammenhalt zu gestalten und Menschlichkeit ins Zentrum zu stellen.</p>
-      </div>
-    </div>
-
-    <p class="quellen__schluss"><em>Dies sind nur drei von zahlreichen Wirkungsfeldern. Uns scheinen sie zentral und wichtig, weswegen wir hier mit euch ansetzen wollen. Wir starten in bestehende Systeme, in denen es auch andere Wirkungsfelder gibt. Wir bieten eine erste Orientierung, um mit euch gemeinsam die Ansätze konstruktiver Veränderung zu identifizieren und ko-kreativ zu nutzen. Wo genau wir ankommen, entsteht erst im Prozess mit euch. Wo sollen wir starten?</em></p>
-  </section>
-
-  <!-- Übergang Quellen → Weitergehen: reine Gold-Linien-Landschaft -->
-  <div class="trenner trenner--skyline trenner--skyline-a" aria-hidden="true">
-    <svg viewBox="0 0 2000 100" preserveAspectRatio="xMidYMid meet" fill="none" stroke="#C9A961">
-
-      <!-- Pagode 3-tier (links) – nur Konturen -->
-      <g transform="translate(150,40)" stroke-width="1">
-        <path d="M -22 52 L -18 36 Q -16 28 -10 26 L 10 26 Q 16 28 18 36 L 22 52"/>
-        <path d="M -16 26 L -13 14 Q -11 8 -6 6 L 6 6 Q 11 8 13 14 L 16 26"/>
-        <path d="M -10 6 L -8 -4 Q -6 -8 -3 -10 L 3 -10 Q 6 -8 8 -4 L 10 6"/>
-        <line x1="0" y1="-10" x2="0" y2="-22" stroke-width="1.4"/>
-        <circle cx="0" cy="-25" r="1.8" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Säulen-Trio – dünne Goldlinien -->
-      <g transform="translate(310,40)" stroke-width="0.9">
-        <line x1="-14" y1="20" x2="-14" y2="52"/>
-        <line x1="0"   y1="14" x2="0"   y2="52"/>
-        <line x1="14"  y1="20" x2="14"  y2="52"/>
-        <circle cx="-14" cy="22" r="1.4" fill="#C9A961" stroke="none"/>
-        <circle cx="0"   cy="14" r="1.7" fill="#C9A961" stroke="none"/>
-        <circle cx="14"  cy="22" r="1.4" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 150 18 Q 230 8 310 26" stroke-width="0.8" opacity="0.7"/>
-
-      <!-- Stupa -->
-      <g transform="translate(440,40)" stroke-width="0.9">
-        <path d="M -18 52 A 18 14 0 0 1 18 52"/>
-        <line x1="0" y1="38" x2="0" y2="20"/>
-        <circle cx="0" cy="18" r="2.2" fill="#C9A961" stroke="none"/>
-        <circle cx="0" cy="13" r="1.4" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 310 14 Q 380 -2 440 16" stroke-width="0.7" opacity="0.6"/>
-
-      <!-- Bogen (klein) -->
-      <g transform="translate(560,52)" stroke-width="0.9">
-        <path d="M -28 40 A 28 28 0 0 1 28 40" opacity="0.85"/>
-        <path d="M -20 40 A 20 20 0 0 1 20 40" stroke-width="0.6" opacity="0.55"/>
-        <line x1="0" y1="12" x2="0" y2="24" stroke-width="1.1"/>
-        <circle cx="0" cy="10" r="1.7" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Pagode 2-tier -->
-      <g transform="translate(700,40)" stroke-width="1">
-        <path d="M -20 52 L -16 32 Q -14 24 -8 22 L 8 22 Q 14 24 16 32 L 20 52"/>
-        <path d="M -13 22 L -10 8 Q -8 2 -3 0 L 3 0 Q 8 2 10 8 L 13 22"/>
-        <line x1="0" y1="0" x2="0" y2="-18" stroke-width="1.4"/>
-        <circle cx="0" cy="-21" r="2" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 560 38 Q 620 22 700 -10" stroke-width="0.7" opacity="0.6"/>
-
-      <!-- Säulenpaar mit Bogen -->
-      <g transform="translate(840,40)" stroke-width="0.9">
-        <line x1="-8" y1="22" x2="-8" y2="52"/>
-        <line x1="8"  y1="22" x2="8"  y2="52"/>
-        <path d="M -10 22 Q 0 14 10 22"/>
-        <circle cx="0" cy="13" r="1.5" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Mini-Stupa -->
-      <g transform="translate(960,40)" stroke-width="0.9">
-        <path d="M -12 52 A 12 10 0 0 1 12 52"/>
-        <line x1="0" y1="42" x2="0" y2="32"/>
-        <circle cx="0" cy="30" r="1.5" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Lange Goldlinien (Skyline-Verbindung) -->
-      <path d="M 700 -22 Q 870 -8 960 28" stroke-width="0.8" opacity="0.55"/>
-      <path d="M 840 12 L 960 30" stroke-width="0.6" opacity="0.5"/>
-
-      <!-- Pagode 3-tier (rechts mitte) -->
-      <g transform="translate(1100,40)" stroke-width="1">
-        <path d="M -24 52 L -20 34 Q -18 26 -11 24 L 11 24 Q 18 26 20 34 L 24 52"/>
-        <path d="M -17 24 L -14 12 Q -12 6 -7 4 L 7 4 Q 12 6 14 12 L 17 24"/>
-        <path d="M -10 4 L -8 -6 Q -6 -10 -3 -12 L 3 -12 Q 6 -10 8 -6 L 10 4"/>
-        <line x1="0" y1="-12" x2="0" y2="-26" stroke-width="1.4"/>
-        <circle cx="0" cy="-29" r="2.1" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Säulen-Quintett -->
-      <g transform="translate(1280,40)" stroke-width="0.85">
-        <line x1="-24" y1="28" x2="-24" y2="52"/>
-        <line x1="-12" y1="22" x2="-12" y2="52"/>
-        <line x1="0"   y1="18" x2="0"   y2="52"/>
-        <line x1="12"  y1="22" x2="12"  y2="52"/>
-        <line x1="24"  y1="28" x2="24"  y2="52"/>
-        <path d="M -28 28 Q 0 8 28 28" stroke-width="0.9" opacity="0.85"/>
-        <circle cx="-24" cy="28" r="1.2" fill="#C9A961" stroke="none"/>
-        <circle cx="0"   cy="9"  r="1.8" fill="#C9A961" stroke="none"/>
-        <circle cx="24"  cy="28" r="1.2" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 1100 -28 Q 1180 -18 1280 6" stroke-width="0.85" opacity="0.65"/>
-
-      <!-- Großer Dom (nur Linien) -->
-      <g transform="translate(1480,52)" stroke-width="1">
-        <path d="M -36 40 A 36 36 0 0 1 36 40"/>
-        <path d="M -28 40 A 28 28 0 0 1 28 40" stroke-width="0.6" opacity="0.6"/>
-        <line x1="0" y1="4" x2="0" y2="-14" stroke-width="1.4"/>
-        <circle cx="0" cy="-17" r="2.2" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Mini Pagode -->
-      <g transform="translate(1640,40)" stroke-width="0.9">
-        <path d="M -14 52 L -11 38 Q -9 32 -5 30 L 5 30 Q 9 32 11 38 L 14 52"/>
-        <line x1="0" y1="30" x2="0" y2="20"/>
-        <circle cx="0" cy="18" r="1.4" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 1280 4 Q 1380 -10 1480 14" stroke-width="0.85" opacity="0.6"/>
-      <path d="M 1480 38 Q 1560 28 1640 32" stroke-width="0.7" opacity="0.55"/>
-
-      <!-- Säulen-Paar mit Bogen -->
-      <g transform="translate(1780,40)" stroke-width="0.9">
-        <line x1="-10" y1="24" x2="-10" y2="52"/>
-        <line x1="10"  y1="24" x2="10"  y2="52"/>
-        <path d="M -12 24 Q 0 14 12 24"/>
-        <circle cx="0" cy="13" r="1.6" fill="#C9A961" stroke="none"/>
-      </g>
-
-      <!-- Mini Stupa rechts -->
-      <g transform="translate(1900,40)" stroke-width="0.9">
-        <path d="M -10 52 A 10 8 0 0 1 10 52"/>
-        <line x1="0" y1="44" x2="0" y2="36"/>
-        <circle cx="0" cy="34" r="1.3" fill="#C9A961" stroke="none"/>
-      </g>
-      <path d="M 1640 30 Q 1720 12 1780 26" stroke-width="0.7" opacity="0.55"/>
-      <path d="M 1780 12 Q 1840 18 1900 32" stroke-width="0.7" opacity="0.55"/>
-
-      <!-- Boden-Linie (Goldlinie statt Steine) -->
-      <line x1="0" y1="92" x2="2000" y2="92" stroke-width="0.7" opacity="0.5"/>
-      <line x1="0" y1="78" x2="2000" y2="78" stroke-width="0.4" opacity="0.35" stroke-dasharray="2 4"/>
-    </svg>
-  </div>
-
-  <!-- ============================================ -->
-  <!-- 3 · WIE WIR MIT EUCH WEITERGEHEN             -->
-  <!-- ============================================ -->
-  <section id="weitergehen" class="weitergehen">
+  <section id="weitergehen" class="weitergehen has-sysbg">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
     <div class="container">
-      <p class="eyebrow">Der Idealprozess</p>
-      <h2 class="section-title">Von der Wirkung zum Systems Change.<br>Eure Wirkung kann noch viel mehr.</h2>
+      <p class="eyebrow">Perspektiven auf Wirkung</p>
 
       <p class="lead lead--full">
-        Hier zeigen wir den idealtypischen Prozess von der Wirkung zum Systems Change. Wirkung will nicht nur angestrebt, sondern auch klar formuliert, mit dem Team in Einklang gebracht, mit anderen abgestimmt und ins Feld eingebettet sein. Was wir damit jeweils meinen, entfalten die vier Schritte.
+        Reflexion der Wirkung aus einer Vielzahl von relevanten Perspektiven ist zentral für uns. Wer schaut wann aus welchem Grund auf eine Wirkung? Mit nur einer Frage leuchtet die Komplexität der Wirkung sofort ein. Ein zentrales Kommunikationselement am Rande des Systems – von innen wird auf sie hingearbeitet, im Außen will man sie haben. Passt die Wirkung überhaupt im Innen? Sind die Menschen motiviert? Ist die Organisation funktional? Und im Außen? Meist sucht man schon Belege über die Wirkung – aber ist die Wirkung überhaupt wirklich genauso erwünscht? Ist die Wirkung in der Gesellschaft überhaupt anschlussfähig? Was braucht es noch in welcher Reihenfolge? Resonanz, Struktur, Kohärenz und Kooperation sind für uns Kernelemente einer guten Wirkungsorientierung. Wir suchen und öffnen Räume mit euch, die Platz schaffen und Orientierung bieten.
       </p>
 
       <div class="prozess">
@@ -272,9 +161,9 @@
             </svg>
             <span class="prozess__num">01</span>
           </div>
-          <p class="prozess__axis">innen</p>
-          <h3>Orientierung durch<br>Resonanz</h3>
-          <p class="prozess__text">Wir glauben, dass eine Wirkung nach innen viel Gutes bringen kann. Der Sinn in der eigenen Arbeit wird durch die Wirkung erzielt, das ist die beste Motivation. Wenn es allen Mitarbeiter:innen oder Projektbeteiligten gelingt, in Resonanz zur Wirkung ihren eigenen Sinn zu finden, gibt dies zusätzlich die Orientierung, die gute Teamarbeit ermöglicht. Als Erstes im Prozess starten wir, die Wirkung so zu gestalten, dass sie die Arbeit für alle unterstützen kann.</p>
+          <p class="prozess__axis">innen · der Mensch</p>
+          <h3>Resonanz</h3>
+          <p class="prozess__text">Menschen sind dann motiviert und mit ihrer Arbeit im Reinen, wenn sie sich mit der Wirkung, die sie erzeugen, identifizieren und darin einen eigenen Sinn finden. Von selbst stellt sich diese Resonanz selten ein – und genau da setzen wir an. Aus ihr wächst die Orientierung, die gute Zusammenarbeit trägt; der Sinn in der eigenen Arbeit entsteht über die Wirkung, und das ist die tragfähigste Motivation. Ob ein Mensch in Resonanz gehen kann, hängt auch davon ab, wie er in Projekt, Programm und Organisation eingebunden ist – hat er den Raum und die Freiheit dafür? Wo die Resonanz fehlt, liegt es mal an der Wirkung selbst, mal an dieser Einbindung – das schauen wir uns mit euch an, bis die Wirkung nach innen trägt.</p>
           <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
         </article>
 
@@ -302,9 +191,9 @@
             </svg>
             <span class="prozess__num">02</span>
           </div>
-          <p class="prozess__axis">innen</p>
-          <h3>Kohärenz durch<br>Struktur</h3>
-          <p class="prozess__text">Die konkrete Wirkung, die einem Team Orientierung bieten kann, ist nur für ein Projekt, eine Abteilung oder eine andere kleine Teameinheit. Häufig sind Innenstrukturen aber größer: zahlreiche Projekte in einem Programm, viele Abteilungen in einer Organisation oder auch andere Konstrukte. Die Wirkung kann nach innen orientieren, aber nach außen braucht es eine übergeordnete Wirkungslogik, die wiederum wichtigen Fokus für mehrere Teams bringt – was zur Kooperation führt anstatt zur Konkurrenz. Als Zweites im Prozess starten wir, die Strukturen der unterschiedlichen Wirkungen zu bauen, sodass sich größere Kooperationseinheiten bilden und ganze Organisationen als eine Einheit wirken können. Das stärkt Zusammenhalt und Erfolg – weniger Reibung, klare Abstimmung, ein Ganzes, das mehr ist als die Summe seiner Teile.</p>
+          <p class="prozess__axis">innen · die Organisation</p>
+          <h3>Struktur</h3>
+          <p class="prozess__text">Eine Organisation gibt sich Struktur – über ihren Zweck, über Teams, Projekte und Rollen. Diese Funktionalität ist kein Selbstzweck: Sie ist die Voraussetzung dafür, dass die formulierte Wirkung durch die Organisation tatsächlich nach außen trägt. Passt die Wirkung zum Zweck der Organisation? Und ist sie so angebunden, dass die Organisation sie tatsächlich nach außen trägt? Zwischen der Wirkung in der Gesellschaft und der Organisation, die sie erreichen will, liegt eine Wirkungslogik: Was braucht es eine Ebene darunter, damit beides passgenau zusammenkommt? Dieses Zusammenspiel gestalten wir mit euch – von der Ausrichtung der Struktur an der Wirkung bis zu Organisationsentwicklung, wo die Struktur selbst noch nachreifen muss.</p>
           <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
         </article>
 
@@ -331,9 +220,9 @@
             </svg>
             <span class="prozess__num">03</span>
           </div>
-          <p class="prozess__axis">außen</p>
-          <h3>Kohärenz im<br>Feld</h3>
-          <p class="prozess__text">Wenn die gesamte Organisation oder ein ganzes Programm die eigene Wirkung so gestaltet hat, dass alle Beteiligten daraus ihren Sinn finden, ist schon viel erreicht. Trotzdem: Es ist leicht, zwei gute Wirkungen nebeneinander anzustreben, die eben nicht in Kohärenz und Komplementarität funktionieren. Im Gegenteil – wer sich in einem Stadtteil oder Themenfeld nicht abspricht, kann unbeabsichtigt gegeneinander wirken oder bestehende Machtungleichgewichte verstärken. Als Drittes im Prozess starten wir, eure Wirkung bewusst ins Feld einzufügen: Wer wirkt neben euch? Wer im Anschluss? Wo verschiebt sich Macht, wenn ihr euch klar positioniert? Was braucht es, damit im System erstmal alle gemeinsam in eine Richtung arbeiten? Die Grundvoraussetzung für Systems Change.</p>
+          <p class="prozess__axis">außen · das Feld</p>
+          <h3>Kohärenz</h3>
+          <p class="prozess__text">Eure Wirkung steht nie für sich – als Organisation wirkt ihr in einem Feld, getragen von eurem Zweck, eurer Aufgabe, euren Veränderungswünschen. Wer wirkt neben euch, wer im Anschluss, wo verschiebt sich Macht, wenn ihr euch klar positioniert? Zwei gute Wirkungen nebeneinander sind noch nicht automatisch kohärent. Gemeinsam suchen wir den Ort eurer Wirkung im Feld, damit sie komplementär wird statt gegenläufig und Machtungleichgewichte nicht unbeabsichtigt verstärkt werden. So entsteht die Grundlage dafür, dass im Feld alle in eine Richtung arbeiten – und dass aus dem Feld heraus Kooperation mit anderen möglich wird.</p>
           <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
         </article>
 
@@ -373,18 +262,16 @@
             </svg>
             <span class="prozess__num">04</span>
           </div>
-          <p class="prozess__axis">außen</p>
-          <h3>Systems Change<br>Moderation</h3>
-          <p class="prozess__text">Wenn Akteure in einem Feld bereits nebeneinander wirken, ist der nächste Schritt, dass sie miteinander wirken – nicht nur kohärent, sondern in geteilter Bewegung. Das passiert nicht von selbst. Es braucht jemanden, der den Raum hält, in dem unterschiedliche Logiken, Mandate und Machtverhältnisse zueinander finden können, ohne sich gegenseitig zu glätten. Als Vierten Schritt im Prozess moderieren wir solche Räume – netzwerkförmig, machtbewusst, mit der Geduld für Beziehungen, die tragen müssen. Wir arbeiten mit dem, was sich zeigt: gemeinsame mentale Modelle, neue Praktiken, verschobene Ressourcenflüsse. Systems Change passiert nicht durch Moderation, aber er wird wahrscheinlicher, wenn jemand den Prozess hält. Das ist unsere Rolle hier.</p>
+          <p class="prozess__axis">außen · die Gesellschaft</p>
+          <h3>Kooperation</h3>
+          <p class="prozess__text">In der Gesellschaft entscheidet sich, ob aus vielen einzelnen Wirkungen ein gemeinsames Ganzes wird. Kann die Gesellschaft auf Basis eurer Wirkung in Kooperation treten – über einzelne Felder und Akteure hinaus? Genau hier liegt der Hebel: Wo heute Konkurrenz das Zusammenspiel bestimmt, wird Kooperation zur Grundlage – und damit zum zentralen Element einer Transformation der Gesellschaft. Das braucht jemanden, der den Raum hält, in dem unterschiedliche Logiken, Mandate und Machtverhältnisse zueinander finden, ohne sich gegenseitig zu glätten. Solche Räume moderieren wir mit euch – netzwerkförmig, machtbewusst, mit Geduld für Beziehungen, die tragen müssen. Wir arbeiten mit dem, was sich zeigt: gemeinsame Modelle, neue Praktiken, verschobene Ressourcenflüsse. In dieser Kooperation entsteht die systemische Wirkung, an der wir uns orientieren.</p>
           <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
         </article>
       </div>
-
-      <p class="weitergehen__bridge">Aus vielen solchen Prozessen wollen wir Systems Change entstehen lassen und freuen uns, wenn dein Prozess Teil von Impact Up und Impact Up Teil von deinem Prozess wird.</p>
     </div>
   </section>
 
-  <!-- Übergang Weitergehen → Angebote: Tempel-Skyline mit Doms (gespiegelte Variante) -->
+  <!-- Übergang Perspektiven → Angebote: Tempel-Skyline mit Doms (gespiegelte Variante) -->
   <div class="trenner trenner--skyline trenner--skyline-b" aria-hidden="true">
     <svg viewBox="0 0 2000 100" preserveAspectRatio="xMidYMid meet">
       <g fill="#B8855E">
@@ -527,103 +414,46 @@
   </div>
 
   <!-- ============================================ -->
-  <!-- 4 · ANGEBOTE                                 -->
+  <!-- 3 · ANGEBOTE                                 -->
   <!-- ============================================ -->
-  <section id="angebote" class="angebote">
+  <section id="angebote" class="angebote has-sysbg">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
     <div class="container">
-      <h2 class="section-title">Unser Angebot an euch:</h2>
-      <p class="lead lead--full angebote__intro">
-        Drei konkrete Angebote – mit unterschiedlichem Schwerpunkt im Prozess. <strong>01</strong> verankert Wirkung im Team. <strong>02 Kohärenz gestalten</strong> ist unser Hauptangebot: es deckt die Prozessschritte 02 und 03 ab – Kohärenz nach innen (Programme, Abteilungen) und Kohärenz nach außen (ans Feld). Beides geht oft zusammen. <strong>03</strong> moderieren wir Kooperation zwischen Akteuren – dort, wo das Feld bereits zusammenwirken will.
-      </p>
-
+      <div class="angebote__head">
+        <p class="angebote__label">Unser Angebot…</p>
+      </div>
       <div class="angebote__cards">
         <article class="card">
           <span class="card__num">01</span>
-          <p class="card__axis">innen</p>
-          <h3>Wirkung verankern</h3>
-          <p class="card__tag">Planungsworkshops · Wirkungsformulierung · Ziele · Teamentwicklung · Sinnorientierung · Stakeholder-Bezug</p>
-          <p>Wir helfen Teams und Projekten, ihre Wirkung so zu setzen, dass sie tragfähig nach innen wird – verständlich für die, auf die es ankommt.</p>
-          <p class="card__result"><em>Ergebnis: eine Wirkung, an der sich alle ausrichten können.</em></p>
+          <p class="card__axis">eure Wirkung</p>
+          <h3>suchen</h3>
+          <p>Ihr fangt etwas an. Gemeinsam suchen wir die Wirkung, die in eurem Vorhaben steckt – und setzen sie so, dass alle die gleiche Richtung sehen.</p>
+          <p class="card__tag">Planungsworkshops · Projektauftakt · Wirkungsziele · Teamklärung</p>
         </article>
 
         <article class="card">
           <span class="card__num">02</span>
-          <p class="card__axis">dazwischen</p>
-          <h3>Kohärenz gestalten</h3>
-          <p class="card__tag">Programmaufbau · Organisationsentwicklung · Abteilungsabstimmung · Substruktur · Wirkungslogik · Anbindung ans Feld · Stakeholder-Mapping · Komplementarität · machtbewusste Positionierung</p>
-          <p>Mehrere Wirkungen kohärent machen – nach innen und nach außen. Nach innen: aus Projekten ein Programm, aus Abteilungen ein Ganzes. Nach außen: anschlussfähig ans Feld, komplementär zu denen, die schon dort wirken. Beides geht oft zusammen – ein Projekt kohärent zur Partnerorganisation, das Programm kohärent zwischen den Partnern, und nach außen kohärent ins Feld. Womit wir Kohärenz aufbauen, hängt davon ab, wo eure Wirkung gerade steht.</p>
-          <p class="card__result"><em>Ergebnis: eine Wirkung, die in ihrer Vielfalt kohärent ist – nach innen wie nach außen.</em></p>
+          <p class="card__axis">eure Wirkung als Organisation</p>
+          <h3>entfalten</h3>
+          <p>Ihr habt eine Wirkung – jetzt soll sie euch tragen. Wir entfalten sie in der Organisation, bis aus einzelnen Projekten ein wirksames Ganzes wird.</p>
+          <p class="card__tag">Organisationsentwicklung · Teamentwicklung · Wirkungslogik · Programmaufbau</p>
         </article>
 
         <article class="card">
           <span class="card__num">03</span>
-          <p class="card__axis">außen</p>
-          <h3>Moderation zur Kooperation</h3>
-          <p class="card__tag">Multi-Stakeholder-Moderation · Ko-Kreation · Konflikttransformation · Netzwerkmoderation · Dialogformate · Action Research</p>
-          <p>Wenn Akteure im Feld kooperieren wollen, moderieren wir den Raum dazwischen. Es geht um Impact-Kooperation – verschiedene Logiken, Mandate und Machtverhältnisse zueinander finden lassen, ohne sie zu glätten. Ko-kreativ, machtbewusst, mit der Geduld für Prozesse, die tragen müssen.</p>
-          <p class="card__result"><em>Ergebnis: eine Kooperation zwischen Akteuren, die das Feld systemisch trägt.</em></p>
+          <p class="card__axis">eure Wirkung mit anderen</p>
+          <h3>verbinden</h3>
+          <p>Ihr wollt mit anderen mehr bewegen. Wir verbinden eure Wirkung mit dem Feld und der Gesellschaft, bis aus vielen einzelnen eine gemeinsame wird.</p>
+          <p class="card__tag">Netzwerkmoderation · Kooperation · Feldanbindung · Ko-Kreation</p>
         </article>
       </div>
-
-      <div class="erstgespraech erstgespraech--compact">
-        <button id="erst-open" class="btn btn--primary btn--big" type="button">
-          Erstgespräch vereinbaren
-        </button>
-        <p class="erst-open__note">kostenlos und unverbindlich</p>
-
-        <form id="erst-form" class="erst-form" hidden>
-          <div class="erst-form__progress" aria-hidden="true">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-
-          <fieldset class="erst-step active" data-step="1">
-            <legend>Welches Wirkungsfeld spricht dich an?</legend>
-            <div class="erst-choices">
-              <label class="erst-card"><input type="radio" name="zugang" value="Ökosystem Erde"><span>Ökosystem Erde</span></label>
-              <label class="erst-card"><input type="radio" name="zugang" value="Frieden &amp; Gewaltfreiheit"><span>Frieden &amp; Gewaltfreiheit</span></label>
-              <label class="erst-card"><input type="radio" name="zugang" value="Soziale Teilhabe"><span>Soziale Teilhabe</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="erst-step" data-step="2">
-            <legend>Was trifft dein Anliegen am ehesten?</legend>
-            <div class="erst-choices">
-              <label class="erst-card"><input type="radio" name="anliegen" value="01 Wirkung verankern"><span><strong>01</strong> Wirkung verankern</span></label>
-              <label class="erst-card"><input type="radio" name="anliegen" value="02 Kohärenz gestalten"><span><strong>02</strong> Kohärenz gestalten</span></label>
-              <label class="erst-card"><input type="radio" name="anliegen" value="03 Moderation zur Kooperation"><span><strong>03</strong> Moderation zur Kooperation</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="erst-step" data-step="3">
-            <legend>Eure Webseite <small>(optional)</small></legend>
-            <input type="url" name="webseite" placeholder="https://…" class="erst-input">
-            <div class="erst-actions">
-              <button type="button" class="btn btn--ghost erst-skip" data-skip>überspringen</button>
-              <button type="button" class="btn btn--primary" data-next>weiter</button>
-            </div>
-          </fieldset>
-
-          <fieldset class="erst-step" data-step="4">
-            <legend>Wie erreichen wir dich?</legend>
-            <input type="email" name="email" required placeholder="eure@mail.de" class="erst-input">
-            <textarea name="bemerkung" rows="2" placeholder="Was sollen wir vorher wissen? (optional)" class="erst-input erst-input--textarea"></textarea>
-            <label class="erst-consent">
-              <input type="checkbox" name="datenschutz" required>
-              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Mehr in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span>
-            </label>
-            <div class="erst-actions">
-              <button type="submit" class="btn btn--primary">Anfrage senden</button>
-            </div>
-          </fieldset>
-        </form>
+      <div class="angebote__foot">
+        <a class="angebote__kontakt" href="kontakt.html">…euer Kontakt</a>
       </div>
     </div>
   </section>
 
-  <!-- Steinrelief: Übergang Angebote → Philosophie -->
+  <!-- Steinrelief: Übergang Angebote → Wirkungsfelder -->
   <div class="trenner trenner--steine trenner--steine--dunkel" aria-hidden="true">
     <svg viewBox="0 0 1200 18" preserveAspectRatio="none">
       <rect x="0"    y="0" width="120" height="18" fill="#5C3A1F"/>
@@ -639,50 +469,45 @@
   </div>
 
   <!-- ============================================ -->
-  <!-- 5 · PHILOSOPHIE                              -->
+  <!-- 4 · WIRKUNGSFELDER (3D-Netz)                 -->
   <!-- ============================================ -->
-  <section id="philosophie" class="philosophie">
+  <section id="quellen" class="quellen has-sysbg">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
+
     <div class="container">
-      <p class="eyebrow eyebrow--light">Die Philosophie</p>
-
-      <div class="philo-leitsatz">
-        <p class="philo-name">Impact Up – Institut für Systems Change</p>
-        <p class="philo-claim-line">Wir geben <em>eurer Wirkung</em> Raum.</p>
-      </div>
-
-      <div class="philo-text">
-        <p>Wir wollen mit Menschen arbeiten, die wirken wollen, die die Welt zu einer besseren und gemeinschaftlicheren Welt gestalten wollen. Wir kennen uns mit dieser Art von Wirkungsorientierung aus, aber da sind wir nicht die Einzigen. Uns gibt es, weil wir ein klares Problem wahrnehmen.</p>
-
-        <p>Impact beschreibt die gesellschaftliche Veränderung, die durch ein Projekt ausgelöst wurde. Wenn aber viele dieser Veränderungen zusammenkommen und aufeinandertreffen, wirken sie nicht unabhängig voneinander, sondern bringen eine gemeinsame Wirkung hervor, die in einer dynamischen Welt zum neuen Ausgangspunkt wird. Man sollte also den Anspruch haben, mit seinem Projekt sinnvoll zum Ganzen beigetragen zu haben. Dazu braucht es Systems Change.</p>
-
-        <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
-
-        <div class="philo-more">
-          <p>Im deutschsprachigen Raum gibt es diesen Anspruch kaum. Wirkungsmessung, Evaluationslogik, Projekttools – alles endet beim Impact. Wie aus vielen Impacts ein gemeinsames Ganzes wird, ist eine Frage, die hier kaum gestellt wird. Im englischen Diskurs schon. Dort ist klar: Systems Change ist nicht planbar, oft unsichtbar, aber seine Bedingungen sind benennbar – stabile Beziehungen, geteilter Kontext, verschobene Macht. Genau dort wollen wir mit Impact Up ansetzen – als deutschsprachiges <em>Institut für Systems Change</em>.</p>
-
-          <p class="philo-break" aria-hidden="true">·</p>
-
-          <p>Wir wollen praxisnah mit euch gemeinsam Systems Change erreichen. Wie wir das verstehen – mit den Six Conditions von Kania/Kramer/Senge, mit Rayner und Bonnicis <em>Context, Connection, Power</em>, mit den Praktiken der School of System Change – findet ihr ausführlich auf der Seite <a href="systems-change.html" class="philo-link">Systems Change →</a>.</p>
-
-          <p class="philo-break" aria-hidden="true">·</p>
-
-          <p>Aus dem Friedensdienst und der systemischen Organisationsentwicklung bringen wir genau die Methodenbreite mit, die für Systems Change zählt – Methoden, die Beziehungen tragen, Machtdynamiken einbeziehen, Konflikte ernst nehmen und in heterogenen Akteurskonstellationen kontextspezifisch arbeiten. Konfliktsensitiv. Partizipativ. Genau auf der mittleren Ebene – Beziehungen und Macht – entscheidet sich, ob Veränderung systemisch hält oder verloren geht. Hier ist unser Zuhause, methodisch und biografisch.</p>
-
-          <p>Das Thema und das Anliegen bereiten bei uns den Weg zur Methode, nicht andersherum.</p>
-
-          <blockquote><p><strong>Wir wollen die Wirkung ins Zentrum bringen, angemessen am Kontext, mit Fokus auf Macht und Verbindungen, und einfach nur einen Beitrag leisten.</strong></p></blockquote>
-
-          <p class="philo-break" aria-hidden="true">·</p>
-
-          <p>Praktisch heißt das: Wir schauen uns gemeinsam mit euch eure Wirkung an. Und dann begleiten wir sie dorthin, wo Raum für sie ist – in Netzwerke, in machtbewusste Räume, in Verbindung und Kohärenz mit anderen Wirkungen. So wird Systems Change wahrscheinlicher. Wo es passt, moderieren wir auch, was sich daraus ergibt.</p>
-
-          <p>Aber wir sind hier nicht diejenigen, die Systems Change machen. Wir gehen den Weg gemeinsam mit euch, schauen, was sich zeigt, und gestalten mit. Systems Change passiert nicht durch uns – er passiert mit denen, die das System bewohnen.</p>
-        </div>
+      <div class="quellen__caption">
+        <p class="quellen__label">Unsere Wirkungsfelder</p>
+        <p><strong>Impact Up</strong> – Institut für systemische Wirkungsorientierung – möchte Impact auch tatsächlich selbst ins System bringen. Ansätze wie <em>Systems Change</em>, die <em>Systemische Beratung der Gesellschaft</em> oder <em>Die große Kokreation</em> zeigen, wie wir mit systemischen und ko-kreativen Methoden gemeinsam die Welt verbessern können – ohne sie verfügbar oder steuerbar machen zu wollen. Darin ist Impact Up auch politisch und stellt drei konkrete <strong>Wirkungsfelder</strong> ins Zentrum seiner Arbeit: ein Startpunkt für systemische Wirkungsorientierung, wie wir sie uns wünschen; ein Angebot, sich zu vernetzen; und nicht zuletzt der Wunsch nach Selbstwirksamkeit.</p>
+        <p class="quellen__quellen">Impulse u.&nbsp;a. aus: Cynthia Rayner &amp; François Bonnici, <em>The Systems Work of Social Change</em> (2021) · Ruth Seliger, <em>Systemische Beratung der Gesellschaft</em> (2022) · Jascha Rohr, <em>Die große Kokreation</em> (2023).</p>
       </div>
     </div>
+
+    <div class="quellen__legende">
+      <div class="quelle" style="--c:#2D4A2B">
+        <span class="quelle__dot"></span>
+        <h3>Ökosystem Erde</h3>
+        <p>Die Erde ist ein Ökosystem mit planetaren Grenzen, die auch wirtschaftliches Wachstum begrenzen und Gerechtigkeit vielschichtig auf dieser Erde herausfordern. Wir starten in den Prozess der harmonischen (Re-)Integration des menschlichen Lebens in das Ökosystem Erde.</p>
+      </div>
+      <div class="quelle" style="--c:#1F1A14">
+        <span class="quelle__dot"></span>
+        <h3>Frieden &amp; Gewaltfreiheit</h3>
+        <p>Gewaltfreiheit ist die Grundlage für die Würde des Menschen und den Frieden zwischen den Menschen. Auch strukturelle und kulturelle Gewaltfreiheit gehört dazu – oft unsichtbar, aber wesentlich. Wir starten in den Prozess, Gewalt in ihren verschiedenen Formen bewusster zu machen und Konflikte konstruktiv zu transformieren.</p>
+      </div>
+      <div class="quelle" style="--c:#4A2B5C">
+        <span class="quelle__dot"></span>
+        <h3>Soziale Teilhabe</h3>
+        <p>Die soziale Teilhabe ist die Grundvoraussetzung für ein gemeinschaftliches Leben. Jede:r braucht Teilhabe, Gemeinwohlorientierung und individuelle Absicherung, etwa durch ein Grundeinkommen. Wir starten in den Prozess, sie als Basis für Demokratie und Zusammenhalt zu gestalten und Menschlichkeit ins Zentrum zu stellen.</p>
+      </div>
+    </div>
+
+    <div id="netz" class="netz">
+      <canvas id="netz-canvas"></canvas>
+      <div class="netz__hint">↻ Mit der Maus drehen</div>
+    </div>
+
   </section>
 
-  <!-- Übergang Philosophie → About: Skyline mit goldenem Linien-Schwerpunkt (von Tinte zu Pergament) -->
+  <!-- Übergang Wirkungsfelder → Über Uns: Goldlinien-Netz -->
   <div class="trenner trenner--skyline trenner--skyline-c" aria-hidden="true">
     <svg viewBox="0 0 2000 80" preserveAspectRatio="xMidYMid meet">
       <!-- Goldene Linien quer (durcheinander, asymmetrisch) -->
@@ -743,72 +568,84 @@
   </div>
 
   <!-- ============================================ -->
-  <!-- 6 · ABOUT                                    -->
+  <!-- 5 · ABOUT                                    -->
   <!-- ============================================ -->
   <section id="about" class="about">
     <div class="container">
       <div class="about__intro">
-        <p class="eyebrow">Wer wir sind</p>
+        <p class="eyebrow">Über Uns</p>
 
-        <p>Die Webseite ist im „Wir" verfasst, denn Impact Up ist eine Idee, die nur in Gemeinschaft entstehen kann. Dieser Gemeinsinn ist von Anfang an Teil von Impact Up – dem Institut für Systems Change. Wir starten die Idee mit dieser Seite und bauen Impact Up Schritt für Schritt mit euch zusammen auf.</p>
+        <p>Die Webseite ist im „Wir" verfasst, denn Impact Up ist eine Idee, die nur in Gemeinschaft entstehen kann. Dieser Gemeinsinn ist von Anfang an Teil von Impact Up – dem Institut für systemische Wirkungsorientierung. Wir starten die Idee mit dieser Seite und bauen Impact Up Schritt für Schritt mit euch zusammen auf.</p>
 
-        <p>Momentan suchen wir hier nicht in erster Linie Kund:innen, sondern Prozessinitiator:innen, die wir mit Impact Up begleiten – bzw. andersherum. Das ist häufig austauschbar. So gibt es zum Beispiel die <a href="https://agenturfuerzukunftsgestaltung.de" target="_blank" rel="noopener">Agentur für Zukunftsgestaltung</a>, die wir begleiten und die uns begleitet; den <a href="https://cocreators.circle.so" target="_blank" rel="noopener">Co-Creators Circle</a>, in dem Impact Up mitläuft; und einen größeren Prozess mit <a href="https://ubie.org" target="_blank" rel="noopener">UBIE</a>.</p>
+        <p>Momentan sind wir auf der Suche, neben Kund:innen, genauso nach Prozessinitiator:innen, die wir mit Impact Up begleiten – bzw. andersherum. Das verstehen wir häufig als austauschbar. So gibt es zum Beispiel die <a href="https://agenturfuerzukunftsgestaltung.de" target="_blank" rel="noopener">Agentur für Zukunftsgestaltung</a>, die wir begleiten und die uns begleitet; den <a href="https://cocreators.circle.so" target="_blank" rel="noopener">Co-Creators Circle</a>, in dem Impact Up mitläuft; und einen größeren Prozess gemeinsam mit <a href="https://ubie.org" target="_blank" rel="noopener">UBIE</a>. Dazu gibt es viele weitere Vernetzungen, bspw. zu NANK (Neue Arbeit, Neue Kultur) oder zur <a href="https://www.kurvewustrow.org" target="_blank" rel="noopener">Kurve Wustrow</a>, wo sich ein Wir von Impact Up weiterentwickeln darf.</p>
 
-        <p>Wir verstehen uns immer als Teil von etwas Größerem.</p>
+        <p class="about__gap">Wir nennen uns <em>Institut</em>, weil ein Institut der Begriff ist, wo Praxis mit Theorie zusammenkommen darf und nichts von beidem über dem jeweils anderen stehen muss. Wir sind ein Institut für systemische Wirkungsorientierung, auch weil wir glauben, dass diese beiden Elemente, also „systemisch" und „Wirkungsorientierung", besser zusammenpassen, als die Welt sie bisher zusammenbringt. Es gibt inzwischen immer mehr Ansätze und Autor:innen, die man genau so interpretieren kann, aber wir wollen eben auch Neues ausprobieren – Theorie in Praxis bringen und Praxis in Theorie. Dabei sind wir undogmatisch und verstehen uns eben auch direkt als eine organisierende Akteurin im System, nicht nur als ein Institut, welches Beratungsleistungen anbietet. Wir wollen auch Netzwerke bauen, in viele Richtungen Ausschau halten und uns letztlich beteiligen und eurer Wirkung den Raum geben.</p>
 
-        <p>Wir nennen uns <em>Institut</em>, aber nicht im Sinne eines Universitäts-Departments mit Expertise als Ware. Im Systemischen kann ohnehin niemand wirklich steuern – welche Expertin oder welcher Experte gerade dazukommt, ist häufig zweitrangig. Hauptsache, jemand bringt Breite mit, und jemand fragt: <em>„Frag ich mal xy, dann kriegen wir das schon hin."</em> Wir verstehen Impact Up als organisierende Akteurin im System, nicht als anbietendes Beratungs-Institut. Wir bauen Netzwerke in viele Richtungen – und wollen vor allem beteiligt sein.</p>
-
-        <p>Das heißt aber auch: Du bist herzlich willkommen, dich hier einzubringen. Sag einfach Bescheid, wie du Teil werden magst: <a class="about__mail" href="mailto:info@impact-up.org"><strong>info@impact-up.org</strong></a>.</p>
+        <p>Das heißt aber auch, dass du herzlich willkommen bist, dich hier einzubringen. Melde dich und wir schauen, wie du ein Teil von Impact Up werden kannst – und/oder Impact Up ein Teil von deinen Ideen: <a class="about__mail" href="mailto:info@impact-up.org"><strong>info@impact-up.org</strong></a>.</p>
       </div>
 
       <div class="about__bio">
         <div class="about__photo">
-          <img class="about__photo-img" src="assets/stefan_neu.png" alt="Stefan Füsers" />
+          <img class="about__photo-img" src="assets/stefan_avatar.png" alt="Stefan Füsers" />
         </div>
         <div class="about__text">
-          <p><strong>Stefan</strong> hat Impact Up – das Institut für Systems Change – gegründet. Zuletzt war er sechs Jahre Berater für Planung, Monitoring und Evaluierung im Zivilen Friedensdienst der GIZ. Seine Arbeit bestand aus unzähligen Workshops, Meetings und Trainings mit ebenso vielfältigen Planungs-, Bildungs-, Entwicklungs-, Austausch- und Absprachebedarfen. Aus jährlichen Projektplanungen mit acht diversen Partnerorganisationen heraus hat er Organisationsentwicklung mitgestaltet, Netzwerke weiterentwickelt und gestärkt und Menschen so zusammengebracht, wie sie gerade zusammenkommen mussten. In solche Workshops fließen immer wieder seine Erfahrung als ausgebildeter Yogalehrer und als Übungsgruppenleiter für Gewaltfreie Kommunikation mit ein.</p>
+          <p><strong class="about__name">Stefan</strong> hat Impact Up, das Institut für systemische Wirkungsorientierung, 2026 gegründet. Bis 2025 war er sechs Jahre lang Berater für Planung, Monitoring und Evaluierung (PME) im Zivilen Friedensdienst (ZFD) der GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) in Kambodscha. Er hat Praxiserfahrung in der Wirkungsorientierung mit einem ZFD-Programm, mit ausländischen Fachkräften und acht sehr diversen Partnerorganisationen gesammelt. Die Projektwirkungen in der Friedens- und Vergangenheitsarbeit waren immer Teil einer Programmwirkung des ZFD, aber auch Teil der Wirkung der Partnerorganisationen – also eines internationalen Gerichtshofs, psychologischer Dienstleister, Gedenkstätten, Jugendbewegungen oder Universitäten. Capacity Development war häufig ein Kernelement, und die Projektwirkung nicht selten auch Organisationsentwicklung.</p>
 
-          <p>Nach der Rückkehr nach Deutschland 2025 hatte Stefan Zeit und Lust, seine Praxis auszubauen und zu reflektieren. Er macht derzeit eine Ausbildung in systemischer Organisationsentwicklung, um als zertifizierter Systemiker arbeiten zu können – und hat in der Literatur zum Systems Change und zur Ko-Kreation viel Resonanz zu sich und seiner Arbeit gefunden. Die Methoden zum Planen, Monitoren, Reflektieren und Evaluieren, zusammen mit den Methoden der Friedensarbeit aus Dialog, Konflikttransformation, Vergangenheits- und Traumaaufarbeitung, nimmt Stefan nun mit in die systemische Ausbildung. Im Rahmen des Instituts für Systems Change entwickelt er Ansätze für Wirkungsarbeit in sinnorientierten Netzwerken. Klarheit wird dabei keinesfalls vorgegeben, sondern allenfalls als Ziel der Prozessarbeit ausgegeben und gemeinschaftlich gestaltet. Stefan bringt eine Breite an Methoden mit, ein Netzwerk, um diese weiter zu ergänzen, und bereitet die Methodik kontextspezifisch und ko-kreativ mit seinem Gegenüber auf. Dazu kommen die Menschlichkeit, die Empathie und das Gespür, die es braucht, um wirklich zu hören, zu sehen und zu fühlen, worum es geht.</p>
+          <p>Das ganze ZFD-Programm war mit anderen ZFD-Programmen in Kambodscha vernetzt, sodass ebenso Wirkungen auf das Land erwünscht waren; und nicht zuletzt gab es viele weitere PME-Berater:innen im ZFD der GIZ in anderen Ländern, die regelmäßig über die Methoden, den Aufbau und die Art und Weise reflektiert haben. So hat Stefan zahlreiche Akteur:innen im Feld in Kambodscha in Resonanz gebracht und ein Netzwerk aus Aktiven für ein friedliches Zusammenleben der Menschen gestärkt. Methoden aus der Friedensarbeit selbst, wie bspw. aus der Konflikttransformation, wurden in solche Planungs- und Reflexionsworkshops genauso immer wieder eingebracht wie die Erfahrung als Yogalehrer und aus der Gewaltfreien Kommunikation.</p>
 
-          <p>Stefan hat International Business, Europäische Studien und Internationale Studien in vier Ländern studiert; seine Arbeitserfahrung in weiteren Ländern kommt hinzu, sodass er seine Qualitäten auch interkulturell in der Praxis weiterentwickeln konnte. Deshalb möchte er Impact Up nicht ausschließlich auf Deutsch belassen, sondern auch auf Englisch und Spanisch zur Verfügung stellen. Um das umzusetzen, hat er sich zuletzt intensiv mit KI auseinandergesetzt – und bringt diese Kenntnisse gern ein, um gemeinsam den Systems Change, den wir als wichtig ansehen, zu erreichen.</p>
+          <p>Seit seiner Rückkehr nach Deutschland beschäftigt sich Stefan sehr intensiv mit Theorien und Methoden, wie sich Partizipation und Ko-Kreation umsetzen lassen, mit systemischen Ansätzen und systemischer Haltung. Zahlreiche Autor:innen bieten einen Reflexionsraum für unzählbar viel Reflexionsmaterial aus seiner Zeit in Kambodscha. Seit Dezember 2025 setzt er dies intensiviert in einer Ausbildung zum systemischen Organisationsentwickler bei der <a href="https://www.systemisches-zentrum.de/" target="_blank" rel="noopener">WISPO</a> fort. Literatur zum Systems Change und zur Ko-Kreation hat viel Resonanz erzeugt. Mit Impact Up versucht er nun, die Methoden zum Planen, Monitoren und Reflektieren zusammen mit den Methoden der Friedensarbeit – Dialog, Konflikttransformation, Vergangenheits- und Traumaaufarbeitung – mit in das systemische Arbeiten zu nehmen und Ansätze für systemische Wirkungsorientierung zur Veränderung der Gesellschaft zu entwickeln. Kontextspezifisch, mit der Empathie und dem Gespür, die es braucht, um wirklich zu hören, zu sehen und zu fühlen, worum es geht.</p>
+
+          <p>Thematisch hat Stefan schon eine breite Vorerfahrung: vor der Friedensarbeit im Kosovo und in Kambodscha aus den Wirtschaftswissenschaften und Internationalen Studien an der Universität. Viele Jahre in der Veränderungsarbeit mit sozial-ökologischen Bewegungen, vor allem für ein Grundeinkommen und Degrowth, haben ihn zudem geprägt. Für das Climate Services Center in Hamburg hat er untersucht, wie die Beteiligung von Praxisakteur:innen an Wissenschaftsprozessen angemessen in Evaluationen berücksichtigt werden kann. In nahezu allen Rollen hat er immer wieder Veranstaltungen von kleinen Festivals über ausführliche Trainings bis hin zu großen Konferenzen initiiert und organisiert.</p>
+          <p class="about__signoff"><a class="about__mail" href="mailto:stefan@impact-up.org"><strong>stefan@impact-up.org</strong></a></p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================ -->
-  <!-- 7 · STIMMEN / REFERENZEN                     -->
+  <!-- 6 · STIMMEN / REFERENZEN                     -->
   <!-- ============================================ -->
   <section id="stimmen" class="stimmen">
     <div class="container">
-      <p class="eyebrow">Referenzen</p>
-      <h2 class="section-title">Wie andere unsere Arbeit sehen.</h2>
+      <div class="stimmen__frame">
+        <p class="eyebrow stimmen__label">Referenzen</p>
+        <div class="zettel-board">
+          <article class="zettel zettel--large">
+            <div class="stimmen__list">
+              <blockquote class="stimme">
+                <p>„Mr. Füsers combined systemic process consulting, organizational development, and impact-oriented PME in a way that significantly enhanced the program's internal coherence and external relevance."</p>
+              </blockquote>
 
-      <div class="stimmen__list">
-        <blockquote class="stimme">
-          <p>„His ability to bring together diverse actors, identify synergies, and facilitate constructive collaboration in a politically sensitive environment had a direct impact on the quality and sustainability of partner activities."</p>
-          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
-        </blockquote>
+              <blockquote class="stimme">
+                <p>„His ability to bring together diverse actors, identify synergies, and facilitate constructive collaboration in a politically sensitive environment had a direct impact on the quality and sustainability of partner activities."</p>
+              </blockquote>
 
-        <blockquote class="stimme">
-          <p>„Mr. Füsers combined systemic process consulting, organizational development, and impact-oriented PME in a way that significantly enhanced the program's internal coherence and external relevance."</p>
-          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
-        </blockquote>
-
-        <blockquote class="stimme">
-          <p>„Through partner-driven and joint learning processes, he promoted plural narratives, participatory approaches, and context-sensitive engagement in a field shaped by historical sensitivities and evolving political conditions."</p>
-          <cite>— GIZ, Civil Peace Service Cambodia · Letter of Reference, 2025</cite>
-        </blockquote>
+              <blockquote class="stimme">
+                <p>„Through partner-driven and joint learning processes, he promoted plural narratives, participatory approaches, and context-sensitive engagement in a field shaped by historical sensitivities and evolving political conditions."</p>
+              </blockquote>
+            </div>
+            <p class="stimmen__quelle">GIZ, Civil Peace Service Cambodia · Letter of Reference, 2019-2025</p>
+          </article>
+          <article class="zettel zettel--small">
+            <div class="stimmen__list">
+              <blockquote class="stimme">
+                <p>„Sein sehr gutes konzeptionelles und theoretisches Denken hatte fortwährend einen hohen Praxisbezug. Die Kongruenz zwischen den vermittelten Inhalten zur konstruktiven gewaltfreien Konflikttransformation und dem eigenen Handeln beweist seine hohe Integrität und führte stets zu sehr guten Ergebnissen."</p>
+              </blockquote>
+            </div>
+            <p class="stimmen__quelle">Anja Petz, Geschäftsführung KURVE Wustrow · Arbeitszeugnis, 2017-2018</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="foot">
-    <p>Impact Up – Institut für Systems Change · Hamburg</p>
+    <p>Impact Up – Institut für systemische Wirkungsorientierung · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=2"></script>
+  <script src="nav.js?v=1"></script>
 
   <script>
     // Prozess-Texte aufklappen
@@ -847,61 +684,16 @@
       });
     });
 
+    // Hero-Feld: Parallax-Tiefe beim Scrollen
     (function () {
-      const open = document.getElementById('erst-open');
-      const form = document.getElementById('erst-form');
-      if (!open || !form) return;
-      const steps = form.querySelectorAll('.erst-step');
-      const dots = form.querySelectorAll('.erst-form__progress .dot');
-      let cur = 0;
-
-      function show(i) {
-        cur = i;
-        steps.forEach((s, k) => s.classList.toggle('active', k === i));
-        dots.forEach((d, k) => d.classList.toggle('active', k <= i));
-        const focusable = steps[i].querySelector('input, textarea');
-        if (focusable && i >= 2) setTimeout(() => focusable.focus(), 250);
-      }
-
-      open.addEventListener('click', () => {
-        form.hidden = false;
-        open.style.display = 'none';
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-
-      // Auto-Advance bei Klick auf Klick-Karten in Step 1 + 2
-      form.querySelectorAll('input[type=radio]').forEach(r => {
-        r.addEventListener('change', () => {
-          if (cur < 2) setTimeout(() => show(cur + 1), 180);
-        });
-      });
-
-      form.querySelectorAll('[data-next]').forEach(b =>
-        b.addEventListener('click', () => show(cur + 1))
-      );
-      form.querySelectorAll('[data-skip]').forEach(b =>
-        b.addEventListener('click', () => {
-          form.querySelector('input[name=webseite]').value = '';
-          show(cur + 1);
-        })
-      );
-
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        const d = new FormData(form);
-        const body = [
-          'Hallo Impact Up,', '',
-          'Wirkungsfeld: ' + (d.get('zugang') || '–'),
-          'Anliegen: '          + (d.get('anliegen') || '–'),
-          'Webseite: '          + (d.get('webseite') || '–'),
-          'Bemerkung: '         + (d.get('bemerkung') || '–'),
-          '',
-          'E-Mail: '            + (d.get('email') || '–')
-        ].join('\n');
-        location.href = 'mailto:info@impact-up.org?subject=' +
-          encodeURIComponent('Erstgespräch-Anfrage') +
-          '&body=' + encodeURIComponent(body);
-      });
+      const ff = document.querySelector('.hero-field--far'),
+            fn = document.querySelector('.hero-field--near');
+      if (!ff && !fn) return;
+      addEventListener('scroll', () => {
+        const y = scrollY;
+        if (ff) ff.style.transform = 'translateY(' + (y * 0.12) + 'px)';
+        if (fn) fn.style.transform = 'translateY(' + (y * 0.28) + 'px)';
+      }, { passive: true });
     })();
   </script>
 </body>

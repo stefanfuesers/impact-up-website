@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://impact-up.org/sitemap.xml

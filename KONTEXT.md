@@ -37,7 +37,7 @@ Statische Webseite für Impact Up unter `impact-up.org`. Visitenkarte und erstes
 ## Wahrheit hier vs. anderswo
 
 - **Webseite-Texte** (Hero, Angebote, Philosophie, About): Wahrheit liegt **hier** in den HTML-Dateien.
-- **Design (Farben, Typografie, Tempel/Wald/Gold-Idee):** `../01_Wissensbasis/Designlogik.md`
+- **Design (Farben, Typografie, Tempel/Wald/Gold-Idee):** `../01_Wissensbasis/Designlogik-Web.md` (für eingereichte/verschickte Dokumente: `Designlogik-Real-World.md`)
 - **Strategischer Hintergrund** (Positionierung, Geschäftsmodell, Zielgruppen): falls woanders gepflegt → `../Wissensbasis/` *(diese wird gerade entschlackt – ggf. veraltet)*
 - **Was offen ist vor Live:** `TODO.md` im selben Ordner
 

@@ -5,121 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impulse – Impact Up</title>
   <meta name="description" content="Gedanken, Lesefunde, Methoden, Reflexionen. Was uns gerade beschäftigt – und vielleicht auch euch." />
-  <link rel="icon" type="image/svg+xml" href="assets/logo_alt.svg" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
+  <link rel="canonical" href="https://impact-up.org/impulse.html" />
+  <link rel="alternate" hreflang="de" href="https://impact-up.org/impulse.html" />
+  <link rel="alternate" hreflang="en" href="https://impact-up.org/impulse.en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://impact-up.org/impulse.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Impulse – Impact Up" />
-  <meta property="og:description" content="Gedanken, Lesefunde, Methoden, Reflexionen aus dem Institut für Systems Change." />
+  <meta property="og:description" content="Gedanken, Lesefunde, Methoden, Reflexionen aus dem Institut für systemische Wirkungsorientierung." />
   <meta property="og:url" content="https://impact-up.org/impulse.html" />
-  <meta property="og:image" content="https://impact-up.org/assets/stefan_neu.png" />
+  <meta property="og:image" content="https://impact-up.org/assets/share.png" />
   <meta property="og:locale" content="de_DE" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <style>
+    .impulse-soon {
+      background: #fff;
+      border: 1px solid rgba(31, 26, 20, 0.08);
+      border-radius: 12px;
+      padding: 28px 32px;
+      box-shadow: 0 4px 20px rgba(31, 26, 20, 0.04);
+      margin-top: 16px;
+    }
+    .impulse-soon h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .impulse-soon p:last-child { margin: 0; line-height: 1.6; color: var(--ink); opacity: 0.85; }
+  </style>
 </head>
 <body>
 
-  <header id="top" class="hero hero--mini">
     <nav class="nav">
-      <ul class="nav__links">
-        <li><a href="index.html#top">Home</a></li>
-        <li><a href="index.html#quellen">Wirkungsfelder</a></li>
-        <li><a href="index.html#weitergehen">Prozess</a></li>
-        <li><a href="index.html#angebote">Angebote</a></li>
-        <li><a href="index.html#philosophie">Philosophie</a></li>
-        <li><a href="systems-change.html">Systems Change</a></li>
-        <li><a href="index.html#about">Wer wir sind</a></li>
-      </ul>
+      <div class="nav__left">
+        <a class="nav__wordmark" href="index.html" aria-label="Impact Up - Startseite">
+          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="">
+          <span class="nav__wordmark-name">Impact <em>Up</em></span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html#weitergehen">Perspektiven</a></li>
+          <li><a href="index.html#angebote">Angebote</a></li>
+          <li><a href="index.html#quellen">Wirkungsfelder</a></li>
+          <li><a href="index.html#about">Über Uns</a></li>
+        </ul>
+      </div>
       <ul class="nav__links nav__links--right">
-        <li><a href="impulse.html">Impulse</a></li>
-        <li><a href="index.html#angebote">Kontakt</a></li>
+        <li class="nav__item--has-dropdown">
+          <a href="impulse.html">Impulse</a>
+          <ul class="nav__dropdown">
+            <li><a href="impulse.html">Der erste Impuls folgt bald</a></li>
+          </ul>
+        </li>
+        <li class="nav__item--has-dropdown">
+          <a href="konstrukte.html">Konstrukte</a>
+          <ul class="nav__dropdown">
+            <li><a href="impact-up-philosophie.html">Impact Up Philosophie</a></li>
+            <li><a href="systemische-wirkungsorientierung.html">Systemische Wirkungsorientierung</a></li>
+            <li><a href="systems-change.html">Systems Change</a></li>
+          </ul>
+        </li>
+        <li><a href="session-werkstatt/index.html">Session-Werkstatt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
         <li class="nav__lang"><a href="impulse.en.html" hreflang="en" aria-label="Switch to English version">EN</a></li>
       </ul>
     </nav>
-  </header>
 
   <main class="page">
     <div class="container page__inner">
       <p class="eyebrow">Impulse</p>
-      <h1 class="page__title">Impulse</h1>
       <p class="page__lead">
-        Gedanken, Lesefunde, Methoden, Reflexionen. Was uns gerade beschäftigt – und vielleicht auch euch.
+        Impulse sind das, was wir aus unserer Arbeit nach außen geben: Gedanken, Methoden, Beobachtungen, manchmal auch nur eine Frage, die uns nicht loslässt. Mal aus einem Projekt, mal aus der Literatur, mal aus einem Gespräch, das etwas in Bewegung gebracht hat. Wir teilen sie, weil gute Wirkung wächst, wenn man sie sichtbar macht und weiterreicht – und weil die guten Elemente dieser Welt mehr werden, wenn viele an ihnen weiterdenken. Schau dich um, nimm mit, was dich anspricht, und denk weiter, wohin es dich trägt.
       </p>
 
-      <div class="impulse-list">
-
-        <article class="impulse-card" id="systemdenken">
-          <p class="impulse-card__date">— 2. Mai 2026</p>
-          <h2 class="impulse-card__title">Systemische Praxis – zwei unterschiedliche Ansätze, die zusammen viel mehr als die Summe ergeben</h2>
-          <p class="impulse-card__teaser">
-            Wer heute systemisch arbeitet, systemtheoretisch denkt oder systems thinking praktiziert, bewegt sich in einem Feld, das auf den ersten Blick zerklüftet wirkt – verschiedene Schulen, verschiedene Vokabulare, verschiedene Werkzeugkästen. Beim genaueren Hinsehen zeigt sich aber: Die Strömungen entstehen fast zeitgleich, aus derselben Beobachtung, und sie ergänzen sich in der Praxis weit besser, als ihre getrennten Traditionen vermuten lassen.
-          </p>
-
-          <details class="impulse-card__more">
-            <summary>Weiterlesen</summary>
-
-            <div class="impulse-card__body">
-              <p>
-                In den 1940er und 1950er Jahren formiert sich, fast simultan in unterschiedlichen Disziplinen, eine gemeinsame Unzufriedenheit mit dem klassischen, cartesianisch-newtonschen Weltbild. Die westliche Wissenschaft hatte sich darauf spezialisiert, ihre Gegenstände in immer kleinere Substanzen zu zerlegen und aus deren Eigenschaften ihr Verhalten zu erklären. Dieses Programm war auf seinem eigenen Terrain ungeheuer erfolgreich – stieß aber überall dort an Grenzen, wo es um lebende, lernende, sich entwickelnde, kulturelle oder ökologische Phänomene ging. Eine Zelle ist kein Sack mit Molekülen. Eine Familie ist nicht die Summe ihrer Mitglieder. Ein Wald ist kein Lager von Bäumen. Ein Markt ist nicht die Addition rationaler Akteure.
-              </p>
-
-              <h3>Nicht Substanz, sondern Relation</h3>
-              <p>
-                Die Antwort, die sich – bei Bertalanffy in der Biologie, bei Wiener in der Kybernetik, bei Forrester in der System Dynamics, bei Bateson in der Anthropologie, bei Maturana und Varela in der Zellbiologie und später bei Luhmann in der Soziologie – fast simultan herausschält, ist im Kern dieselbe Wende: Nicht die Dinge sind das Primäre, sondern ihre Verknüpfungen. Was wir als „Ding" bezeichnen, ist ein stabilisiertes Muster von Relationen, kein Träger dieser Relationen. Beziehung erzeugt das, was uns überhaupt erst als unterscheidbares Ding erscheint. Das ist eine kopernikanische Wende, die in ihrer Tragweite unterschätzt wird, weil sie unserem Alltagsdenken zutiefst widerspricht.
-              </p>
-
-              <h3>Ursache und Wirkung als Schleife</h3>
-              <p>
-                Daraus folgt eine zweite Einsicht, die alle Strömungen teilen: Wenn Welt aus Verknüpfungen besteht, läuft nichts in nur eine Richtung. Ursache und Wirkung sind keine Pfeile, sondern Schleifen. Was geschieht, kommt – über Umwege, Verzögerungen, andere Akteure – auf seinen Ausgangspunkt zurück und konstituiert mit, was als Nächstes überhaupt geschehen kann. Forrester nennt das <em>feedback loop</em>, Maturana und Varela nennen es Autopoiesis, Luhmann operative Schließung, Bateson Kybernetik zweiter Ordnung, Meadows beschreibt es als das Wechselspiel verstärkender und ausgleichender Schleifen. Verschiedene Sprachen, dieselbe Einsicht: Systeme reproduzieren sich selbst über zirkuläre Verknüpfungen.
-              </p>
-
-              <h3>Veränderung adressiert Muster, nicht Schuldige</h3>
-              <p>
-                Daraus ergibt sich eine dritte gemeinsame Konsequenz: ein methodisches Misstrauen gegenüber einfacher Kausalität, einfacher Schuld und einfacher Steuerung. Wer in einem komplexen Zusammenhang etwas verändern will – in einer Organisation, einer Familie, einem ökologischen Gefüge, einer Gesellschaft – kommt nicht weiter, indem er Schuldige sucht oder „die richtige" Maßnahme bestimmt. Man muss das Muster verstehen. Veränderung wird zur Frage, an welchen Stellen das Muster anschlussfähig für andere Verläufe ist. Meadows formuliert das als <em>leverage points</em>, die Mailänder Schule als das Bilden von Hypothesen über zirkuläre Muster, an die sich anschließen lässt. In beiden Fällen dieselbe Bewegung: Statt Akteure zu adressieren, adressiere die Verknüpfungen.
-              </p>
-
-              <h3>Wo die Schulen sich spezialisieren</h3>
-              <p>
-                Bis hierhin sprechen alle Strömungen mit einer Stimme. Der Unterschied beginnt erst eine Etage tiefer und ist im Grunde eine Spezialisierungsfrage: So einig sich das Feld darüber ist, dass Welt aus Verknüpfungen besteht, so unterschiedlich sind die Phänomene, an denen die einzelnen Strömungen arbeiten – und damit auch das Material, aus dem die Verknüpfungen jeweils gemacht sind, und die Methoden, die diesem Material angemessen sind.
-              </p>
-
-              <h3>Die kommunikative Schicht: Hypothesen und zirkuläre Schleifen</h3>
-              <p>
-                Auf der einen Seite stehen Phänomene, in denen Verknüpfungen aus Kommunikation bestehen: Familien, Teams, Organisationen, Beratungsverhältnisse, gesellschaftliche Diskurse. Was hier zirkuliert, sind Erwartungen, Zuschreibungen, Hypothesen, Anerkennungen, Bedeutungen. Diese Schleifen sind real, aber nicht messbar wie ein Wasserstand. Man bekommt sie nur in den Blick, wenn man sich selbst als Beobachter mit hineinrechnet – denn jede Frage, jede Hypothese verändert das System, das man zu verstehen versucht.
-              </p>
-              <p>
-                Genau hier hat die familientherapeutisch entstandene Tradition – Bateson, Palo Alto, die Mailänder Schule um Selvini-Palazzoli und ihre deutsche Übersetzung in der Heidelberger Schule – ihr Handwerk entwickelt. Zirkuläres Fragen, Hypothesenbildung, Reframing, Reflecting Teams, Aufstellungsarbeit: Methoden, um in selbstreferenziellen Systemen zu arbeiten, ohne sie steuern zu wollen. Sie respektieren, dass das System nach eigenen Logiken operiert, und arbeiten an Anschlussfähigkeit statt an Durchsetzung.
-              </p>
-
-              <h3>Die materielle Schicht: Feedback Loops und Wirkungsmodelle</h3>
-              <p>
-                Auf der anderen Seite stehen Phänomene, in denen Verknüpfungen aus Stoff- und Energieflüssen, Wirkungsketten und institutionellen Strukturen bestehen: Stoffkreisläufe, Energiehaushalte, Lieferketten, Klimasysteme, ökonomische Akkumulationen. Diese Flüsse wirken, ob jemand sie versteht oder ihnen Bedeutung zuschreibt. CO₂ wirkt im Treibhaus unabhängig vom Diskurs darüber. Eine Population kollabiert, wenn ihre Nahrungsbasis kollabiert – unabhängig von der Erzählung, die darüber existiert.
-              </p>
-              <p>
-                Hier hat die System-Dynamics-Tradition – Forrester, Meadows, Senge und die heutige Sustainability- und Systems-Change-Forschung – ihr Handwerk entwickelt. Causal Loop Diagrams, Stocks und Flows, verzögerte Rückkopplungen, nichtlineare Schwellenwerte, Hebelpunkte. Werkzeuge, die etwas leisten, was die kommunikative Tradition aus eigenen Mitteln nicht kann: materielle Dynamiken über lange Zeiträume und große Maßstäbe modellieren und in ihrer Eigenlogik ernst nehmen.
-              </p>
-
-              <h3>Ein Programm, zwei Werkzeugkästen</h3>
-              <p>
-                Der scheinbare Gegensatz zwischen den beiden Linien löst sich, sobald man begreift, dass sie nicht über die Welt streiten, sondern über unterschiedliche Schichten desselben Phänomens. Beide sagen denselben Grundsatz: Schau auf die Verknüpfungen, nicht auf die Substanzen. Sie unterscheiden sich nur in der Antwort darauf, was in ihrem Gegenstandsbereich verknüpft ist – und welche Methodik diesem Material angemessen ist.
-              </p>
-
-              <blockquote class="impuls-quote">
-                Systemdenken ist die Beobachtung, dass Welt aus Mustern stabilisierter Verknüpfung besteht und nicht aus Substanzen. Welche Art von Verknüpfung jeweils trägt – Kommunikation, Sinn, Vertrauen, Hypothesen einerseits, Stoffstrom, Energiefluss, ökologische Wirkung andererseits – ist eine empirische Frage des jeweiligen Gegenstands.
-              </blockquote>
-
-              <p>
-                Die meisten Phänomene, an denen wir wirklich arbeiten – Städte, Konflikte, Wirtschaften, Gesundheitssysteme, Klimapolitiken, Transformationen jeder Art – sind ohnehin gleichzeitig in beiden Schichten verfasst. Sie haben eine kommunikative Eigenlogik, die sich nicht aus den materiellen Verhältnissen ableiten lässt; und eine materielle Eigenlogik, die sich nicht durch Umdeutung verändern lässt. Beide Schichten interagieren permanent, aber sie sind nicht ineinander auflösbar. Wer nur auf die eine schaut, wird die andere systematisch unterschätzen.
-              </p>
-
-              <p>
-                Genau hier zeigt sich, warum die Verbindung beider Ansätze mehr ergibt als ihre Summe: Hypothesenarbeit und zirkuläre Schleifen brauchen die strukturelle Schärfe von Feedback Loops und Wirkungsmodellen, um in Nachhaltigkeits- und Transformationsfeldern zu greifen. Systems Thinking braucht das methodische Handwerk der systemischen Praxis, um an den Stellen, an denen Veränderung durch Menschen und Organisationen hindurchgehen muss, tatsächlich anschlussfähig zu werden. Erst zusammen entsteht eine Praxis, die dem Gegenstand gewachsen ist.
-              </p>
-            </div>
-          </details>
-        </article>
-
+      <div class="impulse-soon">
+        <h3>Demnächst hier</h3>
+        <p>
+          Der erste Impuls erscheint bald an dieser Stelle. Jeden neuen Impuls teilen wir auch auf LinkedIn – vernetze dich gern: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">LinkedIn-Profil</a>.
+        </p>
       </div>
 
       <p class="impulse-outro">
@@ -129,22 +98,10 @@
   </main>
 
   <footer class="foot">
-    <p>Impact Up – Institut für Systems Change · Hamburg</p>
+    <p>Impact Up – Institut für systemische Wirkungsorientierung · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
-  <script>
-    // Wenn jemand mit #anker auf eine Karte verlinkt: Karte automatisch aufklappen
-    function openTargeted() {
-      if (!location.hash) return;
-      const el = document.querySelector(location.hash);
-      if (!el) return;
-      const details = el.querySelector('details');
-      if (details) details.open = true;
-    }
-    window.addEventListener('hashchange', openTargeted);
-    openTargeted();
-  </script>
-
+  <script src="nav.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+# Deploy-Hygiene: nur Web-sichere Dateien hochgehen
+
+KONTEXT.md
+TODO.md
+Spaene/
+*.md
+logo_vergleich.html

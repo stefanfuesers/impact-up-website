@@ -1,4 +1,47 @@
 // ============================================
+// Nav: Transparenz über dem Hero, Wortmarke, Scrollspy
+// (zuerst & unabhängig vom 3D-Netz – falls WebGL fehlt und das
+//  Netz wirft, bleibt die Nav-Logik trotzdem aktiv)
+// ============================================
+(function () {
+  'use strict';
+  const nav = document.querySelector('.nav');
+  if (!nav) return;
+  const hero = document.querySelector('.hero');
+
+  // Solange das große Hero-Lockup im Bild ist: Nav transparent.
+  // Beim Wegscrollen wird die Nav solide (Hintergrund + Goldlinie + Wortmarke).
+  function navState() {
+    const trigger = hero ? hero.offsetHeight * 0.6 : 320;
+    nav.classList.toggle('nav--transparent', window.scrollY < trigger);
+  }
+  window.addEventListener('scroll', navState, { passive: true });
+  window.addEventListener('resize', navState);
+  navState();
+
+  // Scrollspy: das Nav-Item der gerade sichtbaren Sektion leuchtet auf.
+  const links = Array.from(document.querySelectorAll('.nav__links a[href^="#"]'));
+  const watched = links
+    .map(a => {
+      const el = document.getElementById(a.getAttribute('href').slice(1));
+      return el ? { a, el } : null;
+    })
+    .filter(Boolean);
+
+  if (watched.length && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = '#' + e.target.id;
+          links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === id));
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    watched.forEach(w => obs.observe(w.el));
+  }
+})();
+
+// ============================================
 // Impact Up · 3D-Netz Drei Quellen
 // three.js v0.149 (UMD, global THREE)
 // ============================================
@@ -21,9 +64,15 @@ const scene = new THREE.Scene();
 scene.background = null;
 
 const camera = new THREE.PerspectiveCamera(45, wrapper.clientWidth / wrapper.clientHeight, 0.1, 1000);
-camera.position.set(0, 0, 18.5);
+camera.position.set(0, 0, 15.1);
 
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+} catch (e) {
+  console.warn('WebGL nicht verfügbar – 3D-Netz wird übersprungen.', e);
+  return;
+}
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(wrapper.clientWidth, wrapper.clientHeight, false);
 
