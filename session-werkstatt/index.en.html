@@ -1319,8 +1319,7 @@ function renderBogen(){
   ${brilleBox(brille)}
   ${begleit.length?`<div class="begleit"><h3>Supporting structures – explained once, valid all day</h3><ul>${begleit.map(b=>`<li><b>${b.name}:</b> ${esc(b.text)}${b.quelle?` (<a href="${b.quelle.url}" target="_blank" rel="noopener">more</a>)`:""}</li>`).join("")}</ul></div>`:""}
   ${blocks}
-  ${aktionenHtml()}
-  <p class="fussnote">This plan is a well-considered suggestion – on the day itself, stay with the group, not with the plan. Breaks are fixed blocks. Every method has sources to go deeper. Your entries stay on your device.</p>`;}
+  ${aktionenHtml()}`;}
 
 /* ---------- Gesprächsleitfaden (Gesprächs-Pfad) ---------- */
 function renderLeitfaden(){
@@ -1362,8 +1361,7 @@ function renderLeitfaden(){
   <h2>What carries you: ${L.werkzeuge.length===1?"one tool":"two tools"} for your stance</h2>
   <p class="lead" style="font-size:.95rem">Not methods to "run" – but stances you can reach for at any point in the conversation, especially when it gets hard.</p>
   ${werkzeuge}
-  ${aktionenHtml()}
-  <p class="fussnote">The guide is preparation, not a script – in the conversation, the person in front of you matters, not the plan. Your entries stay on your device.</p>`;}
+  ${aktionenHtml()}`;}
 
 /* ---------- Actions: Download & Contact ---------- */
 function aktionenHtml(){

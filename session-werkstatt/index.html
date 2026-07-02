@@ -1319,8 +1319,7 @@ function renderBogen(){
   ${brilleBox(brille)}
   ${begleit.length?`<div class="begleit"><h3>Begleitende Strukturen – einmal erklärt, gelten den ganzen Tag</h3><ul>${begleit.map(b=>`<li><b>${b.name}:</b> ${esc(b.text)}${b.quelle?` (<a href="${b.quelle.url}" target="_blank" rel="noopener">mehr</a>)`:""}</li>`).join("")}</ul></div>`:""}
   ${blocks}
-  ${aktionenHtml()}
-  <p class="fussnote">Der Ablauf ist ein durchdachter Vorschlag – bleib am Tag selbst bei der Gruppe, nicht beim Plan. Pausen sind feste Blöcke. Jede Methode hat Quellen zum Vertiefen. Deine Eingaben bleiben auf deinem Gerät.</p>`;}
+  ${aktionenHtml()}`;}
 
 /* ---------- Gesprächsleitfaden (Gesprächs-Pfad) ---------- */
 function renderLeitfaden(){
@@ -1362,8 +1361,7 @@ function renderLeitfaden(){
   <h2>Was dich trägt: ${L.werkzeuge.length===1?"ein Werkzeug":"zwei Werkzeuge"} für die Haltung</h2>
   <p class="lead" style="font-size:.95rem">Keine Methoden zum „Durchführen“ – sondern Haltungen, die du im Gespräch jederzeit greifen kannst, besonders wenn es schwer wird.</p>
   ${werkzeuge}
-  ${aktionenHtml()}
-  <p class="fussnote">Der Leitfaden ist eine Vorbereitung, kein Skript – im Gespräch zählt die Person vor dir, nicht der Plan. Deine Eingaben bleiben auf deinem Gerät.</p>`;}
+  ${aktionenHtml()}`;}
 
 /* ---------- Aktionen: Download & Kontakt ---------- */
 function aktionenHtml(){
