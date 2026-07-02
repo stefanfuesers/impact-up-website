@@ -49,7 +49,28 @@ a:hover{text-decoration-thickness:2px}
 .sitenav .nv-drop:hover>ul,.sitenav .nv-drop:focus-within>ul{display:block}
 .sitenav .nv-drop a{display:block;padding:8px 16px;font-size:.88rem;white-space:nowrap}
 .sitenav .nv-lang a{border:1px solid var(--c-gold);border-radius:var(--radius);padding:2px 9px;color:var(--c-gold)}
+.nv-menu{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;flex:1}
 @media(max-width:760px){.sitenav{font-size:.82rem;padding:8px 14px}.sitenav .nv-right{margin-left:0}}
+
+/* ---------- Mobil-Nav: Burger + aufklappbares Menü (<820px) ---------- */
+.nv-burger{display:none;margin-left:auto;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:40px;height:36px;flex:none}
+.nv-burger span{display:block;height:2px;width:100%;background:var(--c-parchment);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.nv-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nv-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nv-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:820px){
+  .sitenav{position:relative}
+  .nv-burger{display:flex}
+  .nv-menu{display:none;width:100%;flex-basis:100%}
+  .sitenav.nv-open .nv-menu{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+  .sitenav .nv-menu .nv-group{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%}
+  .sitenav .nv-right{margin-left:0}
+  .sitenav .nv-drop{width:100%}
+  .sitenav .nv-drop>ul{position:static;box-shadow:none;border:none;background:none;margin:0 0 4px;padding:0 0 0 14px;display:block}
+  .sitenav a{display:block;padding:9px 0}
+  .sitenav .nv-drop a{padding:7px 0}
+  .sitenav .nv-lang{margin-top:6px}
+}
 
 main{max-width:860px;margin:0 auto;padding:32px 20px 96px}
 .eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-stone-700);margin-bottom:6px}
@@ -170,32 +191,52 @@ button:disabled{opacity:.45;cursor:not-allowed}
 <body>
 
 <nav class="sitenav" aria-label="Hauptnavigation">
-  <div class="nv-group">
-    <a class="nv-wordmark" href="../index.html#top" aria-label="Impact Up - Startseite" style="display:inline-flex;align-items:center;gap:7px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.18rem;font-weight:600;line-height:1">
-      <img src="../assets/favicon.svg?v=2" alt="" style="width:22px;height:auto">
-      <span>Impact <em style="font-style:normal;color:var(--c-gold)">Up</em></span>
-    </a>
-    <a href="../index.html#weitergehen">Perspektiven</a>
-    <a href="../index.html#angebote">Angebote</a>
-    <a href="../index.html#quellen">Wirkungsfelder</a>
-    <a href="../index.html#about">Über Uns</a>
-  </div>
-  <div class="nv-group nv-right">
-    <span class="nv-drop"><a href="../impulse.html">Impulse</a>
-      <ul><li><a href="../impulse.html">Der erste Impuls folgt bald</a></li></ul>
-    </span>
-    <span class="nv-drop"><a href="../konstrukte.html">Konstrukte</a>
-      <ul>
-        <li><a href="../impact-up-philosophie.html">Impact Up Philosophie</a></li>
-        <li><a href="../systemische-wirkungsorientierung.html">Systemische Wirkungsorientierung</a></li>
-        <li><a href="../systems-change.html">Systems Change</a></li>
-      </ul>
-    </span>
-    <a class="nv-current" href="index.html" aria-current="page">Session-Werkstatt</a>
-    <a href="../kontakt.html">Kontakt</a>
-    <span class="nv-lang"><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></span>
+  <a class="nv-wordmark" href="../index.html#top" aria-label="Impact Up - Startseite" style="display:inline-flex;align-items:center;gap:7px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.18rem;font-weight:600;line-height:1">
+    <img src="../assets/favicon.svg?v=2" alt="" style="width:22px;height:auto">
+    <span>Impact <em style="font-style:normal;color:var(--c-gold)">Up</em></span>
+  </a>
+  <button type="button" class="nv-burger" aria-label="Menü" aria-expanded="false" aria-controls="nv-menu"><span></span><span></span><span></span></button>
+  <div class="nv-menu" id="nv-menu">
+    <div class="nv-group">
+      <a href="../index.html#weitergehen">Perspektiven</a>
+      <a href="../index.html#angebote">Angebote</a>
+      <a href="../index.html#quellen">Wirkungsfelder</a>
+      <a href="../index.html#about">Über Uns</a>
+    </div>
+    <div class="nv-group nv-right">
+      <span class="nv-drop"><a href="../impulse.html">Impulse</a>
+        <ul><li><a href="../impulse.html">Der erste Impuls folgt bald</a></li></ul>
+      </span>
+      <span class="nv-drop"><a href="../konstrukte.html">Konstrukte</a>
+        <ul>
+          <li><a href="../impact-up-philosophie.html">Impact Up Philosophie</a></li>
+          <li><a href="../systemische-wirkungsorientierung.html">Systemische Wirkungsorientierung</a></li>
+          <li><a href="../systems-change.html">Systems Change</a></li>
+        </ul>
+      </span>
+      <a class="nv-current" href="index.html" aria-current="page">Session-Werkstatt</a>
+      <a href="../kontakt.html">Kontakt</a>
+      <span class="nv-lang"><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></span>
+    </div>
   </div>
 </nav>
+<script>
+(function(){
+  var nav = document.querySelector('.sitenav');
+  var burger = nav.querySelector('.nv-burger');
+  var menu = nav.querySelector('.nv-menu');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('nv-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && nav.classList.contains('nv-open')) {
+      nav.classList.remove('nv-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
 
 <main id="main"></main>
 

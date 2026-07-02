@@ -2034,3 +2034,48 @@ a { color: inherit; text-decoration: none; }
 /* 3D-Netz: vertikales Scrollen behält auf Touch Vorrang,
    horizontales Ziehen dreht weiterhin das Netz */
 #netz-canvas { touch-action: pan-y; }
+
+/* ============================================ */
+/*  Mobil-Fixes Juli 2026 (Handy-Audit)         */
+/* ============================================ */
+
+/* --- 1) Startseiten-Hero: Lockup größer, Claim/Sub enger + rechtsbündig,
+   Sub-<br> auf Mobil ausblenden (bricht sonst hässlich um) --- */
+@media (max-width: 760px) {
+  .hero--band { padding-top: 72px; padding-bottom: 32px; }
+  .hero__inner--v2 { gap: 10px; }
+  .lockup-img { width: min(88vw, 420px); margin-bottom: 12px; }
+  .hero__claim-col { justify-self: stretch; text-align: right; padding-top: 0; }
+  .hero__inner--v2 .hero__claim {
+    text-align: right;
+    font-size: clamp(1.3rem, 6vw, 1.7rem);
+    margin-bottom: 8px;
+  }
+  .hero__inner--v2 .hero__sub {
+    text-align: right;
+    margin-left: auto;
+    font-size: 14px;
+  }
+  .hero__inner--v2 .hero__sub br { display: none; }
+}
+
+/* --- 2) Nav-Overflow auf den Konstrukt-Subseiten (impact-up-philosophie,
+   systemische-wirkungsorientierung, systems-change): .markwm--right sitzt
+   bewusst mit right:-50px im Hero und ragt heraus (Designabsicht); .hero--sub
+   hat overflow:visible (z.B. für Bleed-Effekte), das lässt den Watermark aber
+   die Seite horizontal aufreißen (document.documentElement.scrollWidth > 390,
+   Touch-Drag nach rechts möglich). Fix: nur horizontal clippen, vertikal
+   bleibt visible erhalten. Die SVG-Diagramme (.six__diagram, figure.lenses)
+   haben bereits eigene overflow-x:auto-Wrapper und sind NICHT die Ursache. */
+@media (max-width: 760px) {
+  .hero--sub { overflow-x: clip; }
+}
+
+/* --- 3) Konstrukt-Seiten: .sub-section (32px Padding) + .container (32px
+   Padding) verdoppeln sich auf schmalen Phones und lassen nur ~230px
+   Textbreite. Padding auf beiden Ebenen reduzieren, Pinnwand/Diagramme
+   bleiben unberührt (die skalieren eigenständig über ihre eigenen Regeln). */
+@media (max-width: 480px) {
+  .sub-section { padding-left: 20px; padding-right: 20px; }
+  .sub-section > .container { padding-left: 4px; padding-right: 4px; }
+}
