@@ -76,6 +76,8 @@ h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px
 textarea,input[type=text],input[type=number],input[type=time]{width:100%;font-family:var(--font-body);font-size:.95rem;padding:10px;border:1px solid var(--c-stone-300);border-radius:var(--radius);background:#FBF8EF;color:var(--c-ink)}
 textarea{min-height:74px;resize:vertical}
 textarea:focus,input:focus{outline:2px solid var(--c-gold)}
+/* Mobile: min. 16px in form fields, otherwise iOS Safari zooms on every focus */
+@media(max-width:480px){textarea,input[type=text],input[type=number],input[type=time]{font-size:16px}}
 .inline{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .inline label{font-size:.9rem}
 .inline input[type=text].kurzfeld{width:150px}

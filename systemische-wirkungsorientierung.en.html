@@ -51,6 +51,12 @@
       color: #6b5d4d;
       margin-top: 14px;
     }
+    /* Mobil: Linsen-SVG nicht unter Lesbarkeitsgrenze schrumpfen –
+       feste Mindestbreite mit horizontalem Scroll in der Figure */
+    @media (max-width: 600px) {
+      .lenses { padding: 18px 16px 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .lenses svg { min-width: 420px; }
+    }
     .quellen { margin: 8px 0 0; padding: 0; list-style: none; }
     .quellen li {
       position: relative;

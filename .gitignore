@@ -9,3 +9,5 @@ logo_vergleich.html
 # Diese Bilder braucht die Live-Seite (Ausnahme von *.png in der Root-.gitignore)
 !assets/share.png
 !assets/stefan_avatar.png
+!assets/lockup.png
+!assets/lockup_en.png
