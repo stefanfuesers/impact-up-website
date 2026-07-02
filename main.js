@@ -94,7 +94,7 @@ const L = IS_EN
       frieden: 'Peace &\nNon-Violence',
       friedenSubs: ['Dignity', 'NVC', 'Cooperation', 'Constructive', 'Humanity'],
       sozial: 'Social\nParticipation',
-      sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy'],
+      sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'NANK'],
     }
   : {
       erde: 'Ökosystem\nErde',
@@ -102,7 +102,7 @@ const L = IS_EN
       frieden: 'Frieden &\nGewaltfreiheit',
       friedenSubs: ['Würde', 'GFK', 'Kooperation', 'Konstruktiv', 'Menschlichkeit'],
       sozial: 'Soziale\nTeilhabe',
-      sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'Demokratie'],
+      sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'Demokratie', 'NANK'],
     };
 
 // ---------- Knoten-Definitionen ----------
