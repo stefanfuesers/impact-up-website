@@ -59,7 +59,7 @@ a:hover{text-decoration-thickness:2px}
 .nv-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .nv-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:820px){
-  .sitenav{position:relative}
+  .sitenav.nv-open{max-height:100dvh;overflow-y:auto}
   .nv-burger{display:flex}
   .nv-menu{display:none;width:100%;flex-basis:100%}
   .sitenav.nv-open .nv-menu{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
