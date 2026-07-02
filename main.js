@@ -94,7 +94,7 @@ const L = IS_EN
       frieden: 'Peace &\nNon-Violence',
       friedenSubs: ['Dignity', 'NVC', 'Cooperation', 'Constructive', 'Humanity'],
       sozial: 'Social\nParticipation',
-      sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'NANK'],
+      sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'New Work\nNew Culture'],
     }
   : {
       erde: 'Ökosystem\nErde',
