@@ -37,6 +37,30 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://impact-up.org/konstrukte.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/konstrukte.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/konstrukte.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impact-up-philosophie.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impact-up-philosophie.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impact-up-philosophie.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://impact-up.org/impulse.html</loc>
     <priority>0.8</priority>
   </url>
