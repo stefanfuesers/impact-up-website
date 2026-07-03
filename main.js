@@ -85,25 +85,42 @@ const fill = new THREE.DirectionalLight(0xc9a961, 0.35);
 fill.position.set(-6, -3, 4);
 scene.add(fill);
 
-// ---------- Sprach-Labels (DE / EN) ----------
-const IS_EN = document.documentElement.lang === 'en';
-const L = IS_EN
-  ? {
-      erde: 'Earth as\nEcosystem',
-      erdeSubs: ['Planetary\nBoundaries', 'Climate\nJustice', 'Post-Growth'],
-      frieden: 'Peace &\nNon-Violence',
-      friedenSubs: ['Dignity', 'NVC', 'Cooperation', 'Constructive', 'Humanity'],
-      sozial: 'Social\nParticipation',
-      sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'New Work\nNew Culture'],
-    }
-  : {
-      erde: 'Ökosystem\nErde',
-      erdeSubs: ['Planetare\nGrenzen', 'Klima-\ngerechtigkeit', 'Postwachstum'],
-      frieden: 'Frieden &\nGewaltfreiheit',
-      friedenSubs: ['Würde', 'GFK', 'Kooperation', 'Konstruktiv', 'Menschlichkeit'],
-      sozial: 'Soziale\nTeilhabe',
-      sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'Demokratie', 'NANK'],
-    };
+// ---------- Sprach-Labels (DE / EN / ES / FR) ----------
+const NETZ_LABELS = {
+  de: {
+    erde: 'Ökosystem\nErde',
+    erdeSubs: ['Planetare\nGrenzen', 'Klima-\ngerechtigkeit', 'Postwachstum'],
+    frieden: 'Frieden &\nGewaltfreiheit',
+    friedenSubs: ['Würde', 'GFK', 'Kooperation', 'Konstruktiv', 'Menschlichkeit'],
+    sozial: 'Soziale\nTeilhabe',
+    sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'Demokratie', 'NANK'],
+  },
+  en: {
+    erde: 'Earth as\nEcosystem',
+    erdeSubs: ['Planetary\nBoundaries', 'Climate\nJustice', 'Post-Growth'],
+    frieden: 'Peace &\nNon-Violence',
+    friedenSubs: ['Dignity', 'NVC', 'Cooperation', 'Constructive', 'Humanity'],
+    sozial: 'Social\nParticipation',
+    sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'New Work\nNew Culture'],
+  },
+  es: {
+    erde: 'Ecosistema\nTierra',
+    erdeSubs: ['Límites\nplanetarios', 'Justicia\nclimática', 'Postcrecimiento'],
+    frieden: 'Paz y\nNo Violencia',
+    friedenSubs: ['Dignidad', 'CNV', 'Cooperación', 'Constructivo', 'Humanidad'],
+    sozial: 'Participación\nSocial',
+    sozialSubs: ['Renta\nbásica', 'Bien común', 'Democracia', 'NANK'],
+  },
+  fr: {
+    erde: 'Écosystème\nTerre',
+    erdeSubs: ['Limites\nplanétaires', 'Justice\nclimatique', 'Post-croissance'],
+    frieden: 'Paix &\nNon-violence',
+    friedenSubs: ['Dignité', 'CNV', 'Coopération', 'Constructif', 'Humanité'],
+    sozial: 'Participation\nsociale',
+    sozialSubs: ['Revenu\nde base', 'Bien commun', 'Démocratie', 'NANK'],
+  },
+};
+const L = NETZ_LABELS[document.documentElement.lang] || NETZ_LABELS.de;
 
 // ---------- Knoten-Definitionen ----------
 const MAINS = [
