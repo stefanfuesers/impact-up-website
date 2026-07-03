@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atelier de Sessions · Impact Up – Institut d'Orientation vers l'Impact Systémique</title>
+<meta name="description" content="L'Atelier de Sessions d'Impact Up conçoit un déroulé à partir de quelques questions ciblées – d'une conversation difficile à une retraite de deux jours. Un outil de l'Institut d'Orientation vers l'Impact Systémique.">
+<link rel="canonical" href="https://impact-up.org/session-werkstatt/index.fr.html">
+<link rel="alternate" hreflang="de" href="https://impact-up.org/session-werkstatt/">
+<link rel="alternate" hreflang="en" href="https://impact-up.org/session-werkstatt/index.en.html">
+<link rel="alternate" hreflang="es" href="https://impact-up.org/session-werkstatt/index.es.html">
+<link rel="alternate" hreflang="fr" href="https://impact-up.org/session-werkstatt/index.fr.html">
+<link rel="alternate" hreflang="x-default" href="https://impact-up.org/session-werkstatt/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Atelier de Sessions · Impact Up">
+<meta property="og:description" content="Planifie ta prochaine session – d'une conversation difficile à une retraite de deux jours. Un outil de l'Institut d'Orientation vers l'Impact Systémique.">
+<meta property="og:url" content="https://impact-up.org/session-werkstatt/index.fr.html">
+<meta property="og:image" content="https://impact-up.org/assets/share.png">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon-96.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.3/dist/html2pdf.bundle.min.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c-gold:#C9A961; --c-moss-deep:#2D4A2B; --c-moss-500:#4A6843; --c-moss-300:#6B8A5A;
+  --c-leaf:#7BA05B; --c-stone:#B8855E; --c-stone-300:#C9A47E; --c-stone-700:#8A5E3B;
+  --c-parchment:#F4ECD8; --c-parchment-100:#FAF6EA; --c-parchment-300:#E8DDB8;
+  --c-ink:#1F1A14; --c-monk:#D4622A; --c-purple-deep:#4A2B5C;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --radius:2px; --shadow:0 2px 12px rgba(31,26,20,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--c-parchment);color:var(--c-ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.65}
+a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:2px}
+a:hover{text-decoration-thickness:2px}
+
+/* ---------- Kanonische Site-Nav (sticky) ---------- */
+.sitenav{position:sticky;top:0;z-index:1000;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;background:rgba(21,39,26,.92);backdrop-filter:blur(8px);padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(201,169,97,.35)}
+.sitenav a{color:var(--c-parchment);text-decoration:none}
+.sitenav a:hover{text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:3px}
+.sitenav .nv-group{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.sitenav .nv-right{margin-left:auto}
+.sitenav .nv-current{color:var(--c-gold);font-weight:600}
+.sitenav .nv-drop{position:relative}
+.sitenav .nv-drop>a::after{content:" \25BE";color:var(--c-gold)}
+.sitenav .nv-drop>ul{position:absolute;left:0;top:100%;min-width:250px;list-style:none;margin:6px 0 0;padding:8px 0;background:var(--c-moss-deep);border:1px solid rgba(201,169,97,.4);border-radius:var(--radius);box-shadow:0 8px 24px rgba(0,0,0,.32);z-index:1001;display:none}
+.sitenav .nv-drop:hover>ul,.sitenav .nv-drop:focus-within>ul{display:block}
+.sitenav .nv-drop a{display:block;padding:8px 16px;font-size:.88rem;white-space:nowrap}
+.sitenav .nv-lang a{border:1px solid var(--c-gold);border-radius:var(--radius);padding:2px 9px;color:var(--c-gold)}
+.nv-menu{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;flex:1}
+@media(max-width:760px){.sitenav{font-size:.82rem;padding:8px 14px}.sitenav .nv-right{margin-left:0}}
+
+/* ---------- Mobil-Nav: Burger + aufklappbares Menü (<820px) ---------- */
+.nv-burger{display:none;margin-left:auto;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:40px;height:36px;flex:none}
+.nv-burger span{display:block;height:2px;width:100%;background:var(--c-parchment);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+.nv-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nv-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nv-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:820px){
+  .sitenav.nv-open{max-height:100dvh;overflow-y:auto}
+  .nv-burger{display:flex}
+  .nv-menu{display:none;width:100%;flex-basis:100%}
+  .sitenav.nv-open .nv-menu{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+  .sitenav .nv-menu .nv-group{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%}
+  .sitenav .nv-right{margin-left:0}
+  .sitenav .nv-drop{width:100%}
+  .sitenav .nv-drop>ul{position:static;box-shadow:none;border:none;background:none;margin:0 0 4px;padding:0 0 0 14px;display:block}
+  .sitenav a{display:block;padding:9px 0}
+  .sitenav .nv-drop a{padding:7px 0}
+  .sitenav .nv-lang{margin-top:6px}
+}
+
+main{max-width:860px;margin:0 auto;padding:32px 20px 96px}
+.eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-stone-700);margin-bottom:6px}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin-bottom:10px}
+h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px 0 8px}
+.lead{max-width:62ch;margin-bottom:16px}
+.hint{font-size:.9rem;color:var(--c-stone-700)}
+
+.progress{display:flex;gap:4px;margin:22px 0 28px}
+.progress span{flex:1;height:6px;background:var(--c-parchment-300);border-radius:var(--radius)}
+.progress span.done{background:var(--c-gold)}
+.progress span.now{background:var(--c-moss-500)}
+
+.card{background:var(--c-parchment-100);border:1px solid var(--c-parchment-300);border-left:3px solid var(--c-gold);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:18px}
+.frage{font-weight:600;font-size:1.05rem;margin-bottom:4px}
+.frage .nr{color:var(--c-stone-700);font-weight:600;font-size:.8rem;letter-spacing:.08em;margin-right:8px}
+.sub{font-size:.9rem;color:var(--c-stone-700);margin-bottom:12px}
+.gruppentitel{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c-stone-700);margin:12px 0 6px}
+
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.opts button{font-family:var(--font-body);font-size:.92rem;padding:9px 14px;border:1px solid var(--c-stone-300);background:transparent;border-radius:var(--radius);cursor:pointer;color:var(--c-ink)}
+.opts button:hover{border-color:var(--c-gold)}
+.opts button.sel{background:var(--c-moss-deep);color:var(--c-parchment);border-color:var(--c-moss-deep)}
+textarea,input[type=text],input[type=number],input[type=time]{width:100%;font-family:var(--font-body);font-size:.95rem;padding:10px;border:1px solid var(--c-stone-300);border-radius:var(--radius);background:#FBF8EF;color:var(--c-ink)}
+textarea{min-height:74px;resize:vertical}
+textarea:focus,input:focus{outline:2px solid var(--c-gold)}
+/* Mobile : min. 16px dans les champs de formulaire, sinon iOS Safari zoome à chaque focus */
+@media(max-width:480px){textarea,input[type=text],input[type=number],input[type=time]{font-size:16px}}
+.inline{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.inline label{font-size:.9rem}
+.inline input[type=text].kurzfeld{width:150px}
+.inline input[type=time]{width:130px}
+.vorschlag{font-size:.9rem;background:var(--c-parchment-300);border-radius:var(--radius);padding:10px 12px;margin:8px 0 4px}
+
+.nav{display:flex;justify-content:space-between;margin-top:26px}
+button.primary,button.secondary{font-family:var(--font-body);font-weight:600;font-size:1rem;padding:12px 24px;border-radius:var(--radius);cursor:pointer}
+button.primary{background:var(--c-moss-deep);color:var(--c-parchment);border:1px solid var(--c-gold)}
+button.primary:hover{background:var(--c-gold);color:var(--c-ink)}
+button.secondary{background:transparent;border:1px solid var(--c-gold);color:var(--c-ink)}
+button.secondary:hover{background:var(--c-parchment-300)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.pflicht{color:var(--c-monk);font-size:.85rem;display:none;margin-top:8px}
+
+/* ---------- Bogen ---------- */
+.kontextzeile{background:var(--c-moss-deep);color:var(--c-parchment);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;font-size:.92rem}
+.kontextzeile b{color:var(--c-gold)}
+.block{background:var(--c-parchment-100);border:1px solid var(--c-parchment-300);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;padding:16px 20px;page-break-inside:avoid}
+.block.pause{background:var(--c-parchment-300);border-style:dashed;box-shadow:none}
+.block .kopf{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.block .zeit{font-family:var(--font-display);font-weight:600;font-size:1.15rem;color:var(--c-moss-deep);white-space:nowrap}
+.block .dauer{font-size:.8rem;color:var(--c-stone-700)}
+.block .titel{font-family:var(--font-display);font-weight:600;font-size:1.25rem}
+.block .kurz{margin:6px 0 2px;font-size:.95rem}
+.block .idee{font-size:.9rem;margin-top:6px;color:var(--c-ink)}
+.block .idee b{color:var(--c-stone-700)}
+.wsatz{font-size:.95rem;background:var(--c-parchment-300);border-left:3px solid var(--c-gold);border-radius:var(--radius);padding:8px 12px;margin:8px 0;font-style:italic}
+
+/* Übungs-Box: das Herzstück, deutlich abgehoben */
+.uebung{border:2px solid var(--c-gold);border-left:6px solid var(--c-gold);background:var(--c-parchment-100);margin:18px 0;padding:20px 22px;page-break-inside:avoid;box-shadow:var(--shadow)}
+.uebung .ukopf{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;border-bottom:1px solid var(--c-parchment-300);padding-bottom:8px;margin-bottom:10px}
+.uebung .uname{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--c-moss-deep)}
+.uebung .ulabel{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-stone-700);margin-left:auto}
+.uebung h4{font-family:var(--font-body);font-weight:600;font-size:.95rem;margin:12px 0 4px;color:var(--c-stone-700)}
+.uebung ol,.uebung ul{margin:4px 0 4px 22px;font-size:.95rem}
+.uebung .phasenzeile{font-size:.85rem;color:var(--c-stone-700);margin-top:2px}
+.uebung .quel{font-size:.88rem;margin-top:12px}
+.uebung .warum{font-size:.95rem;background:var(--c-parchment-300);border-radius:var(--radius);padding:8px 12px;margin:8px 0}
+.uebung .warum b{color:var(--c-stone-700)}
+.uebung .achtung{font-size:.9rem;color:var(--c-monk);margin-top:8px}
+
+
+/* Brille-Kasten: Rahmenmodell / Haltung als Hintergrund, nie als Übung */
+.brille{background:var(--c-parchment-100);border:1px solid var(--c-purple-deep);border-left:5px solid var(--c-purple-deep);border-radius:var(--radius);padding:16px 20px;margin:18px 0;page-break-inside:avoid}
+.brille .btitel{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--c-purple-deep)}
+.brille .blabel{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-stone-700)}
+.brille p{font-size:.92rem;margin-top:6px}
+.brille .quel{font-size:.85rem;margin-top:8px}
+
+.begleit{background:var(--c-parchment-100);border:1px solid var(--c-stone-300);border-radius:var(--radius);padding:18px 22px;margin-bottom:22px}
+.begleit h3{font-family:var(--font-display);font-weight:600;font-size:1.25rem;margin-bottom:8px}
+.begleit li{margin:6px 0 6px 20px;font-size:.95rem}
+
+.cta{background:var(--c-moss-deep);color:var(--c-parchment);border-radius:var(--radius);padding:22px 24px;margin:26px 0;page-break-inside:avoid}
+.cta .ctitel{font-family:var(--font-display);font-weight:600;font-size:1.35rem;color:var(--c-gold);margin-bottom:6px}
+.cta a{color:var(--c-parchment);text-decoration-color:var(--c-gold)}
+.cta p{font-size:.95rem}
+
+.tagkopf{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--c-purple-deep);margin:26px 0 12px}
+.aktionen{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
+.fussnote{font-size:.85rem;color:var(--c-stone-700);max-width:62ch}
+.offen{border-left:6px solid var(--c-monk)}
+.offen .uname{color:var(--c-monk)}
+
+/* ---------- Druck (weiß, klar) ---------- */
+.printkopf{display:none}
+@media print{
+  body{background:#fff;color:#1F1A14;font-size:10.5pt}
+  .sitenav,.progress,.aktionen,.nav,.fussnote{display:none!important}
+  main{max-width:100%;padding:0}
+  .printkopf{display:flex;align-items:center;gap:10px;border-bottom:1.5px solid #C9A961;padding-bottom:8px;margin-bottom:16px}
+  .printkopf svg{width:28px;height:28px}
+  .printkopf .wm{font-family:var(--font-display);font-weight:600;font-size:14pt}
+  .printkopf .wm .up{color:#C9A961}
+  .printkopf .tg{font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-left:auto}
+  .card,.block,.uebung,.begleit{background:#fff;border-color:#ccc;box-shadow:none}
+  .uebung{border:1.5px solid #C9A961;border-left:5px solid #C9A961}
+  .block.pause{background:#f4f4f4}
+  .wsatz,.uebung .warum{background:#f4f4f4}
+  .brille{background:#fff;border-color:#4A2B5C}
+  .kontextzeile{background:#fff;color:#1F1A14;border:1.5px solid #C9A961}
+  .kontextzeile b{color:#8A5E3B}
+  .cta{background:#fff;color:#1F1A14;border:1.5px solid #C9A961}
+  .cta .ctitel{color:#8A5E3B}
+  .cta a{color:#1F1A14}
+}
+</style>
+</head>
+<body>
+
+<nav class="sitenav" aria-label="Navigation principale">
+  <a class="nv-wordmark" href="../index.fr.html#top" aria-label="Impact Up - Accueil" style="display:inline-flex;align-items:center;gap:7px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.18rem;font-weight:600;line-height:1">
+    <img src="../assets/favicon.svg?v=2" alt="" style="width:22px;height:auto">
+    <span>Impact <em style="font-style:normal;color:var(--c-gold)">Up</em></span>
+  </a>
+  <button type="button" class="nv-burger" aria-label="Menu" aria-expanded="false" aria-controls="nv-menu"><span></span><span></span><span></span></button>
+  <div class="nv-menu" id="nv-menu">
+    <div class="nv-group">
+      <a href="../index.fr.html#weitergehen">Perspectives</a>
+      <a href="../index.fr.html#angebote">Offres</a>
+      <a href="../index.fr.html#quellen">Champs d'Impact</a>
+      <a href="../index.fr.html#about">À Propos</a>
+    </div>
+    <div class="nv-group nv-right">
+      <span class="nv-drop"><a href="../impulse.fr.html">Impulsions</a>
+        <ul><li><a href="../impulse.fr.html">La première impulsion arrive bientôt</a></li></ul>
+      </span>
+      <span class="nv-drop"><a href="../konstrukte.fr.html">Construits</a>
+        <ul>
+          <li><a href="../impact-up-philosophie.fr.html">Philosophie d'Impact Up</a></li>
+          <li><a href="../systemische-wirkungsorientierung.fr.html">Orientation vers l'Impact Systémique</a></li>
+          <li><a href="../systems-change.fr.html">Systems Change</a></li>
+        </ul>
+      </span>
+      <a class="nv-current" href="index.fr.html" aria-current="page">Atelier de Sessions</a>
+      <a href="../kontakt.fr.html">Contact</a>
+      <span class="nv-lang"><a href="index.html" hreflang="de" aria-label="Zur deutschen Version">DE</a></span>
+      <span class="nv-lang"><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></span>
+      <span class="nv-lang"><a href="index.es.html" hreflang="es" aria-label="Cambiar a la versión en español">ES</a></span>
+    </div>
+  </div>
+</nav>
+<script>
+(function(){
+  var nav = document.querySelector('.sitenav');
+  var burger = nav.querySelector('.nv-burger');
+  var menu = nav.querySelector('.nv-menu');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('nv-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && nav.classList.contains('nv-open')) {
+      nav.classList.remove('nv-open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+
+<main id="main"></main>
+
+<script src="daten.fr.js"></script>
+<script>
+"use strict";
+const FEATURE_NAME = "Atelier de Sessions";
+const LS_RUNS = "iu_sw_runs";
+const LS_FREI = "iu_sw_frei";
+/* Lien de déblocage : ?frei=wirkungsraum débloque ce navigateur
+   durablement pour un nombre illimité de sessions (bouton "Planifier une nouvelle session"). */
+try{
+  const _p = new URLSearchParams(location.search);
+  if(_p.get("frei")==="wirkungsraum"){ localStorage.setItem(LS_FREI,"1"); history.replaceState(null,"",location.pathname); }
+}catch(e){}
+let _runCounted = false;
+/* =====================================================================
+   Session-Werkstatt · Version 2 (Engine V2)
+   Zwei Pfade: Gesprächsleitfaden (1:1 / Coaching / kleine Klärung)
+   und Session-Bogen (Gruppe). Anlass-Typ steuert Methoden, Dramaturgie
+   und alle Rahmen-Texte. Datenbasis: daten.js (190 Methoden, angereichert).
+   Keine externen Dienste, alles bleibt im Browser.
+   ===================================================================== */
+
+const METHODEN = (window.METHODEN || []);
+
+/* ---------- Vokabular ---------- */
+const ANLASS_GRUPPEN = [
+  {g:"En tête-à-tête", items:["schwieriges_gespraech","coaching"]},
+  {g:"Quand ça grince", items:["konfliktklaerung","krisensitzung"]},
+  {g:"Travailler et décider", items:["regeltermin","entscheidungstreffen","strategie"]},
+  {g:"Démarrer et regarder en arrière", items:["kickoff","retro"]},
+  {g:"Personnes et lien", items:["teamtag","dialograum","netzwerktreffen"]},
+  {g:"Grands groupes et apprentissage", items:["beteiligung","lernformat"]}
+];
+const ANLASS_LABEL = {
+  schwieriges_gespraech:"Conversation individuelle difficile (licenciement, critique, mauvaise nouvelle)",
+  coaching:"Coaching / accompagnement individuel",
+  konfliktklaerung:"Résolution de conflit (entre personnes ou groupes)",
+  krisensitzung:"Réunion de crise (pression aiguë)",
+  regeltermin:"Réunion de travail régulière / point fixe",
+  entscheidungstreffen:"Réunion de décision",
+  strategie:"Stratégie et avenir",
+  kickoff:"Lancement / kick-off",
+  retro:"Rétrospective et bilan",
+  teamtag:"Journée d'équipe / développement d'équipe",
+  dialograum:"Espace de dialogue (la compréhension mutuelle comme fin en soi)",
+  netzwerktreffen:"Rencontre de réseau (plusieurs organisations)",
+  beteiligung:"Format participatif / grand groupe",
+  lernformat:"Formation / apprentissage"
+};
+const ANLASS_KURZ = {
+  schwieriges_gespraech:"Conversation individuelle difficile", coaching:"Coaching / accompagnement individuel",
+  konfliktklaerung:"Résolution de conflit", krisensitzung:"Réunion de crise", regeltermin:"Réunion de travail / point fixe",
+  entscheidungstreffen:"Réunion de décision", strategie:"Stratégie et avenir", kickoff:"Lancement / kick-off",
+  retro:"Rétrospective et bilan", teamtag:"Journée d'équipe", dialograum:"Espace de dialogue",
+  netzwerktreffen:"Rencontre de réseau", beteiligung:"Format participatif / grand groupe", lernformat:"Formation / apprentissage"
+};
+/* Phase: wo die Frage trägt, wird sie gestellt – sonst setzt der Anlass sie */
+const AUTO_PHASE = {regeltermin:"planen", krisensitzung:"entscheiden", retro:"reflektieren", kickoff:"ankommen", entscheidungstreffen:"entscheiden", lernformat:"vertiefen"};
+
+const ERGEBNISTYPEN = {
+  entscheidung:{label:"Décision prise", modi:["entscheidung"], hint:"À la fin, il y a une décision que tout le monde soutient – et il est clair comment on y est arrivé."},
+  plan:{label:"Plan / prochaines étapes définis", modi:["entscheidung","klaerung"], hint:"À la fin, chacun·e sait qui fait quoi et pour quand – consigné et confirmé ensemble."},
+  verstaendnis:{label:"Compréhension / image commune", modi:["klaerung"], hint:"À la fin, tout le monde a la même image de la situation – y compris les points sur lesquels vous voyez les choses différemment."},
+  ideen:{label:"Idées / options développées", modi:["klaerung","energie"], hint:"À la fin, une diversité d'options réelles est sur la table, avec une première pondération commune."},
+  konflikt:{label:"Conflit traité / résolu", modi:["konflikt"], hint:"À la fin, les besoins derrière les positions ont été exprimés et une prochaine étape est convenue."},
+  beziehung:{label:"Relation et confiance renforcées", modi:["vertrauen","verbindung"], hint:"À la fin, les personnes se connaissent mieux et se font davantage confiance qu'avant."},
+  lernen:{label:"Apprentissage capitalisé / réfléchi", modi:["reflexion"], hint:"À la fin, ce que vous avez appris est nommé – sur le sujet et sur vous-mêmes."},
+  information:{label:"Information partagée et digérée", modi:["klaerung"], hint:"À la fin, l'information n'a pas seulement été entendue, mais digérée – des questions ont été posées et répondues."},
+  energie:{label:"Énergie / motivation renouvelée", modi:["energie","verbindung"], hint:"À la fin, on ressent à nouveau pourquoi vous faites cela ensemble – et l'envie d'aller vers la prochaine étape."}
+};
+const ERGEBNIS_G = {
+  klarheit:{label:"La clarté a été exprimée"},
+  beziehung:{label:"La relation continue (ou : une clôture équitable)"},
+  schritte:{label:"Les prochaines étapes sont convenues"},
+  gehoert:{label:"L'autre personne se sent entendue"},
+  verstehen:{label:"Je comprends mieux ce qui se passe"}
+};
+const EBENEN = {person:"Personne individuelle", team:"Groupe / équipe", organisation:"Organisation / service", netzwerk:"Réseau / plusieurs organisations", feld:"Champ / société (cadre ouvert)"};
+const PHASEN = {ankommen:"Arriver et clarifier le mandat", verstehen:"Comprendre le terrain (diagnostic)", planen:"Planifier et concevoir", oeffnen:"Ouvrir et faire participer", vertiefen:"Approfondir et travailler", konflikt:"Transformer le conflit", entscheiden:"Décider et façonner", verstetigen:"Consolider et mettre en réseau", reflektieren:"Réfléchir et apprendre"};
+const PHASEN_NACHBARN = {ankommen:["verstehen"], verstehen:["ankommen","planen","vertiefen"], planen:["verstehen","entscheiden"], oeffnen:["vertiefen","verstehen"], vertiefen:["oeffnen","verstehen","konflikt","entscheiden"], konflikt:["vertiefen","verstehen"], entscheiden:["planen","vertiefen","verstetigen"], verstetigen:["entscheiden","reflektieren"], reflektieren:["verstetigen","vertiefen"]};
+const ROLLEN = {extern:"Facilitation / modération externe", leitung:"Direction interne (tu facilites et fais partie du groupe)", zweihuete:"Participant·e avec responsabilité (« double casquette »)", beratung:"Conseil / coaching", gastgeber:"Hôte / convocateur·rice"};
+const VERTRAUEN = {tragfaehig:"solide", neutral:"neutre / peu claire", duenn:"prudente / fragile", belastet:"tendue / sous pression"};
+const BEKANNT = {neu:"se rencontrent pour la première fois", etwas:"se connaissent un peu", regelmaessig:"travaillent ensemble régulièrement", vertraut:"se connaissent depuis longtemps"};
+const DAUERN = {m60:{label:"jusqu'à 1 h"}, m120:{label:"1h30–2h"}, halbtag:{label:"demi-journée"}, tag:{label:"journée complète"}, t15:{label:"1,5 jour"}, t2:{label:"2 jours et plus"}, serie:{label:"plusieurs rencontres en série"}};
+const ENERGIEN = {frisch:"frais / le matin", mitten:"en pleine journée de travail", muede:"fatigué / le soir", serie:"après une longue série de réunions"};
+const STIMMUNGEN = {neugierig:"curieux / motivé", neutral:"neutre / consciencieux", angespannt:"tendu / sous pression", belastet:"chargé (quelque chose pèse dans la salle)", genervt:"agacé par le sujet (pour la énième fois)"};
+/* Stimmung → stimmung_geeignet-Werte in den Daten (genervt deckt sich mit „skeptisch gegenüber Methoden“) */
+const STIMMUNG_DATEN = {neugierig:["neugierig"], neutral:[], angespannt:["angespannt"], belastet:["belastet"], genervt:["skeptisch"]};
+const HALTUNGEN = {gespraechsnah:"peu de méthode, proche de la conversation", strukturiert:"structuré et orienté résultats", beteiligend:"ouvert et participatif", koerperlich:"corporel et basé sur l'expérience", schriftlich:"silencieux et par écrit", spielerisch:"ludique"};
+const APPETIT = {wenig:"le moins possible (une conversation avec structure)", gezielt:"1–2 éléments ciblés", voll:"volontiers pleinement méthodique"};
+const SO_RANG = {niedrig:0, mittel:1, hoch:2};
+const G_BEZIEHUNG = {leite:"je la/le dirige / j'ai la responsabilité", gleich:"à égalité", macht:"elle/il a plus de pouvoir / de position", kompliziert:"il y a un passif compliqué"};
+const G_WISSEN = {weiss:"le sait déjà", ahnt:"s'en doute", ueberrascht:"sera surpris·e", unklar:"pas clair"};
+const G_DAUERN = {15:"15 min", 30:"30 min", 45:"45 min", 60:"60 min", 90:"90 min"};
+const G_ORTE = {buero:"Bureau", neutral:"espace neutre", online:"en ligne", gehen:"en marchant"};
+
+/* ---------- Zustand ---------- */
+const LS_KEY = "methodenkompass_v2_engine2";
+let A = ladeAntworten();
+let schritt = A._schritt || 0;
+let bogen = null;
+
+function leereAntworten(){return {
+  anlassTyp:null, anlass:"", konfliktGroesse:"",
+  ziel:"", ergebnistypen:[],
+  // Gesprächs-Pfad
+  g1Beziehung:null, g1Wer:"", g2Wissen:null, g2Frei:"", g3Spiel:"", g4Dauer:null, g4Ort:null, g4Zeit:"", g5Sonst:"",
+  // Gruppen-Pfad
+  ebene:null, groesse:"", wer:"", bekannt:null, vertrauen:null, geschichte:"", rolle:null, rolleFrei:"",
+  phase:null, prozess:"", dauer:null, von:"", ort:null, raum:"",
+  energie:null, stimmung:null, energieFrei:"", haltung:[], appetit:null, nogos:"", sonst:"",
+  _schritt:0};}
+function ladeAntworten(){try{const r=localStorage.getItem(LS_KEY); return r?Object.assign(leereAntworten(),JSON.parse(r)):leereAntworten();}catch(e){return leereAntworten();}}
+function speichern(){A._schritt=schritt; try{localStorage.setItem(LS_KEY,JSON.stringify(A));}catch(e){}}
+
+/* ---------- Pfad-Weiche ---------- */
+function istGespraech(){
+  if(A.anlassTyp==="schwieriges_gespraech"||A.anlassTyp==="coaching") return true;
+  if(A.anlassTyp==="konfliktklaerung"){
+    const g = parseGroesse(A.konfliktGroesse);
+    return !!(g && g.bis<=3);
+  }
+  return false;
+}
+/* Gesprächsart fürs Wording: Kündigung vs. Kritik vs. Coaching vs. Konflikt */
+function gespraechsArt(){
+  if(A.anlassTyp==="coaching") return "coaching";
+  if(A.anlassTyp==="konfliktklaerung") return "konflikt";
+  const t = (A.anlass||"").toLowerCase();
+  if(/künd|kuend|trennung|beend|entlass|freistell|vertrag.*nicht.*verläng|nicht verläng|licenci|rupture|renvoi/.test(t)) return "kuendigung";
+  if(/schlechte nachricht|absage|streich|budget.*weg|stelle.*weg|mauvaise nouvelle|suppress/.test(t)) return "kuendigung";
+  return "kritik";
+}
+
+/* ---------- Gruppengröße als Spanne ---------- */
+function parseGroesse(text){
+  if(!text) return null;
+  let t = String(text).toLowerCase().replace(/ca\.?|etwa|ungefähr|rund|~|environ|env\.?/g,"").trim();
+  let m = t.match(/(\d+)\s*(?:[-–—]|bis|à)\s*(\d+)/);
+  if(m){ const a=parseInt(m[1],10), b=parseInt(m[2],10); return {von:Math.min(a,b), bis:Math.max(a,b)}; }
+  m = t.match(/(\d+)/);
+  if(m){ const n=parseInt(m[1],10); return {von:n, bis:n}; }
+  return null;
+}
+function groesse(){ return parseGroesse(A.groesse) || {von:8, bis:8}; }
+function groessenKlasse(g){
+  g = g || groesse();
+  if(g.bis<=2) return "zu_zweit";
+  if(g.bis<=6) return "klein";
+  if(g.bis<=14) return "mittel";
+  if(g.bis<=30) return "gross";
+  return "sehr_gross";
+}
+function groesseLabel(){
+  const g = groesse();
+  return g.von===g.bis ? `${g.von} personnes` : `${g.von}–${g.bis} personnes`;
+}
+
+/* ---------- Kontext für alle Texte ---------- */
+function ctx(ersterTag, letzterTag){
+  return {anlass:A.anlassTyp, klasse:groessenKlasse(), stimmung:A.stimmung||"neutral", energie:A.energie||"mitten",
+          online:A.ort==="online", ersterTag:ersterTag!==false, letzterTag:letzterTag!==false, g:groesse()};
+}
+
+/* =====================================================================
+   ENGINE · Schablonen: wenige Übungen, viel Rahmen. Kleine Gruppen
+   bekommen schlankere Rahmen-Slots (zu viert trudelt niemand ein).
+   ===================================================================== */
+function baueSchablone(){
+  const d = A.dauer, s = [];
+  const klein = ["zu_zweit","klein"].includes(groessenKlasse());
+  const krise = A.anlassTyp==="krisensitzung";
+  const push=(slot,min,label)=>s.push({slot,min,label});
+
+  if(d==="m60"){
+    push("ankommen", krise?6:(klein?4:8), labelAnkommen());
+    push("zweck", krise?6:(klein?4:7), labelZweck());
+    push("uebung", krise?34:(klein?40:31), "Cœur du travail");
+    push("ernte", krise?8:6, labelErnte());
+    push("checkout", krise?6:(klein?6:8), labelCheckout());
+  } else if(d==="m120"||d==="serie"){
+    push("ankommen", klein?6:10, labelAnkommen());
+    push("zweck", klein?6:10, labelZweck());
+    push("uebung", 40, "Cœur du travail I");
+    push("pause", 15, "Pause");
+    push("ernte", 10, labelErnte());
+    push("uebung2", 15, "Cœur du travail II – bref");
+    push("feedback", 5, "Retour rapide");
+    push("checkout", klein?8:10, labelCheckout());
+  } else if(d==="halbtag"){
+    push("ankommen", klein?8:15, labelAnkommen());
+    push("zweck", klein?10:15, labelZweck());
+    push("uebung", 60, "Cœur du travail I");
+    push("pause", 20, "Pause");
+    push("ernte", 15, labelErnte());
+    push("uebung", 55, "Cœur du travail II");
+    if(A.appetit==="voll") push("uebung2", 20, "Élément bonus – bref");
+    push("feedback", 10, "Retours");
+    push("checkout", klein?10:15, labelCheckout());
+  } else if(d==="tag"){ tagesplan(s, true, true); }
+  else if(d==="t15"){
+    s.push({tag:1}); tagesplan(s, true, false);
+    s.push({tag:2});
+    push("ankommen", 15, "Arrivée jour 2");
+    push("uebung", 75, "Cœur de la matinée");
+    push("pause", 20, "Pause");
+    push("ernte", 20, labelErnte());
+    push("feedback", 15, "Retours");
+    push("checkout", 20, "Clôture & check-out");
+  } else if(d==="t2"){
+    s.push({tag:1}); tagesplan(s, true, false);
+    s.push({tag:2}); tagesplan(s, false, true);
+  }
+  return s;
+}
+function tagesplan(s, erster, letzter){
+  const klein = ["zu_zweit","klein"].includes(groessenKlasse());
+  const push=(slot,min,label)=>s.push({slot,min,label});
+  push("ankommen", erster?(klein?12:20):12, erster?labelAnkommen():"Arrivée jour 2");
+  if(erster) push("zweck", 20, "Objectif, fil rouge et accords communs");
+  push("uebung", 90, "Cœur de la matinée");
+  push("pause", 20, "Pause");
+  push("ernte", 25, labelErnte());
+  push("mittag", 60, "Pause déjeuner");
+  push("energiemoment", 10, "Se réinstaller après le déjeuner");
+  push("uebung", 90, "Cœur de l'après-midi");
+  if(A.appetit==="voll") push("uebung2", 20, "Élément bonus – bref");
+  push("pause", 20, "Pause");
+  if(letzter){ push("ernte", 25, labelErnte()); push("feedback", 15, "Retours"); push("checkout", 25, "Clôture & check-out"); }
+  else { push("ernte", 20, "Bilan"); push("checkout", 15, "Clôture de la journée – légère"); }
+}
+function labelAnkommen(){
+  if(A.anlassTyp==="krisensitzung") return "Tour de table éclair : que sait-on ?";
+  return ["zu_zweit","klein"].includes(groessenKlasse()) ? "Check-in" : "Arrivée";
+}
+function labelZweck(){
+  if(A.anlassTyp==="krisensitzung") return "Image commune & priorité";
+  if(A.anlassTyp==="entscheidungstreffen") return "La question, les critères, le chemin";
+  if(A.anlassTyp==="konfliktklaerung") return "Cadre & accords";
+  return "De quoi s'agit-il aujourd'hui";
+}
+function labelErnte(){
+  if(A.anlassTyp==="krisensitzung") return "Sécuriser les décisions";
+  return ["zu_zweit","klein"].includes(groessenKlasse()) ? "Échange & consolidation" : "Bilan & échange";
+}
+function labelCheckout(){
+  if(A.anlassTyp==="krisensitzung") return "Prochain point de contact";
+  if(A.anlassTyp==="regeltermin") return "Check-out – une phrase";
+  return "Check-out";
+}
+
+/* =====================================================================
+   TEXTE V2 · slotText(slot, ctx) – Basis je Anlass × Größenklasse,
+   Modifikatoren Stimmung / Energie / online. Quelle: Research-Situationen.
+   ===================================================================== */
+const ANKOMMEN_BASIS = {
+  zu_zweit:"Vous n'êtes que deux – pas besoin de programme. Commencez à l'heure, prenez un moment bref et honnête : comment arrives-tu, comment est-ce que j'arrive ? Puis directement dans le sujet.",
+  klein:"Peu de monde, une seule table – pas besoin de programme d'accueil. Commencez à l'heure, n'attendez pas tout le monde. Deux, trois minutes d'arrivée réelle : une question, un tour de table, chaque personne une fois, sans commentaire entre les prises de parole. Tu réponds en dernier – cela modélise l'ouverture et referme le cercle.",
+  mittel:"Accueillez, arrivez brièvement de façon informelle, donnez une fois la parole à chacun·e – un tour avec une question suffit. Limitez la durée : réponses courtes, chacun·e peut passer.",
+  gross:"Pas de temps mort : celles et ceux qui arrivent tôt ont déjà quelque chose à faire – p. ex. répondre à une question d'entrée affichée au mur. Puis cadrez brièvement et donnez à tout le monde une première voix avant que le grand tour commence : une minute de réflexion silencieuse, deux minutes d'échange à deux. Cela coûte trois minutes – et tout le monde a déjà dit quelque chose.",
+  sehr_gross:"À cette taille : activer immédiatement plutôt qu'attendre. Question d'entrée au mur ou dans le chat, puis une première voix pour tous via Penser–Partager en binôme–Partager en plénière (silence, à deux, une sélection présentée en plénière). Dis-le honnêtement : tout le monde ne parlera pas devant le grand groupe – mais tout le monde aura la parole."
+};
+const ANKOMMEN_ANLASS = {
+  krisensitzung:"Peu de temps, annonce claire : « Je fais maintenant un tour de table éclair : chacun·e dit en une phrase ce qu'il/elle sait à l'instant. Pas de commentaire, pas de discussion – on rassemble d'abord. » Présence calme : le groupe doit sentir que quelqu'un tient la situation.",
+  konfliktklaerung:"Pas d'ouverture décontractée – ici c'est le cadre qui tient, pas l'ambiance. Accueillez, remerciez tout le monde d'être présent, et passez directement à la pose du cadre.",
+  retro:"Arrivez brièvement, puis tournez ensemble le regard vers l'arrière : sur quoi revenons-nous aujourd'hui – quelle période, quel projet ?",
+  kickoff:"Ici, prendre du temps en vaut la peine : les personnes arrivent avec des attentes différentes. Donnez une fois la parole à chaque personne – avec une question qui met en résonance avec le projet."
+};
+const ANKOMMEN_STIMMUNG = {
+  belastet:" Important : quelque chose pèse dans la salle – nomme-le calmement dès le début, sans le traiter tout de suite : « Je sais que plusieurs choses sont en suspens en ce moment. Nous allons commencer calmement – et cela trouvera sa place aujourd'hui. » Pas d'ouverture enjouée, pas de jeu.",
+  genervt:" Ce groupe connaît déjà le sujet – commence de façon audiblement différente des dernières fois : « Je ne veux pas faire un grand show aujourd'hui. On parle, on clarifie, on décide – le plus directement possible. » N'annonce pas de méthode, fais-le simplement.",
+  angespannt:" Ne masque pas la tension : nomme brièvement qu'il y a de la pression, et donne de la sécurité par la structure – ce qui se passe aujourd'hui, ce qui ne se passe pas."
+};
+const ANKOMMEN_ENERGIE = {
+  muede:" Le groupe arrive fatigué : pas d'énergiseur – ça coûte plus que ça ne rapporte. À la place, le corps d'abord, sans nommer d'exercice : « Avant de commencer : levez-vous un instant, étirez-vous – j'attends un peu. » Puis entrée directe, avec le moins de cadrage possible.",
+  serie:" Après une série de réunions, c'est la différence qui compte : aérez brièvement, changez de posture, posez une vraie question plutôt qu'une diapositive. Rendez audible que cette rencontre est construite autrement que les précédentes."
+};
+const ANKOMMEN_ONLINE = " En ligne : ouvre la salle 10–15 minutes plus tôt – les questions techniques se règlent là, pas pendant la réunion. Alternative au tour de parole oral : tout le monde écrit en même temps dans le chat, personne n'attend.";
+
+const ZWECK_TEXT = {
+  regeltermin:"Court et clair : « Aujourd'hui nous avons [temps]. Ce que nous voulons avoir à la fin : [résultat] – concret, clair, validé. Rien de plus. » Une phrase par point d'agenda, chacune avec son objectif : informer, recueillir des avis ou décider.",
+  entscheidungstreffen:"Trois choses doivent venir en premier : la question concrète qui se décide aujourd'hui · les critères que la décision doit remplir · le chemin pour y arriver. Dis : « Nous allons d'abord tout rassembler – tous les points de vue, toutes les objections – avant de nous rapprocher d'une réponse. » Cela protège d'un faux consensus prématuré.",
+  strategie:"De quoi s'agit-il, pourquoi maintenant, qu'est-ce qui sera différent à la fin ? Montrer une fois le fil rouge de la rencontre. En matière de stratégie, il est particulièrement important de nommer l'horizon temporel : de quoi parlons-nous, de quoi pas encore aujourd'hui.",
+  kickoff:"C'est ici que la première pierre est posée : à quoi sert ce projet, quel est le mandat, qu'est-ce qui reste ouvert ? Ensuite, 5 minutes d'accords communs : qu'est-ce qui nous importe pour travailler ensemble ? Que le groupe le formule lui-même – cela porte plus que des règles imposées.",
+  retro:"Clarifier le cadre : nous regardons en arrière pour apprendre – pas pour chercher des coupables. Quelle était la période, quel était le projet, que faisons-nous de ce que nous voyons aujourd'hui ?",
+  teamtag:"Pourquoi cette journée, pourquoi maintenant ? Nomme honnêtement quelle est l'occasion – et ce qui devrait être différent à la fin. Une journée d'équipe porte quand l'objectif est plus qu'« être de nouveau ensemble ».",
+  dialograum:"Aujourd'hui, la compréhension mutuelle est l'objectif, pas un moyen : il s'agit de se comprendre – pas de se mettre d'accord. Dis-le explicitement, cela soulage tout le monde.",
+  netzwerktreffen:"Plusieurs organisations, plusieurs logiques : de quoi s'agit-il pour tous ensemble, qu'apporte chacun·e, qu'est-ce qui peut naître ici, qu'est-ce qui ne sera pas décidé ? La transparence sur les mandats doit venir en premier.",
+  beteiligung:"Cadrez clairement ce qui se passe des contributions : sur quoi les personnes présentes ont-elles une influence, qui décide à la fin, que devient le résultat ? Rien n'abîme plus la participation qu'un impact peu clair.",
+  lernformat:"Qu'apprenons-nous aujourd'hui, à quoi le remarquerons-nous à la fin ? Montrez le fil rouge et rattachez-vous à l'expérience des personnes présentes : qu'apportez-vous déjà sur le sujet ?",
+  krisensitzung:"Établir une image commune avant que quiconque ne décide : « Ce que j'entends là : [résumé bref]. Est-ce que cette image est juste ? Que manque-t-il ? » Puis prioriser : « Nous ne pouvons pas tout résoudre en même temps. Qu'est-ce qui est le plus urgent – qu'est-ce qui nous fera le plus mal demain si nous ne le clarifions pas aujourd'hui ? » Pas de questions de causes ou de responsabilités en phase aiguë.",
+  konfliktklaerung:"Poser le cadre AVANT que quiconque n'expose son point de vue : « Je suis ici aujourd'hui pour tenir l'espace – pas pour juger. Je ne suis d'aucun des deux côtés – je suis des deux côtés. » Puis convenez des règles de conversation : laisser finir de parler, écouter, dire ensuite ce qui est arrivé."
+};
+const ZWECK_FRAGEN_ANLASS = {
+  regeltermin:["« Qu'est-ce qui doit être clarifié aujourd'hui pour que tu repartes rassuré·e ? »","« Qu'est-ce qui te tient le plus à cœur aujourd'hui – en une phrase ? »"],
+  entscheidungstreffen:["« Où en es-tu par rapport à la décision à prendre – sur une échelle de 1 à 10 ? »","« Que doit remplir la décision pour que tu puisses la soutenir ? »"],
+  strategie:["« Si on se retourne dans deux ans : qu'est-ce qui aurait bien fonctionné ? »","« Que penses-tu que les autres ici voient différemment de toi ? »"],
+  kickoff:["« Qu'est-ce qui t'a amené·e à ce projet – et qu'en espères-tu ? »","« Qu'est-ce qui serait pour toi un bon départ ? »"],
+  retro:["« Quel moment de la période récente t'a le plus occupé·e ? »","« En regardant en arrière, de quoi es-tu un peu fier/fière ? »"],
+  teamtag:["« Qu'est-ce que tu apprécies dans le travail d'équipe ici – et qu'aimerais-tu avoir davantage ? »","« Raconte un moment où cette équipe s'est vraiment sentie bien. »"],
+  dialograum:["« Avec quel sentiment arrives-tu dans cet espace ? »","« Qu'aimerais-tu comprendre aujourd'hui que tu ne comprends pas encore ? »"],
+  netzwerktreffen:["« Qu'est-ce que ton organisation apporte que les autres ne savent peut-être pas ? »","« Quel résultat ferait que cette rencontre en aurait valu la peine pour toi ? »"],
+  beteiligung:["« Que devrait-il se passer aujourd'hui pour que tu dises : ça valait la peine d'être là ? »","« Quelle perspective apportes-tu, qui est souvent négligée ? »"],
+  lernformat:["« Que sais-tu ou sais-tu déjà faire sur ce sujet – et qu'aimerais-tu emporter aujourd'hui ? »","« Où veux-tu appliquer ce que tu as appris en premier ? »"],
+  krisensitzung:["« Que sais-tu à cet instant – une phrase, sans jugement ? »","« De quoi as-tu besoin pour repartir aujourd'hui en capacité d'agir ? »"],
+  konfliktklaerung:["« Que serait pour toi un bon résultat aujourd'hui – une phrase ? »","« Avec quel sentiment arrives-tu dans cet espace ? »"]
+};
+const ERNTE_TEXT_ANLASS = {
+  regeltermin:"Sécuriser brièvement les résultats : qu'est-ce qui est décidé, qui fait quoi et pour quand ? Consigner, confirmer ensemble – pas besoin de tours de présentation.",
+  entscheidungstreffen:"Sécuriser explicitement la décision : « Je veux m'assurer que nous comprenons la même chose : notre décision est [X]. Qui la soutient ? Qui a encore une objection que nous devons connaître maintenant ? »",
+  strategie:"Les états intermédiaires appartiennent à tout le monde : qu'est-ce qui est né, où les images divergent-elles encore ? Laisser place à l'échange – c'est souvent là que la vraie réflexion se produit.",
+  kickoff:"Sécuriser ce qu'a donné le lancement : compréhension commune du mandat, premiers accords, questions ouvertes avec responsables désignés.",
+  retro:"Séparer les enseignements du récit : qu'emportons-nous comme apprentissage, qu'est-ce qui va concrètement changer ? Un ou deux changements suffisent – mais qu'ils soient contraignants.",
+  teamtag:"Ici, l'échange compte plus que la consignation : qu'avons-nous appris les un·e·s des autres ? Que voulons-nous nous laisser mutuellement ?",
+  dialograum:"Pas d'obligation de résultat : qu'a-t-on compris, qu'est-ce qui résonne ? Il suffit que chaque personne nomme ce qu'elle a entendu de nouveau.",
+  netzwerktreffen:"Rendre visible ce qui est né ensemble : points de connexion, coopérations possibles, prochains contacts. Qui emporte quoi dans sa propre organisation ?",
+  beteiligung:"Tous les groupes n'ont pas besoin de tout présenter – cela devient répétitif. Une surprise par groupe : « Qu'avez-vous entendu que vous n'attendiez pas – une phrase ? » Et être transparent sur ce que deviennent toutes les contributions.",
+  lernformat:"Ancrer les apprentissages : qu'emportes-tu, où l'appliqueras-tu en premier ? Le transfert l'emporte sur le résumé.",
+  krisensitzung:"Sécuriser les décisions, court et ferme : qui décide quoi, qui exécute quoi, pour quand ? Lire à voix haute, faire confirmer.",
+  konfliktklaerung:"Qu'a-t-on compris, qu'a-t-on convenu ? Les deux parties le disent avec leurs propres mots – ce n'est qu'alors que c'est vraiment arrivé."
+};
+const ERNTE_KLEIN_ZUSATZ = " À cette taille de groupe : conversation ouverte plutôt que tours de présentation – vous êtes déjà assis ensemble.";
+const CHECKOUT_TEXT_ANLASS = {
+  regeltermin:"Une phrase par personne, pas plus : « Qu'emportes-tu ? [Nom] ? » Régler la logistique avant.",
+  entscheidungstreffen:"Clôturer consciemment : la décision est prise – comment chaque personne se sent-elle avec elle ? Un bref tour donne à la décision sa solidité.",
+  strategie:"Un tour, chaque voix une fois : « Qu'est-ce que j'emporte – et qu'est-ce qui continue à m'occuper ? » La fin porte le sens de l'ensemble.",
+  kickoff:"Clôturer avec énergie : « Qu'attends-tu avec impatience dans ce projet ? » La première impression du travail commun reste.",
+  retro:"Clôturer légèrement : « Que ferais-tu différemment la prochaine fois – et quoi pareil ? » Pas de deuxième compte-rendu.",
+  teamtag:"Clôturer personnellement, pas administrativement : « Qu'est-ce que cette journée t'a fait ? Qu'emportes-tu qui n'est pas dans le compte-rendu ? »",
+  dialograum:"Clôturer avec dignité : qu'est-ce qui t'a touché·e ou surpris·e aujourd'hui ? Pas d'évaluation de ce qui a été dit – seulement ce qui résonne.",
+  netzwerktreffen:"Clôturer concrètement : qui contacte qui, quel est le prochain point commun ? Les réseaux vivent de ce qui se passe entre les rencontres.",
+  beteiligung:"Tour de table éclair volontaire – une phrase, pour qui le souhaite. Et dire clairement comment la suite se déroule : quand les personnes présentes sauront-elles ce que sont devenues leurs contributions ?",
+  lernformat:"Sécuriser le transfert : « Quelle est la première chose que tu vas essayer – et quand ? » Les engagements concrets tiennent mieux que les bonnes intentions.",
+  krisensitzung:"Court et engageant : quand nous revoyons-nous, qui apporte quoi ? Pas de longue clôture – le résultat, c'est la capacité d'agir.",
+  konfliktklaerung:"Le suivi en fait partie : comment continue-t-on, quand revoit-on ça ensemble ? Les deux parties quittent l'espace avec la même prochaine étape."
+};
+const CHECKOUT_KLAUSUR_LETZTER = "Le dernier moment n'appartient pas aux décisions – elles sont déjà sur le papier. « Je veux utiliser ce dernier moment autrement : qu'est-ce que ce temps vous a fait ? Qu'emportez-vous qui n'est pas dans le compte-rendu ? » Clôturer consciemment, ne pas laisser s'éteindre tout seul.";
+
+const ERNTE_FRAGEN_ANLASS = {
+  regeltermin:["Qu'est-ce qui est plus clair maintenant qu'avant ?","Qui doit savoir quoi pour que ça avance ?"],
+  entscheidungstreffen:["Que faut-il encore avant que la décision ne tienne ?","Qui doit savoir quoi pour que la décision produise ses effets ?"],
+  strategie:["Qu'est-ce qui t'est devenu plus clair – et que vois-tu maintenant différemment ?","Où nos images divergent-elles encore ?"],
+  kickoff:["Quelle est pour toi la prochaine étape la plus importante ?","De quoi as-tu besoin pour bien démarrer ?"],
+  retro:["Quelle pensée repars-tu avec toi ?","Que feriez-vous différemment la prochaine fois ?"],
+  teamtag:["Qu'as-tu appris sur les autres qui t'a surpris·e ?","Qu'est-ce qui a changé dans la façon d'être ensemble – même en petit ?"],
+  dialograum:["Qu'as-tu entendu de l'autre qui était nouveau pour toi ?","Où avez-vous plus en commun que vous ne le pensiez ?"],
+  netzwerktreffen:["Quelle connexion veux-tu poursuivre après aujourd'hui ?","Qu'en rapportes-tu dans ton organisation ?"],
+  beteiligung:["Qu'avez-vous entendu que vous n'attendiez pas ?","Quelle voix a manqué aujourd'hui ?"],
+  lernformat:["Quelle est la première chose que tu vas essayer ?","Qu'emportes-tu sur toi-même ?"],
+  krisensitzung:["Qu'est-ce qui est décidé maintenant – et qu'est-ce qui reste délibérément ouvert ?","Qui a besoin de quelle information encore aujourd'hui ?"],
+  konfliktklaerung:["Qu'as-tu entendu de l'autre qui était nouveau pour toi ?","Quel petit pas l'un vers l'autre est maintenant envisageable ?"]
+};
+
+function slotText(slot, c){
+  let t = "";
+  if(slot==="ankommen"){
+    if(!c.ersterTag) return "Plus léger que le jour 1 – un bref tour suffit : « Que reste-t-il d'hier – une image, une phrase, une question ? » Puis ne commencez pas par un aperçu de la journée, allez directement dans le vif du sujet."+(c.online?ANKOMMEN_ONLINE:"");
+    t = ANKOMMEN_ANLASS[c.anlass] || ANKOMMEN_BASIS[c.klasse] || ANKOMMEN_BASIS.mittel;
+    if(ANKOMMEN_ANLASS[c.anlass] && ["gross","sehr_gross"].includes(c.klasse) && c.anlass!=="krisensitzung") t += " À cette taille : impliquez tout le monde via un format silencieux ou en binômes plutôt qu'un long tour.";
+    if(c.anlass!=="krisensitzung"){
+      if(ANKOMMEN_STIMMUNG[c.stimmung]) t += ANKOMMEN_STIMMUNG[c.stimmung];
+      if(ANKOMMEN_ENERGIE[c.energie]) t += ANKOMMEN_ENERGIE[c.energie];
+    }
+    if(c.online) t += ANKOMMEN_ONLINE;
+    return t;
+  }
+  if(slot==="zweck"){
+    t = ZWECK_TEXT[c.anlass] || "De quoi s'agit-il aujourd'hui, pourquoi ce temps commun en vaut-il la peine, qu'est-ce qui sera différent à la fin ? Montrer une fois le fil rouge de la rencontre.";
+    if(c.stimmung==="genervt") t += " Et comme le groupe connaît déjà ce sujet : nomme explicitement ce qui est différent aujourd'hui par rapport aux dernières fois.";
+    return t;
+  }
+  if(slot==="ernte"){
+    t = ERNTE_TEXT_ANLASS[c.anlass] || "Les résultats appartiennent à tout le monde : rendre brièvement visible ce qui est né, laisser place à l'échange.";
+    if(["zu_zweit","klein"].includes(c.klasse) && !["krisensitzung","konfliktklaerung"].includes(c.anlass)) t += ERNTE_KLEIN_ZUSATZ;
+    return t;
+  }
+  if(slot==="feedback") return "Retour bref sur le travail commun : qu'est-ce qui a fait du bien, qu'est-ce qu'il faut la prochaine fois ? Aussi : qu'avons-nous appris les un·e·s des autres ?";
+  if(slot==="energiemoment") return "Juste après le repas, l'attention est au plus bas – récupérer d'abord le corps, puis la tête : se lever brièvement, sortir si possible, trois minutes."+(c.online?" En ligne : les caméras peuvent être coupées un instant, se lever est explicitement encouragé.":"");
+  if(slot==="checkout"){
+    if(["t15","t2","tag"].includes(A.dauer) && c.letzterTag && ["t15","t2"].includes(A.dauer)) return CHECKOUT_KLAUSUR_LETZTER;
+    if(["t2","t15"].includes(A.dauer) && !c.letzterTag) return "Clôture légère de la journée : « Pas de compte-rendu, pas de décisions – qu'est-ce qui reste de la journée ? Une phrase, même moins convient. » Et laissez la soirée libre : un repas partagé sans programme est la meilleure façon de passer la soirée.";
+    return CHECKOUT_TEXT_ANLASS[c.anlass] || "Clôturer consciemment – la fin porte le sens de l'ensemble. Un tour, chaque voix une fois : « Qu'est-ce que j'emporte ? »";
+  }
+  return "";
+}
+
+/* =====================================================================
+   GESPRÄCHS-PFAD · Textmatrix (Kündigung / Kritik / Konflikt / Coaching)
+   ===================================================================== */
+const GESPRAECH_TEXTE = {
+kuendigung:{
+  titelLeitfaden:"Guide de conversation : rupture / mauvaise nouvelle",
+  vorbereitung:[
+    "Clarifie-toi d'abord toi-même : soutiens-tu la décision ? Ne dis pas « nous » si tu ne la portes pas – cela sonne faux. Si c'est une décision venue d'en haut, nomme-le honnêtement.",
+    "Aie les faits sous la main : dernier jour de travail, délais, documents, ce qui se passe avec les tâches en cours, qui accompagne la personne après (coordonner la transition – pas l'improviser).",
+    "Cadre : jamais un vendredi à 17 h, jamais en ligne si c'est évitable. Un espace avec intimité – et une sortie qui ne passe pas par l'open space. La personne ne doit pas se retrouver sous le regard de ses collègues après.",
+    "Posture intérieure : la clarté est la forme la plus bienveillante. La rhétorique empathique avant la nouvelle rend les choses plus difficiles, pas plus faciles."
+  ],
+  eroeffnung:{
+    weiss:["« Je suis content·e que tu sois venu·e. Tu sais de quoi il s'agit – je le dis quand même clairement : nous avons décidé de mettre fin à la relation de travail. »"],
+    ahnt:["« Je vais droit au but, parce que je ne veux pas te laisser dans l'incertitude : nous avons décidé de mettre fin à la relation de travail. »"],
+    ueberrascht:["« Je dois te parler directement : nous avons décidé de mettre fin à ton contrat de travail. »","Message central dans les premières 60 secondes – pas de bavardage, pas d'échauffement. Tout ce qui précède crée de faux espoirs."],
+    unklar:["« Je voudrais aller droit au but : nous avons décidé de mettre fin à la relation de travail. »"]
+  },
+  kern:"Une brève explication (2–3 minutes), sans s'étendre : « Nous avons parlé plusieurs fois de [sujet] ces derniers mois. La situation ne s'est pas développée comme nous en avions besoin. C'est pourquoi nous avons pris cette décision. » Ensuite, laisse de la place : la personne peut réagir, poser des questions, se taire. Ne remplis pas le silence. S'il s'installe : « Je te laisse un instant. » Pas de boucles d'excuses, pas de phrases comme « ce n'est pas une décision contre toi en tant que personne » juste après la nouvelle.",
+  vereinbarung:"Faits et prochaines étapes, clairs et factuels : « Je voudrais t'expliquer maintenant à quoi vont ressembler les prochaines heures et les prochains jours – ce que tu peux emporter, comment nous allons régler cela. » Dernier jour de travail, documents, transition, disponibilité.",
+  abschluss:"Préserver la dignité, pas de fin froide : « Ce que tu as accompli ici est réel. Je l'emporte avec moi, même si nos chemins se séparent maintenant. » Puis laisse de la place – la personne détermine le rythme pour se lever.",
+  nachsorge:"Comment la personne sort-elle – peut-elle dire au revoir, qui l'accompagne ? Pour toi-même : la conversation continue de travailler après. Prévois une demi-heure sans rendez-vous ensuite."
+},
+kritik:{
+  titelLeitfaden:"Guide de conversation : conversation de critique / de feedback",
+  vorbereitung:[
+    "Clarifie avant la conversation – c'est la moitié du travail : quel est exactement le comportement (quand, où, quoi) ? Quel a été l'impact – sur toi, l'équipe, le processus ? Pas de critique du caractère, seulement de l'observable.",
+    "Ne le garde pas pour plus tard : chaque report augmente la charge émotionnelle et diminue la précision. Et ne cumule pas non plus – trop à la fois submerge.",
+    "Vérifie ta propre part : qu'ai-je contribué ou négligé ? Cela a sa place dans la conversation.",
+    "Posture intérieure : bienveillance et clarté en même temps (franchise radicale). Gentil sans clair ne sert à rien, clair sans gentil blesse."
+  ],
+  eroeffnung:{
+    weiss:["« Tu sais probablement de quoi je veux parler – je le dis quand même concrètement, pour que nous parlions de la même chose. »"],
+    ahnt:["« Je voudrais te parler de quelque chose que j'ai remarqué. Je te dis directement de quoi il s'agit. »"],
+    ueberrascht:["« Je voudrais te parler brièvement de quelque chose que j'ai remarqué. Je te dis directement de quoi il s'agit – et je veux ensuite entendre ton point de vue. »"],
+    unklar:["« Je voudrais parler de notre collaboration ces dernières semaines. Concrètement : [situation]. Cela m'occupe – et je me demande si je passe à côté de quelque chose. Comment vois-tu les choses ? »"]
+  },
+  kern:"Rester concret (situation – comportement – impact) : « Lors de notre réunion la semaine dernière – quand [nom] a présenté sa proposition – tu as interrompu deux fois en disant 'on connaît déjà ça'. J'ai observé qu'elle a ensuite moins contribué. » Pas de généralisations (« toujours », « jamais »), pas de sandwich éloge-critique-éloge. Puis demande vraiment sa perspective, pas comme un rituel : « Je veux comprendre ce qui se passait pour toi à ce moment-là. Qu'est-ce que j'ai peut-être manqué ? » Écoute au lieu de te défendre.",
+  vereinbarung:"Convenez ensemble, ne dictez pas : qu'est-ce qui change, qui fait quoi, pour quand ? Et sécurise ce qui a été entendu : « Qu'emportes-tu de cette conversation ? »",
+  abschluss:"Réaffirme la relation sans revenir sur la clarté : nomme ce que tu apprécies dans la collaboration – concrètement, pas comme une formule toute faite.",
+  nachsorge:"Reste dans le suivi : convenez d'un bref contact de suivi (« revoyons ça dans deux semaines, comment ça se passe »). Le feedback agit par répétition, pas par intensité."
+},
+konflikt:{
+  titelLeitfaden:"Guide de conversation : résolution de conflit en petit cercle",
+  vorbereitung:[
+    "Clarifie ton rôle : tu tiens l'espace – tu ne juges pas et ne proposes pas de solution. Multipartialité plutôt que neutralité : tu comprends toutes les parties dans leur logique interne, et tu le dis.",
+    "Pas d'entretien préalable individuel avec les parties en conflit – cela invite au positionnement stratégique. Tout le monde entre dans la salle en même temps.",
+    "Aie la séquence en tête : cadre → chaque partie expose l'une après l'autre (auto-clarification) → traiter les sujets émotionnels (dialogue) → SEULEMENT ENSUITE les solutions. Ne jamais combiner pression de solution et travail émotionnel.",
+    "Prépare-toi au silence : le silence est souvent plus productif que la phrase suivante. Ne le remplis pas."
+  ],
+  eroeffnung:{
+    weiss:["« Je suis ici aujourd'hui pour tenir l'espace – pas pour juger ni proposer de solution. Je ne suis d'aucun des deux côtés – je suis des deux côtés. »"],
+    ahnt:["« Vous savez tou·te·s les deux que ça grince entre vous – aujourd'hui il s'agit que vous vous entendiez vraiment. Je tiens le cadre pour ça. »"],
+    ueberrascht:["« Je vous ai invité·e·s parce que j'ai l'impression qu'il y a quelque chose entre vous qui pèse sur le travail. Je ne veux rien forcer aujourd'hui – juste ouvrir un espace où les deux points de vue ont leur place. »"],
+    unklar:["« Un accord préalable : quand l'autre personne parle, on écoute – sans interrompre. Je demanderai ensuite ce que vous avez entendu. »"]
+  },
+  kern:"Auto-clarification l'une après l'autre : « Je voudrais que vous décriviez, l'un·e après l'autre, comment vous vivez la situation – depuis votre perspective, à votre propre rythme. L'autre personne écoute et aura ensuite son espace. Qui veut commencer ? » Si tu poses plus de questions à une partie, nomme-le : « Cela ne veut pas dire que je lui donne raison – je veux comprendre ce qui se cache derrière. » Utile : formuler avec précaution ce qui se trouve entre les lignes – « Puis-je essayer d'ajouter : 'Il ne s'agit pas seulement de ce qui s'est passé, mais du fait de ne pas me sentir pris·e au sérieux.' Est-ce que ça résonne ? »",
+  vereinbarung:"Seulement quand les deux parties se sentent entendues : qu'a-t-on compris, que convenons-nous ? Les deux le disent avec leurs propres mots. Les petits pas l'emportent sur les grandes promesses.",
+  abschluss:"Clôturer avec dignité : les deux nomment ce qu'ils/elles ont entendu de l'autre qui était nouveau. Pas d'évaluation, pas de conclusion de ta part.",
+  nachsorge:"Fixe fermement une conversation de suivi – la clarification tient rarement complètement du premier coup. « Quand revoyons-nous à trois comment ça a évolué ? »"
+},
+coaching:{
+  titelLeitfaden:"Guide de conversation : coaching / accompagnement individuel",
+  vorbereitung:[
+    "Le mandat avant le contenu : que veut clarifier la personne aujourd'hui – et à quoi remarquera-t-elle à la fin que le temps en valait la peine ? Sans contrat, cela devient une conversation agréable, pas un accompagnement.",
+    "Note tes propres hypothèses – et sois prêt·e à les abandonner. Tu accompagnes la clarification de la personne, pas ton diagnostic.",
+    "Posture intérieure : la personne est experte de sa propre vie. Tes questions ouvrent des espaces – tes conseils les ferment le plus souvent.",
+    "Clarifie le cadre : confidentialité, temps, ce que tu fais et ce que tu ne fais pas."
+  ],
+  eroeffnung:{
+    weiss:["« Nous avions convenu de ce sur quoi nous travaillons aujourd'hui – vérifions rapidement : est-ce toujours le plus important, ou quelque chose a-t-il changé ? »"],
+    ahnt:["« Quel est ton sujet aujourd'hui – et à quoi remarqueras-tu à la fin de la séance qu'elle en valait la peine ? »"],
+    ueberrascht:["« Prends un instant : qu'est-ce qui t'occupe le plus en ce moment – professionnellement ou au-delà ? C'est par là que nous commençons. »"],
+    unklar:["« Quel est ton sujet aujourd'hui – et à quoi remarqueras-tu à la fin de la séance qu'elle en valait la peine ? »"]
+  },
+  kern:"Comprendre avant de changer : explore d'abord la situation et la préoccupation qui la sous-tend, seulement ensuite vers une solution. Bons repères : « Qu'est-ce qui rend exactement cela difficile ? » · « Qui d'autre est impliqué – et comment cette personne décrirait-elle la situation ? » · « En supposant que le sujet soit résolu : qu'est-ce qui serait différent, que ferais-tu en premier ? » Laisse de la place – les phrases les plus précieuses viennent souvent après une pause.",
+  vereinbarung:"Devenir concret, sans forcer : « Quelle est une première étape qui est entre tes mains – et quand la franchiras-tu ? » La personne la formule elle-même, tu la consignes.",
+  abschluss:"Récolter brièvement : « Qu'emportes-tu de cette séance – et qu'est-ce qui t'a été le plus utile ? » Cela affine aussi ton prochain contrat.",
+  nachsorge:"Convenez du prochain rendez-vous et, le cas échéant, d'une petite tâche d'observation (« d'ici là, remarque quand le sujet réapparaît – observe seulement, ne change rien »)."
+}
+};
+const G_BEZIEHUNG_HINWEIS = {
+  leite:"Tu as le pouvoir de position – l'autre personne l'entend dans chaque phrase. Sois doublement clair·e sur le fond et doublement attentif/attentive au ton : ce que tu veux dire comme une offre peut être perçu comme un ordre.",
+  gleich:"Vous êtes à égalité – tu ne peux rien imposer, seulement inviter. C'est une force : parle systématiquement depuis ta propre perspective (l'impact sur toi, ta demande) plutôt qu'en phrases impératives.",
+  macht:"L'autre personne a plus de pouvoir ou de position. Prépare ta phrase centrale mot pour mot et reste sur ton observation – même si la conversation veut prendre une autre direction. Tu peux te donner du temps pour réfléchir : « Je veux y réfléchir calmement et revenir vers toi. »",
+  kompliziert:"Il y a un passif. Attends-toi à ce que d'anciens épisodes s'invitent dans la conversation – nomme-le gentiment et ramène la conversation : « Cela mérite peut-être aussi d'être clarifié – aujourd'hui je voudrais rester sur [sujet]. »"
+};
+const G_ORT_HINWEIS = {
+  buero:"Ton bureau installe la hiérarchie dans l'espace – pour les conversations délicates, mieux vaut une salle de réunion neutre avec intimité.",
+  neutral:"Bon endroit : neutre, sans interruption, intime. Assure-toi que personne n'interrompe et que rien ne soit visible à travers des parois vitrées.",
+  online:"En ligne seulement si ça ne peut pas être autrement – les nouvelles difficiles et les clarifications ont besoin de présence. Si c'est en ligne : caméra allumée, connexion stable, et assure-toi au préalable que la personne peut parler sans être dérangée.",
+  gehen:"Marcher soulage : pas d'obligation de contact visuel, le mouvement libère. Bon pour le coaching et les clarifications ouvertes – pas pour les licenciements ou les occasions formelles."
+};
+
+/* =====================================================================
+   ENGINE V2 · Kandidaten, Scoring, Varianz
+   ===================================================================== */
+function zielModi(){
+  const m = new Set();
+  A.ergebnistypen.forEach(t=>{const e=ERGEBNISTYPEN[t]; if(e) e.modi.forEach(x=>m.add(x));});
+  if(m.size===0) m.add("klaerung");
+  return [...m];
+}
+function maxSelbstoeffnung(spaet){
+  if(A.vertrauen==="belastet") return spaet?1:0;
+  if(A.vertrauen==="duenn") return 1;
+  if(A.bekannt==="neu") return spaet?2:1;
+  return 2;
+}
+const UMBRELLA = new Set(["liberating-structures","new-games","trust-uebungen","check-in-rituale"]);
+const NUR_ONLINE = new Set(["online-energizer-scavenger-hunt","online-energizer-stretch-shake","online-energizer-virtual-wave","breakout-design","digitales-whiteboard-arbeiten","online-check-in-varianten","kamera-energie-hygiene"]);
+const NICHT_ALS_UEBUNG = new Set(["digitales-whiteboard-arbeiten","breakout-design","kamera-energie-hygiene","timeboxing"]);
+
+function stimmungDatenWerte(){
+  return STIMMUNG_DATEN[A.stimmung||"neutral"]||[];
+}
+function methodeStimmungen(m){
+  return (m.stimmung_geeignet||[]).map(x=>x==="müde"?"muede":x);
+}
+function passtGroesse(m, g){
+  return m.gruppe_min<=g.bis && m.gruppe_max>=g.von;
+}
+
+function kandidatenFuerUebung(maxMin, schonGewaehlt, spaet){
+  const genervt = (A.stimmung==="genervt");
+  const zm = zielModi(), maxSO = maxSelbstoeffnung(spaet);
+  const kernTypen = (A.phase==="reflektieren") ? ["kern","reflexion"] : ["kern"];
+  const g = groesse();
+  const stw = stimmungDatenWerte();
+
+  let liste = METHODEN.filter(m=>{
+    if(UMBRELLA.has(m.id) || NICHT_ALS_UEBUNG.has(m.id)) return false;
+    if(m.typ==="haltung"||m.typ==="rahmenmodell") return false;        // nie als Übung
+    if(A.ort!=="online" && NUR_ONLINE.has(m.id)) return false;
+    if(!m.blocktyp.some(t=>kernTypen.includes(t))) return false;
+    if(schonGewaehlt.has(m.id)) return false;
+    if(m.dauer_min > maxMin) return false;
+    if(m.dauer_max < Math.max(12, maxMin*0.3)) return false;
+    if(!passtGroesse(m, g)) return false;
+    if(A.ort==="online" && (m.online==="nein"||m.braucht_raum)) return false;
+    if(SO_RANG[m.selbstoeffnung] > maxSO) return false;
+    return true;
+  });
+
+  const punkte = m=>{
+    let p = 0;
+    // Haupthebel V2: Anlass-Match
+    const at = m.anlass_typen||[];
+    if(at.includes(A.anlassTyp)) p+=4; else if(at.length) p-=2;
+    // Stimmung
+    const ms = methodeStimmungen(m);
+    if(stw.some(s=>ms.includes(s))) p+=1.5;
+    if(A.energie==="muede"||A.energie==="serie"){ if(ms.includes("muede")) p+=0.5; }
+    if(A.energie==="frisch" && ms.includes("frisch")) p+=0.3;
+    // Genervt vom Thema: Regeltermin-Standards meiden
+    if(genervt && at.includes("regeltermin") && A.anlassTyp!=="regeltermin") p-=1.5;
+    // Bewährte V1-Gewichte
+    if(m.phasen.includes(A.phase)) p+=3;
+    else if((PHASEN_NACHBARN[A.phase]||[]).some(n=>m.phasen.includes(n))) p+=1.2;
+    else p-=2.5;
+    if(m.ebenen.includes(A.ebene)) p+=2; else p-=1.5;
+    p += m.modi.filter(x=>zm.includes(x)).length * 2.2;
+    if(m.vertrauensbildend||m.modi.includes("verbindung")||m.modi.includes("vertrauen")) p+=1.1;
+    p += m.stil.filter(x=>A.haltung.includes(x)).length * 1.6;
+    if(genervt){ if(m.stil.includes("gespraechsnah")||m.stil.includes("schriftlich")||m.stil.includes("strukturiert")) p+=1.4;
+                 if(m.stil.includes("spielerisch")||m.stil.includes("koerperlich")) p-=2.2; }
+    if(A.stimmung==="belastet" && m.stil.includes("spielerisch")) p-=2.5;
+    if((A.energie==="muede"||A.energie==="serie") && m.energie==="aktivierend") p+=0.8;
+    if(A.stimmung==="angespannt" && m.energie==="beruhigend") p+=0.8;
+    if(A.ort==="online"){ if(m.online==="ja") p+=0.6; else p-=0.8; }
+    if(!spaet) p -= SO_RANG[m.selbstoeffnung]*0.9;
+    if(zm.includes("entscheidung") && m.modi.includes("entscheidung")) p += spaet ? 1.4 : -1.4;
+    if(A.appetit==="voll" && m.stil.includes("spielerisch") && A.stimmung!=="belastet" && !genervt) p+=0.8;
+    return p;
+  };
+  return liste.map(m=>({m, p:punkte(m)})).sort((a,b)=>b.p-a.p);
+}
+
+/* Bestplatzierten Kandidaten deterministisch wählen */
+function ziehe(kand){
+  if(kand.length===0) return null;
+  return {m:kand[0].m, p:kand[0].p};
+}
+
+/* Kleine Idee für Rahmen-Slots (Check-in, Energiemoment, Check-out) */
+function ideeFuer(slot, schonGewaehlt){
+  const typ = {ankommen:["einstieg"], energiemoment:["energizer"], checkout:["abschluss"], feedback:["abschluss","reflexion"], ernte:["reflexion"]}[slot];
+  if(!typ) return null;
+  if(A.anlassTyp==="krisensitzung") return null;                       // Krise: kein Methoden-Schmuck
+  if(["zu_zweit","klein"].includes(groessenKlasse()) && slot==="ankommen" && A.appetit==="wenig") return null;
+  const g = groesse();
+  const k = METHODEN.filter(m=>{
+    if(UMBRELLA.has(m.id)||schonGewaehlt.has(m.id)) return false;
+    if(m.typ==="haltung"||m.typ==="rahmenmodell") return false;
+    if(A.ort!=="online" && NUR_ONLINE.has(m.id)) return false;
+    if(!m.blocktyp.some(t=>typ.includes(t))) return false;
+    if(m.dauer_min>12) return false;
+    if(!passtGroesse(m,g)) return false;
+    if(A.ort==="online" && (m.online==="nein"||m.braucht_raum)) return false;
+    if(SO_RANG[m.selbstoeffnung]>1) return false;
+    if((A.stimmung==="belastet"||A.stimmung==="genervt") && m.stil.includes("spielerisch")) return false;
+    return true;
+  }).sort((a,b)=>{
+    const s = m => (m.vertrauensbildend?1:0) + (m.energie==="aktivierend"&&slot==="energiemoment"?2:0) + ((m.anlass_typen||[]).includes(A.anlassTyp)?1.5:0) + (m.stil.includes(A.haltung[0])?1:0) - SO_RANG[m.selbstoeffnung]*0.5;
+    return s(b)-s(a);
+  });
+  return k[0]||null;
+}
+
+/* Eine Brille für diesen Tag: max. 1 Rahmenmodell/Haltung als Hintergrund-Kasten */
+function brilleFuerTag(){
+  const kand = METHODEN.filter(m=>(m.typ==="haltung"||m.typ==="rahmenmodell") && (m.anlass_typen||[]).includes(A.anlassTyp));
+  if(!kand.length) return null;
+  const score = m => ((m.phasen||[]).includes(A.phase)?2:0) + (stimmungDatenWerte().some(s=>methodeStimmungen(m).includes(s))?1:0) + (m.modi.filter(x=>zielModi().includes(x)).length);
+  kand.sort((a,b)=>score(b)-score(a));
+  return kand[0];
+}
+
+/* „Warum das hier“: der wann_passt-Satz mit dem besten Situations-Match */
+function warumSatz(m){
+  const wp = m.wann_passt||[];
+  if(!wp.length) return null;
+  const begriffe = [ANLASS_KURZ[A.anlassTyp]||"", A.anlass||"", A.ziel||""].join(" ").toLowerCase().split(/[^a-zäöüß]+/).filter(w=>w.length>4);
+  let best = wp[0], bestN = -1;
+  wp.forEach(s=>{
+    const sl = s.toLowerCase();
+    const n = begriffe.filter(w=>sl.includes(w)).length;
+    if(n>bestN){ bestN=n; best=s; }
+  });
+  return best;
+}
+/* Achtung-Zeile: wann_nicht nur, wenn er die aktuelle Situation berührt */
+function achtungSatz(m){
+  const wn = m.wann_nicht||[];
+  if(!wn.length) return null;
+  const lagen = [];
+  if(A.vertrauen==="belastet"||A.vertrauen==="duenn"||A.stimmung==="belastet") lagen.push(/vertrau|belast|eskal|konflikt|verletz|unsicher/i);
+  if(A.ort==="online") lagen.push(/online|virtuell|präsenz|raum/i);
+  if(["gross","sehr_gross"].includes(groessenKlasse())) lagen.push(/großgrupp|grosse grupp|über \d+|mehr als \d+/i);
+  if(A.stimmung==="genervt") lagen.push(/müde|method|skeptisch|kennt/i);
+  if(A.energie==="muede"||A.energie==="serie") lagen.push(/müde|abend|energie/i);
+  if((A.dauer==="m60")) lagen.push(/zeitdruck|wenig zeit|kurz/i);
+  for(const s of wn){ if(lagen.some(re=>re.test(s))) return s; }
+  return null;
+}
+
+/* ---------- Bogen bauen (Gruppen-Pfad) ---------- */
+function baueBogen(){
+  const rawSlots = baueSchablone();
+  // Kern-Methoden auf max. 3 begrenzen
+  let _uc = 0;
+  const slots = rawSlots.filter(s => {
+    if(s.slot==="uebung"||s.slot==="uebung2"){ _uc++; return _uc<=3; }
+    return true;
+  });
+  const gewaehlt = new Set();
+  let start = A.von || (["tag","t15","t2","halbtag"].includes(A.dauer) ? "09:00" : "10:00");
+  let clock = zuMinuten(start);
+  const ergebnis = [];
+  let uebungNr = 0, ersterTag = true, letzterTag = !["t15","t2"].includes(A.dauer);
+
+  const uebungSlots = slots.filter(x=>x.slot==="uebung"||x.slot==="uebung2").length;
+
+  for(const s of slots){
+    if(s.tag){ ergebnis.push({tag:s.tag}); clock = zuMinuten("09:00"); ersterTag = (s.tag===1); letzterTag = (s.tag>=2 || A.dauer==="tag"); continue; }
+    const e = {slot:s.slot, label:s.label, von:vonMinuten(clock), bis:vonMinuten(clock+s.min), min:s.min};
+    clock += s.min;
+
+    if(s.slot==="pause"||s.slot==="mittag"){ e.pause=true; ergebnis.push(e); continue; }
+
+    if(s.slot==="uebung"||s.slot==="uebung2"){
+      uebungNr++;
+      const key = "u"+uebungNr;
+      const spaet = uebungNr > Math.max(1, Math.ceil(uebungSlots/2));
+      const kand = kandidatenFuerUebung(s.slot==="uebung2"?15:Math.round(s.min*0.7), gewaehlt, spaet);
+
+      if(A.appetit==="wenig"){
+        // Strukturiertes Gespräch statt Voll-Übung: Fokusfragen der bestplatzierten Methode
+        const best = kand.length?kand[0].m:null;
+        e.kerngespraech = true; e.methodeLeise = best;
+        e.label = "Conversation structurée";
+        ergebnis.push(e); if(best) gewaehlt.add(best.id); continue;
+      }
+      if(kand.length===0 || kand[0].p < -1){
+        e.offen = true; e.kandidaten = kand.slice(0,2).map(k=>k.m);
+        ergebnis.push(e); continue;
+      }
+      const z = ziehe(kand);
+      e.methode = z.m; gewaehlt.add(z.m.id);
+      e.uebungNr = uebungNr;
+      ergebnis.push(e); continue;
+    }
+
+    // Rahmen-Slot
+    e.rahmen = true;
+    e.text = slotText(s.slot, ctx(ersterTag, letzterTag));
+    if(s.slot==="zweck"){
+      e.fragen = (ZWECK_FRAGEN_ANLASS[A.anlassTyp]||[]).slice(0,2);
+    }
+    const idee = ideeFuer(s.slot, gewaehlt);
+    if(idee && (s.slot==="ankommen"||s.slot==="energiemoment"||s.slot==="checkout"||s.slot==="feedback")){
+      e.idee = idee; gewaehlt.add(idee.id);
+    }
+    ergebnis.push(e);
+  }
+  return ergebnis;
+}
+function zuMinuten(hhmm){const[h,m]=hhmm.split(":").map(Number);return h*60+m;}
+function vonMinuten(min){min=min%(24*60);return String(Math.floor(min/60)).padStart(2,"0")+":"+String(min%60).padStart(2,"0");}
+
+/* Begleitende Strukturen (ganz-/mehrtägig) */
+function begleitStrukturen(){
+  if(!["tag","t15","t2"].includes(A.dauer)) return [];
+  const find = re => METHODEN.find(m=>re.test(m.name));
+  const liste = [{
+    name:"Accords communs", text:"5 minutes au début : qu'est-ce qui nous importe pour notre temps ensemble ? Consignez de façon visible 3–5 points (p. ex. laisser finir de parler, téléphones rangés, confidentialité). Que le groupe le formule lui-même – cela porte plus que des règles imposées.", quelle:null
+  }];
+  const p = find(/parkplatz|parking/i);
+  if(p) liste.push({name:p.name, text:p.kurz+" Expliquez-le une fois, affichez-le visiblement – et videz-le ensemble à la fin : qu'est-ce qui, là-dedans, a besoin d'un rendez-vous de suivi ?", quelle:(p.quellen||[]).find(q=>q.url)});
+  if(groesse().bis>=10){ const elmo = find(/elmo/i); if(elmo) liste.push({name:elmo.name, text:elmo.kurz, quelle:(elmo.quellen||[]).find(q=>q.url)}); }
+  return liste;
+}
+
+/* Breakout-Empfehlung: rechnet mit beiden Enden der Spanne */
+function breakoutText(m){
+  const g = groesse();
+  if(g.bis < 7) return null;
+  if(m.gruppe_min > 6) return null;
+  const ideal = Math.min(Math.max(m.gruppe_min,3),5);
+  const onlineZusatz = A.ort==="online"?" (préparez les salles de sous-groupes à l'avance, et publiez aussi la consigne dans le chat – cela évite 5 minutes de nervosité)":"";
+  const rech = n => Math.max(2, Math.round(n/ideal));
+  if(g.von===g.bis){
+    const gr = rech(g.von);
+    if(gr<2) return null;
+    return `Avec ${g.von} personnes : p. ex. ${gr} groupes de ${Math.floor(g.von/gr)}–${Math.ceil(g.von/gr)}${onlineZusatz}.`;
+  }
+  const grV = rech(g.von), grB = rech(g.bis);
+  if(grV===grB) return `Avec ${g.von}–${g.bis} personnes : ${grV} groupes de ${Math.floor(g.von/grV)}–${Math.ceil(g.bis/grV)}${onlineZusatz}.`;
+  return `Selon le nombre de personnes présentes, la répartition change : avec ${g.von} personnes, ${grV} groupes de ~${Math.round(g.von/grV)} ; avec ${g.bis} personnes, ${grB} groupes de ~${Math.round(g.bis/grB)}. Préparez les deux versions${onlineZusatz}.`;
+}
+function ernteFragen(){
+  return (ERNTE_FRAGEN_ANLASS[A.anlassTyp]||["Qu'est-ce qui t'est devenu plus clair ?","Qu'emportes-tu ?"]).slice(0,3);
+}
+function uebungPhasen(e){
+  const t = e.min;
+  const erkl = Math.max(5, Math.round(t*0.18));
+  const ernte = Math.max(5, Math.round(t*0.22));
+  const durch = t - erkl - ernte;
+  return {erkl, durch, ernte};
+}
+
+/* ---------- Gesprächsleitfaden bauen (Gesprächs-Pfad) ---------- */
+function baueLeitfaden(){
+  const art = gespraechsArt();
+  const T = GESPRAECH_TEXTE[art];
+  const dauer = parseInt(A.g4Dauer||"45",10);
+  const wissen = A.g2Wissen||"unklar";
+  // Zeitanteile: Eröffnung ~10%, Kern ~50%, Vereinbarung ~25%, Abschluss ~15%
+  const z = n => Math.max(2, Math.round(dauer*n));
+  const bloecke = [];
+  bloecke.push({titel:"Préparation – avant la conversation", vor:true, punkte:T.vorbereitung});
+  bloecke.push({titel:"Ouverture", min:z(0.1), saetze:T.eroeffnung[wissen]||T.eroeffnung.unklar,
+    text:(art==="kuendigung")?"Entrée directe – pas de bavardage, pas de question sur le week-end : cela crée de fausses attentes et prolonge la souffrance. La nouvelle doit venir dans les premières 60 secondes.":null});
+  bloecke.push({titel:"Cœur", min:z(0.5), text:T.kern});
+  bloecke.push({titel:"Accord / prochaines étapes", min:z(0.25), text:T.vereinbarung});
+  bloecke.push({titel:"Clôture avec dignité", min:z(0.15), text:T.abschluss});
+  bloecke.push({titel:"Suivi – après la conversation", nach:true, text:T.nachsorge});
+  // Werkzeuge als Haltungs-Stützen
+  const mapAnlass = (art==="konflikt")?"konfliktklaerung":(art==="coaching"?"coaching":"schwieriges_gespraech");
+  const bevorzugt = ["empathisches-zuhoeren","nvc-4-schritte","systemische-fragetechniken","selbstempathie-pause","empathic-deep-listening","bitte-vs-forderung","auftragsklaerung-kontrakt"];
+  const wkz = METHODEN.filter(m=>m.typ==="werkzeug" && (m.anlass_typen||[]).includes(mapAnlass))
+    .sort((a,b)=>{
+      const s = m => (bevorzugt.indexOf(m.id)>=0 ? (10-bevorzugt.indexOf(m.id)) : 0) + (m.beispiel?2:0);
+      return s(b)-s(a);
+    }).slice(0,2);
+  return {art, T, dauer, bloecke, werkzeuge:wkz, durchatmen:dauer>=90};
+}
+
+/* =====================================================================
+   UI · Frage-Flow (zwei Pfade)
+   Gespräch:  0 Start · 1 Block A · 2 G1–G2 · 3 G3–G5 · 4 Leitfaden
+   Gruppe:    0 Start · 1 Block A · 2 Mit wem · 3 Phase (oft automatisch)
+              · 4 Rahmen · 5 Handschrift · 6 Bogen
+   ===================================================================== */
+const M = document.getElementById("main");
+
+function maxSchritt(){ return istGespraech() ? 4 : 6; }
+let _renderedSchritt = -1;
+function render(){
+  speichern();
+  const stepChanged = (schritt !== _renderedSchritt);
+  const keepY = window.scrollY;
+  _renderedSchritt = schritt;
+  if(schritt===0) renderStart();
+  else if(schritt===1) renderBlockA();
+  else if(istGespraech()){
+    if(schritt===2) renderG12();
+    else if(schritt===3) renderG345();
+    else renderErgebnis();
+  }
+  else if(schritt===2) renderBlockB();
+  else if(schritt===3) renderBlockC();
+  else if(schritt===4) renderBlockD();
+  else if(schritt===5) renderBlockE();
+  else renderErgebnis();
+  // Nur bei echtem Schrittwechsel nach oben springen – Options-Klicks
+  // (waehle→render) bleiben an der aktuellen Scroll-Position.
+  if(stepChanged) window.scrollTo(0,0); else window.scrollTo(0,keepY);
+}
+function progressHtml(){
+  const n = maxSchritt();
+  let h='<div class="progress">';
+  for(let i=1;i<=n;i++) h+=`<span class="${i<schritt?"done":i===schritt?"now":""}"></span>`;
+  return h+"</div>";
+}
+
+function renderStart(){
+  M.innerHTML = `
+  <div class="eyebrow">Un outil d'Impact Up</div>
+  <h1>Atelier de Sessions</h1>
+  <p class="lead">Dans l'Atelier de Sessions, tu construis en quelques minutes un déroulé provisoire pour un besoin concret. Tu réponds à quelques questions – de quoi il s'agit, où vous en êtes, ce que vous voulez atteindre – et à la fin tu obtiens quelques méthodes, des indications sur ce à quoi faire attention, et deux ou trois liens pour approfondir.</p>
+  <p class="lead">Derrière cela se trouve une partie de notre savoir de terrain, traduit en briques. Un mécanisme simple les assemble pour toi – volontairement un peu mélangé au hasard, comme une première inspiration pour continuer à réfléchir. Aucune IA ne planifie ta session ici : tu reçois des briques, et ce que tu en fais, c'est toi qui le décides.</p>
+  <p class="lead">Si cet outil te plaît et t'aide, nous serions ravis d'avoir un bref retour. Et si tu ne trouves pas ici ce dont tu as besoin, nous en serions encore plus heureux – alors nous regarderons cela ensemble avec toi, en tant que personnes. Écris-nous simplement.</p>
+  <p class="lead hint">Environ 5 minutes. Tes réponses restent sur ton appareil.</p>
+  <div class="nav"><span></span><button class="primary" onclick="schritt=1;render()">Planifier une session</button></div>
+  <div class="cta" style="margin-top:36px">
+    <div class="ctitel">Le métier commence là où le plan s'arrête.</div>
+    <p>Sentir ce dont un groupe a besoin sur l'instant, changer de cap quand quelque chose d'inattendu se produit, tenir l'espace quand ça devient sérieux – c'est exactement ce que nous apportons : comme partenaire d'entraînement pour ta préparation, ou comme facilitation à tes côtés. <a href="../kontakt.fr.html">Prendre contact</a></p>
+  </div>
+  ${A.anlass?'<p class="hint" style="margin-top:14px">Il y a un état enregistré. <a href="#" onclick="A=leereAntworten();schritt=0;localStorage.removeItem(LS_KEY);render();return false">Recommencer</a> ou continuer simplement – tes réponses sont encore là.</p>':""}`;
+}
+
+/* ---- Eingabe-Helfer ---- */
+function optButtons(name, obj, multi, max){
+  const cur = A[name];
+  return '<div class="opts">'+Object.entries(obj).map(([k,v])=>{
+    const lbl = typeof v==="string"?v:v.label;
+    const sel = multi ? (cur||[]).includes(k) : String(cur)===String(k);
+    return `<button type="button" class="${sel?"sel":""}" onclick="waehle('${name}','${k}',${multi},${max||0})">${lbl}</button>`;
+  }).join("")+"</div>";
+}
+function waehle(name,k,multi,max){
+  if(multi){
+    const arr = A[name]||[];
+    if(arr.includes(k)) A[name]=arr.filter(x=>x!==k);
+    else { if(max && arr.length>=max) arr.shift(); A[name]=[...arr,k]; }
+  } else A[name] = (String(A[name])===String(k)? null : k);
+  render();
+}
+function feld(name,placeholder,rows){
+  return `<textarea ${rows?`style="min-height:${rows*24}px"`:""} placeholder="${placeholder}" oninput="A['${name}']=this.value;speichern()">${esc(A[name]||"")}</textarea>`;
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");}
+
+/* ---- Block A: Was steht an? ---- */
+function renderBlockA(){
+  let anlassOpts = ANLASS_GRUPPEN.map(gr=>
+    `<div class="gruppentitel">${gr.g}</div><div class="opts">`+
+    gr.items.map(k=>`<button type="button" class="${A.anlassTyp===k?"sel":""}" onclick="waehle('anlassTyp','${k}',false,0)">${ANLASS_LABEL[k]}</button>`).join("")+
+    `</div>`).join("");
+  const konflikt = A.anlassTyp==="konfliktklaerung" ? `
+    <div class="sub" style="margin-top:10px">Combien de personnes sont impliquées (toi y compris) ? Avec deux ou trois personnes, je te construis un guide de conversation plutôt qu'un déroulé d'atelier.</div>
+    <div class="inline"><input type="text" class="kurzfeld" placeholder="p. ex. 2 ou 8" value="${esc(A.konfliktGroesse)}" oninput="A.konfliktGroesse=this.value;speichern()" onchange="render()"></div>`:"";
+  const gespr = istGespraech();
+  const etyp = gespr ? ERGEBNIS_G : ERGEBNISTYPEN;
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 1 sur ${maxSchritt()-1}</div>
+    <h1>Qu'est-ce qui se prépare ?</h1>
+    <div class="card"><div class="frage"><span class="nr">F1</span>Quel type de rencontre se prépare ? *</div>
+      ${anlassOpts}${konflikt}
+      <div class="sub" style="margin-top:12px">Décris brièvement de quoi il s'agit – plus c'est concret, mieux c'est. *</div>
+      ${feld("anlass","P. ex. : je dois licencier une salariée ; réunion trimestrielle de notre réseau ; nous devons nous attaquer à la stratégie 2027 …",4)}
+      ${gespr?'<p class="hint" style="margin-top:8px">Cette occasion a son propre chemin : quelques questions, puis un guide de conversation – pas de programme d’atelier.</p>':""}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F2</span>Que veux-tu atteindre ?</div>
+      <div class="sub">Si tout s'est bien passé – qu'est-ce qui sera différent ensuite ? *</div>
+      ${feld("ziel","Ton objectif avec tes propres mots …",3)}
+      <div class="sub" style="margin-top:12px">Qu'est-ce qui correspond le mieux ? (max. 2)</div>
+      ${optButtons("ergebnistypen",etyp,true,2)}
+      ${(!gespr && A.ergebnistypen.length)?`<div class="vorschlag">${A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>"« "+ERGEBNISTYPEN[t].hint+" »").join(" · ")}</div>`:""}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis le type d'occasion et remplis les champs marqués d'un * – ils orientent tout ce qui suit.</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=0;render()">Retour</button>
+      <button class="primary" onclick="weiterA()">Suivant</button>
+    </div>`;}
+function weiterA(){
+  if(!A.anlassTyp || !A.anlass.trim() || !A.ziel.trim()){ document.getElementById("pflicht").style.display="block"; return; }
+  // Ergebnistypen aus dem jeweils anderen Pfad bereinigen
+  const erlaubt = istGespraech()?ERGEBNIS_G:ERGEBNISTYPEN;
+  A.ergebnistypen = A.ergebnistypen.filter(t=>erlaubt[t]);
+  if(A.anlassTyp==="konfliktklaerung" && !istGespraech() && A.konfliktGroesse && !A.groesse) A.groesse = A.konfliktGroesse;
+  schritt = 2; render();
+}
+
+/* ---- Gesprächs-Pfad: G1–G5 ---- */
+function renderG12(){
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 2 sur ${maxSchritt()-1} · Guide de conversation</div>
+    <h1>L'autre personne</h1>
+    <div class="card"><div class="frage"><span class="nr">G1</span>Qui est l'autre personne – et quelle est votre relation ? *</div>
+      ${optButtons("g1Beziehung",G_BEZIEHUNG,false)}
+      <div class="sub" style="margin-top:10px">Qui est-elle, qu'est-ce que tu devrais garder en tête ?</div>
+      ${feld("g1Wer","P. ex. : salarié depuis 6 ans, très loyal, dernièrement débordé …",3)}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">G2</span>Que sait ou soupçonne l'autre personne ?</div>
+      ${optButtons("g2Wissen",G_WISSEN,false)}
+      ${feld("g2Frei","Optionnel : à quoi le vois-tu ?",2)}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis votre type de relation – cela oriente les indications sur le ton et l'équité.</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=1;render()">Retour</button>
+      <button class="primary" onclick="if(!A.g1Beziehung){document.getElementById('pflicht').style.display='block'}else{A.g2Wissen=A.g2Wissen||'unklar';schritt=3;render()}">Suivant</button>
+    </div>`;}
+function renderG345(){
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 3 sur ${maxSchritt()-1} · Guide de conversation</div>
+    <h1>Enjeux & cadre</h1>
+    <div class="card"><div class="frage"><span class="nr">G3</span>Qu'est-ce qui est en jeu – pour les deux parties ?</div>
+      <div class="sub">Qu'est-ce qui est le plus difficile pour toi là-dedans ? Qu'est-ce qui t'inquiète le plus ?</div>
+      ${feld("g3Spiel","Avec tes propres mots …",3)}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">G4</span>Cadre *</div>
+      <div class="sub">Combien de temps ?</div>${optButtons("g4Dauer",G_DAUERN,false)}
+      <div class="sub">Où ?</div>${optButtons("g4Ort",G_ORTE,false)}
+      <div class="sub">À quel moment de la journée ? (optionnel)</div>
+      <div class="inline"><input type="text" class="kurzfeld" placeholder="p. ex. le matin" value="${esc(A.g4Zeit)}" oninput="A.g4Zeit=this.value;speichern()"></div>
+      <p class="hint" style="margin-top:8px">Règle générale pour les mauvaises nouvelles : tôt dans la journée, tôt dans la semaine – la personne a besoin d'espace après, et toi d'être disponible.</p>
+    </div>
+    <div class="card"><div class="frage"><span class="nr">G5</span>Y a-t-il autre chose d'important ?</div>
+      <div class="sub">Obligations légales · tierces personnes · antécédents · aspects culturels …</div>
+      ${feld("g5Sonst","Optionnel …",3)}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis la durée et le lieu – ils orientent les blocs horaires et les indications de cadre.</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=2;render()">Retour</button>
+      <button class="primary" onclick="if(!A.g4Dauer||!A.g4Ort){document.getElementById('pflicht').style.display='block'}else{schritt=4;render()}">Créer le guide</button>
+    </div>`;}
+
+/* ---- Gruppen-Pfad: Blöcke B–E ---- */
+function renderBlockB(){
+  const g = parseGroesse(A.groesse);
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 2 sur ${maxSchritt()-1}</div>
+    <h1>Avec qui ?</h1>
+    <div class="card"><div class="frage"><span class="nr">F3</span>À qui as-tu affaire ? *</div>
+      ${optButtons("ebene",EBENEN,false)}
+      <div class="inline" style="margin-top:8px"><label>Combien de personnes ?</label><input type="text" class="kurzfeld" placeholder="p. ex. 8 ou 12–15" value="${esc(A.groesse)}" oninput="A.groesse=this.value;speichern()" onchange="render()"></div>
+      ${g?`<p class="hint" style="margin-top:6px">Compris : ${g.von===g.bis?g.von+" personnes":g.von+" à "+g.bis+" personnes"} – l'Atelier de Sessions compte avec toute la fourchette.</p>`:(A.groesse?'<p class="hint" style="margin-top:6px;color:var(--c-monk)">Impossible de lire ça comme un nombre – essaie p. ex. « 8 », « 3–4 » ou « env. 20 ».</p>':"")}
+      <div class="sub" style="margin-top:10px">Qui exactement est présent ? Fonctions, mélange, particularités.</div>
+      ${feld("wer","P. ex. : conseil d'administration plus deux nouveaux bénévoles, mélange salarié/bénévole …",3)}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F4</span>À quel point les gens se connaissent-ils – et quel est le niveau de confiance ?</div>
+      <div class="sub">Familiarité</div>${optButtons("bekannt",BEKANNT,false)}
+      <div class="sub">Niveau de confiance</div>${optButtons("vertrauen",VERTRAUEN,false)}
+      ${(A.vertrauen==="duenn"||A.vertrauen==="belastet")?`<div class="sub" style="margin-top:10px">Y a-t-il un passif ? Des tensions ? Qui connaît qui ?</div>${feld("geschichte","Ce qui est important sur les antécédents …",3)}`:""}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F5</span>Quel est ton rôle ?</div>
+      ${optButtons("rolle",ROLLEN,false)}
+      <div class="sub">Qu'attend-on de toi – et que peux-tu (ne pas) faire ?</div>
+      ${feld("rolleFrei","Optionnel …",2)}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis le niveau et indique la taille du groupe (p. ex. « 8 » ou « 12–15 »).</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=1;render()">Retour</button>
+      <button class="primary" onclick="weiterB()">Suivant</button>
+    </div>`;}
+function weiterB(){
+  if(!A.ebene || !parseGroesse(A.groesse)){ document.getElementById("pflicht").style.display="block"; return; }
+  A.bekannt=A.bekannt||"etwas"; A.vertrauen=A.vertrauen||"neutral"; A.rolle=A.rolle||"extern";
+  if(AUTO_PHASE[A.anlassTyp]){ A.phase = AUTO_PHASE[A.anlassTyp]; schritt = 4; }
+  else schritt = 3;
+  render();
+}
+function renderBlockC(){
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 3 sur ${maxSchritt()-1}</div>
+    <h1>Où en êtes-vous dans le processus ?</h1>
+    <div class="card"><div class="frage"><span class="nr">F6</span>Dans quelle phase du processus global êtes-vous ? *</div>
+      ${optButtons("phase",PHASEN,false)}
+      <div class="sub">Que s'est-il passé jusqu'à présent ? Que se passe-t-il après ?</div>
+      ${feld("prozess","Optionnel mais précieux : le processus alentour …",3)}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis une phase – elle oriente le choix des méthodes.</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=2;render()">Retour</button>
+      <button class="primary" onclick="if(!A.phase){document.getElementById('pflicht').style.display='block'}else{schritt=4;render()}">Suivant</button>
+    </div>`;}
+function renderBlockD(){
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 4 sur ${maxSchritt()-1}</div>
+    <h1>Cadre</h1>
+    <div class="card"><div class="frage"><span class="nr">F7</span>Combien de temps avez-vous ? *</div>
+      ${optButtons("dauer",DAUERN,false)}
+      <div class="inline" style="margin-top:8px"><label>Début (optionnel) :</label><input type="time" value="${A.von}" oninput="A.von=this.value;speichern()"></div>
+      <div class="hint" style="margin-top:8px">L'Atelier de Sessions planifie délibérément au large : peu de méthodes, de vraies pauses – en réalité tout dure plus longtemps que prévu.</div>
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F8</span>En ligne, en présentiel ou hybride ? *</div>
+      ${optButtons("ort",{praesenz:"en présentiel",online:"en ligne",hybrid:"hybride"},false)}
+      <div class="sub">Salle, matériel, possibilité de bouger, technique ?</div>
+      ${feld("raum","Optionnel …",2)}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F9</span>Énergie & ambiance – deux choses différentes</div>
+      <div class="sub">À quel moment de la journée – avec quelle énergie les gens arrivent-ils ?</div>
+      ${optButtons("energie",ENERGIEN,false)}
+      <div class="sub">Et comment se sentent-ils par rapport au sujet ou à la rencontre ?</div>
+      ${optButtons("stimmung",STIMMUNGEN,false)}
+      ${feld("energieFrei","Optionnel : ce que tu sais sur l'ambiance & les besoins …",2)}
+    </div>
+    <div class="pflicht" id="pflicht">Choisis la durée et le lieu.</div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=${AUTO_PHASE[A.anlassTyp]?2:3};render()">Retour</button>
+      <button class="primary" onclick="weiterD()">Suivant</button>
+    </div>`;}
+function weiterD(){
+  if(!A.dauer || !A.ort){ document.getElementById("pflicht").style.display="block"; return; }
+  A.energie=A.energie||"mitten"; A.stimmung=A.stimmung||"neutral";
+  schritt=5; render();
+}
+function renderBlockE(){
+  M.innerHTML = `${progressHtml()}
+    <div class="eyebrow">Étape 5 sur ${maxSchritt()-1}</div>
+    <h1>Ta touche personnelle</h1>
+    <div class="card"><div class="frage"><span class="nr">F10</span>Comment voulez-vous travailler ? (max. 2)</div>
+      ${optButtons("haltung",HALTUNGEN,true,2)}
+      <div class="sub" style="margin-top:12px">Et combien de méthode peut-il y avoir ?</div>
+      ${optButtons("appetit",APPETIT,false)}
+      <div class="sub" style="margin-top:12px">Y a-t-il des interdits ? Qu'est-ce qui a (ou n'a pas) déjà fonctionné avec ce groupe ?</div>
+      ${feld("nogos","Optionnel …",2)}
+    </div>
+    <div class="card"><div class="frage"><span class="nr">F11</span>Y a-t-il encore autre chose d'important ?</div>
+      <div class="sub">Langues · hiérarchie dans la salle · aspects culturels · accessibilité · personnes particulières …</div>
+      ${feld("sonst","Optionnel …",3)}
+    </div>
+    <div class="nav">
+      <button class="secondary" onclick="schritt=4;render()">Retour</button>
+      <button class="primary" onclick="if(A.haltung.length===0)A.haltung=['gespraechsnah'];A.appetit=A.appetit||'gezielt';schritt=6;render()">Créer le déroulé</button>
+    </div>`;}
+
+/* =====================================================================
+   UI · Ergebnis: Session-Bogen bzw. Gesprächsleitfaden
+   ===================================================================== */
+const PRINTKOPF = `<div class="printkopf"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="31" fill="#1F1A14"/><path d="M 50 13 A 37 37 0 1 1 28.3 20.1" fill="none" stroke="#C9A961" stroke-width="13" stroke-linecap="round"/><circle cx="50" cy="50" r="10.5" fill="#4A2B5C"/></svg><span class="wm">Impact <span class="up">Up</span></span><span class="tg">Institut d'Orientation vers l'Impact Systémique · ${FEATURE_NAME}</span></div>`;
+
+function quellenHtml(m){
+  return (m.quellen||[]).map(q=>q.url?`<a href="${q.url}" target="_blank" rel="noopener">${esc(q.titel)}</a>`:esc(q.titel)+(q.typ==="buch"?" (livre)":"")).join(" · ");
+}
+function kurzTitel(){
+  const a=(A.anlass||"").trim();
+  return a.length>70 ? a.slice(0,67)+"…" : (a||"Déroulé de session");
+}
+function renderErgebnis(){
+  if(istGespraech()) return renderLeitfaden();
+  return renderBogen();
+}
+
+/* ---------- Übungs-Box V2 ---------- */
+function uebungBox(e){
+  const m = e.methode, ph = uebungPhasen(e), bo = breakoutText(m);
+  const warum = warumSatz(m), achtung = achtungSatz(m);
+  const fokus = (m.fokusfragen||[]).slice(0,3);
+  const ef = fokus.length?[]:ernteFragen();
+  return `<div class="uebung"><div class="ukopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="uname">${m.name}</span><span class="ulabel">${e.label}</span></div>
+    <p class="kurz">${esc(m.kurz)}</p>
+    ${warum?`<div class="warum"><b>Pourquoi ici :</b> ${esc(warum)}</div>`:""}
+    <p class="phasenzeile">Répartition approximative : ~${ph.erkl} min d'introduction & d'explication (questions bienvenues) · ~${ph.durch} min de déroulement · ~${ph.ernte} min de récolte & d'échange</p>
+    ${(m.typ==="werkzeug" && m.beispiel)?`<h4>Comment ça sonne concrètement</h4><p class="kurz">${esc(m.beispiel)}</p>`:""}
+    <h4>Comment procéder</h4>
+    <ol>${m.schritte.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+    ${bo?`<h4>Groupes</h4><p class="kurz">${esc(bo)}</p>`:""}
+    ${fokus.length?`<h4>Questions de focus pour cette méthode</h4><ul>${fokus.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>`:""}
+    ${ef.length?`<h4>Questions pour la récolte ensuite</h4><ul>${ef.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>`:""}
+    ${m.mini_form?`<h4>Si tu veux une version plus petite</h4><p class="kurz">${esc(m.mini_form)}</p>`:""}
+    ${m.hinweise?`<h4>À quoi faire attention</h4><p class="kurz">${esc(m.hinweise)}</p>`:""}
+    ${achtung?`<p class="achtung"><b>Attention dans ta situation :</b> ${esc(achtung)}</p>`:""}
+    <p class="quel"><b>Pour approfondir :</b> ${quellenHtml(m)}</p>
+  </div>`;
+}
+/* Strukturiertes Gespräch (Methoden-Appetit „so wenig wie möglich“) */
+function kernGespraechBox(e){
+  const m = e.methodeLeise;
+  const fokus = m ? (m.fokusfragen||[]).slice(0,3) : [];
+  const fragen = fokus.length?fokus:ernteFragen();
+  return `<div class="uebung"><div class="ukopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="uname">Conversation structurée</span><span class="ulabel">${e.label}</span></div>
+    <p class="kurz">Tu voulais le moins de méthode possible – ici, c'est donc la conversation elle-même qui porte, soutenue par quelques bonnes questions. N'annonce pas de méthode, pose simplement des questions, écoute, creuse. Rassemblez d'abord tous les points de vue, puis mettez de l'ordre, et allez seulement ensuite vers un résultat.</p>
+    <h4>Trois questions comme armature</h4>
+    <ul>${fragen.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>
+    ${m&&m.mini_form?`<h4>Si tu veux quand même un petit élément</h4><p class="kurz">${esc(m.mini_form)}${m.name?` <i>(extrait de : ${esc(m.name)})</i>`:""}</p>`:""}
+    ${m?`<p class="quel"><b>Ces questions sont tirées de :</b> ${esc(m.name)} – ${quellenHtml(m)}</p>`:""}
+  </div>`;
+}
+/* Eine Brille für diesen Tag (Rahmenmodell / Haltung als Hintergrund) */
+function brilleBox(m){
+  if(!m) return "";
+  let text = m.kurz||"";
+  if(text.length>320) text = text.slice(0,317)+"…";
+  const q = (m.quellen||[]).find(x=>x.url) || (m.quellen||[])[0];
+  return `<div class="brille"><span class="blabel">Un regard pour cette journée · trame de fond, pas un exercice</span>
+    <div class="btitel">${m.name}</div>
+    <p>${esc(text)}</p>
+    ${m.beispiel?`<p class="hint">${esc(m.beispiel.length>200?m.beispiel.slice(0,197)+"…":m.beispiel)}</p>`:""}
+    ${q?`<p class="quel"><b>Source :</b> ${q.url?`<a href="${q.url}" target="_blank" rel="noopener">${esc(q.titel)}</a>`:esc(q.titel)}</p>`:""}
+  </div>`;
+}
+
+/* ---------- Session-Bogen (Gruppen-Pfad) ---------- */
+function renderBogen(){
+  zaehleRun();
+  bogen = baueBogen();
+  const begleit = begleitStrukturen();
+  const brille = brilleFuerTag();
+
+  let blocks = "";
+  bogen.forEach(e=>{
+    if(e.tag){blocks+=`<div class="tagkopf">Jour ${e.tag}</div>`;return;}
+    if(e.pause){blocks+=`<div class="block pause"><div class="kopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="titel" style="font-size:1.05rem">${e.label}</span></div></div>`;return;}
+    if(e.kerngespraech){ blocks += kernGespraechBox(e); return; }
+    if(e.offen){
+      blocks+=`<div class="uebung offen"><div class="ukopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="uname">Encore ouvert : ${e.label}</span></div>
+      <p class="kurz">L'Atelier de Sessions n'a pas de recommandation claire pour cet emplacement – c'est un bon endroit pour la conversation. ${e.kandidaten.length?"Deux candidats :":""}</p>
+      ${e.kandidaten.map(k=>`<p class="kurz">• <b>${k.name}</b> – ${esc(k.kurz)}</p>`).join("")}
+      <p class="kurz">Nous serions ravis d'y réfléchir avec toi jusqu'au bout – <a href="https://impact-up.org" target="_blank" rel="noopener">impact-up.org</a>.</p></div>`;
+      return;
+    }
+    if(e.methode){ blocks += uebungBox(e); return; }
+    blocks+=`<div class="block"><div class="kopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="titel">${e.label}</span></div>
+      <p class="kurz">${esc(e.text||"")}</p>
+      ${e.fragen&&e.fragen.length?`<p class="idee"><b>Idées de questions pour le tour :</b> ${e.fragen.map(esc).join(" · ")}</p>`:""}
+      ${e.idee?`<p class="idee"><b>Idée pour cela :</b> ${e.idee.name} – ${esc(e.idee.kurz)}${(e.idee.quellen||[]).find(q=>q.url)?` (<a href="${e.idee.quellen.find(q=>q.url).url}" target="_blank" rel="noopener">plus</a>)`:""}</p>`:""}
+    </div>`;
+  });
+
+  M.innerHTML = `${progressHtml()}
+  ${PRINTKOPF}
+  <div class="eyebrow">Ton déroulé de session</div>
+  <h1>${esc(kurzTitel())}</h1>
+  <div class="kontextzeile">
+    <b>${ANLASS_KURZ[A.anlassTyp]||""}</b> · ${EBENEN[A.ebene]||""} · ${groesseLabel()} · ${DAUERN[A.dauer].label} · ${({praesenz:"en présentiel",online:"en ligne",hybrid:"hybride"})[A.ort]} · Phase : ${PHASEN[A.phase]||""}<br>
+    Énergie : ${ENERGIEN[A.energie]||""} · Ambiance : ${STIMMUNGEN[A.stimmung]||""}<br>
+    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].label).join(", "):""}
+  </div>
+  ${brilleBox(brille)}
+  ${begleit.length?`<div class="begleit"><h3>Structures d'accompagnement – expliquées une fois, valables toute la journée</h3><ul>${begleit.map(b=>`<li><b>${b.name} :</b> ${esc(b.text)}${b.quelle?` (<a href="${b.quelle.url}" target="_blank" rel="noopener">plus</a>)`:""}</li>`).join("")}</ul></div>`:""}
+  ${blocks}
+  ${aktionenHtml()}`;}
+
+/* ---------- Gesprächsleitfaden (Gesprächs-Pfad) ---------- */
+function renderLeitfaden(){
+  zaehleRun();
+  const L = baueLeitfaden();
+  let blocks = "";
+  L.bloecke.forEach(b=>{
+    blocks += `<div class="block"><div class="kopf">${b.min?`<span class="dauer">~${b.min} min</span>`:`<span class="dauer">${b.vor?"avant":"après"}</span>`}<span class="titel">${b.titel}</span></div>
+      ${b.text?`<p class="kurz">${esc(b.text)}</p>`:""}
+      ${b.punkte?`<ul style="margin:8px 0 4px 22px;font-size:.95rem">${b.punkte.map(p=>`<li style="margin:5px 0">${esc(p)}</li>`).join("")}</ul>`:""}
+      ${b.saetze?b.saetze.map(s=>s.startsWith('"')||s.startsWith('«')?`<div class="wsatz">${esc(s)}</div>`:`<p class="kurz">${esc(s)}</p>`).join(""):""}
+    </div>`;
+  });
+  let werkzeuge = "";
+  L.werkzeuge.forEach(m=>{
+    werkzeuge += `<div class="uebung"><div class="ukopf"><span class="uname">${m.name}</span><span class="ulabel">Une posture pour t'appuyer dans cette conversation</span></div>
+      <p class="kurz">${esc(m.kurz)}</p>
+      ${m.beispiel?`<h4>Comment ça sonne concrètement</h4><div class="wsatz">${esc(m.beispiel)}</div>`:""}
+      ${m.mini_form?`<h4>La plus petite version</h4><p class="kurz">${esc(m.mini_form)}</p>`:""}
+      <p class="quel"><b>Pour approfondir :</b> ${quellenHtml(m)}</p>
+    </div>`;
+  });
+  M.innerHTML = `${progressHtml()}
+  ${PRINTKOPF}
+  <div class="eyebrow">Ton guide de conversation</div>
+  <h1>${esc(kurzTitel())}</h1>
+  <div class="kontextzeile">
+    <b>${L.T.titelLeitfaden.replace("Guide de conversation : ","")}</b> · ${G_DAUERN[A.g4Dauer]||A.g4Dauer+" min"} · ${G_ORTE[A.g4Ort]||""} · Relation : ${G_BEZIEHUNG[A.g1Beziehung]||""} · La personne ${({weiss:"le sait déjà",ahnt:"s'en doute",ueberrascht:"sera surprise",unklar:"– on ne sait pas ce qu'elle sait"})[A.g2Wissen||"unklar"]}<br>
+    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNIS_G[t]).map(t=>ERGEBNIS_G[t].label).join(", "):""}
+  </div>
+  <div class="block"><div class="kopf"><span class="titel">Relation & équité</span></div>
+    <p class="kurz">${esc(G_BEZIEHUNG_HINWEIS[A.g1Beziehung]||"")}</p>
+    <p class="kurz">${esc(G_ORT_HINWEIS[A.g4Ort]||"")}</p>
+    ${A.g3Spiel?`<p class="idee"><b>Ce qui est en jeu pour toi :</b> ${esc(A.g3Spiel)} – dis-le une fois à voix haute pour toi-même avant la conversation. Ce qui est nommé ne te prendra plus par surprise en pleine conversation.</p>`:""}
+    ${A.g5Sonst?`<p class="idee"><b>À garder aussi en tête :</b> ${esc(A.g5Sonst)}</p>`:""}
+  </div>
+  ${blocks}
+  ${L.durchatmen?`<div class="block pause"><div class="kopf"><span class="titel" style="font-size:1.05rem">À 90 minutes : un moment de respiration conscient</span></div><p class="kurz">Pas une pause au sens d'un atelier – mais à un moment donné, vers le milieu, réduire le rythme une fois : « Arrêtons-nous un instant – où en sommes-nous ? » Cela remet de l'ordre pour les deux parties.</p></div>`:""}
+  <h2>Ce qui te soutient : ${L.werkzeuge.length===1?"un outil":"deux outils"} pour ta posture</h2>
+  <p class="lead" style="font-size:.95rem">Pas des méthodes à « exécuter » – mais des postures que tu peux saisir à tout moment de la conversation, surtout quand ça devient difficile.</p>
+  ${werkzeuge}
+  ${aktionenHtml()}`;}
+
+/* ---------- Aktionen: Download & Kontakt ---------- */
+function aktionenHtml(){
+  const frei = (function(){ try{ return localStorage.getItem(LS_FREI)==="1"; }catch(e){ return false; } })();
+  const zweitButton = frei
+    ? `<button class="secondary" onclick="A=leereAntworten();schritt=0;try{localStorage.removeItem(LS_KEY)}catch(e){};window.scrollTo(0,0);render()">Planifier une nouvelle session</button>`
+    : `<button class="secondary" onclick="location.href='../kontakt.fr.html'">Planifier une autre session ? Contacte-nous</button>`;
+  return `<div class="aktionen">
+    <button class="primary" onclick="downloadPdf(this)">Télécharger</button>
+    ${zweitButton}
+  </div>`;
+}
+
+/* ---------- Ein-Klick-PDF (html2pdf, kein Druckdialog) ---------- */
+function downloadPdf(btn){
+  if(typeof html2pdf === "undefined"){ // Fallback, falls CDN nicht geladen
+    window.print(); return;
+  }
+  const label = btn ? btn.textContent : "";
+  if(btn){ btn.disabled = true; btn.textContent = "Création du PDF …"; }
+  const klon = document.getElementById("main").cloneNode(true);
+  klon.querySelectorAll(".progress,.aktionen,.nav,.fussnote").forEach(el=>el.remove());
+  const pk = klon.querySelector(".printkopf"); if(pk) pk.style.display = "flex";
+  const wrap = document.createElement("div");
+  wrap.className = "pdfdoc";
+  wrap.style.cssText = "position:fixed;left:-99999px;top:0;width:760px;background:#fff;color:#1F1A14;padding:8px 4px;font-family:'Inter',system-ui,sans-serif";
+  wrap.appendChild(klon);
+  const st = document.createElement("style");
+  st.textContent = `
+    .pdfdoc .card,.pdfdoc .block,.pdfdoc .uebung,.pdfdoc .begleit{background:#fff;border-color:#ccc;box-shadow:none}
+    .pdfdoc .uebung{border:1.5px solid #C9A961;border-left:5px solid #C9A961}
+    .pdfdoc .block.pause{background:#f4f4f4}
+    .pdfdoc .wsatz,.pdfdoc .uebung .warum{background:#f4f4f4}
+    .pdfdoc .brille{background:#fff;border-color:#4A2B5C}
+    .pdfdoc .kontextzeile{background:#fff;color:#1F1A14;border:1.5px solid #C9A961}
+    .pdfdoc .kontextzeile b{color:#8A5E3B}
+    .pdfdoc .cta{background:#fff;color:#1F1A14;border:1.5px solid #C9A961}
+    .pdfdoc .cta .ctitel{color:#8A5E3B}
+    .pdfdoc .cta a{color:#1F1A14}
+    .pdfdoc .printkopf{display:flex;align-items:center;gap:10px;border-bottom:1.5px solid #C9A961;padding-bottom:8px;margin-bottom:16px}
+    .pdfdoc .printkopf .wm{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:20px}
+    .pdfdoc .printkopf .wm .up{color:#C9A961}
+    .pdfdoc .printkopf .tg{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#555;margin-left:auto}
+    .pdfdoc .printkopf svg{width:30px;height:30px}
+  `;
+  document.head.appendChild(st);
+  document.body.appendChild(wrap);
+  const datum = new Date().toISOString().slice(0,10);
+  const opt = {
+    margin: [10,10,12,10],
+    filename: `session-ablauf-${datum}.pdf`,
+    image: {type:"jpeg", quality:0.96},
+    html2canvas: {scale:2, useCORS:true, backgroundColor:"#ffffff"},
+    jsPDF: {unit:"mm", format:"a4", orientation:"portrait"},
+    pagebreak: {mode:["css","legacy"], avoid:[".uebung",".block",".brille",".cta",".kontextzeile"]}
+  };
+  const done = ()=>{ wrap.remove(); st.remove(); if(btn){ btn.disabled=false; btn.textContent=label; } };
+  html2pdf().set(opt).from(klon).save().then(done).catch(done);
+}
+
+/* ---------- Run-Zähler ---------- */
+function zaehleRun(){
+  if(_runCounted) return;
+  _runCounted = true;
+  const n = parseInt(localStorage.getItem(LS_RUNS)||"0",10);
+  localStorage.setItem(LS_RUNS, String(n+1));
+}
+
+window.addEventListener("beforeprint",()=>document.querySelectorAll("details").forEach(d=>d.open=true));
+render();
+</script>
+  <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
