@@ -27,8 +27,8 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.3/dist/html2pdf.bundle.min.js" defer></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="../nav.css?v=1">
 <style>
 :root{
   --c-gold:#C9A961; --c-moss-deep:#2D4A2B; --c-moss-500:#4A6843; --c-moss-300:#6B8A5A;
@@ -44,53 +44,13 @@ body{background:var(--c-parchment);color:var(--c-ink);font-family:var(--font-bod
 a{color:var(--c-ink);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:2px}
 a:hover{text-decoration-thickness:2px}
 
-/* ---------- Kanonische Site-Nav (sticky) ---------- */
-.sitenav{position:sticky;top:0;z-index:1000;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;background:rgba(21,39,26,.92);backdrop-filter:blur(8px);padding:10px 24px;font-size:.9rem;border-bottom:1px solid rgba(201,169,97,.35)}
-.sitenav a{color:var(--c-parchment);text-decoration:none}
-.sitenav a:hover{text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:3px}
-.sitenav .nv-group{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
-.sitenav .nv-right{margin-left:auto}
-.sitenav .nv-current{color:var(--c-gold);font-weight:600}
-.sitenav .nv-drop{position:relative}
-/* Hover-Bruecke: fuellt den 6px-Spalt zwischen Trigger und Panel, sonst klappt das Menue beim Runterfahren zu */
-.sitenav .nv-drop::before{content:"";position:absolute;left:-10px;right:-10px;top:100%;height:14px;display:none}
-.sitenav .nv-drop:hover::before,.sitenav .nv-drop:focus-within::before{display:block}
-.sitenav .nv-drop>a::after{content:" \25BE";color:var(--c-gold)}
-.sitenav .nv-drop>ul{position:absolute;left:0;top:100%;min-width:250px;list-style:none;margin:6px 0 0;padding:8px 0;background:var(--c-moss-deep);border:1px solid rgba(201,169,97,.4);border-radius:var(--radius);box-shadow:0 8px 24px rgba(0,0,0,.32);z-index:1001;display:none}
-.sitenav .nv-drop:hover>ul,.sitenav .nv-drop:focus-within>ul{display:block}
-.sitenav .nv-drop a{display:block;padding:8px 16px;font-size:.88rem;white-space:nowrap}
-.sitenav .nv-lang>a{border:1px solid var(--c-gold);border-radius:var(--radius);padding:2px 9px;color:var(--c-gold)}
-/* Sprachmenue: schmales Panel, rechtsbuendig unter dem Kuerzel */
-.sitenav .nv-lang>ul{min-width:0;left:auto;right:0}
-.nv-menu{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;flex:1}
-@media(max-width:760px){.sitenav{font-size:.82rem;padding:8px 14px}.sitenav .nv-right{margin-left:0}}
-
-/* ---------- Mobil-Nav: Burger + aufklappbares Menü (<820px) ---------- */
-.nv-burger{display:none;margin-left:auto;background:none;border:none;padding:8px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;width:40px;height:36px;flex:none}
-.nv-burger span{display:block;height:2px;width:100%;background:var(--c-parchment);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
-.nv-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nv-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.nv-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:820px){
-  .sitenav.nv-open{max-height:100dvh;overflow-y:auto}
-  .nv-burger{display:flex}
-  .nv-menu{display:none;width:100%;flex-basis:100%}
-  .sitenav.nv-open .nv-menu{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
-  .sitenav .nv-menu .nv-group{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%}
-  .sitenav .nv-right{margin-left:0}
-  .sitenav .nv-drop{width:100%}
-  .sitenav .nv-drop>ul{position:static;box-shadow:none;border:none;background:none;margin:0 0 4px;padding:0 0 0 14px;display:block}
-  .sitenav a{display:block;padding:9px 0}
-  .sitenav .nv-drop a{padding:7px 0}
-  .sitenav .nv-lang{margin-top:6px}
-  .sitenav .nv-lang>a{display:inline-block}
-}
-
-main{max-width:860px;margin:0 auto;padding:32px 20px 96px}
+/* Site-Nav: gemeinsame Quelle ../nav.css (identisch mit den Hauptseiten);
+   nav.js baut Hamburger + Mobile-Drawer. Nav ist fixed -> main braucht Abstand oben. */
+main{max-width:860px;margin:0 auto;padding:88px 20px 96px}
 .eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--c-stone-700);margin-bottom:6px}
 h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.15;margin-bottom:10px}
 h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px 0 8px}
-.lead{max-width:62ch;margin-bottom:16px}
+.lead{max-width:62ch;margin-bottom:16px;font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.5}
 .hint{font-size:.9rem;color:var(--c-stone-700)}
 
 .progress{display:flex;gap:4px;margin:22px 0 28px}
@@ -117,9 +77,9 @@ textarea:focus,input:focus{outline:2px solid var(--c-gold)}
 .inline label{font-size:.9rem}
 .inline input[type=text].kurzfeld{width:150px}
 .inline input[type=time]{width:130px}
-.vorschlag{font-size:.9rem;background:var(--c-parchment-300);border-radius:var(--radius);padding:10px 12px;margin:8px 0 4px}
+.vorschlag{font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5;background:var(--c-parchment-300);border-radius:var(--radius);padding:10px 12px;margin:8px 0 4px}
 
-.nav{display:flex;justify-content:space-between;margin-top:26px}
+.wnav{display:flex;justify-content:space-between;margin-top:26px}
 button.primary,button.secondary{font-family:var(--font-body);font-weight:600;font-size:1rem;padding:12px 24px;border-radius:var(--radius);cursor:pointer}
 button.primary{background:var(--c-moss-deep);color:var(--c-parchment);border:1px solid var(--c-gold)}
 button.primary:hover{background:var(--c-gold);color:var(--c-ink)}
@@ -129,7 +89,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .pflicht{color:var(--c-monk);font-size:.85rem;display:none;margin-top:8px}
 
 /* ---------- Bogen ---------- */
-.kontextzeile{background:var(--c-moss-deep);color:var(--c-parchment);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;font-size:.92rem}
+.kontextzeile{background:var(--c-moss-deep);color:var(--c-parchment);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5}
 .kontextzeile b{color:var(--c-gold)}
 .block{background:var(--c-parchment-100);border:1px solid var(--c-parchment-300);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:12px;padding:16px 20px;page-break-inside:avoid}
 .block.pause{background:var(--c-parchment-300);border-style:dashed;box-shadow:none}
@@ -137,10 +97,10 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .block .zeit{font-family:var(--font-display);font-weight:600;font-size:1.15rem;color:var(--c-moss-deep);white-space:nowrap}
 .block .dauer{font-size:.8rem;color:var(--c-stone-700)}
 .block .titel{font-family:var(--font-display);font-weight:600;font-size:1.25rem}
-.block .kurz{margin:6px 0 2px;font-size:.95rem}
+.block .kurz{margin:6px 0 2px;font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5}
 .block .idee{font-size:.9rem;margin-top:6px;color:var(--c-ink)}
 .block .idee b{color:var(--c-stone-700)}
-.wsatz{font-size:.95rem;background:var(--c-parchment-300);border-left:3px solid var(--c-gold);border-radius:var(--radius);padding:8px 12px;margin:8px 0;font-style:italic}
+.wsatz{font-family:var(--font-display);font-weight:400;font-size:1.1rem;line-height:1.45;background:var(--c-parchment-300);border-left:3px solid var(--c-gold);border-radius:var(--radius);padding:8px 12px;margin:8px 0;font-style:italic}
 
 /* Übungs-Box: das Herzstück, deutlich abgehoben */
 .uebung{border:2px solid var(--c-gold);border-left:6px solid var(--c-gold);background:var(--c-parchment-100);margin:18px 0;padding:20px 22px;page-break-inside:avoid;box-shadow:var(--shadow)}
@@ -148,29 +108,29 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .uebung .uname{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--c-moss-deep)}
 .uebung .ulabel{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-stone-700);margin-left:auto}
 .uebung h4{font-family:var(--font-body);font-weight:600;font-size:.95rem;margin:12px 0 4px;color:var(--c-stone-700)}
-.uebung ol,.uebung ul{margin:4px 0 4px 22px;font-size:.95rem}
+.uebung ol,.uebung ul{margin:4px 0 4px 22px;font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5}
 .uebung .phasenzeile{font-size:.85rem;color:var(--c-stone-700);margin-top:2px}
 .uebung .quel{font-size:.88rem;margin-top:12px}
-.uebung .warum{font-size:.95rem;background:var(--c-parchment-300);border-radius:var(--radius);padding:8px 12px;margin:8px 0}
+.uebung .warum{font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5;background:var(--c-parchment-300);border-radius:var(--radius);padding:8px 12px;margin:8px 0}
 .uebung .warum b{color:var(--c-stone-700)}
-.uebung .achtung{font-size:.9rem;color:var(--c-monk);margin-top:8px}
+.uebung .achtung{font-family:var(--font-display);font-weight:400;font-size:1rem;line-height:1.45;color:var(--c-monk);margin-top:8px}
 
 
 /* Brille-Kasten: Rahmenmodell / Haltung als Hintergrund, nie als Übung */
 .brille{background:var(--c-parchment-100);border:1px solid var(--c-purple-deep);border-left:5px solid var(--c-purple-deep);border-radius:var(--radius);padding:16px 20px;margin:18px 0;page-break-inside:avoid}
 .brille .btitel{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--c-purple-deep)}
 .brille .blabel{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-stone-700)}
-.brille p{font-size:.92rem;margin-top:6px}
+.brille p{font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5;margin-top:6px}
 .brille .quel{font-size:.85rem;margin-top:8px}
 
 .begleit{background:var(--c-parchment-100);border:1px solid var(--c-stone-300);border-radius:var(--radius);padding:18px 22px;margin-bottom:22px}
 .begleit h3{font-family:var(--font-display);font-weight:600;font-size:1.25rem;margin-bottom:8px}
-.begleit li{margin:6px 0 6px 20px;font-size:.95rem}
+.begleit li{margin:6px 0 6px 20px;font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.5}
 
 .cta{background:var(--c-moss-deep);color:var(--c-parchment);border-radius:var(--radius);padding:22px 24px;margin:26px 0;page-break-inside:avoid}
 .cta .ctitel{font-family:var(--font-display);font-weight:600;font-size:1.35rem;color:var(--c-gold);margin-bottom:6px}
 .cta a{color:var(--c-parchment);text-decoration-color:var(--c-gold)}
-.cta p{font-size:.95rem}
+.cta p{font-family:var(--font-display);font-weight:400;font-size:1.1rem;line-height:1.5}
 
 .tagkopf{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--c-purple-deep);margin:26px 0 12px}
 .aktionen{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
@@ -182,7 +142,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .printkopf{display:none}
 @media print{
   body{background:#fff;color:#1F1A14;font-size:10.5pt}
-  .sitenav,.progress,.aktionen,.nav,.fussnote{display:none!important}
+  .progress,.aktionen,.wnav,.fussnote{display:none!important}
   main{max-width:100%;padding:0}
   .printkopf{display:flex;align-items:center;gap:10px;border-bottom:1.5px solid #C9A961;padding-bottom:8px;margin-bottom:16px}
   .printkopf svg{width:28px;height:28px}
@@ -204,60 +164,46 @@ button:disabled{opacity:.45;cursor:not-allowed}
 </head>
 <body>
 
-<nav class="sitenav" aria-label="Navegación principal">
-  <a class="nv-wordmark" href="../index.es.html#top" aria-label="Impact Up - inicio" style="display:inline-flex;align-items:center;gap:7px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.18rem;font-weight:600;line-height:1">
-    <img src="../assets/favicon.svg?v=2" alt="" style="width:22px;height:auto">
-    <span>Impact <em style="font-style:normal;color:var(--c-gold)">Up</em></span>
-  </a>
-  <button type="button" class="nv-burger" aria-label="Menú" aria-expanded="false" aria-controls="nv-menu"><span></span><span></span><span></span></button>
-  <div class="nv-menu" id="nv-menu">
-    <div class="nv-group">
-      <a href="../index.es.html#weitergehen">Perspectivas</a>
-      <a href="../index.es.html#angebote">Servicios</a>
-      <a href="../index.es.html#quellen">Campos de Impacto</a>
-      <a href="../index.es.html#about">Sobre Nosotros</a>
-    </div>
-    <div class="nv-group nv-right">
-      <span class="nv-drop"><a href="../impulse.es.html">Impulsos</a>
-        <ul><li><a href="../impulse.es.html">El primer impulso llega pronto</a></li></ul>
-      </span>
-      <span class="nv-drop"><a href="../konstrukte.es.html">Constructos</a>
-        <ul>
-          <li><a href="../impact-up-philosophie.es.html">Filosofía de Impact Up</a></li>
-          <li><a href="../systemische-wirkungsorientierung.es.html">Orientación al Impacto Sistémico</a></li>
-          <li><a href="../systems-change.es.html">Systems Change</a></li>
-        </ul>
-      </span>
-      <a class="nv-current" href="index.es.html" aria-current="page">Taller de Sesiones</a>
-      <a href="../kontakt.es.html">Contacto</a>
-      <span class="nv-drop nv-lang">
-        <a href="index.es.html" aria-label="Elegir idioma">ES</a>
-        <ul>
-          <li><a href="index.html" hreflang="de" aria-label="Zur deutschen Version">DE</a></li>
-          <li><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></li>
-          <li><a href="index.fr.html" hreflang="fr" aria-label="Passer à la version française">FR</a></li>
-        </ul>
-      </span>
-    </div>
+<nav class="nav">
+  <div class="nav__left">
+    <a class="nav__wordmark" href="../index.es.html" aria-label="Impact Up - inicio">
+      <img class="nav__wordmark-mark" src="../assets/favicon.svg?v=2" alt="">
+      <span class="nav__wordmark-name">Impact <em>Up</em></span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="../index.es.html#weitergehen">Perspectivas</a></li>
+      <li><a href="../index.es.html#angebote">Servicios</a></li>
+      <li><a href="../index.es.html#quellen">Campos de Impacto</a></li>
+      <li><a href="../index.es.html#about">Sobre Nosotros</a></li>
+    </ul>
   </div>
+  <ul class="nav__links nav__links--right">
+    <li class="nav__item--has-dropdown">
+      <a href="../impulse.es.html">Impulsos</a>
+      <ul class="nav__dropdown">
+        <li><a href="../impulse.es.html">El primer impulso llega pronto</a></li>
+      </ul>
+    </li>
+    <li class="nav__item--has-dropdown">
+      <a href="../konstrukte.es.html">Constructos</a>
+      <ul class="nav__dropdown">
+        <li><a href="../impact-up-philosophie.es.html">Filosofía de Impact Up</a></li>
+        <li><a href="../systemische-wirkungsorientierung.es.html">Orientación al Impacto Sistémico</a></li>
+        <li><a href="../systems-change.es.html">Systems Change</a></li>
+      </ul>
+    </li>
+    <li><a class="is-active" href="index.es.html" aria-current="page">Taller de Sesiones</a></li>
+    <li><a href="../kontakt.es.html">Contacto</a></li>
+    <li class="nav__lang nav__item--has-dropdown">
+      <a href="index.es.html" aria-label="Elegir idioma">ES</a>
+      <ul class="nav__dropdown">
+        <li><a href="index.html" hreflang="de" aria-label="Zur deutschen Version">DE</a></li>
+        <li><a href="index.en.html" hreflang="en" aria-label="Switch to English version">EN</a></li>
+        <li><a href="index.fr.html" hreflang="fr" aria-label="Passer à la version française">FR</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
-<script>
-(function(){
-  var nav = document.querySelector('.sitenav');
-  var burger = nav.querySelector('.nv-burger');
-  var menu = nav.querySelector('.nv-menu');
-  burger.addEventListener('click', function(){
-    var open = nav.classList.toggle('nv-open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  menu.addEventListener('click', function(e){
-    if (e.target.tagName === 'A' && nav.classList.contains('nv-open')) {
-      nav.classList.remove('nv-open');
-      burger.setAttribute('aria-expanded', 'false');
-    }
-  });
-})();
-</script>
 
 <main id="main"></main>
 
@@ -1070,7 +1016,7 @@ function renderStart(){
   <p class="lead">Detrás hay una parte de nuestro conocimiento de trabajo, traducido en bloques. Un mecanismo sencillo los combina para ti – deliberadamente mezclados con algo de libertad, una primera inspiración para seguir pensando. Aquí no hay ninguna IA planificando tu sesión: recibes bloques de construcción, y lo que hagas con ellos depende de ti.</p>
   <p class="lead">Si te gusta la herramienta y te ayuda, nos encantaría recibir un poco de retroalimentación. Y si no encuentras aquí lo que necesitas, nos alegraría aún más – entonces podemos verlo juntos contigo, como personas. Solo escríbenos.</p>
   <p class="lead hint">Unos 5 minutos. Tus respuestas se quedan en tu dispositivo.</p>
-  <div class="nav"><span></span><button class="primary" onclick="schritt=1;render()">Planificar una sesión</button></div>
+  <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Planificar una sesión</button></div>
   <div class="cta" style="margin-top:36px">
     <div class="ctitel">El oficio empieza donde termina el plan.</div>
     <p>Sentir lo que un grupo necesita en el momento, cambiar de rumbo cuando pasa algo inesperado, sostener el espacio cuando las cosas se ponen serias – eso es exactamente lo que aportamos: como sparring para tu preparación, o como facilitación a tu lado. <a href="../kontakt.es.html">Contáctanos</a></p>
@@ -1128,7 +1074,7 @@ function renderBlockA(){
       ${(!gespr && A.ergebnistypen.length)?`<div class="vorschlag">${A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].hint).join(" · ")}</div>`:""}
     </div>
     <div class="pflicht" id="pflicht">Elige el tipo de ocasión y completa los campos marcados con * – guían todo lo que sigue.</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=0;render()">Atrás</button>
       <button class="primary" onclick="weiterA()">Siguiente</button>
     </div>`;}
@@ -1156,7 +1102,7 @@ function renderG12(){
       ${feld("g2Frei","Opcional: ¿qué te hace pensar eso?",2)}
     </div>
     <div class="pflicht" id="pflicht">Selecciona cómo se relacionan – esto guía las notas sobre tono y equidad.</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=1;render()">Atrás</button>
       <button class="primary" onclick="if(!A.g1Beziehung){document.getElementById('pflicht').style.display='block'}else{A.g2Wissen=A.g2Wissen||'unklar';schritt=3;render()}">Siguiente</button>
     </div>`;}
@@ -1180,7 +1126,7 @@ function renderG345(){
       ${feld("g5Sonst","Opcional …",3)}
     </div>
     <div class="pflicht" id="pflicht">Elige duración y lugar – guían los bloques de tiempo y las notas sobre el escenario.</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=2;render()">Atrás</button>
       <button class="primary" onclick="if(!A.g4Dauer||!A.g4Ort){document.getElementById('pflicht').style.display='block'}else{schritt=4;render()}">Crear la guía</button>
     </div>`;}
@@ -1209,7 +1155,7 @@ function renderBlockB(){
       ${feld("rolleFrei","Opcional …",2)}
     </div>
     <div class="pflicht" id="pflicht">Elige el nivel e indica el tamaño del grupo (p. ej. "8" o "12–15").</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=1;render()">Atrás</button>
       <button class="primary" onclick="weiterB()">Siguiente</button>
     </div>`;}
@@ -1230,7 +1176,7 @@ function renderBlockC(){
       ${feld("prozess","Opcional pero valioso: el proceso alrededor …",3)}
     </div>
     <div class="pflicht" id="pflicht">Elige una fase – guía la selección de métodos.</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=2;render()">Atrás</button>
       <button class="primary" onclick="if(!A.phase){document.getElementById('pflicht').style.display='block'}else{schritt=4;render()}">Siguiente</button>
     </div>`;}
@@ -1256,7 +1202,7 @@ function renderBlockD(){
       ${feld("energieFrei","Opcional: lo que sepas sobre el ánimo y las necesidades …",2)}
     </div>
     <div class="pflicht" id="pflicht">Elige duración y lugar.</div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=${AUTO_PHASE[A.anlassTyp]?2:3};render()">Atrás</button>
       <button class="primary" onclick="weiterD()">Siguiente</button>
     </div>`;}
@@ -1280,7 +1226,7 @@ function renderBlockE(){
       <div class="sub">Idiomas · jerarquía en la sala · aspectos culturales · accesibilidad · personas específicas …</div>
       ${feld("sonst","Opcional …",3)}
     </div>
-    <div class="nav">
+    <div class="wnav">
       <button class="secondary" onclick="schritt=4;render()">Atrás</button>
       <button class="primary" onclick="if(A.haltung.length===0)A.haltung=['gespraechsnah'];A.appetit=A.appetit||'gezielt';schritt=6;render()">Crear el plan</button>
     </div>`;}
@@ -1454,7 +1400,7 @@ function downloadPdf(btn){
   const label = btn ? btn.textContent : "";
   if(btn){ btn.disabled = true; btn.textContent = "Creando PDF …"; }
   const klon = document.getElementById("main").cloneNode(true);
-  klon.querySelectorAll(".progress,.aktionen,.nav,.fussnote").forEach(el=>el.remove());
+  klon.querySelectorAll(".progress,.aktionen,.wnav,.fussnote").forEach(el=>el.remove());
   const pk = klon.querySelector(".printkopf"); if(pk) pk.style.display = "flex";
   const wrap = document.createElement("div");
   wrap.className = "pdfdoc";
@@ -1504,6 +1450,7 @@ function zaehleRun(){
 window.addEventListener("beforeprint",()=>document.querySelectorAll("details").forEach(d=>d.open=true));
 render();
 </script>
+  <script src="../nav.js?v=3"></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
