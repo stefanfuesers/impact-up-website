@@ -501,7 +501,7 @@ a { color: inherit; text-decoration: none; }
 .quelle h3 { flex-basis: 100%; }
 /* Button kompakt, unter dem Text (per order hinter den Ausklapp-Block sortiert) */
 .quelle .philo-more { order: 1; }
-.quelle .philo-more-btn { order: 2; margin: -27px 0 0 auto; padding: 6px 12px; font-size: 10px; }
+.quelle .philo-more-btn { order: 2; margin: -21px 0 0 auto; padding: 6px 12px; font-size: 10px; }
 .quelle .philo-more-btn.expanded { margin: 8px 0 0 auto; }
 /* Eingeklappt sind zwei Textzeilen als Anfang sichtbar (…), Rest klappt aus */
 .quelle .philo-more {
@@ -569,7 +569,7 @@ a { color: inherit; text-decoration: none; }
 .weitergehen {
   background: var(--moss);
   color: var(--parchment);
-  padding: 90px 32px 90px;
+  padding: 70px 32px 70px;
 }
 .weitergehen .eyebrow { color: var(--gold); }
 .weitergehen .section-title { color: var(--parchment); max-width: 720px; }
@@ -750,7 +750,7 @@ a { color: inherit; text-decoration: none; }
    ============================================ */
 .angebote {
   background: var(--parchment);
-  padding: 90px 32px 80px;
+  padding: 70px 32px 60px;
 }
 .angebote .section-title { text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; }
 .angebote .lead { text-align: center; max-width: 720px; margin: 0 auto 64px; }
