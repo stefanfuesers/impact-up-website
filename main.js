@@ -285,27 +285,21 @@ MAINS.forEach(n => {
   mainMeshes.push(m);
 });
 
-// ---------- 5 kleine Impact-Up-Knoten mit Wortmarke ----------
+// ---------- Kleine Impact-Up-Knoten: die Mark (Favicon) statt Gold-Kugel ----------
+// Gold-Ring + lila Kugel brauchen keine Beschriftung und zeigen,
+// dass Impact Up an diese Verbindungen will.
+const markTex = new THREE.TextureLoader().load('assets/favicon-192.png');
+markTex.anisotropy = 4;
+markTex.minFilter = THREE.LinearFilter;
+
 const impactMeshes = [];
 IMPACTS.forEach((node, i) => {
-  const m = makeSphere(node, true);
+  const mat = new THREE.SpriteMaterial({ map: markTex, transparent: true, depthWrite: false });
+  const m = new THREE.Sprite(mat);
+  m.position.set(...node.pos);
+  m.userData.baseScale = node.radius * 3.4; // Ring deutlich größer als die alte Kugel, damit er lesbar bleibt
+  m.scale.setScalar(m.userData.baseScale);
   group.add(m);
-  // Halo
-  const haloGeo = new THREE.SphereGeometry(node.radius * 1.8, 24, 24);
-  const haloMat = new THREE.MeshBasicMaterial({
-    color: 0xC9A961, transparent: true, opacity: 0.22, side: THREE.BackSide,
-  });
-  const halo = new THREE.Mesh(haloGeo, haloMat);
-  m.add(halo);
-
-  // Wortmarke „Impact Up" weiß, klein, direkt auf der Kugel
-  const lbl = makeSprite('Impact\nUp',
-    { fontSize: 64, fontWeight: 700, fontFamily: "'Cormorant Garamond', Georgia, serif",
-      color: '#FFFFFF', shadow: 'rgba(31,26,20,0.9)', shadowBlur: 14 },
-    { x: 0.85, y: 0.42 });
-  lbl.position.copy(m.position);
-  group.add(lbl);
-  m.userData.label = lbl;
   m.userData.def = node;
   m.userData.phase = i * 0.7;
   impactMeshes.push(m);
@@ -513,9 +507,9 @@ function tick() {
     m.material.emissive.copy(m.material.color);
   });
 
-  // Hero-Pulsation: jede Impact-Kugel mit eigener Phase
+  // Hero-Pulsation: jede Impact-Mark mit eigener Phase
   impactMeshes.forEach((im, i) => {
-    im.scale.setScalar(1 + Math.sin(t * 1.4 + i * 0.9) * 0.07);
+    im.scale.setScalar(im.userData.baseScale * (1 + Math.sin(t * 1.4 + i * 0.9) * 0.07));
   });
 
   // Auto-rotate
