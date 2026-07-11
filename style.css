@@ -501,7 +501,8 @@ a { color: inherit; text-decoration: none; }
 .quelle h3 { flex-basis: 100%; }
 /* Button kompakt, unter dem Text (per order hinter den Ausklapp-Block sortiert) */
 .quelle .philo-more { order: 1; }
-.quelle .philo-more-btn { order: 2; margin: 8px 0 0 auto; padding: 6px 12px; font-size: 10px; }
+.quelle .philo-more-btn { order: 2; margin: -27px 0 0 auto; padding: 6px 12px; font-size: 10px; }
+.quelle .philo-more-btn.expanded { margin: 8px 0 0 auto; }
 /* Eingeklappt sind zwei Textzeilen als Anfang sichtbar (…), Rest klappt aus */
 .quelle .philo-more {
   flex-basis: 100%;
@@ -511,14 +512,19 @@ a { color: inherit; text-decoration: none; }
 }
 .quelle .philo-more p {
   margin-top: 12px;
-  /* Eingeklappt 1,5 Zeilen sichtbar (Zeile = 1.6 x 15px) */
-  max-height: 2.4em;
+  /* Eingeklappt zwei volle Zeilenhöhen; Zeile 2 nur halbbreit (Float-Loch), Button daneben */
+  max-height: 3.2em;
   overflow: hidden;
 }
 .quelle .philo-more.expanded p {
   max-height: none;
   overflow: visible;
 }
+/* Loch rechts in Zeile 2: Push-Float (0 breit, 1 Zeile hoch) + Hole-Float darunter */
+.quelle .q-push { float: right; width: 0; height: 1.6em; }
+.quelle .q-hole { float: right; clear: right; width: 55%; height: 1.6em; }
+.quelle .philo-more.expanded .q-push,
+.quelle .philo-more.expanded .q-hole { display: none; }
 @media (max-width: 1200px) {
   .quellen__legende { grid-template-columns: repeat(2, 1fr); }
 }
@@ -1220,7 +1226,7 @@ a { color: inherit; text-decoration: none; }
    ============================================ */
 .about {
   background: var(--parchment);
-  padding: 90px 32px 48px;
+  padding: 90px 32px 24px;
 }
 .about__intro {
   max-width: 1080px;
@@ -1280,14 +1286,15 @@ a { color: inherit; text-decoration: none; }
   border-top: 4px solid var(--gold);
   border-left: 4px solid var(--gold);
 }
+/* Untere Ecken: Abstand zum Inhalt = 12px, wie die Ecke oben links */
 .about__intro::after {
-  bottom: -12px;
+  bottom: -17px;
   right: -16px;
   border-bottom: 4px solid var(--gold);
   border-right: 4px solid var(--gold);
 }
 .about__bio::after {
-  bottom: -12px;
+  bottom: 6px;
   right: -16px;
   border-bottom: 4px solid var(--gold);
   border-right: 4px solid var(--gold);
@@ -1584,7 +1591,8 @@ a { color: inherit; text-decoration: none; }
 /* Stimmen / Referenzen-Block – Pinnwand aus zwei ungleich großen Zetteln */
 .stimmen {
   background: #F4ECD8;
-  padding: 32px 0 72px;
+  /* Rueckt nah an den Stefan-Block darueber */
+  padding: 8px 0 72px;
 }
 .stimmen__list {
   display: flex;
