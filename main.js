@@ -42,7 +42,7 @@
 })();
 
 // ============================================
-// Impact Up · 3D-Netz Drei Quellen
+// Impact Up · 3D-Netz Vier Wirkungsfelder
 // three.js v0.149 (UMD, global THREE)
 // ============================================
 
@@ -64,7 +64,7 @@ const scene = new THREE.Scene();
 scene.background = null;
 
 const camera = new THREE.PerspectiveCamera(45, wrapper.clientWidth / wrapper.clientHeight, 0.1, 1000);
-camera.position.set(0, 0, 15.1);
+camera.position.set(0, 0, 15.8);
 
 let renderer;
 try {
@@ -93,7 +93,9 @@ const NETZ_LABELS = {
     frieden: 'Frieden &\nGewaltfreiheit',
     friedenSubs: ['Würde', 'GFK', 'Kooperation', 'Konstruktiv', 'Menschlichkeit'],
     sozial: 'Soziale\nTeilhabe',
-    sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'Demokratie', 'NANK'],
+    sozialSubs: ['Grund-\neinkommen', 'Gemeinwohl', 'NANK', 'Wohnen &\nNahrung', 'Kultur &\nMobilität'],
+    demokratie: 'Demokratie',
+    demokratieSubs: ['Dialog', 'Partizipation', 'Systemisches\nKonsensieren', 'Digitale\nDemokratie', 'Entscheidungs-\nfindung'],
   },
   en: {
     erde: 'Earth as\nEcosystem',
@@ -101,7 +103,9 @@ const NETZ_LABELS = {
     frieden: 'Peace &\nNon-Violence',
     friedenSubs: ['Dignity', 'NVC', 'Cooperation', 'Constructive', 'Humanity'],
     sozial: 'Social\nParticipation',
-    sozialSubs: ['Basic\nIncome', 'Common\nGood', 'Democracy', 'New Work\nNew Culture'],
+    sozialSubs: ['Basic\nIncome', 'Common\nGood', 'New Work\nNew Culture', 'Housing &\nFood', 'Culture &\nMobility'],
+    demokratie: 'Democracy',
+    demokratieSubs: ['Dialogue', 'Participation', 'Systemic\nConsensing', 'Digital\nDemocracy', 'Decision-\nMaking'],
   },
   es: {
     erde: 'Ecosistema\nTierra',
@@ -109,7 +113,9 @@ const NETZ_LABELS = {
     frieden: 'Paz y\nNo Violencia',
     friedenSubs: ['Dignidad', 'CNV', 'Cooperación', 'Constructivo', 'Humanidad'],
     sozial: 'Participación\nSocial',
-    sozialSubs: ['Renta\nbásica', 'Bien común', 'Democracia', 'NANK'],
+    sozialSubs: ['Renta\nbásica', 'Bien común', 'NANK', 'Vivienda y\nalimentación', 'Cultura y\nmovilidad'],
+    demokratie: 'Democracia',
+    demokratieSubs: ['Diálogo', 'Participación', 'Consenso\nsistémico', 'Democracia\ndigital', 'Toma de\ndecisiones'],
   },
   fr: {
     erde: 'Écosystème\nTerre',
@@ -117,7 +123,9 @@ const NETZ_LABELS = {
     frieden: 'Paix &\nNon-violence',
     friedenSubs: ['Dignité', 'CNV', 'Coopération', 'Constructif', 'Humanité'],
     sozial: 'Participation\nsociale',
-    sozialSubs: ['Revenu\nde base', 'Bien commun', 'Démocratie', 'NANK'],
+    sozialSubs: ['Revenu\nde base', 'Bien commun', 'NANK', 'Logement &\nalimentation', 'Culture &\nmobilité'],
+    demokratie: 'Démocratie',
+    demokratieSubs: ['Dialogue', 'Participation', 'Consensus\nsystémique', 'Démocratie\nnumérique', 'Prise de\ndécision'],
   },
 };
 const L = NETZ_LABELS[document.documentElement.lang] || NETZ_LABELS.de;
@@ -128,7 +136,7 @@ const MAINS = [
     id: 'erde',
     label: L.erde,
     color: 0x2D4A2B, // Moos-Tief – Grün (war Impact, jetzt Erde)
-    pos: [-6.2, 2.1, -2.6],
+    pos: [-6.6, 2.2, -2.4],
     radius: 0.78,
     subs: L.erdeSubs,
   },
@@ -136,7 +144,7 @@ const MAINS = [
     id: 'frieden',
     label: L.frieden,
     color: 0x1F1A14, // Tinte – wird halb-transparent (durchscheinend)
-    pos: [6.2, 1.7, 2.4],
+    pos: [6.6, 2.0, 2.2],
     radius: 0.78,
     subs: L.friedenSubs,
     transparent: true,
@@ -145,41 +153,59 @@ const MAINS = [
     id: 'sozial',
     label: L.sozial,
     color: 0x4A2B5C, // Reflexionslila – wird halb-transparent
-    pos: [0, -2.9, -1.6],
+    pos: [-3.2, -3.1, 1.6],
     radius: 0.78,
     subs: L.sozialSubs,
+    transparent: true,
+  },
+  {
+    id: 'demokratie',
+    label: L.demokratie,
+    color: 0x2B4A5C, // Demokratie-Blau – tiefes Blau in der Tonlage von Moos und Lila
+    pos: [3.4, -2.9, -1.8],
+    radius: 0.78,
+    subs: L.demokratieSubs,
     transparent: true,
   },
 ];
 
 // Goldene Impact-Up-Knoten, klein und verteilt
 // 2 mittig (innerer Cluster, leicht durch z-Tiefe getrennt)
-// 3 weiter außen, je eine außerhalb der Teilsysteme
+// 4 weiter außen, je eine außerhalb der Teilsysteme
 const IMPACTS = [
   { color: 0xC9A961, pos: [-0.8,  0.4,  1.4], radius: 0.24 },  // mittig vorne
   { color: 0xC9A961, pos: [ 0.9, -0.3, -1.6], radius: 0.24 },  // mittig hinten
   { color: 0xC9A961, pos: [-8.0,  2.6, -2.0], radius: 0.24 },  // außen bei Erde
   { color: 0xC9A961, pos: [ 8.0,  2.4,  2.6], radius: 0.24 },  // außen bei Frieden
-  { color: 0xC9A961, pos: [-0.4, -4.4, -1.4], radius: 0.24 },  // außen bei Sozial
+  { color: 0xC9A961, pos: [-3.8, -4.7,  1.4], radius: 0.24 },  // außen bei Sozial
+  { color: 0xC9A961, pos: [ 4.0, -4.5, -2.2], radius: 0.24 },  // außen bei Demokratie
 ];
 
-// Sub-Knoten generieren – in einer Wolke um den Hauptknoten
+// Sub-Knoten generieren – als kreisende Satelliten um den Hauptknoten
+// (Orbital-Parameter; die Position wird pro Frame in tick() aus der
+//  aktuellen Position des Hauptknotens berechnet)
 const SUBS = [];
 MAINS.forEach((parent, pi) => {
   const n = parent.subs.length;
   parent.subs.forEach((text, i) => {
-    const angle = (i / n) * Math.PI * 2 + pi * 0.4;
-    const dist = 2.1;
+    const angle0 = (i / n) * Math.PI * 2 + pi * 0.4;
+    const dist = 1.9 + (i % 3) * 0.3;
+    const speed = 0.30 - (dist - 1.9) * 0.18; // innere Bahnen schneller, wie Planeten
     SUBS.push({
       label: text,
       color: parent.color,
+      // Initialposition bei t=0 – dieselbe Formel wie in tick(),
+      // damit die Verbindungslinien von Anfang an stimmen
       pos: [
-        parent.pos[0] + Math.cos(angle) * dist,
-        parent.pos[1] + Math.sin(angle) * dist * 0.75,
-        parent.pos[2] + Math.sin(angle * 1.3 + pi) * 0.9,
+        parent.pos[0] + Math.cos(angle0) * dist,
+        parent.pos[1] + Math.sin(angle0) * dist * 0.75,
+        parent.pos[2] + Math.sin(angle0 * 1.3 + pi) * 0.9,
       ],
       radius: 0.30,
       parentIdx: pi,
+      angle0: angle0,
+      dist: dist,
+      speed: speed,
     });
   });
 });
@@ -323,7 +349,7 @@ function addLine(meshA, meshB, opts) {
   lines.push(ln);
 }
 
-// Impact-Knoten ↔ Hauptknoten: jeder Impact verbunden mit allen drei Quellen
+// Impact-Knoten ↔ Hauptknoten: jeder Impact verbunden mit allen vier Wirkungsfeldern
 impactMeshes.forEach(im => {
   mainMeshes.forEach(mm => {
     addLine(im, mm, { color: 0x4A2B5C, opacity: 0.7, dashSize: 0.22, gapSize: 0.1 });
@@ -346,17 +372,19 @@ subMeshes.forEach(s => {
 });
 
 // Einige Sub-Knoten ↔ einer Impact-Kugel (sparsam, Vernetzung in den Cluster)
-[0, 4, 7].forEach((subIdx, k) => {
+[0, 4, 9, 14].forEach((subIdx, k) => {
   const im = impactMeshes[k % impactMeshes.length];
   if (subMeshes[subIdx]) addLine(im, subMeshes[subIdx], {
     color: 0x4A2B5C, opacity: 0.25, dashSize: 0.08, gapSize: 0.14,
   });
 });
 
-// Hauptknoten untereinander (Triangulation – das gespannte Dach)
-addLine(mainMeshes[0], mainMeshes[1], { color: 0x4A2B5C, opacity: 0.55, dashSize: 0.18, gapSize: 0.12 });
-addLine(mainMeshes[1], mainMeshes[2], { color: 0x4A2B5C, opacity: 0.55, dashSize: 0.18, gapSize: 0.12 });
-addLine(mainMeshes[2], mainMeshes[0], { color: 0x4A2B5C, opacity: 0.55, dashSize: 0.18, gapSize: 0.12 });
+// Hauptknoten untereinander (alle Paare – das gespannte Dach)
+for (let i = 0; i < mainMeshes.length; i++) {
+  for (let j = i + 1; j < mainMeshes.length; j++) {
+    addLine(mainMeshes[i], mainMeshes[j], { color: 0x4A2B5C, opacity: 0.55, dashSize: 0.18, gapSize: 0.12 });
+  }
+}
 
 // Sub ↔ Sub Cross-System: jeder Sub mit 3 Subs aus anderen Quellen verbunden
 // (zeigt: Konzepte sind nicht system-exklusiv)
@@ -411,17 +439,20 @@ function onResize() {
 window.addEventListener('resize', onResize);
 
 // ---------- Animation ----------
-const allDynamic = [...mainMeshes, ...impactMeshes, ...subMeshes];
+// Nur Haupt- und Impact-Knoten schweben frei – die Sub-Knoten kreisen
+// als Satelliten um ihren Hauptknoten (eigene Schleife in tick())
+const allDynamic = [...mainMeshes, ...impactMeshes];
 const baseY = allDynamic.map(m => m.position.y);
 const baseX = allDynamic.map(m => m.position.x);
 const baseZ = allDynamic.map(m => m.position.z);
 const clock = new THREE.Clock();
 
-// Sub-Knoten cyclen zwischen den drei Quellfarben (Erde / Frieden / Sozial)
+// Sub-Knoten cyclen zwischen den vier Quellfarben (Erde / Frieden / Sozial / Demokratie)
 const SUB_COLORS = [
   new THREE.Color(0x2D4A2B), // Moos-Tief – Erde
   new THREE.Color(0x1F1A14), // Tinte – Frieden
   new THREE.Color(0x4A2B5C), // Reflexionslila – Sozial
+  new THREE.Color(0x2B4A5C), // Demokratie-Blau
 ];
 function blendSubColor(t, phase, out) {
   const period = 5; // Sekunden pro Übergang
@@ -436,13 +467,29 @@ function blendSubColor(t, phase, out) {
 function tick() {
   const t = clock.getElapsedTime();
 
-  // Knoten schweben
+  // Haupt- und Impact-Knoten schweben
   allDynamic.forEach((m, i) => {
     const phase = i * 1.3;
-    const amp = m.userData.def && m.userData.def.parentIdx !== undefined ? 0.10 : 0.18;
+    const amp = 0.18;
     m.position.x = baseX[i] + Math.cos(t * 0.4 + phase) * amp;
     m.position.y = baseY[i] + Math.sin(t * 0.6 + phase) * amp;
     m.position.z = baseZ[i] + Math.sin(t * 0.5 + phase * 0.7) * amp;
+    if (m.userData.label) {
+      m.userData.label.position.x = m.position.x;
+      m.userData.label.position.y = m.position.y + (m.userData.labelOffset || 0);
+      m.userData.label.position.z = m.position.z;
+    }
+  });
+
+  // Sub-Knoten kreisen als Satelliten um die aktuelle (schwebende)
+  // Position ihres Hauptknotens – sie ziehen mit und kreisen zugleich
+  subMeshes.forEach(m => {
+    const d = m.userData.def;
+    const parent = mainMeshes[d.parentIdx];
+    const theta = d.angle0 + t * d.speed;
+    m.position.x = parent.position.x + Math.cos(theta) * d.dist;
+    m.position.y = parent.position.y + Math.sin(theta) * d.dist * 0.75;
+    m.position.z = parent.position.z + Math.sin(theta * 1.3 + d.parentIdx) * 0.9;
     if (m.userData.label) {
       m.userData.label.position.x = m.position.x;
       m.userData.label.position.y = m.position.y + (m.userData.labelOffset || 0);
@@ -460,7 +507,7 @@ function tick() {
     ln.material.opacity = ln.userData.baseOpacity * (0.85 + 0.25 * Math.sin(t * 0.9 + ln.userData.a.id));
   });
 
-  // Sub-Knoten: langsamer Farbwechsel zwischen den drei Quellfarben
+  // Sub-Knoten: langsamer Farbwechsel zwischen den vier Quellfarben
   subMeshes.forEach((m, i) => {
     blendSubColor(t, i * 1.4, m.material.color);
     m.material.emissive.copy(m.material.color);
