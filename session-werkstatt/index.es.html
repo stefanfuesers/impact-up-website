@@ -52,6 +52,10 @@ h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.
 h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px 0 8px}
 .lead{max-width:62ch;margin-bottom:16px;font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.5}
 .hint{font-size:.9rem;color:var(--c-stone-700)}
+.lead.breit{max-width:none;text-align:justify}
+.mehr-toggle{display:flex;justify-content:flex-end;margin:-4px 0 16px}
+.mehr-toggle button{font-family:var(--font-body);font-size:.9rem;background:none;border:none;cursor:pointer;color:var(--c-stone-700);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:2px;padding:0}
+.mehr-toggle button:hover{text-decoration-thickness:2px}
 
 .progress{display:flex;gap:4px;margin:22px 0 28px}
 .progress span{flex:1;height:6px;background:var(--c-parchment-300);border-radius:var(--radius)}
@@ -306,6 +310,7 @@ const G_ORTE = {buero:"Oficina", neutral:"espacio neutral", online:"en línea", 
 const LS_KEY = "methodenkompass_v2_engine2";
 let A = ladeAntworten();
 let schritt = A._schritt || 0;
+let introOffen = false;
 let bogen = null;
 
 function leereAntworten(){return {
@@ -1012,9 +1017,10 @@ function renderStart(){
   M.innerHTML = `
   <div class="eyebrow">Una herramienta de Impact Up</div>
   <h1>Taller de Sesiones</h1>
-  <p class="lead">El buen impacto surge siempre en el intercambio con personas, y solo con personas se puede trabajar de forma sistémica. Aquí, en el Taller de Sesiones, armas en pocos minutos un desarrollo tentativo para una necesidad concreta. Respondes unas pocas preguntas – de qué se trata, dónde se encuentran, qué quieren lograr – y al final obtienes algunos métodos, indicaciones de qué tener en cuenta, y dos o tres enlaces para profundizar.</p>
-  <p class="lead">Detrás hay una parte de nuestro conocimiento de trabajo, traducido en bloques. Un mecanismo sencillo los combina para ti – deliberadamente mezclados con algo de libertad, de modo que siga siendo «solo» una primera inspiración para seguir pensando. Aquí no hay ninguna IA planificando tu sesión: recibes bloques de construcción, y lo que hagas con ellos depende de ti.</p>
-  <p class="lead">Si te gusta la herramienta y te ayuda, nos encantaría recibir un poco de retroalimentación. Y si no encuentras aquí lo que necesitas, nos alegraría aún más – entonces podemos verlo juntos contigo, como personas. Solo escríbenos.</p>
+  <p class="lead breit">El buen impacto surge siempre en el intercambio con personas, y solo con personas se puede trabajar de forma sistémica. Aquí, en el Taller de Sesiones, armas en pocos minutos un desarrollo tentativo para una necesidad concreta. Respondes unas pocas preguntas – de qué se trata, dónde se encuentran, qué quieren lograr – y al final obtienes algunos métodos, indicaciones de qué tener en cuenta, y dos o tres enlaces para profundizar.</p>
+  ${introOffen?`<p class="lead breit">Detrás hay una parte de nuestro conocimiento de trabajo, traducido en bloques. Un mecanismo sencillo los combina para ti – deliberadamente mezclados con algo de libertad, de modo que siga siendo «solo» una primera inspiración para seguir pensando. Aquí no hay ninguna IA planificando tu sesión: recibes bloques de construcción, y lo que hagas con ellos depende de ti.</p>
+  <p class="lead breit">Si te gusta la herramienta y te ayuda, nos encantaría recibir un poco de retroalimentación. Y si no encuentras aquí lo que necesitas, nos alegraría aún más – entonces podemos verlo juntos contigo, como personas. Solo escríbenos.</p>`:""}
+  <div class="mehr-toggle"><button type="button" onclick="introOffen=!introOffen;render()">${introOffen?"Mostrar menos":"Leer más"}</button></div>
   <p class="lead hint">Unos 5 minutos. Tus respuestas se quedan en tu dispositivo.</p>
   <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Planificar una sesión</button></div>
   <div class="cta" style="margin-top:36px">

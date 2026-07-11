@@ -51,6 +51,10 @@ h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.
 h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px 0 8px}
 .lead{max-width:62ch;margin-bottom:16px;font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.5}
 .hint{font-size:.9rem;color:var(--c-stone-700)}
+.lead.breit{max-width:none;text-align:justify}
+.mehr-toggle{display:flex;justify-content:flex-end;margin:-4px 0 16px}
+.mehr-toggle button{font-family:var(--font-body);font-size:.9rem;background:none;border:none;cursor:pointer;color:var(--c-stone-700);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:2px;padding:0}
+.mehr-toggle button:hover{text-decoration-thickness:2px}
 
 .progress{display:flex;gap:4px;margin:22px 0 28px}
 .progress span{flex:1;height:6px;background:var(--c-parchment-300);border-radius:var(--radius)}
@@ -305,6 +309,7 @@ const G_ORTE = {buero:"Büro", neutral:"neutraler Raum", online:"online", gehen:
 const LS_KEY = "methodenkompass_v2_engine2";
 let A = ladeAntworten();
 let schritt = A._schritt || 0;
+let introOffen = false;
 let bogen = null;
 
 function leereAntworten(){return {
@@ -1011,9 +1016,10 @@ function renderStart(){
   M.innerHTML = `
   <div class="eyebrow">Ein Werkzeug von Impact Up</div>
   <h1>Session-Werkstatt</h1>
-  <p class="lead">Gute Wirkung entsteht immer im Austausch mit Menschen, und systemisch arbeiten kann man auch nur mit Menschen. Hier in der Session-Werkstatt baust du dir in wenigen Minuten eine kleine, fiktive Session zu einem konkreten Anliegen. Du beantwortest ein paar Fragen – worum es geht, wo ihr steht, was ihr erreichen wollt – und am Ende bekommst du einige Methoden, Hinweise, worauf du achten kannst, und zwei, drei Links zum Weiterlesen.</p>
-  <p class="lead">Dahinter steckt ein Stück unseres Arbeitswissens, übersetzt in Bausteine. Ein einfacher Mechanismus stellt sie für dich zusammen – bewusst etwas wild gewürfelt, sodass es „nur“ eine erste Inspiration zum Weiterdenken bleibt. Hier plant keine KI deine Session: Du bekommst Bausteine, und was daraus wird, entscheidest du.</p>
-  <p class="lead">Wenn dir das Werkzeug gefällt und weiterhilft, freuen wir uns über eine kurze Rückmeldung. Und wenn du hier nicht findest, was du brauchst, freuen wir uns erst recht – dann schauen wir als Menschen gemeinsam mit dir darauf. Schreib uns einfach.</p>
+  <p class="lead breit">Gute Wirkung entsteht immer im Austausch mit Menschen, und systemisch arbeiten kann man auch nur mit Menschen. Hier in der Session-Werkstatt baust du dir in wenigen Minuten eine kleine, fiktive Session zu einem konkreten Anliegen. Du beantwortest ein paar Fragen – worum es geht, wo ihr steht, was ihr erreichen wollt – und am Ende bekommst du einige Methoden, Hinweise, worauf du achten kannst, und zwei, drei Links zum Weiterlesen.</p>
+  ${introOffen?`<p class="lead breit">Dahinter steckt ein Stück unseres Arbeitswissens, übersetzt in Bausteine. Ein einfacher Mechanismus stellt sie für dich zusammen – bewusst etwas wild gewürfelt, sodass es „nur“ eine erste Inspiration zum Weiterdenken bleibt. Hier plant keine KI deine Session: Du bekommst Bausteine, und was daraus wird, entscheidest du.</p>
+  <p class="lead breit">Wenn dir das Werkzeug gefällt und weiterhilft, freuen wir uns über eine kurze Rückmeldung. Und wenn du hier nicht findest, was du brauchst, freuen wir uns erst recht – dann schauen wir als Menschen gemeinsam mit dir darauf. Schreib uns einfach.</p>`:""}
+  <div class="mehr-toggle"><button type="button" onclick="introOffen=!introOffen;render()">${introOffen?"Einklappen":"Weiterlesen"}</button></div>
   <p class="lead hint">Etwa 5 Minuten. Deine Eingaben bleiben auf deinem Gerät.</p>
   <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Session planen</button></div>
   <div class="cta" style="margin-top:36px">

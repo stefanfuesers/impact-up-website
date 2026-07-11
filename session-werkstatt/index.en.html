@@ -51,6 +51,10 @@ h1{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,4vw,2.
 h2{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin:26px 0 8px}
 .lead{max-width:62ch;margin-bottom:16px;font-family:var(--font-display);font-weight:400;font-size:1.15rem;line-height:1.5}
 .hint{font-size:.9rem;color:var(--c-stone-700)}
+.lead.breit{max-width:none;text-align:justify}
+.mehr-toggle{display:flex;justify-content:flex-end;margin:-4px 0 16px}
+.mehr-toggle button{font-family:var(--font-body);font-size:.9rem;background:none;border:none;cursor:pointer;color:var(--c-stone-700);text-decoration:underline;text-decoration-color:var(--c-gold);text-underline-offset:2px;padding:0}
+.mehr-toggle button:hover{text-decoration-thickness:2px}
 
 .progress{display:flex;gap:4px;margin:22px 0 28px}
 .progress span{flex:1;height:6px;background:var(--c-parchment-300);border-radius:var(--radius)}
@@ -305,6 +309,7 @@ const G_ORTE = {buero:"Office", neutral:"neutral room", online:"online", gehen:"
 const LS_KEY = "methodenkompass_v2_engine2";
 let A = ladeAntworten();
 let schritt = A._schritt || 0;
+let introOffen = false;
 let bogen = null;
 
 function leereAntworten(){return {
@@ -1011,9 +1016,10 @@ function renderStart(){
   M.innerHTML = `
   <div class="eyebrow">A tool by Impact Up</div>
   <h1>Session Builder</h1>
-  <p class="lead">Good impact always emerges in exchange with people, and you can only work systemically with people, too. Here in the Session Builder you put together a small, tentative session for a specific need in just a few minutes. You answer a few questions – what it's about, where you stand, what you want to achieve – and at the end you get a few methods, pointers on what to watch out for, and two or three links to read further.</p>
-  <p class="lead">Behind it is a piece of our working knowledge, translated into building blocks. A simple mechanism assembles them for you – deliberately a little wildly mixed, so that it stays “only” a first inspiration to think onward. There is no AI planning your session here: you get building blocks, and what becomes of them is up to you.</p>
-  <p class="lead">If you like the tool and it helps you, we'd love a short bit of feedback. And if you don't find what you need here, we'd be even happier – then we can look at it together with you, as people. Just write to us.</p>
+  <p class="lead breit">Good impact always emerges in exchange with people, and you can only work systemically with people, too. Here in the Session Builder you put together a small, tentative session for a specific need in just a few minutes. You answer a few questions – what it's about, where you stand, what you want to achieve – and at the end you get a few methods, pointers on what to watch out for, and two or three links to read further.</p>
+  ${introOffen?`<p class="lead breit">Behind it is a piece of our working knowledge, translated into building blocks. A simple mechanism assembles them for you – deliberately a little wildly mixed, so that it stays “only” a first inspiration to think onward. There is no AI planning your session here: you get building blocks, and what becomes of them is up to you.</p>
+  <p class="lead breit">If you like the tool and it helps you, we'd love a short bit of feedback. And if you don't find what you need here, we'd be even happier – then we can look at it together with you, as people. Just write to us.</p>`:""}
+  <div class="mehr-toggle"><button type="button" onclick="introOffen=!introOffen;render()">${introOffen?"Show less":"Read more"}</button></div>
   <p class="lead hint">About 5 minutes. Your entries stay on your device.</p>
   <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Plan a session</button></div>
   <div class="cta" style="margin-top:36px">
