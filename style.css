@@ -490,7 +490,7 @@ a { color: inherit; text-decoration: none; }
   border-left: 3px solid var(--c);
   /* Gleicher warmer Pergament-Verlauf wie der Netz-Kasten */
   background: linear-gradient(180deg, #FAF4E2 0%, #EFE5CB 100%);
-  /* Einheitlicher Aufbau: Titel-Zeile, Button-Zeile rechts, zwei Zeilen Text */
+  /* Einheitlicher Aufbau: Titel, zwei Zeilen Text, Button rechts darunter */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -499,8 +499,9 @@ a { color: inherit; text-decoration: none; }
   column-gap: 12px;
 }
 .quelle h3 { flex-basis: 100%; }
-/* Karten-Text klappt aus – Button kompakt, rechts unter dem Titel */
-.quelle .philo-more-btn { margin: 8px 0 0 auto; padding: 6px 12px; font-size: 10px; }
+/* Button kompakt, unter dem Text (per order hinter den Ausklapp-Block sortiert) */
+.quelle .philo-more { order: 1; }
+.quelle .philo-more-btn { order: 2; margin: 12px 0 0 auto; padding: 6px 12px; font-size: 10px; }
 /* Eingeklappt sind zwei Textzeilen als Anfang sichtbar (…), Rest klappt aus */
 .quelle .philo-more {
   flex-basis: 100%;
@@ -1093,20 +1094,12 @@ a { color: inherit; text-decoration: none; }
   background: rgba(201,169,97,0.12);
   border-color: var(--gold);
 }
-/* Weiterlesen-Buttons rechts, in die letzte Textzeile gezogen –
-   die letzte Zeile im Blocksatz ist meist kurz, so spart der Button eine Zeile.
-   Werte je Kontext = Absatz-margin-bottom + eine Zeilenhöhe. */
-.intro .philo-more-btn { margin: -48px 0 0 auto; }
-.weitergehen .philo-more-btn { margin: -62px 0 0 auto; }
-.about__intro .philo-more-btn { margin: -30px 0 0 auto; }
-.about__text .philo-more-btn { margin: -54px 0 0 auto; }
-@media (max-width: 720px) {
-  /* Schmale Spalten: letzte Zeile oft lang – Button wieder in eigene Zeile, rechts */
-  .intro .philo-more-btn,
-  .weitergehen .philo-more-btn,
-  .about__intro .philo-more-btn,
-  .about__text .philo-more-btn { margin: 12px 0 0 auto; }
-}
+/* Weiterlesen-Buttons: eigene Zeile unter dem Text, rechtsbündig,
+   kleine Lücke zum Absatz (dessen margin-bottom liefert den Grundabstand) */
+.intro .philo-more-btn,
+.weitergehen .philo-more-btn,
+.about__text .philo-more-btn { margin: 0 0 0 auto; }
+.about__intro .philo-more-btn { margin: 14px 0 0 auto; }
 /* Mail-Signoff folgt jetzt dem Einklapp-Block, nicht mehr dem letzten Absatz */
 .philo-more + .about__signoff { margin-top: 18px; }
 
