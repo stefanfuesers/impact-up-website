@@ -649,7 +649,8 @@
   <section id="stimmen" class="stimmen">
     <div class="container">
       <div class="stimmen__frame">
-        <p class="eyebrow stimmen__label">Voces de trabajos anteriores</p>
+        <p class="eyebrow stimmen__label"><button type="button" class="stimmen__toggle" data-philo-toggle data-keep-label aria-expanded="false">Voces de trabajos anteriores</button></p>
+        <div class="philo-more">
         <div class="zettel-board">
           <article class="zettel zettel--large">
             <div class="stimmen__list">
@@ -678,6 +679,7 @@
             <p class="stimmen__note">Traducido del alemán.</p>
           </article>
         </div>
+        </div>
       </div>
     </div>
   </section>
@@ -704,11 +706,11 @@
     // Expandir texto de bienvenida
     document.querySelectorAll('[data-philo-toggle]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const more = btn.nextElementSibling;
+        const more = btn.nextElementSibling || btn.parentElement.nextElementSibling;
         const open = more.classList.toggle('expanded');
         btn.classList.toggle('expanded', open);
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.textContent = open ? 'colapsar' : 'leer más';
+        if (!btn.hasAttribute('data-keep-label')) btn.textContent = open ? 'colapsar' : 'leer más';
       });
     });
 
