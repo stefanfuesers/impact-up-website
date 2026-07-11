@@ -1060,6 +1060,11 @@ a { color: inherit; text-decoration: none; }
 .philo-more-btn.expanded {
   margin-top: 28px;
 }
+/* Aufklapp-Buttons in Perspektiven & Über Uns links ausgerichtet */
+.weitergehen .philo-more-btn,
+.about .philo-more-btn { margin-left: 0; margin-right: auto; }
+/* Mail-Signoff folgt jetzt dem Einklapp-Block, nicht mehr dem letzten Absatz */
+.philo-more + .about__signoff { margin-top: 18px; }
 
 /* ---------- Willkommen / Gründungsimpuls ---------- */
 .intro {

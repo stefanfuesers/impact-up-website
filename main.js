@@ -270,8 +270,9 @@ const mainMeshes = [];
 MAINS.forEach(n => {
   const m = makeSphere(n, false);
   group.add(m);
-  // Alle Hauptknoten sind jetzt dunkel → Pergament-Schrift
-  const isLight = false;
+  // Dunkle Schrift mit Pergament-Schein – liest sich auf den
+  // halbtransparenten Kugeln vor Pergament-Grund besser
+  const isLight = true;
   const lbl = makeSprite(n.label,
     { fontSize: 60,
       color: isLight ? '#1F1A14' : '#F4ECD8',
@@ -297,7 +298,7 @@ IMPACTS.forEach((node, i) => {
   const mat = new THREE.SpriteMaterial({ map: markTex, transparent: true, depthWrite: false });
   const m = new THREE.Sprite(mat);
   m.position.set(...node.pos);
-  m.userData.baseScale = node.radius * 3.4; // Ring deutlich größer als die alte Kugel, damit er lesbar bleibt
+  m.userData.baseScale = node.radius * 2.55; // Ring etwas größer als die alte Kugel, damit er lesbar bleibt
   m.scale.setScalar(m.userData.baseScale);
   group.add(m);
   m.userData.def = node;
