@@ -29,42 +29,9 @@
   <link rel="stylesheet" href="style.css?v=8" />
   <style>
     /* Page-specific styling for the contact page (style.css stays untouched) */
-    .page__lead { margin-bottom: 40px; }
-
-    .contact-mail-prominent { margin: 0 0 32px; }
-    .contact-mail-prominent a {
-      display: inline-block;
-      font-family: var(--serif);
-      font-size: clamp(28px, 3.4vw, 34px);
-      font-weight: 600;
-      line-height: 1.2;
-      padding: 4px 0;
-      color: #A9843D; /* darkened gold for readability on parchment */
-      text-underline-offset: 8px;
-      text-decoration-thickness: 1px;
-      text-decoration-color: rgba(201, 169, 97, 0.55);
-      transition: color .2s ease;
-    }
-    .contact-mail-prominent a:hover {
-      color: var(--moss);
-      text-decoration-color: var(--moss);
-    }
-
-    .contact-linkedin {
-      max-width: 580px;
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: .88;
-      margin: 0;
-    }
-
-    .contact-divider {
-      border: none;
-      border-top: 1px solid rgba(201, 169, 97, 0.45);
-      margin: 56px 0 44px;
-    }
-
     .contact-form-wrap { max-width: 620px; }
+    .contact-form-wrap .page__lead { margin-bottom: 40px; }
+    .contact-form-wrap .page__lead strong { display: block; margin-bottom: 6px; }
     .contact-form .form-group { margin-bottom: 24px; }
     .contact-form .form-group label {
       display: block;
@@ -90,8 +57,26 @@
     .contact-form .erst-input::placeholder { color: rgba(31, 26, 20, 0.35); }
 
     .contact-form .erst-consent { margin-top: 20px; }
-    .contact-form .form-actions { margin-top: 28px; }
+    .contact-form .form-actions {
+      margin-top: 28px;
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
     .contact-form .btn[disabled] { opacity: .6; cursor: default; }
+
+    /* Link buttons next to the submit button (ghost variant for light ground) */
+    .form-actions .btn { text-decoration: none; }
+    .btn--outline {
+      background: transparent;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn--outline:hover { background: var(--gold); color: var(--ink); }
+    .btn--icon { padding: 14px 18px; }
+    .btn--icon svg { width: 20px; height: 20px; fill: currentColor; display: block; }
 
     .impressum-hint { margin-top: 64px; font-size: 14px; opacity: .7; }
   </style>
@@ -141,12 +126,12 @@
 
   <main class="page">
     <div class="container page__inner">
-      <p class="eyebrow">Contact</p>
-      <p class="page__lead">
-        We welcome the conversation – about a concrete project, an idea, or a question you're sitting with.
-      </p>
-
       <div class="contact-form-wrap">
+
+        <p class="page__lead">
+          <strong>We look forward to the exchange!</strong>
+          About a concrete request, about setting up a first conversation on how we can support you, an idea, or simply the questions on your mind. Feel free to use the form or email us. LinkedIn if we already know each other.
+        </p>
 
         <form id="contact-form" class="contact-form"
               action="https://api.web3forms.com/submit"
@@ -161,7 +146,7 @@
           </div>
 
           <div class="form-group">
-            <label for="webseite">Website / Link <span class="form-hint">(optional)</span></label>
+            <label for="webseite">Website / Link <span class="form-hint">(optional – in case we should prepare for you)</span></label>
             <input type="url" id="webseite" name="webseite" class="erst-input" placeholder="https://…">
           </div>
 
@@ -176,7 +161,11 @@
           </label>
 
           <div class="form-actions">
-            <button type="submit" class="btn btn--primary">Send message</button>
+            <button type="submit" class="btn btn--primary">Send form</button>
+            <a class="btn btn--outline" href="mailto:info@impact-up.org">By email</a>
+            <a class="btn btn--outline btn--icon" href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
           </div>
         </form>
 
@@ -189,21 +178,9 @@
           <p>The form could not be submitted. Please write to us directly at <a href="mailto:info@impact-up.org">info@impact-up.org</a> – we look forward to hearing from you.</p>
         </div>
 
+        <p class="impressum-hint"><a href="impressum.en.html">Imprint &amp; Postal Address</a></p>
+
       </div>
-
-      <hr class="contact-divider" />
-
-      <p class="eyebrow">Or email us directly</p>
-
-      <p class="contact-mail-prominent">
-        <a href="mailto:info@impact-up.org">info@impact-up.org</a>
-      </p>
-
-      <p class="contact-linkedin">
-        Feel free to connect on LinkedIn: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">LinkedIn profile</a>.
-      </p>
-
-      <p class="impressum-hint"><a href="impressum.en.html">Imprint &amp; Address</a></p>
 
     </div>
   </main>
