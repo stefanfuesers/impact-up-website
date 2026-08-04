@@ -27,6 +27,10 @@
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/services.html">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="style.css?v=10">
+  <style>
+    /* Spécifique à cette page : les cartes de services sont elles-mêmes des liens */
+    .sammel-cards .card { text-decoration: none; }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -65,9 +69,9 @@
       <li class="nav__item--has-dropdown">
         <a href="services.fr.html">Services</a>
         <ul class="nav__dropdown">
-          <li><a href="services.fr.html#coaching">Coaching</a></li>
-          <li><a href="services.fr.html#wirkungsberatung">Conseil en Impact</a></li>
-          <li><a href="services.fr.html#ki">Intégration de l'Intelligence Artificielle</a></li>
+          <li><a href="coaching.fr.html">Coaching</a></li>
+          <li><a href="wirkungsberatung.fr.html">Conseil en Impact</a></li>
+          <li><a href="ki-integration.fr.html">Intégration de l'Intelligence Artificielle</a></li>
         </ul>
       </li>
       <li><a class="nav__cta" href="kontakt.fr.html">Contact</a></li>
@@ -91,24 +95,26 @@
 
       <div class="sammel-cards">
 
-        <section id="coaching" class="card">
+        <a href="coaching.fr.html" class="card">
           <span class="card__num">01</span>
-          <h2>Coaching</h2>
-          <p>Coaching de personnes seules et d'équipes jusqu'à cinq personnes. Nous convenons de l'orientation avec la direction, et volontiers aussi avec l'équipe elle-même — puis nous travaillons sur cette orientation : avec des accords de structure et les éléments éprouvés du coaching, pour qu'une équipe fonctionne bien. Il est ici déjà question d'orientation vers l'impact, car l'orientation est le fil commun. C'est dans ces cadres que se trouve notre plus longue expérience.</p>
-        </section>
+          <h3>Coaching</h3>
+          <p>Coaching de personnes seules et d'équipes jusqu'à cinq personnes. Nous convenons de l'orientation avec la direction, et volontiers aussi avec l'équipe elle-même — puis nous travaillons sur cette orientation : la clarté des objectifs et la clarté des rôles, pour qu'une équipe fonctionne bien. C'est dans ces cadres que se trouve notre plus longue expérience.</p>
+          <p class="card__result">→ Vers le Coaching</p>
+        </a>
 
-        <section id="wirkungsberatung" class="card">
+        <a href="wirkungsberatung.fr.html" class="card">
           <span class="card__num">02</span>
-          <h2>Conseil en Impact</h2>
-          <p><strong class="service__bewegungen">Développer · déployer · relier</strong> l'impact — ce sont les trois mouvements du conseil en impact. Une organisation existe pour un but, et là où ce but est un impact sur la société, le conseil commence exactement à cet endroit. Sur le fond, il s'agit de conseil en organisation ; conseil en impact le dit mieux, parce que le mot nomme ce sur quoi on travaille : développer l'impact, le déployer à travers l'organisation et le relier au champ et à la société.</p>
-        </section>
+          <h3>Conseil en Impact</h3>
+          <p>Développer, déployer et relier l'impact — ce sont les trois mouvements du conseil en impact. Une organisation existe pour un but, et là où ce but est un impact sur la société, le conseil commence exactement à cet endroit.</p>
+          <p class="card__result">→ Vers le Conseil en Impact</p>
+        </a>
 
-        <section id="ki" class="card">
+        <a href="ki-integration.fr.html" class="card">
           <span class="card__num">03</span>
-          <h2>Intégration de l'Intelligence Artificielle</h2>
-          <p>L'intelligence artificielle apporte partout du changement — y compris dans les champs d'impact où nous voulons obtenir quelque chose. Elle peut aider ces systèmes, et cette contribution, nous devrions l'utiliser : qui veut plus de participation sociale, plus de non-violence, un écosystème intact, devrait veiller sans tarder à ce que l'intelligence artificielle contribue aussi à ces buts — car c'est de cela que dépend la direction qu'elle prend dans son ensemble. Nous l'intégrons dans le travail des organisations : reliée à leur langage, à leur logique d'impact et à leurs critères, avec l'expérience d'une année de pratique intensive.</p>
-          <p>C'est ainsi que nous travaillons nous-mêmes : ce qui se trouve sur ces pages est né en collaboration avec l'intelligence artificielle.</p>
-        </section>
+          <h3>Intégration de l'Intelligence Artificielle</h3>
+          <p>L'intelligence artificielle peut aider les organisations à porter leur impact dans le monde. Nous l'intégrons dans le travail : reliée à votre langage, à votre logique d'impact et à vos critères.</p>
+          <p class="card__result">→ Vers l'Intégration de l'Intelligence Artificielle</p>
+        </a>
 
       </div>
     </div>

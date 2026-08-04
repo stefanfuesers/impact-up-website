@@ -113,6 +113,54 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://impact-up.org/coaching.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/coaching.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/coaching.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/coaching.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/wirkungsberatung.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/wirkungsberatung.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/wirkungsberatung.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/wirkungsberatung.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/ki-integration.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/ki-integration.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/ki-integration.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/ki-integration.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://impact-up.org/werkstatt.html</loc>
     <priority>0.8</priority>
   </url>

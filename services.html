@@ -27,6 +27,10 @@
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/services.html">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="style.css?v=10">
+  <style>
+    /* Seitenspezifisch: die Service-Karten sind selbst Links */
+    .sammel-cards .card { text-decoration: none; }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -65,9 +69,9 @@
       <li class="nav__item--has-dropdown">
         <a href="services.html">Services</a>
         <ul class="nav__dropdown">
-          <li><a href="services.html#coaching">Coaching</a></li>
-          <li><a href="services.html#wirkungsberatung">Wirkungsberatung</a></li>
-          <li><a href="services.html#ki">Integration künstlicher Intelligenz</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="wirkungsberatung.html">Wirkungsberatung</a></li>
+          <li><a href="ki-integration.html">Integration künstlicher Intelligenz</a></li>
         </ul>
       </li>
       <li><a class="nav__cta" href="kontakt.html">Kontakt</a></li>
@@ -91,24 +95,26 @@
 
       <div class="sammel-cards">
 
-        <section id="coaching" class="card">
+        <a href="coaching.html" class="card">
           <span class="card__num">01</span>
-          <h2>Coaching</h2>
-          <p>Coaching von Einzelpersonen und Teams bis zu fünf Personen. Die Ausrichtung stimmen wir mit der Leitung ab, gern auch mit dem Team selbst — und dann arbeiten wir an dieser Ausrichtung: mit Strukturabsprachen und den bewährten Elementen des Coachings, damit ein Team gut funktioniert. Auch hier geht es schon um Wirkungsorientierung, denn die Ausrichtung ist der gemeinsame Faden. In diesen Settings liegt unsere längste Erfahrung.</p>
-        </section>
+          <h3>Coaching</h3>
+          <p>Coaching von Einzelpersonen und Teams bis zu fünf Personen. Die Ausrichtung stimmen wir mit der Leitung ab, gern auch mit dem Team selbst — und dann arbeiten wir an dieser Ausrichtung: an Zielklarheit und Rollenklarheit, damit ein Team gut funktioniert. In diesen Settings liegt unsere längste Erfahrung.</p>
+          <p class="card__result">→ Zum Coaching</p>
+        </a>
 
-        <section id="wirkungsberatung" class="card">
+        <a href="wirkungsberatung.html" class="card">
           <span class="card__num">02</span>
-          <h2>Wirkungsberatung</h2>
-          <p>Wirkung <strong class="service__bewegungen">entwickeln · entfalten · verbinden</strong> — das sind die drei Bewegungen der Wirkungsberatung. Eine Organisation existiert für ein Ziel, und wo dieses Ziel eine gesellschaftliche Wirkung ist, beginnt die Beratung genau dort. Der Sache nach ist das Organisationsberatung; Wirkungsberatung trifft es besser, weil das Wort sagt, woran gearbeitet wird: die Wirkung entwickeln, sie durch die Organisation entfalten und sie mit dem Feld und der Gesellschaft verbinden.</p>
-        </section>
+          <h3>Wirkungsberatung</h3>
+          <p>Wirkung entwickeln, entfalten und verbinden — das sind die drei Bewegungen der Wirkungsberatung. Eine Organisation existiert für ein Ziel, und wo dieses Ziel eine gesellschaftliche Wirkung ist, beginnt die Beratung genau dort.</p>
+          <p class="card__result">→ Zur Wirkungsberatung</p>
+        </a>
 
-        <section id="ki" class="card">
+        <a href="ki-integration.html" class="card">
           <span class="card__num">03</span>
-          <h2>Integration künstlicher Intelligenz</h2>
-          <p>Künstliche Intelligenz bringt überall Veränderung mit sich — auch in den Wirkungsfeldern, in denen wir etwas erreichen wollen. Sie kann diesen Systemen helfen, und diesen Beitrag sollten wir nutzen: Wer mehr soziale Teilhabe will, mehr Gewaltfreiheit, ein intaktes Ökosystem, sollte schleunigst darauf achten, dass künstliche Intelligenz auch zu diesen Zielen beiträgt — denn davon hängt ab, in welche Richtung sie insgesamt läuft. Wir integrieren sie in die Arbeit von Organisationen: angebunden an ihre Sprache, ihre Wirkungslogik und ihre Maßstäbe, mit der Erfahrung aus einem Jahr intensiver eigener Praxis.</p>
-          <p>So arbeiten wir selbst: Was auf diesen Seiten steht, ist in Zusammenarbeit mit künstlicher Intelligenz entstanden.</p>
-        </section>
+          <h3>Integration künstlicher Intelligenz</h3>
+          <p>Künstliche Intelligenz kann Organisationen helfen, ihre Wirkung in die Welt zu bringen. Wir integrieren sie in die Arbeit: angebunden an eure Sprache, eure Wirkungslogik und eure Maßstäbe.</p>
+          <p class="card__result">→ Zur Integration künstlicher Intelligenz</p>
+        </a>
 
       </div>
     </div>
