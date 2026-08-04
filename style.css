@@ -397,7 +397,9 @@ a { color: inherit; text-decoration: none; }
    ============================================ */
 .quellen {
   background: linear-gradient(180deg, var(--moss) 0%, var(--moss-deep) 100%);
-  padding: 24px 16px 14px;
+  /* Kopf sitzt dicht unter der Tempel-Skyline – oben bewusst ohne Polster,
+     der Abstand kommt aus dem Trenner selbst. */
+  padding: 0 16px 14px;
   position: relative;
 }
 .eyebrow--center {
@@ -416,8 +418,20 @@ a { color: inherit; text-decoration: none; }
   max-width: 760px;
   line-height: 1.3;
 }
-/* Caption der Section auf volle Zettel-Breite (Container ist 32px schmaler gepolstert) */
-.quellen .container { max-width: calc(var(--maxw) + 64px); }
+/* ---- Kopf der Wirkungsfelder = Zwilling des Perspektiven-Kopfs ----
+   Gleicher Container (var(--maxw) + 32px Innenpolster wie in .weitergehen),
+   gleiche .eyebrow, gleiche .lead-Typo, gleicher Blocksatz, helle Schrift
+   auf Grün. Nur der Wrapper-Selektor `.quellen > .container` – sonst würden
+   die Karten in .quellen__legende mitgefärbt. */
+.quellen > .container { padding-top: 26px; padding-bottom: 24px; }
+.quellen > .container .eyebrow { color: var(--gold); }
+.quellen > .container .lead { color: rgba(244,236,216,0.85); }
+.quellen > .container .lead em { color: var(--gold); font-style: italic; }
+.quellen > .container .lead strong { color: var(--gold); font-weight: 600; }
+.quellen > .container .philo-more-btn { margin: -16px 0 0 auto; }
+.quellen > .container .philo-more.expanded { margin-top: 24px; }
+
+/* Caption-Bauform der EN/ES/FR-Startseiten (dort noch im Einsatz) */
 .quellen__caption {
   max-width: var(--maxw);
   margin: 12px auto 40px;
@@ -486,58 +500,23 @@ a { color: inherit; text-decoration: none; }
 }
 .quelle {
   position: relative;
-  padding: 20px 22px 22px 26px;
-  border-left: 3px solid var(--c);
-  /* Gleicher warmer Pergament-Verlauf wie der Netz-Kasten */
-  background: linear-gradient(180deg, #FAF4E2 0%, #EFE5CB 100%);
-  /* Einheitlicher Aufbau: Titel, zwei Zeilen Text, Button rechts darunter */
+  /* Aufbau wie die Perspektiven-Karte: Titel, Text, Weiterlesen darunter.
+     Die DOM-Reihenfolge (Titel, Button, Text) bleibt fuer das Toggle-Skript
+     erhalten – die Spalte sortiert den Button per order hinter den Text. */
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: flex-start;
-  justify-content: space-between;
-  column-gap: 12px;
+  flex-direction: column;
 }
-.quelle h3 { flex-basis: 100%; }
-/* Button kompakt, unter dem Text (per order hinter den Ausklapp-Block sortiert) */
 .quelle .philo-more { order: 1; }
-.quelle .philo-more-btn { order: 2; margin: -21px 0 0 auto; padding: 6px 12px; font-size: 10px; }
-.quelle .philo-more-btn.expanded { margin: 8px 0 0 auto; }
-/* Eingeklappt sind zwei Textzeilen als Anfang sichtbar (…), Rest klappt aus */
+.quelle .philo-more-btn { order: 2; }
+/* Der Ausklapp-Wrapper reicht durch; geklappt wird der Absatz selbst */
 .quelle .philo-more {
-  flex-basis: 100%;
   max-height: none;
   opacity: 1;
   overflow: visible;
 }
-.quelle .philo-more p {
-  margin-top: 12px;
-  /* Eingeklappt zwei volle Zeilenhöhen; Zeile 2 nur halbbreit (Float-Loch), Button daneben */
-  max-height: 3.2em;
-  overflow: hidden;
-}
-.quelle .philo-more.expanded p {
-  max-height: none;
-  overflow: visible;
-}
-/* Loch rechts in Zeile 2: Push-Float (0 breit, 1 Zeile hoch) + Hole-Float darunter */
-.quelle .q-push { float: right; width: 0; height: 1.6em; }
-.quelle .q-hole { float: right; clear: right; width: 55%; height: 1.6em; }
-.quelle .philo-more.expanded .q-push,
-.quelle .philo-more.expanded .q-hole { display: none; }
-@media (max-width: 1200px) {
-  .quellen__legende { grid-template-columns: repeat(2, 1fr); }
-}
-.quelle__dot {
-  position: absolute;
-  left: -8px;
-  top: 32px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--c);
-  box-shadow: 0 0 0 4px var(--parchment);
-}
+/* Aus der frueheren Bauform (Button rechts neben dem Text): nicht mehr noetig */
+.quelle .q-push,
+.quelle .q-hole { display: none; }
 .quelle h3 {
   font-family: var(--serif);
   font-size: 22px;
@@ -569,7 +548,8 @@ a { color: inherit; text-decoration: none; }
 .weitergehen {
   background: var(--moss);
   color: var(--parchment);
-  padding: 70px 32px 70px;
+  /* unten knapper: die Tempel-Skyline schliesst direkt an */
+  padding: 70px 32px 32px;
 }
 .weitergehen .eyebrow { color: var(--gold); }
 .weitergehen .section-title { color: var(--parchment); max-width: 720px; }
@@ -620,7 +600,7 @@ a { color: inherit; text-decoration: none; }
 }
 .prozess__faden {
   position: absolute;
-  top: 75px; /* mittig durch die Visuals */
+  top: 79px; /* mittig durch die Visuals (4px Abstand + 150px/2) */
   left: 12%;
   right: 12%;
   height: 1px;
@@ -1907,8 +1887,10 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 760px) {
   .container { padding-left: 18px; padding-right: 18px; }
   .intro { padding: 44px 0 40px; }
-  .weitergehen { padding: 48px 18px; }
+  .weitergehen { padding: 48px 18px 20px; }
   .weitergehen__notiz { margin-bottom: 22px; }
+  /* gleiche seitliche Kante wie .weitergehen, damit beide Koepfe fluchten */
+  .quellen { padding-left: 18px; padding-right: 18px; }
   .angebote { padding: 48px 18px 44px; }
   .angebote .lead { margin-bottom: 32px; }
   .card { padding: 26px 20px; }
@@ -1961,76 +1943,171 @@ a { color: inherit; text-decoration: none; }
   .intro .intro__nachwort .intro__links { flex-basis: 100%; }
 }
 
-/* --- §2e Ueber Uns: der Stefan-Block ist raus, der Gruendungssatz
-   steht jetzt am Ende des eingeklappten Textes. Ohne den Block unten
+/* --- §2e Ueber Uns: der Stefan-Block ist raus. Ohne den Block unten
    braucht die Sektion wieder etwas Fuss. */
 .about { padding-bottom: 56px; }
-.about__gruendung { margin-top: 1.4em; }
 
-/* --- §2d Karten-Familie: Perspektiven und Wirkungsfelder -------
-   Beide Vierergruppen sind dieselbe Kartenform: weicher Schatten,
-   Radius 4px, dezenter Flaechenverlauf, ein Goldstreifen als Kante.
-   Perspektiven tragen ihn links, Wirkungsfelder rechts. */
+/* ============================================================
+   RUNDE 3 (04.08.2026) – Spec Umbau-Spec-Runde3.md
+   ============================================================ */
 
-/* Perspektiven */
-/* Als Karten duerfen die vier nicht mehr auf gleiche Hoehe gestreckt
-   werden: sonst stehen beim Ausklappen einer Karte drei leere Kaesten
-   daneben. Jede Karte ist so hoch wie ihr Inhalt. */
+/* --- §2 Karten-Familie: die acht gleichen Kacheln ---------------
+   Perspektiven und Wirkungsfelder sind dieselbe Kachel: dezenter
+   Verlauf auf dem Sektionsgruen, Radius 4px, weicher Schatten,
+   ein Goldstreifen als Kante – links bei den Perspektiven, rechts
+   bei den Wirkungsfeldern. Das ist der einzige Unterschied. */
+
+/* gemeinsame Kartenwerte, damit beide Gruppen aus einer Quelle leben */
+:root {
+  /* Der Verlauf laeuft ueber eine feste Strecke aus und haelt danach –
+     so bleibt auch eine weit ausgeklappte Karte als Flaeche sichtbar. */
+  --karte-flaeche: linear-gradient(180deg,
+    rgba(244,236,216,0.075) 0,
+    rgba(244,236,216,0.038) 170px,
+    rgba(244,236,216,0.032) 100%);
+  --karte-schatten: 0 6px 20px rgba(12,22,12,0.22);
+  --karte-gold: linear-gradient(180deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
+  --karte-padding: 22px 22px 18px;
+  --karte-titel-hoehe: 2.4em;   /* zwei Zeilen bei line-height 1.2 */
+}
+
+/* Jede Karte ist so hoch wie ihr Inhalt – sonst stehen beim Ausklappen
+   einer Karte leere Kaesten daneben. */
 .prozess { align-items: start; }
-.prozess__step {
-  padding: 26px 22px 18px;
-  border-radius: 4px;
-  /* sehr leichtes Aufhellen von oben nach unten, kein Bling */
-  background: linear-gradient(180deg,
-    rgba(244,236,216,0.075) 0%,
-    rgba(244,236,216,0.025) 55%,
-    rgba(244,236,216,0.01) 100%);
-  box-shadow: 0 6px 20px rgba(12,22,12,0.22);
+.quellen__legende { align-items: start; }
+/* minmax(0,1fr) statt 1fr: sonst zieht ein langer Achsen-/Titeltext eine
+   Spalte breiter als die anderen und die acht Kacheln sind ungleich. */
+@media (min-width: 901px) {
+  .prozess,
+  .quellen__legende { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-.prozess__step::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  border-radius: 4px 0 0 4px;
-  background: linear-gradient(180deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
-  pointer-events: none;
-}
-/* der goldene Faden lief bisher hinter den Visuals durch – zwischen den
-   Karten bleibt er sichtbar und verbindet sie weiterhin */
-.prozess__visual { margin-top: 4px; }
 
-/* Wirkungsfelder – gleiche Form, Streifen rechts, Flaeche eine Stufe
-   dunkler als der Sektionsgrund, Schrift hell (Pergament) */
-.quelle {
-  padding: 24px 26px 22px 22px;
-  border-left: none;
-  border-radius: 4px;
-  background: linear-gradient(180deg, #1B2E1C 0%, #142312 100%);
-  box-shadow: 0 6px 20px rgba(12,22,12,0.28);
+/* Perspektiven: das Visual steht ausserhalb der Karte, zentriert
+   darueber. In der Karte bleiben Achse, Titel, Text, Weiterlesen. */
+.prozess__step {
+  padding: 0;
+  background: none;
+  box-shadow: none;
 }
+.prozess__step::before { content: none; }
+.prozess__visual { margin: 4px auto 16px; }
+
+.prozess__card,
+.quelle {
+  position: relative;
+  padding: var(--karte-padding);
+  border-radius: 4px;
+  background: var(--karte-flaeche);
+  box-shadow: var(--karte-schatten);
+  text-align: center;
+}
+.prozess__card::before,
 .quelle::after {
   content: "";
   position: absolute;
-  right: 0; top: 0; bottom: 0;
+  top: 0; bottom: 0;
   width: 3px;
-  border-radius: 0 4px 4px 0;
-  background: linear-gradient(180deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
+  background: var(--karte-gold);
   pointer-events: none;
 }
-.quelle h3 { color: var(--parchment); }
-.quelle p  { color: rgba(244,236,216,0.84); }
-/* Farbpunkt des Feldes: heller Ring statt Pergament-Flaeche, damit er
-   auch als dunkler Punkt (Tinte, Lila) auf der dunklen Karte liest */
-.quelle__dot {
-  left: -7px;
-  box-shadow: 0 0 0 3px rgba(244,236,216,0.55);
+.prozess__card::before { left: 0;  border-radius: 4px 0 0 4px; }
+.quelle::after         { right: 0; border-radius: 0 4px 4px 0; }
+
+/* Titel: identische Schrift, zentriert, einheitlich zwei Zeilen hoch */
+.prozess__step h3,
+.quelle h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--parchment);
+  text-align: center;
+  margin: 0 0 12px;
+  /* zweizeilige Hoehe fuer alle acht Titel; einzeilige sitzen mittig darin,
+     damit die Reihen ruhig stehen und der Abstand nicht nach unten kippt */
+  min-height: var(--karte-titel-hoehe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Clamp 2 → 4: deutlich mehr Text steht schon eingeklappt da.
-   Das Float-Loch fuer den Button wandert entsprechend in Zeile 4. */
-.quelle .philo-more p { max-height: 6.4em; }
-.quelle .q-push { height: 4.8em; }
+/* Absatz: identische Schrift, Blocksatz, gleicher Ausklapp-Verlauf */
+.quelle p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(244,236,216,0.82);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  padding: 0 4px;
+  margin: 0 0 4px;
+}
+.quelle .philo-more p {
+  max-height: calc(4 * 1.6 * 14.5px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  transition: max-height .5s ease, -webkit-mask-image .3s, mask-image .3s;
+}
+.quelle .philo-more.expanded p {
+  max-height: 1500px;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Weiterlesen: gold, zentriert, in beiden Gruppen dieselbe Bauform
+   (Referenz ist .prozess__more) */
+.quelle .philo-more-btn,
+.quelle .philo-more-btn.expanded {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 4px;
+  margin: 6px auto 0;
+  transition: opacity .2s;
+}
+.quelle .philo-more-btn::after { content: ' ▾'; font-size: 10px; }
+.quelle .philo-more-btn.expanded::after { content: ' ▴'; }
+.quelle .philo-more-btn:hover {
+  background: none;
+  border-color: transparent;
+  opacity: 0.7;
+}
+
+/* Gleiche Kartenbreite: das Wirkungsfelder-Grid bekommt exakt die
+   Innenbreite des .container, in dem das Perspektiven-Grid steht. */
+.quellen__legende {
+  max-width: var(--maxw);
+  padding: 0 32px;
+  gap: 24px;
+}
+/* und dieselben vier Spalten bis zur gemeinsamen Umbruchgrenze (900px) */
+@media (min-width: 901px) {
+  .quellen__legende { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  /* einspaltig: die Titel sind einzeilig, die feste Hoehe waere Leerraum */
+  .prozess__step h3,
+  .quelle h3 { min-height: 0; }
+}
+@media (max-width: 760px) {
+  /* Sektionspolster: .weitergehen 18px + .container 18px = 36px.
+     .quellen polstert hier ebenfalls 18px – 18px mehr ergeben dieselben 36px. */
+  .quellen__legende { padding: 0 18px; }
+}
+
+/* --- §3a Hero: der CTA rueckt unter dem Lockup nach rechts ------ */
+.hero__lockup-col .hero__cta { margin-left: 110px; }
+@media (max-width: 900px) {
+  .hero__lockup-col .hero__cta { margin-left: 0; }
+}
 
 /* --- §3 Sammelseiten (Konstrukte · Impulse · Werkstatt · Services)
    Gemeinsame Kartenlogik: volle Inhaltsbreite, goldene Nummer oben

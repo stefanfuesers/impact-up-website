@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Twenty years of peace and development work in Cambodia, Kosovo and Hamburg, impact orientation and PM&amp;E, systemic organisational development." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 
   <style>
     /* ============================================================
@@ -166,39 +166,49 @@
       pointer-events: none;
     }
 
-    /* ---------- Wand-Bilder als Zwischenband ---------- */
+    /* ---------- Wand-Bilder als Zwischenband ----------
+       Die beiden Workshopfotos stehen einzeln und verteilt: eines als
+       ruhiger Atemzug nach dem Haupttext, eines zwischen den beiden
+       Sektionen – dort mit dem Satz daneben. */
     .band {
       background: var(--moss-deep);
       padding: 44px 0 46px;
       position: relative;
     }
-    /* Beide Workshopfotos aussen, der Satz steht zwischen ihnen –
-       sie zeigen dieselbe Arbeit, der Satz sagt worum es dabei geht. */
+    .band--warm { background: var(--parchment); }
     .band__inner {
       max-width: 1040px;
       margin: 0 auto;
       padding: 0 32px;
-      display: grid;
-      grid-template-columns: 1fr minmax(200px, 26%) 1fr;
-      gap: 28px;
-      align-items: center;
     }
     .band__bild {
       max-width: 300px;
       margin: 0;
     }
-    .band__bild:last-of-type { margin-left: auto; }
     .band__bild img {
       width: 100%;
       height: auto;
       filter: drop-shadow(0 12px 24px rgba(0,0,0,.36));
     }
+    .band--warm .band__bild img { filter: drop-shadow(0 10px 22px rgba(31,26,20,.20)); }
     .band__note {
       font-family: var(--sans);
       font-size: 11.5px;
       line-height: 1.5;
       color: rgba(244,236,216,.45);
       margin: 8px 0 0;
+    }
+    .band--warm .band__note { color: var(--stone); }
+
+    /* Einzelbild, mittig gestellt */
+    .band--solo .band__bild { margin: 0 auto; }
+
+    /* Bild und Satz nebeneinander */
+    .band--satz .band__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 300px) 1fr;
+      gap: 40px;
+      align-items: center;
     }
     .band__satz {
       font-family: var(--serif);
@@ -207,18 +217,17 @@
       color: var(--parchment);
       margin: 0;
       font-style: italic;
-      text-align: center;
+      max-width: 34ch;
     }
-    .band__satz::before,
-    .band__satz::after {
+    .band--warm .band__satz { color: var(--ink); }
+    .band__satz::before {
       content: "";
       display: block;
       width: 40px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 16px;
+      margin: 0 0 16px;
     }
-    .band__satz::after { margin: 16px auto 0; }
 
     /* ---------- Stationen und Studium ---------- */
     .weg { list-style: none; }
@@ -290,13 +299,12 @@
       .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
       .kopf { grid-template-columns: 1fr; gap: 22px; }
       .kopf__bild { max-width: 140px; }
-      /* Untereinander: Satz zuerst, Bilder darunter, schmal gehalten */
-      .band__inner { grid-template-columns: 1fr; gap: 24px; }
+      /* Untereinander: Bild, darunter der Satz */
+      .band { padding: 34px 0 36px; }
+      .band--satz .band__inner { grid-template-columns: 1fr; gap: 24px; }
       .band__bild { max-width: 300px; }
-      .band__bild:last-of-type { margin-left: 0; }
-      .band__satz { order: -1; text-align: left; }
-      .band__satz::before, .band__satz::after { margin-left: 0; margin-right: 0; }
-      .band__satz::after { display: none; }
+      .band--solo .band__bild, .band--satz .band__bild { margin: 0; }
+      .band__satz { max-width: none; }
       .stimmen { padding-bottom: 46px; }
       .ruf { padding: 52px 0; }
     }
@@ -389,20 +397,8 @@
     </div>
   </section>
 
-  <!-- ===================== Artificial intelligence and craft ===================== -->
-  <section class="pers pers--tief">
-    <div class="pers__inner">
-      <p class="pers__label auf">Artificial Intelligence and Craft</p>
-      <div class="pers__text auf">
-        <p>The past year belonged to artificial intelligence: since returning to Germany, Stefan has used it to build up systemic organisational development and Impact Up — and along with it a cooperation network reaching from IP-GO through the Hamburg self-employed network and the EH returnees to KURVE Wustrow. What interests him is less what these systems can do than what they bind themselves to: the language, the impact logic and the standards of a piece of work. What goes on inside them is not fully understood by anyone — Stefan follows who is driving the development and which conceptual constructs are emerging there. For him the division of labour is clear: the sorting work may go to the machine; judgement, responsibility and the moment in the room stay with people.</p>
-
-        <p>Stefan gathered his craft in coaching small groups and in planning and reflection workshops: clarifying the direction with the leadership, shaping the way there with the group — in conversation, at the wall, in small steps.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== Photo band ===================== -->
-  <section class="band">
+  <!-- ===================== Photo band I ===================== -->
+  <section class="band band--solo">
     <div class="band__inner">
       <figure class="band__bild auf">
         <img src="assets/workshop-panorama.webp"
@@ -410,15 +406,42 @@
              width="1800" height="1062" />
         <figcaption class="band__note">Impact planning in the Civil Peace Service, Cambodia</figcaption>
       </figure>
+    </div>
+  </section>
 
-      <p class="band__satz auf">What hangs on the wall is what the group thought. Stefan's work is getting it there.</p>
+  <!-- ===================== Systemic organisational development ===================== -->
+  <section class="pers pers--tief">
+    <div class="pers__inner">
+      <p class="pers__label auf">Systemic Organisational Development</p>
+      <div class="pers__text auf">
+        <p>The time since returning went into Stefan's own development: alongside the training at WISPO, reflection seminars with IP-GO and the AGdD, which have visibly developed him further. His craft remains the coaching of small groups and the planning and reflection workshops: clarifying the direction with the leadership, shaping the way there with the group — in conversation, at the wall, in small steps.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===================== Photo band II ===================== -->
+  <section class="band band--warm band--satz">
+    <div class="band__inner">
       <figure class="band__bild auf">
         <img src="assets/workshop-wand.webp"
              alt="Three facilitation walls covered in clustered cards, with Stefan Füsers in conversation in front of them"
              width="1500" height="1107" />
         <figcaption class="band__note">Planning workshop in the Civil Peace Service, Cambodia</figcaption>
       </figure>
+
+      <p class="band__satz auf">What hangs on the wall is what the group thought. Stefan's work is getting it there.</p>
+    </div>
+  </section>
+
+  <!-- ===================== Artificial intelligence ===================== -->
+  <section class="pers pers--tief">
+    <div class="pers__inner">
+      <p class="pers__label auf">Artificial Intelligence</p>
+      <div class="pers__text auf">
+        <p>The past year belonged to artificial intelligence — not as a topic of its own, but as collaboration. Within his self-employment, Stefan began working with it: he uses it to bring into the world the things that stand here — the constructs, the workshop, this website. That is exactly his aspiration: to use artificial intelligence for meaning and purpose, in collaboration — the way collaboration also grows between people. What stands on these pages came into being this way.</p>
+
+        <p>What interests him is less what these systems can do than what they bind themselves to: the language, the impact logic and the standards of a piece of work. What happens inside them, nobody fully understands — Stefan follows who drives the development and which constructs of thought emerge there. The division of labour is clear to him: the sorting work may go to the machine; judgement, responsibility and the moment in the room stay with people. And a cooperation network has grown along this year — from IP-GO via the Hamburg self-employed network and the EH returnees to KURVE Wustrow.</p>
+      </div>
     </div>
   </section>
 
@@ -439,7 +462,7 @@
       <ul class="weg auf">
         <li><span class="weg__jahr">M.A.</span><span>International Studies</span></li>
         <li><span class="weg__jahr">M.A.</span><span>European Studies</span></li>
-        <li><span class="weg__jahr">B.A.</span><span>International Business – business and economics, the basis for understanding organisations and their parts</span></li>
+        <li><span class="weg__jahr">B.A.</span><span>International Business</span></li>
       </ul>
     </div>
   </section>

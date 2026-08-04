@@ -30,7 +30,7 @@
   <meta name="twitter:description" content="Veinte años de trabajo por la paz y el desarrollo en Camboya, Kosovo y Hamburgo, orientación al impacto y PM&amp;E, desarrollo organizacional sistémico." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 
   <style>
     /* ============================================================
@@ -167,39 +167,49 @@
       pointer-events: none;
     }
 
-    /* ---------- Wand-Bilder als Zwischenband ---------- */
+    /* ---------- Wand-Bilder als Zwischenband ----------
+       Die beiden Workshopfotos stehen einzeln und verteilt: eines als
+       ruhiger Atemzug nach dem Haupttext, eines zwischen den beiden
+       Sektionen – dort mit dem Satz daneben. */
     .band {
       background: var(--moss-deep);
       padding: 44px 0 46px;
       position: relative;
     }
-    /* Beide Workshopfotos aussen, der Satz steht zwischen ihnen –
-       sie zeigen dieselbe Arbeit, der Satz sagt worum es dabei geht. */
+    .band--warm { background: var(--parchment); }
     .band__inner {
       max-width: 1040px;
       margin: 0 auto;
       padding: 0 32px;
-      display: grid;
-      grid-template-columns: 1fr minmax(200px, 26%) 1fr;
-      gap: 28px;
-      align-items: center;
     }
     .band__bild {
       max-width: 300px;
       margin: 0;
     }
-    .band__bild:last-of-type { margin-left: auto; }
     .band__bild img {
       width: 100%;
       height: auto;
       filter: drop-shadow(0 12px 24px rgba(0,0,0,.36));
     }
+    .band--warm .band__bild img { filter: drop-shadow(0 10px 22px rgba(31,26,20,.20)); }
     .band__note {
       font-family: var(--sans);
       font-size: 11.5px;
       line-height: 1.5;
       color: rgba(244,236,216,.45);
       margin: 8px 0 0;
+    }
+    .band--warm .band__note { color: var(--stone); }
+
+    /* Einzelbild, mittig gestellt */
+    .band--solo .band__bild { margin: 0 auto; }
+
+    /* Bild und Satz nebeneinander */
+    .band--satz .band__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 300px) 1fr;
+      gap: 40px;
+      align-items: center;
     }
     .band__satz {
       font-family: var(--serif);
@@ -208,18 +218,17 @@
       color: var(--parchment);
       margin: 0;
       font-style: italic;
-      text-align: center;
+      max-width: 34ch;
     }
-    .band__satz::before,
-    .band__satz::after {
+    .band--warm .band__satz { color: var(--ink); }
+    .band__satz::before {
       content: "";
       display: block;
       width: 40px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 16px;
+      margin: 0 0 16px;
     }
-    .band__satz::after { margin: 16px auto 0; }
 
     /* ---------- Stationen und Studium ---------- */
     .weg { list-style: none; }
@@ -291,13 +300,12 @@
       .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
       .kopf { grid-template-columns: 1fr; gap: 22px; }
       .kopf__bild { max-width: 140px; }
-      /* Untereinander: Satz zuerst, Bilder darunter, schmal gehalten */
-      .band__inner { grid-template-columns: 1fr; gap: 24px; }
+      /* Untereinander: Bild, darunter der Satz */
+      .band { padding: 34px 0 36px; }
+      .band--satz .band__inner { grid-template-columns: 1fr; gap: 24px; }
       .band__bild { max-width: 300px; }
-      .band__bild:last-of-type { margin-left: 0; }
-      .band__satz { order: -1; text-align: left; }
-      .band__satz::before, .band__satz::after { margin-left: 0; margin-right: 0; }
-      .band__satz::after { display: none; }
+      .band--solo .band__bild, .band--satz .band__bild { margin: 0; }
+      .band__satz { max-width: none; }
       .stimmen { padding-bottom: 46px; }
       .ruf { padding: 52px 0; }
     }
@@ -390,20 +398,8 @@
     </div>
   </section>
 
-  <!-- ===================== Inteligencia artificial y oficio ===================== -->
-  <section class="pers pers--tief">
-    <div class="pers__inner">
-      <p class="pers__label auf">Inteligencia artificial y oficio</p>
-      <div class="pers__text auf">
-        <p>El último año perteneció a la inteligencia artificial: desde su regreso a Alemania, Stefan ha construido con ella el desarrollo organizacional sistémico e Impact Up — y con ello una red de cooperación que va desde IP-GO y la red de autónomos de Hamburgo y las personas retornadas de la EH hasta la KURVE Wustrow. Le interesa menos qué pueden hacer estos sistemas que a qué se vinculan: al lenguaje, a la lógica de impacto y a los criterios de un trabajo. Lo que sucede en su interior nadie lo entiende del todo — Stefan sigue de cerca quién impulsa el desarrollo y qué constructos de pensamiento surgen ahí. El reparto del trabajo le resulta claro: el trabajo de clasificación puede hacerlo la máquina; el juicio, la responsabilidad y el momento en la sala se quedan con las personas.</p>
-
-        <p>Su oficio lo reunió Stefan en el coaching de grupos pequeños y en talleres de planificación y reflexión: con la dirección aclarar el rumbo, con el grupo configurar el camino hasta allí — en la conversación, en la pared, en pasos pequeños.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== Banda de fotos ===================== -->
-  <section class="band">
+  <!-- ===================== Banda de fotos I ===================== -->
+  <section class="band band--solo">
     <div class="band__inner">
       <figure class="band__bild auf">
         <img src="assets/workshop-panorama.webp"
@@ -411,15 +407,42 @@
              width="1800" height="1062" />
         <figcaption class="band__note">Planificación de impacto en el Servicio Civil para la Paz, Camboya</figcaption>
       </figure>
+    </div>
+  </section>
 
-      <p class="band__satz auf">Lo que cuelga en la pared lo ha pensado el grupo. El trabajo de Stefan es que llegue hasta allí.</p>
+  <!-- ===================== Desarrollo organizacional sistémico ===================== -->
+  <section class="pers pers--tief">
+    <div class="pers__inner">
+      <p class="pers__label auf">Desarrollo Organizacional Sistémico</p>
+      <div class="pers__text auf">
+        <p>El tiempo desde su regreso lo ha invertido Stefan en su propio desarrollo: junto a la formación en la WISPO, seminarios de reflexión con IP-GO y la AGdD, que lo han hecho avanzar de forma perceptible. Su oficio sigue siendo el coaching de grupos pequeños y los talleres de planificación y reflexión: con la dirección aclarar el rumbo, con el grupo configurar el camino hasta allí — en la conversación, en la pared, en pasos pequeños.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===================== Banda de fotos II ===================== -->
+  <section class="band band--warm band--satz">
+    <div class="band__inner">
       <figure class="band__bild auf">
         <img src="assets/workshop-wand.webp"
              alt="Tres paneles de moderación llenos de tarjetas agrupadas, delante Stefan Füsers en conversación"
              width="1500" height="1107" />
         <figcaption class="band__note">Taller de planificación en el Servicio Civil para la Paz, Camboya</figcaption>
       </figure>
+
+      <p class="band__satz auf">Lo que cuelga en la pared lo ha pensado el grupo. El trabajo de Stefan es que llegue hasta allí.</p>
+    </div>
+  </section>
+
+  <!-- ===================== Inteligencia artificial ===================== -->
+  <section class="pers pers--tief">
+    <div class="pers__inner">
+      <p class="pers__label auf">Inteligencia Artificial</p>
+      <div class="pers__text auf">
+        <p>El último año perteneció a la inteligencia artificial — no como tema en sí, sino como colaboración. En el marco de su trabajo autónomo, Stefan empezó a trabajar con ella: la usa para traer al mundo las cosas que están aquí — los constructos, el taller, esta página web. Justo ahí está su aspiración: emplear la inteligencia artificial con sentido y propósito, en colaboración — tal como la colaboración surge también entre personas. Lo que hay en estas páginas ha nacido de ese modo.</p>
+
+        <p>Le interesa menos qué pueden hacer estos sistemas que a qué se vinculan: al lenguaje, a la lógica de impacto y a los criterios de un trabajo. Lo que sucede en su interior nadie lo entiende del todo — Stefan sigue de cerca quién impulsa el desarrollo y qué constructos de pensamiento surgen ahí. El reparto del trabajo le resulta claro: el trabajo de clasificación puede hacerlo la máquina; el juicio, la responsabilidad y el momento en la sala se quedan con las personas. Y a lo largo de este año ha crecido con ello una red de cooperación — desde IP-GO, pasando por la red de autónomos de Hamburgo y las personas retornadas de la EH, hasta la KURVE Wustrow.</p>
+      </div>
     </div>
   </section>
 
@@ -440,7 +463,7 @@
       <ul class="weg auf">
         <li><span class="weg__jahr">M.A.</span><span>International Studies</span></li>
         <li><span class="weg__jahr">M.A.</span><span>European Studies</span></li>
-        <li><span class="weg__jahr">B.A.</span><span>International Business – economía de la empresa y economía política, la base para entender las organizaciones y sus componentes</span></li>
+        <li><span class="weg__jahr">B.A.</span><span>International Business</span></li>
       </ul>
     </div>
   </section>

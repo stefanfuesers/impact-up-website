@@ -352,8 +352,10 @@
 }
 .nav .nav__links a.nav__cta:hover,
 .nav .nav__links a.nav__cta:focus-visible {
-  background: #E7D199;         /* leicht aufgehellt, kein Farbwechsel */
-  color: #1F1A14;
+  /* dasselbe Hover wie der Hero-Button (.btn--primary:hover):
+     goldene Schrift auf dunklem Grund */
+  background: var(--ink);
+  color: var(--gold);
   opacity: 1;
 }
 /* Zwischen Hamburger-Grenze (900px) und breitem Desktop wurde die Nav
