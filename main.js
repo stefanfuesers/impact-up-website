@@ -289,7 +289,58 @@ MAINS.forEach(n => {
 // ---------- Kleine Impact-Up-Knoten: die Mark (Favicon) statt Gold-Kugel ----------
 // Gold-Ring + lila Kugel brauchen keine Beschriftung und zeigen,
 // dass Impact Up an diese Verbindungen will.
-const markTex = new THREE.TextureLoader().load('assets/favicon-192.png');
+// Die Textur wird prozedural auf ein Canvas gezeichnet statt als PNG geladen:
+// beim Öffnen per file:// blockiert der Browser Bild-Texturen (CORS), das Netz
+// verlöre dann seine Impact-Up-Kugeln. Geometrie und Farben 1:1 aus
+// assets/favicon.svg (viewBox 0 0 100 100), hier auf 256px hochskaliert.
+function makeMarkTexture(size = 256) {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = size;
+  const ctx = cv.getContext('2d');
+  const s = size / 100;          // Skalierung SVG-Einheit → Pixel
+  const cx = 50 * s, cy = 50 * s;
+
+  // 1 · Tinte-Kern (r 31), radialer Verlauf #2A241C → #1F1A14 → #120E0A
+  //     (SVG-Gradient cx .5 / cy .42 / r .72 auf die Kern-Bounding-Box gerechnet)
+  const coreX = (19 + 0.50 * 62) * s, coreY = (19 + 0.42 * 62) * s, coreR = 0.72 * 62 * s;
+  const core = ctx.createRadialGradient(coreX, coreY, 0, coreX, coreY, coreR);
+  core.addColorStop(0,   '#2A241C');
+  core.addColorStop(0.6, '#1F1A14');
+  core.addColorStop(1,   '#120E0A');
+  ctx.beginPath();
+  ctx.arc(cx, cy, 31 * s, 0, Math.PI * 2);
+  ctx.fillStyle = core;
+  ctx.fill();
+
+  // 2 · Gold-Ring (r 37, Strichstärke 13) mit Lücke oben links:
+  //     Start bei -90°, 1.8π im Uhrzeigersinn → 36° offen
+  const gold = ctx.createLinearGradient(0, size, size, 0);
+  gold.addColorStop(0,    '#B8923F');
+  gold.addColorStop(0.55, '#C9A961');
+  gold.addColorStop(1,    '#E7D199');
+  ctx.beginPath();
+  ctx.arc(cx, cy, 37 * s, -Math.PI / 2, -Math.PI / 2 + Math.PI * 1.8);
+  ctx.strokeStyle = gold;
+  ctx.lineWidth = 13 * s;
+  ctx.lineCap = 'round';
+  ctx.stroke();
+
+  // 3 · Lila Kugel (r 10.5), radialer Verlauf #9A74B6 → #5C3A74 → #391F4E
+  //     (SVG-Gradient cx .36 / cy .30 / r .9 auf die Kugel-Bounding-Box gerechnet)
+  const ballX = (39.5 + 0.36 * 21) * s, ballY = (39.5 + 0.30 * 21) * s, ballR = 0.9 * 21 * s;
+  const ball = ctx.createRadialGradient(ballX, ballY, 0, ballX, ballY, ballR);
+  ball.addColorStop(0,   '#9A74B6');
+  ball.addColorStop(0.5, '#5C3A74');
+  ball.addColorStop(1,   '#391F4E');
+  ctx.beginPath();
+  ctx.arc(cx, cy, 10.5 * s, 0, Math.PI * 2);
+  ctx.fillStyle = ball;
+  ctx.fill();
+
+  return new THREE.CanvasTexture(cv);
+}
+
+const markTex = makeMarkTexture();
 markTex.anisotropy = 4;
 markTex.minFilter = THREE.LinearFilter;
 

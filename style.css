@@ -7,7 +7,7 @@
    Hauptseiten UND session-werkstatt/.
    ============================================ */
 
-@import url("nav.css");
+@import url("nav.css?v=2");
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
@@ -1919,3 +1919,171 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Hero: Action-Button unter dem Claim ---------- */
 .hero__cta { margin-top: 28px; display: inline-block; }
+
+
+/* ============================================================
+   RUNDE 2 (04.08.2026) – Spec Umbau-Spec-Runde2.md
+   Alle Ergaenzungen dieser Runde gesammelt am Dateiende.
+   ============================================================ */
+
+/* --- §1 Nav: Kontakt-Gold-Pill liegt in nav.css (der EINEN
+   Nav-Quelle), damit auch die Session-Builder-Seiten ihn laden. --- */
+
+/* --- §2a Hero: CTA sitzt links unter dem Lockup ----------------
+   .lockup-img bringt bereits 30px Abstand mit; die 4px hier ergeben
+   die in der Spec gewuenschten ~34px Luft. Die Claim-Spalte bleibt
+   ohne Button, das Hero-Band behaelt seine kompakte Hoehe. */
+.hero__lockup-col .hero__cta { margin-top: 4px; }
+@media (max-width: 760px) {
+  /* mobil ist der Lockup-Abstand nur 12px – hier etwas nachlegen */
+  .hero__lockup-col .hero__cta { margin-top: 14px; }
+}
+
+/* --- §2b Willkommen: Linkzeile und Weiterlesen in einer Zeile --- */
+.intro__nachwort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 24px;
+  flex-wrap: wrap;             /* mobil darf die Zeile umbrechen */
+  margin-top: 6px;
+}
+.intro .intro__nachwort .intro__links {
+  margin: 0;
+  flex: 1 1 auto;
+}
+.intro .intro__nachwort .philo-more-btn {
+  margin: 0;
+  flex: 0 0 auto;
+}
+@media (max-width: 560px) {
+  .intro__nachwort { justify-content: flex-start; }
+  .intro .intro__nachwort .intro__links { flex-basis: 100%; }
+}
+
+/* --- §2e Ueber Uns: der Stefan-Block ist raus, der Gruendungssatz
+   steht jetzt am Ende des eingeklappten Textes. Ohne den Block unten
+   braucht die Sektion wieder etwas Fuss. */
+.about { padding-bottom: 56px; }
+.about__gruendung { margin-top: 1.4em; }
+
+/* --- §2d Karten-Familie: Perspektiven und Wirkungsfelder -------
+   Beide Vierergruppen sind dieselbe Kartenform: weicher Schatten,
+   Radius 4px, dezenter Flaechenverlauf, ein Goldstreifen als Kante.
+   Perspektiven tragen ihn links, Wirkungsfelder rechts. */
+
+/* Perspektiven */
+/* Als Karten duerfen die vier nicht mehr auf gleiche Hoehe gestreckt
+   werden: sonst stehen beim Ausklappen einer Karte drei leere Kaesten
+   daneben. Jede Karte ist so hoch wie ihr Inhalt. */
+.prozess { align-items: start; }
+.prozess__step {
+  padding: 26px 22px 18px;
+  border-radius: 4px;
+  /* sehr leichtes Aufhellen von oben nach unten, kein Bling */
+  background: linear-gradient(180deg,
+    rgba(244,236,216,0.075) 0%,
+    rgba(244,236,216,0.025) 55%,
+    rgba(244,236,216,0.01) 100%);
+  box-shadow: 0 6px 20px rgba(12,22,12,0.22);
+}
+.prozess__step::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 4px 0 0 4px;
+  background: linear-gradient(180deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
+  pointer-events: none;
+}
+/* der goldene Faden lief bisher hinter den Visuals durch – zwischen den
+   Karten bleibt er sichtbar und verbindet sie weiterhin */
+.prozess__visual { margin-top: 4px; }
+
+/* Wirkungsfelder – gleiche Form, Streifen rechts, Flaeche eine Stufe
+   dunkler als der Sektionsgrund, Schrift hell (Pergament) */
+.quelle {
+  padding: 24px 26px 22px 22px;
+  border-left: none;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #1B2E1C 0%, #142312 100%);
+  box-shadow: 0 6px 20px rgba(12,22,12,0.28);
+}
+.quelle::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(180deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
+  pointer-events: none;
+}
+.quelle h3 { color: var(--parchment); }
+.quelle p  { color: rgba(244,236,216,0.84); }
+/* Farbpunkt des Feldes: heller Ring statt Pergament-Flaeche, damit er
+   auch als dunkler Punkt (Tinte, Lila) auf der dunklen Karte liest */
+.quelle__dot {
+  left: -7px;
+  box-shadow: 0 0 0 3px rgba(244,236,216,0.55);
+}
+
+/* Clamp 2 → 4: deutlich mehr Text steht schon eingeklappt da.
+   Das Float-Loch fuer den Button wandert entsprechend in Zeile 4. */
+.quelle .philo-more p { max-height: 6.4em; }
+.quelle .q-push { height: 4.8em; }
+
+/* --- §3 Sammelseiten (Konstrukte · Impulse · Werkstatt · Services)
+   Gemeinsame Kartenlogik: volle Inhaltsbreite, goldene Nummer oben
+   rechts, ruhige Typografie. Generalisiert aus dem lokalen <style>
+   von services.html – die Seiten nutzen kuenftig diese Klassen. */
+.sammel-cards {
+  display: grid;
+  gap: 28px;
+  margin-top: 24px;
+  max-width: 880px;
+}
+.sammel-cards .card {
+  display: block;
+  padding: 36px 40px;
+  scroll-margin-top: 96px;
+}
+.sammel-cards .card h2,
+.sammel-cards .card h3 {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 14px;
+  padding-right: 70px;         /* haelt die Zeile von der Nummer frei */
+  white-space: normal;
+}
+.sammel-cards .card p {
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+  margin: 0;
+}
+.sammel-cards .card p + p { margin-top: 14px; }
+.sammel-cards .card a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.sammel-cards .card a:hover { text-decoration-thickness: 2px; }
+/* gesperrte Kleinzeile in einer Karte (z.B. "entwickeln · entfalten · verbinden") */
+.sammel-cards .card__bewegungen,
+.sammel-cards .service__bewegungen {
+  font-style: normal;
+  letter-spacing: .04em;
+  color: #A9843D;
+}
+/* Absatz unterhalb des Kartenblocks, falls eine Seite ihn braucht */
+.page__outro {
+  max-width: 880px;
+  margin-top: 40px;
+}
+@media (max-width: 640px) {
+  .sammel-cards .card { padding: 28px 24px; }
+  .sammel-cards .card h2,
+  .sammel-cards .card h3 { font-size: 23px; padding-right: 56px; }
+}

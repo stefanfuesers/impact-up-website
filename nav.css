@@ -331,3 +331,40 @@
 @media print {
   .nav, .nav__toggle, .nav__drawer { display: none !important; }
 }
+
+/* Kontakt als kleiner Gold-Pill oben rechts -------------------
+   Fuehrt auf dieselbe Seite wie "Kooperiere mit uns" und traegt
+   deshalb dasselbe Gold. Navklein, damit die Zeile ruhig bleibt.
+   Liegt hier in der EINEN Nav-Quelle, damit auch die
+   Session-Builder-Seiten (laden nur nav.css) den Pill bekommen. */
+.nav .nav__links a.nav__cta {
+  display: inline-block;
+  padding: 7px 14px;
+  margin: -7px 0;              /* Pill vergroessert die Nav-Hoehe nicht */
+  background: var(--gold);
+  color: #1F1A14;
+  opacity: 1;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  transition: background .2s ease, color .2s ease;
+}
+.nav .nav__links a.nav__cta:hover,
+.nav .nav__links a.nav__cta:focus-visible {
+  background: #E7D199;         /* leicht aufgehellt, kein Farbwechsel */
+  color: #1F1A14;
+  opacity: 1;
+}
+/* Zwischen Hamburger-Grenze (900px) und breitem Desktop wurde die Nav
+   schon vorher zweizeilig; mit dem Pill etwas frueher. In diesem Band
+   ruecken Abstaende und Schriftgrad zusammen, damit die Zeile eine
+   Zeile bleibt. */
+@media (min-width: 901px) and (max-width: 1140px) {
+  .nav { gap: 18px; padding-left: 20px; padding-right: 20px; }
+  .nav__left { gap: 16px; }
+  .nav__links { gap: 16px; font-size: 13px; }
+  .nav__wordmark-name { font-size: 17px; }
+  .nav .nav__links a.nav__cta { padding: 6px 11px; }
+  .nav__lang { margin-left: 6px; }
+}
