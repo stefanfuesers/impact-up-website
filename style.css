@@ -2234,3 +2234,135 @@ h2.eyebrow--xl,
   /* Parallax-Felder im Hero stehen still */
   .hero-field { transform: none !important; }
 }
+
+/* ============================================================
+   WELLE 3 (05.08.2026) – Impeccable-Paket A, B1 + B2
+   Gesammelt am Dateiende. Zwei Eingriffe:
+   B2  Wirkungsfelder-Sektion (#quellen) wechselt von Moos auf
+       Pergament; die vier Feld-Karten werden Zettel auf Papier.
+   B1  Abschlussblock vor dem Footer (Startseite, alle Sprachen).
+   Kontrastwerte stehen jeweils in der Regel.
+   ============================================================ */
+
+/* --- B2a · Grundwechsel Moos → Pergament ------------------------
+   Der Kapitelwechsel wird sichtbar: der Skyline-Trenner davor
+   laeuft ohnehin schon nach Pergament aus, jetzt traegt ihn die
+   Sektion weiter. 40px zusaetzliches Kopfpolster geben dem
+   Uebergang Luft (frueher trennte eine helle Sektion die beiden). */
+.quellen {
+  background: var(--parchment);
+  padding: 40px 16px 24px;
+}
+/* Der Trenner danach fuehrt jetzt Pergament → Pergament:
+   nur noch die gezeichneten Goldlinien, keine Farbkante. */
+.quellen + .trenner--skyline-c {
+  background: var(--parchment);
+}
+/* Das Systemfeld ist in Moos gezeichnet – auf Pergament wird es
+   sichtbar, deshalb eine Spur zurueckgenommen. */
+.quellen .sysfield--light { opacity: .1; }
+
+/* --- B2b · Kopf der Sektion auf hellem Grund --------------------
+   Ink #1F1A14 auf #F4ECD8 = 14.7:1 · #3A332A = 10.4:1 ·
+   --gold-ink #745C28 = 5.45:1. */
+.quellen > .container .eyebrow { color: var(--gold-ink); }
+.quellen > .container .lead { color: #3A332A; }
+.quellen > .container .lead em { color: var(--gold-ink); }
+.quellen > .container .lead strong { color: var(--gold-ink); }
+.quellen > .container .lead a { color: var(--gold-ink); }
+.quellen > .container .philo-more-btn { color: var(--gold-ink); }
+/* Ueberleitung zur Netz-Grafik (steht ausserhalb des Containers) */
+.quellen > .lead { color: #3A332A; }
+/* Quellenzeile: ruhiges Braun statt Pergament-Transparenz (5.47:1) */
+.quellen__quellen { color: #6b5d4d; opacity: 1; }
+
+/* --- B2c · Die vier Feld-Karten als Zettel ----------------------
+   Eigene Bauform, damit sie sich von den Perspektiven-Kacheln
+   direkt darueber unterscheiden: Papierflaeche statt Moos-Kachel,
+   Goldlinie oben statt Seitenstreifen, dunkle Ink-Schrift.
+   Ruhezustand traegt nur den Zettel-Schatten (Flat-Parchment). */
+.quelle {
+  background: var(--paper);
+  border: 1px solid rgba(31,26,20,0.10);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(31,26,20,0.06);
+  padding: 24px 22px 18px;
+  overflow: hidden;
+}
+/* Gold-Edge-Rule: genau eine Kante – hier oben. */
+.quelle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  height: 3px;
+  background: linear-gradient(90deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
+  border-radius: 4px 4px 0 0;
+  pointer-events: none;
+}
+.quelle h3 { color: var(--ink); }          /* 16.7:1 auf #FFFBF0 */
+.quelle p  { color: #3A332A; }             /* 11.9:1 auf #FFFBF0 */
+.quelle .philo-more-btn,
+.quelle .philo-more-btn.expanded { color: var(--gold-ink); }  /* 6.2:1 */
+.quelle .philo-more-btn:hover { opacity: 0.72; }
+
+/* --- B2d · Netz-Fenster auf hellem Grund ------------------------
+   Der Canvas-Verlauf (#FAF4E2 → #EFE5CB) liegt dicht am Pergament.
+   Eine goldene Haarlinie haelt das Fenster als Flaeche zusammen. */
+.netz {
+  border: 1px solid rgba(201,169,97,0.45);
+  box-shadow: inset 0 0 80px rgba(201,169,97,0.10);
+}
+
+/* --- B2e · Fokus in der Sektion --------------------------------
+   Welle 1 setzt hier das helle Gold fuer Moos – auf Pergament
+   traegt wieder das dunkle. */
+.quellen > .container :focus-visible,
+.quellen__legende :focus-visible { outline-color: var(--gold-ink); }
+
+/* --- B1 · Abschlussblock vor dem Footer -------------------------
+   Auf Pergament, im Fluss der Ueber-Uns-Sektion. Drei gleichrangige
+   Wege zu den Sammelseiten, darunter der eine Gold-Button. */
+.abschluss {
+  background: var(--parchment);
+  padding: 0 0 88px;
+}
+.abschluss > .container { max-width: 880px; }
+.abschluss__satz {
+  border-top: 1px solid rgba(201,169,97,0.45);
+  padding-top: 42px;
+  margin: 0 0 26px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);                        /* 14.7:1 auf Pergament */
+}
+.abschluss__wege {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+/* Ghost-Variante fuer helle Gruende: .btn--ghost traegt Pergament-
+   Schrift und funktioniert nur auf Moos. */
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--gold-ink);            /* Kante 5.45:1 */
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--gold);
+  color: var(--ink);                        /* 7.7:1 auf Gold */
+  border-color: var(--gold);
+}
+@media (max-width: 560px) {
+  .abschluss__wege { flex-direction: column; align-items: stretch; }
+  .abschluss__wege .btn,
+  .abschluss__cta { display: block; text-align: center; }
+}
