@@ -7,7 +7,7 @@
    Hauptseiten UND session-werkstatt/.
    ============================================ */
 
-@import url("nav.css?v=2");
+@import url("nav.css?v=3");
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
@@ -125,7 +125,7 @@ h2.eyebrow--xl,
   min-height: 100vh;
   background:
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
-    linear-gradient(180deg, var(--moss) 0%, var(--moss-deep) 100%);
+    linear-gradient(180deg, var(--moss) 0%, var(--moss-deepest) 100%);
   color: var(--parchment);
   padding: 84px 32px 80px;
   position: relative;
@@ -279,7 +279,7 @@ h2.eyebrow--xl,
   transition: border-color .2s ease, color .2s ease;
 }
 .praxis-links a:hover {
-  color: var(--moss-deep);
+  color: var(--moss-deepest);
   border-bottom-color: var(--gold);
 }
 
@@ -370,6 +370,10 @@ h2.eyebrow--xl,
   color: rgba(244,236,216,0.85);
   margin-bottom: 16px;
 }
+/* NICHT mit dem .hero-Block oben zusammenlegen (Welle 1 geprueft):
+   .hero--sub setzt weiter oben padding-bottom:56px und hat dieselbe
+   Spezifitaet – nur weil diese Regel SPAETER steht, gilt fuer die
+   Sub-Heros 48px. Beim Zusammenlegen kippte das auf 56px. */
 .hero {
   min-height: auto;
   padding-bottom: 48px;
@@ -380,34 +384,14 @@ h2.eyebrow--xl,
   flex-wrap: wrap;
 }
 
-.hero__scroll {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 56px;
-  background: rgba(201,169,97,0.3);
-}
-.hero__scroll span {
-  position: absolute;
-  top: 0;
-  left: -2px;
-  width: 5px;
-  height: 16px;
-  background: var(--gold);
-  animation: scroll-pulse 2.4s ease-in-out infinite;
-}
-@keyframes scroll-pulse {
-  0%,100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(40px); opacity: 0.2; }
-}
+/* .hero__scroll + @keyframes scroll-pulse am 05.08.2026 geloescht –
+   in keiner HTML-Datei mehr benutzt (Welle 1, Hygiene). */
 
 /* ============================================
    2 · DREI QUELLEN
    ============================================ */
 .quellen {
-  background: linear-gradient(180deg, var(--moss) 0%, var(--moss-deep) 100%);
+  background: linear-gradient(180deg, var(--moss) 0%, var(--moss-deepest) 100%);
   /* Kopf sitzt dicht unter der Tempel-Skyline – oben bewusst ohne Polster,
      der Abstand kommt aus dem Trenner selbst. */
   padding: 0 16px 14px;
@@ -549,17 +533,8 @@ h2.eyebrow--xl,
   color: #3A332A;
 }
 
-.quellen__schluss {
-  text-align: justify;
-  hyphens: auto;
-  margin: 40px auto 0;
-  max-width: 940px;
-  font-family: var(--serif);
-  font-size: 19px;
-  line-height: 1.55;
-  color: var(--gold);
-  font-weight: 500;
-}
+/* .quellen__schluss am 05.08.2026 geloescht – in keiner HTML-Datei
+   mehr benutzt (Welle 1, Hygiene). */
 
 /* ============================================
    3 · WIE WIR WEITERGEHEN
@@ -642,7 +617,7 @@ h2.eyebrow--xl,
   height: 150px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: var(--moss-deep);
+  background: var(--moss-deepest);
   border: 1px solid rgba(201,169,97,0.35);
   display: flex;
   align-items: center;
@@ -661,7 +636,7 @@ h2.eyebrow--xl,
   height: 38px;
   border-radius: 50%;
   background: var(--gold);
-  color: var(--moss-deep);
+  color: var(--moss-deepest);
   font-family: var(--serif);
   font-size: 18px;
   font-weight: 700;
@@ -745,46 +720,11 @@ h2.eyebrow--xl,
 }
 
 /* ============================================
-   4 · ANGEBOTE
+   4 · SERVICE-KARTEN
+   Die .angebote*-Regeln (Sektion, Kopfzeile, Karten-Grid) sind am
+   05.08.2026 geloescht – die Klasse steht in keiner HTML-Datei mehr
+   (Welle 1, Hygiene). Die Karte selbst lebt weiter.
    ============================================ */
-.angebote {
-  background: var(--parchment);
-  padding: 70px 32px 60px;
-}
-.angebote .section-title { text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; }
-.angebote .lead { text-align: center; max-width: 720px; margin: 0 auto 64px; }
-.angebote .lead strong { color: var(--gold); font-weight: 600; }
-
-.angebote__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 28px;
-}
-.angebote__label {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--gold);
-}
-.angebote__kontakt {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--gold);
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-.angebote__kontakt:hover { opacity: 0.7; }
-.angebote__foot { text-align: right; margin-top: -32px; }
-.angebote__cards .card h3 { color: var(--gold); }
-
-.angebote__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 56px;
-}
 .card {
   background: white;
   padding: 40px 32px;
@@ -986,7 +926,7 @@ h2.eyebrow--xl,
    5 · PHILOSOPHIE
    ============================================ */
 .philosophie {
-  background: var(--moss-deep);
+  background: var(--moss-deepest);
   color: var(--parchment);
   padding: 110px 32px 100px;
   position: relative;
@@ -1164,7 +1104,7 @@ h2.eyebrow--xl,
   top: 64px;
   bottom: 0;
   width: calc(100% / 300);
-  background: var(--moss-deep);
+  background: var(--moss-deepest);
   z-index: 1;
   pointer-events: none;
 }
@@ -1341,7 +1281,7 @@ h2.eyebrow--xl,
   pointer-events: none;
 }
 .trenner--steine {
-  background: var(--moss-deep);
+  background: var(--moss-deepest);
   height: 24px;
   padding: 0;
 }
@@ -1390,10 +1330,10 @@ h2.eyebrow--xl,
 }
 .trenner--skyline-a { background: linear-gradient(180deg, var(--parchment) 0%, var(--moss) 100%); }
 .trenner--skyline-b { background: linear-gradient(180deg, var(--moss) 0%, var(--parchment) 100%); }
-.trenner--skyline-c { background: linear-gradient(180deg, var(--moss-deep) 0%, var(--parchment) 100%); }
+.trenner--skyline-c { background: linear-gradient(180deg, var(--moss-deepest) 0%, var(--parchment) 100%); }
 
 .trenner--bogen {
-  background: linear-gradient(180deg, var(--moss-deep) 0%, var(--parchment) 100%);
+  background: linear-gradient(180deg, var(--moss-deepest) 0%, var(--parchment) 100%);
   padding: 18px 0 12px;
   position: relative;
 }
@@ -1425,7 +1365,7 @@ h2.eyebrow--xl,
 .hero--mini {
   min-height: 80px;
   padding: 0;
-  background: var(--moss-deep);
+  background: var(--moss-deepest);
 }
 .page {
   background: var(--parchment);
@@ -1476,7 +1416,7 @@ h2.eyebrow--xl,
   font-size: 13px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--moss-deep);
+  color: var(--moss-deepest);
   margin-bottom: 8px;
 }
 .impulse-card__title {
@@ -1501,7 +1441,7 @@ h2.eyebrow--xl,
   display: inline-block;
   font-size: 14px;
   letter-spacing: 0.5px;
-  color: var(--moss-deep);
+  color: var(--moss-deepest);
   font-weight: 600;
   list-style: none;
   padding: 4px 0;
@@ -1560,7 +1500,6 @@ h2.eyebrow--xl,
   .quellen__legende,
   .bewegungen,
   .prozess,
-  .angebote__cards,
   .philo-grid { grid-template-columns: 1fr; gap: 24px; }
   .prozess__faden { display: none; }
   .about__intro { margin-bottom: 40px; }
@@ -1910,8 +1849,6 @@ h2.eyebrow--xl,
   .weitergehen__notiz { margin-bottom: 22px; }
   /* gleiche seitliche Kante wie .weitergehen, damit beide Koepfe fluchten */
   .quellen { padding-left: 18px; padding-right: 18px; }
-  .angebote { padding: 48px 18px 44px; }
-  .angebote .lead { margin-bottom: 32px; }
   .card { padding: 26px 20px; }
   .about { padding: 48px 18px 36px; }
   .stimmen { padding: 24px 0 48px; }
@@ -1963,7 +1900,11 @@ h2.eyebrow--xl,
 }
 
 /* --- §2e Ueber Uns: der Stefan-Block ist raus. Ohne den Block unten
-   braucht die Sektion wieder etwas Fuss. */
+   braucht die Sektion wieder etwas Fuss.
+   NICHT mit dem .about-Block oben zusammenlegen (Welle 1 geprueft):
+   dazwischen liegt @media (max-width:760px){.about{padding:48px 18px 36px}} –
+   weil diese Regel danach steht, gelten die 56px auch mobil. Zusammengelegt
+   wuerde die Media-Query gewinnen und mobil auf 36px fallen. */
 .about { padding-bottom: 56px; }
 
 /* ============================================================
@@ -2182,4 +2123,114 @@ h2.eyebrow--xl,
   .sammel-cards .card { padding: 28px 24px; }
   .sammel-cards .card h2,
   .sammel-cards .card h3 { font-size: 23px; padding-right: 56px; }
+}
+
+/* ============================================================
+   WELLE 1 (05.08.2026) – Impeccable-Paket A, Abschnitt 1a/1b/1c/1e
+   Gesammelt am Dateiende, damit die Kontrast-Korrekturen an einer
+   Stelle stehen und ohne Suchen zurueckgenommen werden koennen.
+   Tokens --gold-ink / --gold-bright liegen in nav.css.
+   ============================================================ */
+
+/* --- 1a · Kleine Gold-Texte: Grundfarbe ist das dunkle Gold ------
+   Gilt fuer Eyebrow, Weiterlesen-Knoepfe und Inline-Gold-Links.
+   Linien, Kanten, Ziffern, Kartenstreifen, Section-Titles, Buttons
+   und der Hero-Claim bleiben unveraendert bei --gold. */
+.eyebrow { color: var(--gold-ink); }
+.intro .eyebrow { color: var(--gold-ink); }
+.philo-more-btn { color: var(--gold-ink); }
+.lead a,
+.page__lead a { color: var(--gold-ink); }
+
+/* Auf den Moos-Flaechen traegt das helle Gold: gleicher Farbton,
+   Lightness +15 % (5.28:1 auf #2D4A2B statt 4.39:1). */
+.hero .eyebrow,
+.weitergehen .eyebrow,
+.quellen > .container .eyebrow,
+.philosophie .eyebrow,
+.sub-section--moss .eyebrow,
+.eyebrow--light { color: var(--gold-bright); }
+
+.hero .philo-more-btn,
+.weitergehen .philo-more-btn,
+.philosophie .philo-more-btn,
+.sub-section--moss .philo-more-btn,
+.quellen > .container .philo-more-btn,
+.quelle .philo-more-btn,
+.quelle .philo-more-btn.expanded,
+.prozess__more { color: var(--gold-bright); }
+
+.hero .lead a,
+.weitergehen .lead a,
+.philosophie .lead a,
+.sub-section--moss .lead a,
+.quellen > .container .lead a { color: var(--gold-bright); }
+
+/* Stefan-Seite: Kleinzeilen auf Pergament und Papier */
+.stimmen__toggle { color: var(--gold-ink); }
+.stimmen__quelle { color: var(--gold-ink); }
+.stimmen__note {
+  /* Uebersetzungshinweis braucht kein Gold – ruhiges Braun, volle Deckung
+     (6.16:1 auf dem Zettel #FFFBF0 statt 2.61:1 mit Gold auf 60 %). */
+  color: #6b5d4d;
+  opacity: 1;
+}
+
+/* Hinweis am 3D-Netz: derselbe Ink, aber lesbar
+   (7.25:1 oben / 6.67:1 unten auf dem Netz-Verlauf statt 2.3:1). */
+.netz__hint { opacity: 0.75; }
+
+/* --- 1b · Fokus auf den dunklen Flaechen ------------------------
+   Die Grundregel (2px Outline, 2px Offset, --gold-ink) und der
+   Skip-Link liegen in nav.css. Hier nur die dunklen Sektionen. */
+.hero :focus-visible,
+.weitergehen :focus-visible,
+.quellen > .container :focus-visible,
+.quellen__legende :focus-visible,
+.philosophie :focus-visible,
+.sub-section--moss :focus-visible,
+.foot :focus-visible {
+  outline-color: var(--gold);
+}
+
+/* --- 1e · Trefferflaechen der Weiterlesen-Knoepfe ---------------
+   Die Knoepfe sind 33–39px hoch; ein transparentes Overlay hebt die
+   Trefferflaeche auf 44px, ohne Layout oder Optik zu beruehren.
+   (::after traegt bei beiden schon das ▾/▴, deshalb ::before.) */
+.philo-more-btn,
+.prozess__more { position: relative; }
+.philo-more-btn::before,
+.prozess__more::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 44px;
+  min-height: 100%;
+}
+
+/* --- 1c · prefers-reduced-motion --------------------------------
+   Muster aus stefan.html: nichts bewegt sich, alles bleibt sichtbar.
+   Das 3D-Netz wird in main.js einmal statisch gerendert. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Reveal-Animationen zeigen ihren Endzustand statt zu starten */
+  .auf,
+  .js-auf .auf {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  /* Parallax-Felder im Hero stehen still */
+  .hero-field { transform: none !important; }
 }

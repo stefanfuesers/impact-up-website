@@ -25,10 +25,13 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Aller au contenu</a>
 
     <nav class="nav">
       <div class="nav__left">
@@ -83,9 +86,9 @@
       </ul>
     </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
-      <p class="eyebrow">Impulsions</p>
+      <h1 class="eyebrow">Impulsions</h1>
       <p class="page__lead">
         Les impulsions, c'est ce que nous partageons de notre travail avec le monde : des idées, des méthodes, des observations, parfois juste une question qui ne nous lâche pas. Tantôt issues d'un projet, tantôt de la littérature, tantôt d'une conversation qui a mis quelque chose en mouvement. Nous les partageons parce qu'un bon impact grandit quand on le rend visible et qu'on le transmet – et parce que les bonnes choses de ce monde se multiplient quand beaucoup de personnes continuent d'y réfléchir. Regardez autour de vous, prenez ce qui vous parle, et laissez votre pensée vous mener où elle veut. La résonance avec une impulsion est la plus belle des occasions — <a href="kontakt.fr.html">écrivez-nous</a>.
       </p>
@@ -98,7 +101,7 @@
 
         <section class="card">
           <span class="card__num">01</span>
-          <h3>Bientôt ici</h3>
+          <h2>Bientôt ici</h2>
           <p>La première impulsion paraîtra bientôt à cet endroit. Nous partageons aussi chaque nouvelle impulsion sur LinkedIn – connectez-vous avec Stefan pour ne rien manquer : <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan sur LinkedIn</a>.</p>
         </section>
 
@@ -109,9 +112,10 @@
   <footer class="foot">
     <p>Impact Up – Institut d'Orientation vers l'Impact Systémique · Hambourg</p>
     <p class="foot__small">© 2026 · <a href="impressum.fr.html">Mentions légales</a> · <a href="datenschutz.fr.html">Confidentialité</a></p>
+    <p class="foot__small">Ce site a été créé en collaboration avec l'intelligence artificielle.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

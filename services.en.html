@@ -25,14 +25,17 @@
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/services.fr.html">
   <link rel="alternate" hreflang="de" href="https://impact-up.org/services.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/services.html">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=12">
   <style>
     /* Page-specific: the service cards are links themselves */
     .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Skip to content</a>
   <nav class="nav">
     <div class="nav__left">
       <a class="nav__wordmark" href="index.en.html" aria-label="Impact Up - Home">
@@ -86,9 +89,9 @@
     </ul>
   </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
-      <p class="eyebrow" style="margin:0 0 18px;">Services</p>
+      <h1 class="eyebrow" style="margin:0 0 18px;">Services</h1>
       <p class="page__lead">
         Impact Up is under construction — and the services are taking shape along with the institute. What we develop is guided by what people wish for: if you want something, write to us about it, and together we will see whether and how it can be done — <a href="kontakt.en.html">send a service inquiry</a>.
       </p>
@@ -97,21 +100,21 @@
 
         <a href="coaching.en.html" class="card">
           <span class="card__num">01</span>
-          <h3>Coaching</h3>
+          <h2>Coaching</h2>
           <p>Coaching for individuals and teams of up to five people. We agree on the direction with the leadership, and gladly with the team itself — and then we work on that direction: on clarity of goals and clarity of roles, so that a team works well. These settings hold our longest experience.</p>
           <p class="card__result">→ To Coaching</p>
         </a>
 
         <a href="wirkungsberatung.en.html" class="card">
           <span class="card__num">02</span>
-          <h3>Impact Consulting</h3>
+          <h2>Impact Consulting</h2>
           <p>Developing, unfolding and connecting impact — these are the three movements of impact consulting. An organisation exists for a goal, and where that goal is a societal impact, consulting begins exactly there.</p>
           <p class="card__result">→ To Impact Consulting</p>
         </a>
 
         <a href="ki-integration.en.html" class="card">
           <span class="card__num">03</span>
-          <h3>Integrating Artificial Intelligence</h3>
+          <h2>Integrating Artificial Intelligence</h2>
           <p>Artificial intelligence can help organisations bring their impact into the world. We integrate it into the work: tied to your language, your impact logic and your standards.</p>
           <p class="card__result">→ To Integrating Artificial Intelligence</p>
         </a>
@@ -123,9 +126,10 @@
   <footer class="foot">
     <p>Impact Up – Institut für systemische Wirkungsorientierung · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.en.html">Imprint</a> · <a href="datenschutz.en.html">Privacy</a></p>
+    <p class="foot__small">This site was created in collaboration with artificial intelligence.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

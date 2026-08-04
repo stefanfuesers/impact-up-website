@@ -5,6 +5,8 @@
 // ============================================
 (function () {
   'use strict';
+
+  function init() {
   const nav = document.querySelector('.nav');
   if (!nav) return;
   const hero = document.querySelector('.hero');
@@ -15,8 +17,15 @@
     const trigger = hero ? hero.offsetHeight * 0.6 : 320;
     nav.classList.toggle('nav--transparent', window.scrollY < trigger);
   }
-  window.addEventListener('scroll', navState, { passive: true });
-  window.addEventListener('resize', navState);
+  // Scroll-Handler läuft im rAF-Takt statt bei jedem Scroll-Event.
+  let wartet = false;
+  function onScroll() {
+    if (wartet) return;
+    wartet = true;
+    requestAnimationFrame(() => { wartet = false; navState(); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
   navState();
 
   // Scrollspy: das Nav-Item der gerade sichtbaren Sektion leuchtet auf.
@@ -39,6 +48,14 @@
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     watched.forEach(w => obs.observe(w.el));
   }
+  }
+
+  // Robust gegen defer/async: erst laufen, wenn das Markup steht.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 
 // ============================================
@@ -48,6 +65,11 @@
 
 (function () {
 'use strict';
+
+// Der Aufbau steht in einer eigenen Funktion, damit er auch dann erst nach
+// dem Markup läuft, wenn die Skripte künftig mit defer geladen werden.
+// (Der Rumpf bleibt bewusst unverändert eingerückt.)
+function netzAufbauen() {
 
 if (typeof THREE === 'undefined') {
   console.error('three.js wurde nicht geladen.');
@@ -447,11 +469,17 @@ subMeshes.forEach((s, i) => {
   });
 });
 
+// ---------- Bewegung: Systemeinstellung respektieren ----------
+// Wer Bewegung abbestellt hat, bekommt das Netz einmal statisch gezeichnet:
+// keine Schwebe-Animation, kein Auto-Rotate. Ziehen bleibt möglich.
+const ruhig = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+let schont = !!(ruhig && ruhig.matches);
+
 // ---------- Drag Controls ----------
 let isDragging = false;
 let lastX = 0, lastY = 0;
 let rotX = 0.18, rotY = 0;
-let autoRotate = true;
+let autoRotate = !schont;
 let autoRotateTimeout = null;
 
 canvas.addEventListener('pointerdown', (e) => {
@@ -467,11 +495,14 @@ canvas.addEventListener('pointermove', (e) => {
   rotX += (e.clientY - lastY) * 0.004;
   rotX = Math.max(-0.9, Math.min(0.9, rotX));
   lastX = e.clientX; lastY = e.clientY;
+  // Läuft keine Schleife (Reduced Motion oder Netz außerhalb des Bilds),
+  // zeichnet das Ziehen selbst neu.
+  if (!laeuft) zeichnen();
 });
 canvas.addEventListener('pointerup', (e) => {
   isDragging = false;
   canvas.releasePointerCapture(e.pointerId);
-  autoRotateTimeout = setTimeout(() => { autoRotate = true; }, 3000);
+  if (!schont) autoRotateTimeout = setTimeout(() => { autoRotate = true; }, 3000);
 });
 canvas.addEventListener('pointerleave', () => { isDragging = false; });
 
@@ -481,17 +512,27 @@ function onResize() {
   camera.aspect = w / h;
   camera.updateProjectionMatrix();
   renderer.setSize(w, h, false);
+  if (!laeuft) zeichnen();
 }
 window.addEventListener('resize', onResize);
 
 // ---------- Animation ----------
 // Nur Haupt- und Impact-Knoten schweben frei – die Sub-Knoten kreisen
-// als Satelliten um ihren Hauptknoten (eigene Schleife in tick())
+// als Satelliten um ihren Hauptknoten (eigene Schleife in schritt())
 const allDynamic = [...mainMeshes, ...impactMeshes];
 const baseY = allDynamic.map(m => m.position.y);
 const baseX = allDynamic.map(m => m.position.x);
 const baseZ = allDynamic.map(m => m.position.z);
 const clock = new THREE.Clock();
+// Eigene Zeitachse statt clock.getElapsedTime(): beim Pausieren und
+// Wiederaufnehmen darf die Szene nicht springen.
+let simZeit = 0;
+
+// computeLineDistances() braucht nur, was tatsächlich gestrichelt ist.
+lines.forEach(ln => {
+  const m = ln.material;
+  ln.userData.gestrichelt = !!(m && (m.isLineDashedMaterial || m.type === 'LineDashedMaterial'));
+});
 
 // Sub-Knoten cyclen zwischen den vier Quellfarben (Erde / Frieden / Sozial / Demokratie)
 const SUB_COLORS = [
@@ -510,8 +551,10 @@ function blendSubColor(t, phase, out) {
   return out;
 }
 
-function tick() {
-  const t = clock.getElapsedTime();
+function schritt() {
+  // dt wird gedeckelt, damit ein Tab-Wechsel keinen Sprung erzeugt
+  simZeit += Math.min(clock.getDelta(), 0.1);
+  const t = simZeit;
 
   // Haupt- und Impact-Knoten schweben
   allDynamic.forEach((m, i) => {
@@ -549,7 +592,7 @@ function tick() {
     positions.setXYZ(0, ln.userData.a.position.x, ln.userData.a.position.y, ln.userData.a.position.z);
     positions.setXYZ(1, ln.userData.b.position.x, ln.userData.b.position.y, ln.userData.b.position.z);
     positions.needsUpdate = true;
-    ln.computeLineDistances();
+    if (ln.userData.gestrichelt) ln.computeLineDistances();
     ln.material.opacity = ln.userData.baseOpacity * (0.85 + 0.25 * Math.sin(t * 0.9 + ln.userData.a.id));
   });
 
@@ -566,12 +609,79 @@ function tick() {
 
   // Auto-rotate
   if (autoRotate) rotY += 0.0022;
+
+  zeichnen();
+}
+
+function zeichnen() {
   group.rotation.y = rotY;
   group.rotation.x = rotX;
-
   renderer.render(scene, camera);
-  requestAnimationFrame(tick);
 }
-tick();
+
+// ---------- Schleife nur, wenn das Netz auch zu sehen ist ----------
+// Die tick()-Schleife war die teuerste Dauerlast der Startseite. Sie läuft
+// jetzt nur, solange #netz im Bild und der Tab im Vordergrund ist.
+let laeuft = false;
+let rafId = 0;
+let imBild = false;
+
+function frame() {
+  rafId = requestAnimationFrame(frame);
+  schritt();
+}
+function starten() {
+  if (laeuft || schont) return;
+  laeuft = true;
+  clock.getDelta();            // Pausenlücke verschlucken
+  rafId = requestAnimationFrame(frame);
+}
+function anhalten() {
+  if (!laeuft) return;
+  laeuft = false;
+  cancelAnimationFrame(rafId);
+}
+function pruefen() {
+  if (imBild && !document.hidden) starten();
+  else anhalten();
+}
+
+if ('IntersectionObserver' in window) {
+  const netzBeobachter = new IntersectionObserver(eintraege => {
+    imBild = eintraege.some(e => e.isIntersecting);
+    pruefen();
+  }, { rootMargin: '200px 0px' });
+  netzBeobachter.observe(wrapper);
+} else {
+  imBild = true;
+}
+document.addEventListener('visibilitychange', pruefen);
+
+// Ein Bild steht immer – auch wenn die Schleife nie startet.
+zeichnen();
+if (!schont) pruefen();
+
+// Wer die Einstellung im laufenden Betrieb ändert, bekommt sie sofort.
+if (ruhig && ruhig.addEventListener) {
+  ruhig.addEventListener('change', e => {
+    schont = e.matches;
+    if (schont) {
+      anhalten();
+      autoRotate = false;
+      zeichnen();
+    } else {
+      autoRotate = true;
+      pruefen();
+    }
+  });
+}
+
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', netzAufbauen);
+} else {
+  netzAufbauen();
+}
 
 })();

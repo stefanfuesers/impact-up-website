@@ -25,14 +25,17 @@
   <link rel="alternate" hreflang="es" href="https://impact-up.org/services.es.html">
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/services.fr.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/services.html">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=12">
   <style>
     /* Específico de esta página: las tarjetas de servicios son enlaces */
     .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Saltar al contenido</a>
   <nav class="nav">
     <div class="nav__left">
       <a class="nav__wordmark" href="index.es.html" aria-label="Impact Up - Inicio">
@@ -86,9 +89,9 @@
     </ul>
   </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
-      <p class="eyebrow" style="margin:0 0 18px;">Servicios</p>
+      <h1 class="eyebrow" style="margin:0 0 18px;">Servicios</h1>
       <p class="page__lead">
         Impact Up está en construcción – y con el instituto van naciendo también los servicios. Lo que desarrollamos se orienta por lo que la gente desea: quien quiera algo, nos cuenta de qué se trata, y miramos juntos si es posible y cómo – <a href="kontakt.es.html">a la solicitud de servicio</a>.
       </p>
@@ -97,21 +100,21 @@
 
         <a href="coaching.es.html" class="card">
           <span class="card__num">01</span>
-          <h3>Coaching</h3>
+          <h2>Coaching</h2>
           <p>Coaching para personas individuales y equipos de hasta cinco personas. El rumbo lo acordamos con la dirección, y con mucho gusto también con el propio equipo — y después trabajamos en ese rumbo: en la claridad de objetivos y la claridad de roles, para que un equipo funcione bien. En estos escenarios está nuestra experiencia más larga.</p>
           <p class="card__result">→ Al Coaching</p>
         </a>
 
         <a href="wirkungsberatung.es.html" class="card">
           <span class="card__num">02</span>
-          <h3>Consultoría de Impacto</h3>
+          <h2>Consultoría de Impacto</h2>
           <p>Desarrollar, desplegar y conectar el impacto — estos son los tres movimientos de la consultoría de impacto. Una organización existe para un objetivo, y allí donde ese objetivo es un impacto social, la consultoría comienza justo ahí.</p>
           <p class="card__result">→ A la Consultoría de Impacto</p>
         </a>
 
         <a href="ki-integration.es.html" class="card">
           <span class="card__num">03</span>
-          <h3>Integración de Inteligencia Artificial</h3>
+          <h2>Integración de Inteligencia Artificial</h2>
           <p>La inteligencia artificial puede ayudar a las organizaciones a traer su impacto al mundo. Nosotros la integramos en el trabajo: vinculada a su lenguaje, a su lógica de impacto y a sus criterios.</p>
           <p class="card__result">→ A la Integración de Inteligencia Artificial</p>
         </a>
@@ -123,9 +126,10 @@
   <footer class="foot">
     <p>Impact Up – Instituto de Orientación al Impacto Sistémico · Hamburgo</p>
     <p class="foot__small">© 2026 · <a href="impressum.es.html">Aviso legal</a> · <a href="datenschutz.es.html">Privacidad</a></p>
+    <p class="foot__small">Este sitio se ha creado en colaboración con inteligencia artificial.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

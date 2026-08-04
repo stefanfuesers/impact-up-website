@@ -28,8 +28,10 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
 <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.3/dist/html2pdf.bundle.min.js" defer></script>
+<link rel="preload" href="../assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts/fonts.css">
-<link rel="stylesheet" href="../nav.css?v=2">
+<link rel="stylesheet" href="../nav.css?v=3">
 <style>
 :root{
   --c-gold:#C9A961; --c-moss-deep:#2D4A2B; --c-moss-500:#4A6843; --c-moss-300:#6B8A5A;
@@ -140,6 +142,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .tagkopf{font-family:var(--font-display);font-weight:600;font-size:1.5rem;color:var(--c-purple-deep);margin:26px 0 12px}
 .aktionen{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
 .fussnote{font-size:.85rem;color:var(--c-stone-700);max-width:62ch}
+.sw-foot{max-width:860px;margin:0 auto;padding:0 20px 56px;font-size:.85rem;color:var(--c-stone-700)}
 .offen{border-left:6px solid var(--c-monk)}
 .offen .uname{color:var(--c-monk)}
 
@@ -168,6 +171,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Aller au contenu</a>
 
 <nav class="nav">
   <div class="nav__left">
@@ -222,7 +226,9 @@ button:disabled{opacity:.45;cursor:not-allowed}
   </ul>
 </nav>
 
-<main id="main"></main>
+<main id="inhalt"></main>
+
+<footer class="sw-foot"><p>Ce site a été créé en collaboration avec l'intelligence artificielle.</p></footer>
 
 <script src="daten.fr.js"></script>
 <script>
@@ -994,7 +1000,7 @@ function baueLeitfaden(){
    Gruppe:    0 Start · 1 Block A · 2 Mit wem · 3 Phase (oft automatisch)
               · 4 Rahmen · 5 Handschrift · 6 Bogen
    ===================================================================== */
-const M = document.getElementById("main");
+const M = document.getElementById("inhalt");
 
 function maxSchritt(){ return istGespraech() ? 4 : 6; }
 let _renderedSchritt = -1;
@@ -1419,7 +1425,7 @@ function downloadPdf(btn){
   }
   const label = btn ? btn.textContent : "";
   if(btn){ btn.disabled = true; btn.textContent = "Création du PDF …"; }
-  const klon = document.getElementById("main").cloneNode(true);
+  const klon = document.getElementById("inhalt").cloneNode(true);
   klon.querySelectorAll(".progress,.aktionen,.wnav,.fussnote").forEach(el=>el.remove());
   const pk = klon.querySelector(".printkopf"); if(pk) pk.style.display = "flex";
   const wrap = document.createElement("div");
@@ -1470,7 +1476,7 @@ function zaehleRun(){
 window.addEventListener("beforeprint",()=>document.querySelectorAll("details").forEach(d=>d.open=true));
 render();
 </script>
-  <script src="../nav.js?v=3"></script>
+  <script src="../nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

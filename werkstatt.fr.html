@@ -25,14 +25,17 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
   <style>
     /* Spécifique à cette page : les cartes de l'atelier sont des liens */
     .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Aller au contenu</a>
 
   <nav class="nav">
     <div class="nav__left">
@@ -87,7 +90,7 @@
     </ul>
   </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
       <p class="eyebrow">Atelier d'Impact Up</p>
       <h1 class="page__title">Atelier</h1>
@@ -99,7 +102,7 @@
 
         <a href="session-werkstatt/index.fr.html" class="card">
           <span class="card__num">01</span>
-          <h3>Constructeur de Sessions</h3>
+          <h2>Constructeur de Sessions</h2>
           <p>En quelques minutes, tu construis une petite session pour un besoin concret — de l'entretien individuel délicat au séminaire de deux jours. Tu réponds à quelques questions, et tu obtiens quelques méthodes issues d'une base de 190, des indications sur ce à quoi faire attention, et deux ou trois liens pour approfondir — comme une première inspiration. Ce que tu en fais, c'est toi qui le décides ; tout reste dans ton navigateur.</p>
           <p class="card__result">→ Vers le Constructeur de Sessions</p>
         </a>
@@ -111,9 +114,10 @@
   <footer class="foot">
     <p>Impact Up – Institut d'Orientation vers l'Impact Systémique · Hambourg</p>
     <p class="foot__small">© 2026 · <a href="impressum.fr.html">Mentions légales</a> · <a href="datenschutz.fr.html">Confidentialité</a></p>
+    <p class="foot__small">Ce site a été créé en collaboration avec l'intelligence artificielle.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

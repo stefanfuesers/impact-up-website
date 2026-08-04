@@ -26,18 +26,21 @@
   <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Impact Up – Institut d'Orientation vers l'Impact Systémique">
+  <meta name="twitter:title" content="Impact Up · Institut d'Orientation vers l'Impact Systémique">
   <meta name="twitter:description" content="Nous donnons de l'espace à votre impact. Pour les initiatives, organisations et réseaux qui veulent porter leur impact dans le système.">
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=11">
-  <script src="assets/three.min.js"></script>
+  <link rel="stylesheet" href="style.css?v=12">
+  <script src="assets/three.min.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Aller au contenu</a>
     <nav class="nav">
       <div class="nav__left">
         <a class="nav__wordmark" href="#top" aria-label="Impact Up – retour en haut de page">
-          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="">
+          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="" width="100" height="100">
           <span class="nav__wordmark-name">Impact <em>Up</em></span>
         </a>
         <ul class="nav__links">
@@ -87,14 +90,16 @@
       </ul>
     </nav>
 
+  <main id="inhalt">
+
 
   <!-- ============================================ -->
   <!-- 1 · HERO                                     -->
   <!-- ============================================ -->
   <header id="top" class="hero hero--band">
 
-    <img class="hero-field hero-field--far" src="assets/field_far.svg" alt="" aria-hidden="true">
-    <img class="hero-field hero-field--near" src="assets/field_near.svg" alt="" aria-hidden="true">
+    <img class="hero-field hero-field--far" src="assets/field_far.svg" width="1200" height="800" alt="" aria-hidden="true">
+    <img class="hero-field hero-field--near" src="assets/field_near.svg" width="1200" height="800" alt="" aria-hidden="true">
 
     <div class="hero__inner hero__inner--v2">
       <div class="hero__lockup-col">
@@ -158,7 +163,7 @@
   <!-- 2 · COMMENT NOUS AVANÇONS AVEC VOUS          -->
   <!-- ============================================ -->
   <section id="weitergehen" class="weitergehen has-sysbg">
-    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true" width="1200" height="800" loading="lazy" decoding="async">
     <div class="container">
       <h2 class="eyebrow eyebrow--xl">Orientation vers l'Impact</h2>
 
@@ -193,7 +198,7 @@
           <p class="prozess__axis">intérieur · la personne</p>
           <h3>Résonance</h3>
           <p class="prozess__text">Les personnes sont motivées et aiment leur travail lorsqu'elles s'identifient à l'impact qu'elles produisent et y trouvent un sens propre. Mais une résonance aussi positive avec son propre impact n'a rien d'évident — et c'est exactement là que nous intervenons. Lorsque cela réussit, naît une orientation qui rend aussi possible une bonne collaboration ; le sens du travail lui-même naît de l'impact, et c'est la motivation la plus solide qui soit. Qu'une personne puisse entrer en résonance dépend aussi de la façon dont elle est intégrée dans le projet, le programme et l'organisation — a-t-elle l'espace et la liberté nécessaires ? Là où la résonance manque, la cause tient tantôt à l'impact lui-même, tantôt à cette intégration — nous l'examinons avec vous, jusqu'à ce que l'impact agisse aussi vers l'intérieur par le sens.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>lire la suite</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">lire la suite</button>
           </div>
         </article>
 
@@ -225,7 +230,7 @@
           <p class="prozess__axis">intérieur · l'organisation</p>
           <h3>Structure</h3>
           <p class="prozess__text">Une organisation se donne une structure — par sa raison d'être, ses équipes, dans des projets ou des rôles. Cette fonctionnalité n'est pas une fin en soi : elle est la condition pour que l'impact puisse réellement être produit vers l'extérieur à travers l'organisation. L'impact correspond-il à la raison d'être de l'organisation ? Et est-il relié de telle sorte que l'organisation le porte réellement vers l'extérieur ? La logique d'impact se situe toujours à la frontière entre l'organisation et la société : que faut-il exactement à l'intérieur de l'organisation pour que l'impact souhaité puisse être produit ? Nous façonnons cette interaction avec vous — depuis l'alignement de la structure sur l'impact jusqu'au développement organisationnel, là où beaucoup doit être structuré et concerté au service de l'impact.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>lire la suite</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">lire la suite</button>
           </div>
         </article>
 
@@ -256,7 +261,7 @@
           <p class="prozess__axis">extérieur · le champ d'impact</p>
           <h3>Cohérence</h3>
           <p class="prozess__text">Votre impact n'existe jamais seul — en tant qu'organisation, vous agissez dans un champ d'impact, portés par votre raison d'être, votre mission, vos aspirations au changement. Qui agit à vos côtés, qui à votre suite, où se déplace le pouvoir quand vous prenez une position claire ? Deux bons impacts côte à côte ne sont pas automatiquement cohérents. Ensemble, nous cherchons la place de votre impact dans le champ d'impact, pour qu'il devienne complémentaire plutôt que contraire, et pour que les déséquilibres de pouvoir ne se renforcent pas involontairement. C'est ainsi que se crée la base pour que, dans le champ d'impact, tout le monde travaille dans une même direction — et pour que, à partir de lui, la coopération avec d'autres devienne possible.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>lire la suite</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">lire la suite</button>
           </div>
         </article>
 
@@ -300,7 +305,7 @@
           <p class="prozess__axis">extérieur · la société</p>
           <h3>Coopération</h3>
           <p class="prozess__text">C'est dans la société que se décide si de nombreux impacts individuels deviennent un tout commun. La société peut-elle entrer en coopération sur la base de votre impact — au-delà des champs et des acteurs pris isolément ? C'est exactement là que se trouve le levier : là où la concurrence détermine aujourd'hui l'interaction, la coopération devient la base — et donc l'élément central d'une transformation de la société. Cela nécessite quelqu'un qui tienne l'espace où différentes logiques, mandats et rapports de pouvoir se rencontrent, sans se lisser mutuellement. Nous facilitons de tels espaces avec vous — en réseau, conscients des rapports de pouvoir, avec la patience qu'exigent des relations qui doivent tenir dans la durée. Nous travaillons avec ce qui se montre : des modèles partagés, de nouvelles pratiques, des flux de ressources déplacés. C'est dans cette coopération que naît l'impact systémique qui nous oriente.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>lire la suite</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">lire la suite</button>
           </div>
         </article>
       </div>
@@ -453,7 +458,7 @@
   <!-- 3 · CHAMPS D'IMPACT (réseau 3D)               -->
   <!-- ============================================ -->
   <section id="quellen" class="quellen has-sysbg">
-    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true" width="1200" height="800" loading="lazy" decoding="async">
 
     <div class="container">
       <h2 class="eyebrow eyebrow--xl">Champs d'Impact Centraux</h2>
@@ -473,28 +478,28 @@
     </div>
 
     <div class="quellen__legende">
-      <div class="quelle" style="--c:#2D4A2B">
+      <div class="quelle">
         <h3>Écosystème Terre</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">lire la suite</button>
         <div class="philo-more">
           <p>La Terre est un écosystème aux limites planétaires, qui limitent aussi la croissance économique et mettent au défi la justice sous ses multiples facettes sur cette planète. Nous engageons le processus de (ré)intégration harmonieuse de la vie humaine dans l'écosystème Terre.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#1F1A14">
+      <div class="quelle">
         <h3>Paix &amp; Non-violence</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">lire la suite</button>
         <div class="philo-more">
           <p>La non-violence est le fondement de la dignité humaine et de la paix entre les personnes. La non-violence structurelle et culturelle en fait aussi partie — souvent invisible, mais essentielle. Nous engageons le processus qui consiste à rendre plus conscientes les différentes formes de violence et à transformer les conflits de façon constructive.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#4A2B5C">
+      <div class="quelle">
         <h3>Participation Sociale</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">lire la suite</button>
         <div class="philo-more">
           <p>La participation sociale est la condition de base d'une vie en communauté — pour tout ce qui est aujourd'hui organisé économiquement : l'alimentation, le logement, la mobilité, la culture. Chacune et chacun a besoin de participation, d'orientation vers le bien commun et de sécurité individuelle, par exemple grâce à un revenu de base. Nous engageons le processus consistant à faire de l'économie un instrument de participation sociale et à placer l'humanité au centre.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#2B4A5C">
+      <div class="quelle">
         <h3>Démocratie</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">lire la suite</button>
         <div class="philo-more">
@@ -505,7 +510,7 @@
 
     <p class="lead lead--full">Tous les quatre se complètent mutuellement — par le soutien réciproque et les synergies. Un autre objectif d'Impact Up est de mettre ces champs d'impact en réseau les uns avec les autres, afin que la coopération puisse se développer dans toute la société :</p>
 
-    <div id="netz" class="netz">
+    <div id="netz" class="netz" role="img" aria-label="Les quatre champs d'impact, reliés entre eux comme un réseau mobile">
       <canvas id="netz-canvas"></canvas>
       <div class="netz__hint">↻ Faites glisser pour tourner</div>
     </div>
@@ -578,7 +583,7 @@
   <section id="about" class="about">
     <div class="container">
       <div class="about__intro">
-        <p class="eyebrow">À Propos</p>
+        <h2 class="eyebrow">À Propos</h2>
 
         <p>Impact Up est une idée qui ne peut naître qu'en communauté — c'est pourquoi ce site est rédigé au « nous ». En tant qu'Institut d'Orientation vers l'Impact Systémique, nous nous comprenons comme un acteur organisateur : nous réunissons des personnes, des organisations et des réseaux qui travaillent à l'impact sociétal, contribuons à bâtir des alliances et gardons les liens ouverts. Nous cherchons pour cela des initiatrices et initiateurs de processus autant que des clientes et clients — les deux rôles sont souvent interchangeables : nous accompagnons et nous sommes accompagnés.</p>
 
@@ -596,13 +601,15 @@
     </div>
   </section>
 
+  </main>
   <footer class="foot">
     <p>Impact Up – Institut d'Orientation vers l'Impact Systémique · Hambourg</p>
     <p class="foot__small">© 2026 · <a href="impressum.fr.html">Mentions légales</a> · <a href="datenschutz.fr.html">Confidentialité</a></p>
+    <p class="foot__small">Ce site a été créé en collaboration avec l'intelligence artificielle.</p>
   </footer>
 
-  <script src="main.js?v=5"></script>
-  <script src="nav.js?v=3"></script>
+  <script src="main.js?v=6" defer></script>
+  <script src="nav.js?v=4" defer></script>
 
   <script>
     // Prozess-Texte aufklappen
@@ -611,6 +618,7 @@
         const text = btn.previousElementSibling;
         const open = text.classList.toggle('expanded');
         btn.classList.toggle('expanded', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.textContent = open ? 'réduire' : 'lire la suite';
       });
     });
@@ -626,30 +634,21 @@
       });
     });
 
-    // Auto-Einklappen, wenn Maus die Karte verlässt
-    document.querySelectorAll('.prozess__step').forEach(step => {
-      step.addEventListener('mouseleave', () => {
-        const text = step.querySelector('.prozess__text');
-        const btn = step.querySelector('.prozess__more');
-        if (text && text.classList.contains('expanded')) {
-          text.classList.remove('expanded');
-          if (btn) {
-            btn.classList.remove('expanded');
-            btn.textContent = 'lire la suite';
-          }
-        }
-      });
-    });
 
     // Hero-Feld: Parallax-Tiefe beim Scrollen
     (function () {
       const ff = document.querySelector('.hero-field--far'),
             fn = document.querySelector('.hero-field--near');
       if (!ff && !fn) return;
-      addEventListener('scroll', () => {
+      let ticking = false;
+      function update() {
+        ticking = false;
         const y = scrollY;
         if (ff) ff.style.transform = 'translateY(' + (y * 0.12) + 'px)';
         if (fn) fn.style.transform = 'translateY(' + (y * 0.28) + 'px)';
+      }
+      addEventListener('scroll', () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
       }, { passive: true });
     })();
   </script>

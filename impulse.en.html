@@ -25,10 +25,13 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Skip to content</a>
 
     <nav class="nav">
       <div class="nav__left">
@@ -83,9 +86,9 @@
       </ul>
     </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
-      <p class="eyebrow">Impulses</p>
+      <h1 class="eyebrow">Impulses</h1>
       <p class="page__lead">
         Impulses are what we share from our work with the world: thoughts, methods, observations – sometimes just a question that won't let us go. From a project, from the literature, from a conversation that set something in motion. We share them because good impact grows when you make it visible and pass it on – and because the good things in this world multiply when many people keep thinking them further. Look around, take what speaks to you, and follow the thought wherever it leads. Resonance with an impulse is the finest of occasions — <a href="kontakt.en.html">write to us</a>.
       </p>
@@ -97,7 +100,7 @@
 
         <section class="card">
           <span class="card__num">01</span>
-          <h3>Coming soon</h3>
+          <h2>Coming soon</h2>
           <p>The first impulse will appear right here soon. We also share every new impulse on LinkedIn – connect with Stefan there to catch them as they come: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan on LinkedIn</a>.</p>
         </section>
 
@@ -108,9 +111,10 @@
   <footer class="foot">
     <p>Impact Up – Institute for Systemic Impact Orientation · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.en.html">Imprint</a> · <a href="datenschutz.en.html">Privacy</a></p>
+    <p class="foot__small">This site was created in collaboration with artificial intelligence.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

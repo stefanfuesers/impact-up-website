@@ -25,14 +25,17 @@
   <link rel="alternate" hreflang="es" href="https://impact-up.org/werkstatt.es.html">
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/werkstatt.fr.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/werkstatt.html">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=12">
   <style>
     /* Específico de esta página: las tarjetas del taller son enlaces */
     .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Saltar al contenido</a>
 
   <nav class="nav">
     <div class="nav__left">
@@ -87,7 +90,7 @@
     </ul>
   </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
       <p class="eyebrow">Taller de Impact Up</p>
       <h1 class="page__title">Taller</h1>
@@ -99,7 +102,7 @@
 
         <a href="session-werkstatt/index.es.html" class="card">
           <span class="card__num">01</span>
-          <h3>Constructor de Sesiones</h3>
+          <h2>Constructor de Sesiones</h2>
           <p>En pocos minutos pueden armar una sesión breve para un asunto concreto — desde una conversación individual difícil hasta un retiro de dos días. Responden algunas preguntas, y el resultado son algunos métodos de una base de 190, indicaciones sobre lo que conviene tener en cuenta y dos o tres enlaces para seguir leyendo — como primera inspiración. Lo que salga de ahí lo deciden ustedes; todo permanece en su navegador.</p>
           <p class="card__result">→ Al Constructor de Sesiones</p>
         </a>
@@ -111,9 +114,10 @@
   <footer class="foot">
     <p>Impact Up – Instituto de Orientación al Impacto Sistémico · Hamburgo</p>
     <p class="foot__small">© 2026 · <a href="impressum.es.html">Aviso legal</a> · <a href="datenschutz.es.html">Privacidad</a></p>
+    <p class="foot__small">Este sitio se ha creado en colaboración con inteligencia artificial.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

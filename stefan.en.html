@@ -25,17 +25,19 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Stefan Füsers – Impact Up" />
+  <meta name="twitter:title" content="Stefan Füsers · Impact Up" />
   <meta name="twitter:description" content="More than 15 years of peace work and civil-society project development and implementation in Cambodia, Kosovo and Hamburg, impact orientation and PM&amp;E, systemic organisational development." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=12" />
 
   <style>
     /* ============================================================
        Personenseite – seitenspezifisches Styling
-       Nutzt die Tokens aus style.css: --gold --moss --moss-deep
-       --leaf --stone --parchment --ink --purple --serif --sans
+       Nutzt die Tokens aus style.css: --gold --moss --moss-deepest
+       --stone --parchment --ink --purple --serif --sans
 
        Grundhaltung: klein, eng, ruhig. Der Text laeuft ueber die
        volle Inhaltsbreite, die Bilder bleiben zurueckhaltend.
@@ -44,7 +46,7 @@
     /* ---------- Buehne oben ---------- */
     .stage {
       position: relative;
-      background: var(--moss-deep);
+      background: var(--moss-deepest);
       padding: 104px 0 0;
       overflow: hidden;
     }
@@ -171,7 +173,7 @@
        ruhiger Atemzug nach dem Haupttext, eines zwischen den beiden
        Sektionen – dort mit dem Satz daneben. */
     .band {
-      background: var(--moss-deep);
+      background: var(--moss-deepest);
       padding: 44px 0 46px;
       position: relative;
     }
@@ -198,7 +200,7 @@
       color: rgba(244,236,216,.45);
       margin: 8px 0 0;
     }
-    .band--warm .band__note { color: var(--stone); }
+    .band--warm .band__note { color: #6b5d4d; }
 
     /* Einzelbild, mittig gestellt */
     .band--solo .band__bild { margin: 0 auto; }
@@ -244,7 +246,7 @@
       font-family: var(--sans);
       font-size: 13px;
       letter-spacing: 1.5px;
-      color: var(--gold);
+      color: var(--gold-ink);
       padding-top: 2px;
     }
 
@@ -314,6 +316,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Skip to content</a>
 
   <nav class="nav">
     <div class="nav__left">
@@ -368,6 +371,8 @@
     </ul>
   </nav>
 
+  <main id="inhalt">
+
   <!-- ===================== Stage ===================== -->
   <header class="stage">
     <div class="stage__inner">
@@ -403,7 +408,7 @@
       <figure class="band__bild auf">
         <img src="assets/workshop-panorama.webp"
              alt="Stefan Füsers facilitating a workshop in front of three large card walls on trauma, rights and political participation"
-             width="1800" height="1062" />
+             width="1800" height="1062" loading="lazy" decoding="async" />
         <figcaption class="band__note">Impact planning in the Civil Peace Service, Cambodia</figcaption>
       </figure>
     </div>
@@ -425,7 +430,7 @@
       <figure class="band__bild auf">
         <img src="assets/workshop-wand.webp"
              alt="Three facilitation walls covered in clustered cards, with Stefan Füsers in conversation in front of them"
-             width="1500" height="1107" />
+             width="1500" height="1107" loading="lazy" decoding="async" />
         <figcaption class="band__note">Planning workshop in the Civil Peace Service, Cambodia</figcaption>
       </figure>
 
@@ -518,9 +523,11 @@
     </div>
   </section>
 
+  </main>
   <footer class="foot">
     <p>Impact Up – Institute for Systemic Impact Orientation · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.en.html">Imprint</a> · <a href="datenschutz.en.html">Privacy</a></p>
+    <p class="foot__small">This site was created in collaboration with artificial intelligence.</p>
   </footer>
 
   <script>
@@ -565,7 +572,7 @@
     })();
   </script>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

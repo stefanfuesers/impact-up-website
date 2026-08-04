@@ -25,8 +25,10 @@
   <link rel="alternate" hreflang="es" href="https://impact-up.org/konstrukte.es.html">
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/konstrukte.fr.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/konstrukte.html">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=12">
   <style>
     /* La forme de base des cartes vient de .sammel-cards dans style.css.
        Spécifique à cette page : ici chaque carte est elle-même un lien. */
@@ -35,6 +37,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Aller au contenu</a>
   <nav class="nav">
     <div class="nav__left">
       <a class="nav__wordmark" href="index.fr.html" aria-label="Impact Up - Accueil">
@@ -88,9 +91,9 @@
     </ul>
   </nav>
 
-  <main class="page">
+  <main id="inhalt" class="page">
     <div class="container page__inner">
-      <p class="eyebrow" style="margin:0 0 18px;">Construits d'Impact Up</p>
+      <h1 class="eyebrow" style="margin:0 0 18px;">Construits d'Impact Up</h1>
       <p class="page__lead">
         Les construits sont les fondements théoriques d'Impact Up – les outils de pensée dont est né notre travail. Nous les appelons construits parce qu'ils sont construits par nous et par d'autres, pour pouvoir voir et discuter les relations d'impact. Toute description du monde est une construction – et les bonnes constructions rendent le travail commun possible : elles donnent à toutes les personnes impliquées un langage pour ce qui agit entre elles. Les contenus essentiels naissent d'abord de la collaboration – et c'est avec nos construits que nous nous appuyons dessus. Les échanges autour des construits nous sont toujours précieux — <a href="kontakt.fr.html">écrivez-nous</a>. Voici pour commencer quelques points de départ pour nous :
       </p>
@@ -99,21 +102,21 @@
 
         <a href="impact-up-philosophie.fr.html" class="card">
           <span class="card__num">01</span>
-          <h3>Philosophie d'Impact Up</h3>
+          <h2>Philosophie d'Impact Up</h2>
           <p>Un impact dans la société n'existe pas à lui seul. C'est l'interaction des nombreux impacts qui a fait naître Impact Up : trouver les bonnes théories et les mettre en échange avec la pratique ; mettre les personnes qui veulent s'engager et façonner des projets dans de nombreux bons échanges. Écouter, faire confiance et mettre en réseau comme point de départ – mais en gardant le champ en vue, la société en vue, de sorte que les impacts ensemble deviennent plus que leur somme.</p>
           <p class="card__result">→ Vers la Philosophie</p>
         </a>
 
         <a href="systemische-wirkungsorientierung.fr.html" class="card">
           <span class="card__num">02</span>
-          <h3>Orientation vers l'Impact Systémique</h3>
+          <h2>Orientation vers l'Impact Systémique</h2>
           <p>De l'impact individuel à l'effet sur tout le champ. Penser « le systémique » et « l'orientation vers l'impact » comme quelque chose de lié est nouveau. Et nous voulons l'essayer, parce que nous y découvrons deux directions que, pour l'instant, nous aimons toutes les deux : s'orienter vers un impact qui transforme le système lui-même – et façonner l'orientation vers l'impact avec une posture systémique.</p>
           <p class="card__result">→ Vers l'Orientation vers l'Impact Systémique</p>
         </a>
 
         <a href="systems-change.fr.html" class="card">
           <span class="card__num">03</span>
-          <h3>Systems Change</h3>
+          <h2>Systems Change</h2>
           <p>Une approche du changement social à visée systémique – déjà largement établie dans le monde anglophone. De notre point de vue, l'une des approches les plus prometteuses pour l'orientation vers l'impact systémique. Le travail au plus près du terrain, auprès des personnes ; les réseaux comme fondement solide ; la confiance et l'apprentissage mutuel : Systems Change place les priorités dont ce monde a besoin.</p>
           <p class="card__result">→ Vers Systems Change</p>
         </a>
@@ -125,9 +128,10 @@
   <footer class="foot">
     <p>Impact Up – Institut d'Orientation vers l'Impact Systémique · Hambourg</p>
     <p class="foot__small">© 2026 · <a href="impressum.fr.html">Mentions légales</a> · <a href="datenschutz.fr.html">Confidentialité</a></p>
+    <p class="foot__small">Ce site a été créé en collaboration avec l'intelligence artificielle.</p>
   </footer>
 
-  <script src="nav.js?v=3"></script>
+  <script src="nav.js?v=4" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

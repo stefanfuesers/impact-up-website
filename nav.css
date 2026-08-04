@@ -10,20 +10,72 @@
 
 :root {
   --gold:      #C9A961;
+  /* Kontrast-Geschwister des Golds (Welle 1, 05.08.2026) – gleicher Farbton
+     (H 41.5°, S 49%), nur die Helligkeit verschoben. Sie gelten fuer KLEINE
+     Gold-Texte (Eyebrow, Weiterlesen, Inline-Links); Linien, Ziffern, Kanten,
+     Buttons und der Hero bleiben --gold.
+     --gold-ink    L 30.5%  -> 5.40:1 auf Pergament #F4ECD8, 6.15:1 auf #FFFBF0
+     --gold-bright L 67%    -> 5.28:1 auf Moos #2D4A2B, 7.23:1 auf #1F3320 */
+  --gold-ink:    #745C28;
+  --gold-bright: #D4BB82;
   --moss:      #2D4A2B;
-  --moss-deep: #1F3320;
-  --leaf:      #7BA05B;
+  /* Die tiefste Moos-Stufe hiess frueher --moss-deep; unter diesem Namen
+     verstehen die Session-Builder-Seiten aber #2D4A2B. Kanonisch heisst sie
+     jetzt --moss-deepest (Alias in Welle 2 entfernt, alle Nutzungen umgestellt). */
+  --moss-deepest: #1F3320;
   --stone:     #B8855E;
   --parchment: #F4ECD8;
   --ink:       #1F1A14;
-  --orange:    #D4622A;
   --purple:    #4A2B5C;
-  --blue:      #7B92B5;
 
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans:  'Inter', system-ui, sans-serif;
 
   --maxw: 1040px;
+}
+
+/* ============================================
+   Fokus + Skip-Link (Welle 1)
+   Liegt in der EINEN Nav-Quelle, damit auch die
+   session-werkstatt-Seiten beides bekommen.
+   ============================================ */
+:focus-visible {
+  outline: 2px solid var(--gold-ink);
+  outline-offset: 2px;
+}
+/* Auf den dunklen Flaechen (Nav, Drawer) traegt das helle Gold besser */
+.nav :focus-visible,
+.nav__drawer :focus-visible,
+.nav__toggle:focus-visible {
+  outline-color: var(--gold);
+}
+
+/* Sprung zum Inhalt: unsichtbar, bis er den Fokus bekommt */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 2000;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 11px 20px;
+  background: var(--gold);
+  color: var(--ink);
+  border-radius: 3px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-decoration: none;
 }
 
 /* .nav ist direktes <body>-Kind (Mai 2026) -> fixed greift seitenweit,
@@ -216,14 +268,19 @@
    nav.js baut Button + Drawer auf allen Seiten;
    unabhängig von main.js. Drawer = Overlay aus <body>.
    ============================================ */
+/* Trefferflaeche 44x44 (WCAG 2.5.8), Optik unveraendert: die 2px/6px, die
+   die Box gegenueber der alten 42x38 waechst, holen die negativen Margins
+   wieder heraus – Nav-Hoehe und Balkenbreite (26px) bleiben identisch. */
 .nav__toggle {
+  box-sizing: border-box;
   display: none;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 42px;
-  height: 38px;
-  padding: 9px 8px;
+  width: 44px;
+  height: 44px;
+  margin: -3px -1px;
+  padding: 9px;
   background: none;
   border: none;
   cursor: pointer;
@@ -310,10 +367,15 @@
   font-size: 14px;
   letter-spacing: 1.6px;
 }
+/* Trefferflaeche >=44x44 (WCAG 2.5.8) ohne Optik-Aenderung: Polster nach aussen,
+   negative Margins holen es zurueck, top/right sind um genau dieses Polster
+   vorgeschoben – das Kreuz steht weiter exakt auf 20px/24px. */
 .nav__drawer-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
+  top: 26px;
+  right: 38px;
+  margin: -6px -14px;
+  padding: 6px 14px;
   background: none;
   border: none;
   color: var(--parchment);
@@ -321,10 +383,57 @@
   line-height: 1;
   cursor: pointer;
 }
+
+/* Kontakt am Drawer-Fuss: dieselbe Gold-Pill wie .nav__cta auf dem Desktop.
+   nav.js haengt sie als eigenstaendiges Element hinter die Menuepunkte. */
+.nav__drawer a.drawer-cta {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 26px 0 0;
+  padding: 12px 22px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-bottom: none;
+  border-radius: 3px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  opacity: 1;
+  transition: background .2s ease, color .2s ease;
+}
+.nav__drawer a.drawer-cta:hover,
+.nav__drawer a.drawer-cta:focus-visible {
+  background: var(--ink);
+  color: var(--gold);
+}
 @media (min-width: 901px) { .nav__drawer { display: none; } }
 @media (max-width: 900px) {
   .nav__toggle { display: flex; }
   .nav__links { display: none; }
+}
+
+/* Wer Bewegung abbestellt hat, bekommt die Nav ohne Uebergaenge.
+   Muster wie in stefan.html; gilt auch fuer die session-werkstatt-Seiten,
+   die nur nav.css laden. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .nav,
+  .nav__wordmark,
+  .nav__links a,
+  .nav__dropdown,
+  .nav__lang > a,
+  .nav__drawer,
+  .nav__drawer a,
+  .nav__drawer .drawer-toggle span {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .nav__drawer { transform: none; }
 }
 
 /* Nav taucht in Ausdrucken/PDF-Exports nicht auf */

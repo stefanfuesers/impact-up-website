@@ -25,18 +25,21 @@
   <meta property="og:locale" content="de_DE">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Impact Up – Institut für systemische Wirkungsorientierung">
+  <meta name="twitter:title" content="Impact Up · Institut für systemische Wirkungsorientierung">
   <meta name="twitter:description" content="Wir geben eurer Wirkung Raum. Für Initiativen, Organisationen und Netzwerke, die Wirkung ins System bringen wollen.">
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png">
+  <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=11">
-  <script src="assets/three.min.js"></script>
+  <link rel="stylesheet" href="style.css?v=12">
+  <script src="assets/three.min.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
     <nav class="nav">
       <div class="nav__left">
         <a class="nav__wordmark" href="#top" aria-label="Impact Up – zum Seitenanfang">
-          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="">
+          <img class="nav__wordmark-mark" src="assets/favicon.svg?v=2" alt="" width="100" height="100">
           <span class="nav__wordmark-name">Impact <em>Up</em></span>
         </a>
         <ul class="nav__links">
@@ -86,18 +89,20 @@
       </ul>
     </nav>
 
+  <main id="inhalt">
+
 
   <!-- ============================================ -->
   <!-- 1 · HERO                                     -->
   <!-- ============================================ -->
   <header id="top" class="hero hero--band">
 
-    <img class="hero-field hero-field--far" src="assets/field_far.svg" alt="" aria-hidden="true">
-    <img class="hero-field hero-field--near" src="assets/field_near.svg" alt="" aria-hidden="true">
+    <img class="hero-field hero-field--far" src="assets/field_far.svg" width="1200" height="800" alt="" aria-hidden="true">
+    <img class="hero-field hero-field--near" src="assets/field_near.svg" width="1200" height="800" alt="" aria-hidden="true">
 
     <div class="hero__inner hero__inner--v2">
       <div class="hero__lockup-col">
-        <img class="lockup-img" src="assets/lockup.png" alt="Impact Up – Institut für systemische Wirkungsorientierung">
+        <img class="lockup-img" src="assets/lockup.png" width="1753" height="479" fetchpriority="high" alt="Impact Up – Institut für systemische Wirkungsorientierung">
         <a class="btn btn--primary hero__cta" href="kontakt.html">Kooperiere mit uns</a>
       </div>
       <div class="hero__claim-col">
@@ -157,7 +162,7 @@
   <!-- 2 · WIE WIR MIT EUCH WEITERGEHEN             -->
   <!-- ============================================ -->
   <section id="weitergehen" class="weitergehen has-sysbg">
-    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true" width="1200" height="800" loading="lazy" decoding="async">
     <div class="container">
       <h2 class="eyebrow eyebrow--xl">Wirkungsorientierung</h2>
 
@@ -192,7 +197,7 @@
           <p class="prozess__axis">innen · der Mensch</p>
           <h3>Resonanz</h3>
           <p class="prozess__text">Menschen sind dann motiviert und mögen ihre Arbeit, wenn sie sich mit der Wirkung, die sie erzeugen, identifizieren und darin einen eigenen Sinn finden. Eine derart positive Resonanz mit der eigenen Wirkung ist aber keineswegs selbstverständlich – und genau da setzen wir an. Wenn das gelingt, entsteht Orientierung, die auch gute Zusammenarbeit ermöglicht; der Sinn in der eigenen Arbeit entsteht über die Wirkung, und das ist die tragfähigste Motivation. Ob ein Mensch in Resonanz gehen kann, hängt auch davon ab, wie er in Projekt, Programm und Organisation eingebunden ist – hat er den Raum und die Freiheit dafür? Wo die Resonanz fehlt, liegt es mal an der Wirkung selbst, mal an dieser Einbindung – das schauen wir uns mit euch an, bis die Wirkung auch nach innen durch Sinn wirkt.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">weiterlesen</button>
           </div>
         </article>
 
@@ -224,7 +229,7 @@
           <p class="prozess__axis">innen · die Organisation</p>
           <h3>Struktur</h3>
           <p class="prozess__text">Eine Organisation gibt sich Struktur – über ihren Zweck, über Teams, in Projekten oder Rollen. Diese Funktionalität ist kein Selbstzweck: Sie ist die Voraussetzung dafür, dass die Wirkung durch die Organisation tatsächlich nach außen erzeugt werden kann. Passt die Wirkung zum Zweck der Organisation? Und ist sie so angebunden, dass die Organisation sie tatsächlich nach außen bringt? Die Wirkungslogik liegt immer an der Grenze zwischen Organisation und Gesellschaft: Was braucht es intern in der Organisation genau, damit die erwünschte Wirkung erzeugt werden kann? Dieses Zusammenspiel gestalten wir mit euch – von der Ausrichtung der Struktur an der Wirkung bis zur Organisationsentwicklung, wo vieles für die Wirkung strukturiert und abgesprochen werden muss.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">weiterlesen</button>
           </div>
         </article>
 
@@ -255,7 +260,7 @@
           <p class="prozess__axis">außen · das Wirkungsfeld</p>
           <h3>Kohärenz</h3>
           <p class="prozess__text">Eure Wirkung steht nie für sich – als Organisation wirkt ihr in einem Wirkungsfeld, getragen von eurem Zweck, eurer Aufgabe, euren Veränderungswünschen. Wer wirkt neben euch, wer im Anschluss, wo verschiebt sich Macht, wenn ihr euch klar positioniert? Zwei gute Wirkungen nebeneinander sind noch nicht automatisch kohärent. Gemeinsam suchen wir den Ort eurer Wirkung im Wirkungsfeld, damit sie komplementär wird statt gegenläufig und Machtungleichgewichte nicht unbeabsichtigt verstärkt werden. So entsteht die Grundlage dafür, dass im Wirkungsfeld alle in eine Richtung arbeiten – und dass aus ihm heraus Kooperation mit anderen möglich wird.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">weiterlesen</button>
           </div>
         </article>
 
@@ -299,7 +304,7 @@
           <p class="prozess__axis">außen · die Gesellschaft</p>
           <h3>Kooperation</h3>
           <p class="prozess__text">In der Gesellschaft entscheidet sich, ob aus vielen einzelnen Wirkungen ein gemeinsames Ganzes wird. Kann die Gesellschaft auf Basis eurer Wirkung in Kooperation treten – über einzelne Felder und Akteure hinaus? Genau hier liegt der Hebel: Wo heute Konkurrenz das Zusammenspiel bestimmt, wird Kooperation zur Grundlage – und damit zum zentralen Element einer Transformation der Gesellschaft. Das braucht jemanden, der den Raum hält, in dem unterschiedliche Logiken, Mandate und Machtverhältnisse zueinander finden, ohne sich gegenseitig zu glätten. Solche Räume moderieren wir mit euch – netzwerkförmig, machtbewusst, mit Geduld für Beziehungen, die tragen müssen. Wir arbeiten mit dem, was sich zeigt: gemeinsame Modelle, neue Praktiken, verschobene Ressourcenflüsse. In dieser Kooperation entsteht die systemische Wirkung, an der wir uns orientieren.</p>
-          <button type="button" class="prozess__more" data-prozess-toggle>weiterlesen</button>
+          <button type="button" class="prozess__more" data-prozess-toggle aria-expanded="false">weiterlesen</button>
           </div>
         </article>
       </div>
@@ -452,7 +457,7 @@
   <!-- 3 · WIRKUNGSFELDER (3D-Netz)                 -->
   <!-- ============================================ -->
   <section id="quellen" class="quellen has-sysbg">
-    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
+    <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true" width="1200" height="800" loading="lazy" decoding="async">
 
     <div class="container">
       <h2 class="eyebrow eyebrow--xl">Zentrale Wirkungsfelder</h2>
@@ -472,28 +477,28 @@
     </div>
 
     <div class="quellen__legende">
-      <div class="quelle" style="--c:#2D4A2B">
+      <div class="quelle">
         <h3>Ökosystem Erde</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
         <div class="philo-more">
           <p>Die Erde ist ein Ökosystem mit planetaren Grenzen, die auch wirtschaftliches Wachstum begrenzen und Gerechtigkeit vielschichtig auf dieser Erde herausfordern. Wir starten in den Prozess der harmonischen (Re-)Integration des menschlichen Lebens in das Ökosystem Erde.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#1F1A14">
+      <div class="quelle">
         <h3>Frieden &amp; Gewaltfreiheit</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
         <div class="philo-more">
           <p>Gewaltfreiheit ist die Grundlage für die Würde des Menschen und den Frieden zwischen den Menschen. Auch strukturelle und kulturelle Gewaltfreiheit gehört dazu – oft unsichtbar, aber wesentlich. Wir starten in den Prozess, Gewalt in ihren verschiedenen Formen bewusster zu machen und Konflikte konstruktiv zu transformieren.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#4A2B5C">
+      <div class="quelle">
         <h3>Soziale Teilhabe</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
         <div class="philo-more">
           <p>Die soziale Teilhabe ist die Grundvoraussetzung für ein gemeinschaftliches Leben – bei allem, was heute wirtschaftlich organisiert ist: Nahrung, Wohnraum, Mobilität, Kultur. Jede:r braucht Teilhabe, Gemeinwohlorientierung und individuelle Absicherung, etwa durch ein Grundeinkommen. Wir starten in den Prozess, die Wirtschaft als Instrument sozialer Teilhabe zu gestalten und Menschlichkeit ins Zentrum zu stellen.</p>
         </div>
       </div>
-      <div class="quelle" style="--c:#2B4A5C">
+      <div class="quelle">
         <h3>Demokratie</h3>
         <button type="button" class="philo-more-btn" data-philo-toggle aria-expanded="false">weiterlesen</button>
         <div class="philo-more">
@@ -504,7 +509,7 @@
 
     <p class="lead lead--full">Alle vier ergänzen sich untereinander — durch gegenseitige Unterstützung und Synergien. Ein weiteres Ziel von Impact Up ist es, diese Wirkungsfelder miteinander zu vernetzen, sodass sich Kooperation über die gesamte Gesellschaft entwickeln kann:</p>
 
-    <div id="netz" class="netz">
+    <div id="netz" class="netz" role="img" aria-label="Die vier Wirkungsfelder, untereinander verbunden als bewegliches Netz">
       <canvas id="netz-canvas"></canvas>
       <div class="netz__hint">↻ Ziehen zum Drehen</div>
     </div>
@@ -577,7 +582,7 @@
   <section id="about" class="about">
     <div class="container">
       <div class="about__intro">
-        <p class="eyebrow">Über Uns</p>
+        <h2 class="eyebrow">Über Uns</h2>
 
         <p>Impact Up ist eine Idee, die nur in Gemeinschaft entstehen kann – deshalb ist diese Webseite im „Wir" verfasst. Als Institut für systemische Wirkungsorientierung verstehen wir uns als organisierender Akteur: Wir bringen Menschen, Organisationen und Netzwerke zusammen, die an gesellschaftlicher Wirkung arbeiten, bauen Zusammenschlüsse mit auf und halten Verbindungen offen. Wir suchen dabei Prozessinitiator:innen ebenso wie Kund:innen – oft ist das austauschbar: Wir begleiten und werden begleitet.</p>
 
@@ -595,13 +600,15 @@
     </div>
   </section>
 
+  </main>
   <footer class="foot">
     <p>Impact Up – Institut für systemische Wirkungsorientierung · Hamburg</p>
     <p class="foot__small">© 2026 · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+    <p class="foot__small">Diese Seite ist in Zusammenarbeit mit künstlicher Intelligenz entstanden.</p>
   </footer>
 
-  <script src="main.js?v=5"></script>
-  <script src="nav.js?v=3"></script>
+  <script src="main.js?v=6" defer></script>
+  <script src="nav.js?v=4" defer></script>
 
   <script>
     // Prozess-Texte aufklappen
@@ -610,6 +617,7 @@
         const text = btn.previousElementSibling;
         const open = text.classList.toggle('expanded');
         btn.classList.toggle('expanded', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.textContent = open ? 'einklappen' : 'weiterlesen';
       });
     });
@@ -625,30 +633,21 @@
       });
     });
 
-    // Auto-Einklappen, wenn Maus die Karte verlässt
-    document.querySelectorAll('.prozess__step').forEach(step => {
-      step.addEventListener('mouseleave', () => {
-        const text = step.querySelector('.prozess__text');
-        const btn = step.querySelector('.prozess__more');
-        if (text && text.classList.contains('expanded')) {
-          text.classList.remove('expanded');
-          if (btn) {
-            btn.classList.remove('expanded');
-            btn.textContent = 'weiterlesen';
-          }
-        }
-      });
-    });
 
     // Hero-Feld: Parallax-Tiefe beim Scrollen
     (function () {
       const ff = document.querySelector('.hero-field--far'),
             fn = document.querySelector('.hero-field--near');
       if (!ff && !fn) return;
-      addEventListener('scroll', () => {
+      let ticking = false;
+      function update() {
+        ticking = false;
         const y = scrollY;
         if (ff) ff.style.transform = 'translateY(' + (y * 0.12) + 'px)';
         if (fn) fn.style.transform = 'translateY(' + (y * 0.28) + 'px)';
+      }
+      addEventListener('scroll', () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
       }, { passive: true });
     })();
   </script>
