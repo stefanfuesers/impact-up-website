@@ -26,30 +26,12 @@
   <link rel="alternate" hreflang="de" href="https://impact-up.org/konstrukte.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/konstrukte.html">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <style>
-    /* Constructs overview: card grid in the editorial layout */
-    .konstrukte-cards {
-      display: grid;
-      gap: 28px;
-      margin-top: 16px;
-      max-width: 880px;
-    }
-    .konstrukte-cards .card {
-      display: block;
-      text-decoration: none;
-      padding: 36px 40px;
-    }
-    .konstrukte-cards .card:hover { color: inherit; }
-    .konstrukte-cards .card h3 { white-space: normal; }
-    .konstrukte-cards .card p {
-      text-align: left;
-      hyphens: none;
-      -webkit-hyphens: none;
-    }
-    @media (max-width: 640px) {
-      .konstrukte-cards .card { padding: 28px 24px; }
-    }
+    /* Base card form comes from .sammel-cards in style.css.
+       Page-specific: here each card is itself a link. */
+    .sammel-cards .card { text-decoration: none; }
+    .sammel-cards .card:hover { color: inherit; }
   </style>
 </head>
 <body>
@@ -110,10 +92,10 @@
     <div class="container page__inner">
       <p class="eyebrow" style="margin:0 0 18px;">Impact Up Constructs</p>
       <p class="page__lead">
-        Constructs are the theoretical foundations of Impact Up – the thinking tools our work has grown from. We call them constructs because they are constructed – by us and by others – to see and discuss impact relationships. Every description of the world is a construction – and good constructions make working together possible: they give everyone involved a language for what is at work between them. The important content only emerges from collaboration – and with our constructs we build on it. Here, to begin with, a few starting points for us:
+        Constructs are the theoretical foundations of Impact Up – the thinking tools our work has grown from. We call them constructs because they are constructed – by us and by others – to see and discuss impact relationships. Every description of the world is a construction – and good constructions make working together possible: they give everyone involved a language for what is at work between them. The important content only emerges from collaboration – and with our constructs we build on it. Exchange about the constructs is always welcome — <a href="kontakt.en.html">write to us</a>. Here, to begin with, a few starting points for us:
       </p>
 
-      <div class="konstrukte-cards">
+      <div class="sammel-cards">
 
         <a href="impact-up-philosophie.en.html" class="card">
           <span class="card__num">01</span>

@@ -26,20 +26,10 @@
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/werkstatt.fr.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/werkstatt.html">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <style>
-    /* Estilo específico de la página Taller (style.css permanece intacto) */
-    .werkzeug-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 560px;
-      margin-bottom: 48px;
-    }
-    .werkzeug-cards .card { display: block; text-decoration: none; }
-    .werkzeug-cards .card h3 { padding-right: 56px; }
-    .werkzeug-cards .card p + p { margin-top: 12px; }
-    .werkstatt-outro { font-size: 15px; opacity: .8; max-width: 62ch; }
+    /* Específico de esta página: las tarjetas del taller son enlaces */
+    .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
@@ -102,10 +92,10 @@
       <p class="eyebrow">Taller de Impact Up</p>
       <h1 class="page__title">Taller</h1>
       <p class="page__lead">
-        Somos un taller: aquí construimos herramientas que pueden usar directamente — para probar, experimentar y seguir pensando. Trabajamos con inteligencia artificial. Por ahora todo es gratuito; eso puede cambiar con el tiempo. La primera herramienta es el Constructor de Sesiones, y vienen más.
+        Somos un taller: aquí construimos herramientas que pueden usar directamente — para probar, experimentar y seguir pensando. Trabajamos con inteligencia artificial. Por ahora todo es gratuito; eso puede cambiar con el tiempo. La primera herramienta es el Constructor de Sesiones, y vienen más. Los comentarios de quienes las prueban nos ayudan a construir — <a href="kontakt.es.html">escríbannos</a>.
       </p>
 
-      <div class="werkzeug-cards">
+      <div class="sammel-cards">
 
         <a href="session-werkstatt/index.es.html" class="card">
           <span class="card__num">01</span>
@@ -117,10 +107,6 @@
         </a>
 
       </div>
-
-      <p class="werkstatt-outro">
-        Si prueban el Constructor de Sesiones y quieren contarnos qué funcionó bien y qué falta — les escuchamos con gusto: <a href="mailto:info@impact-up.org">info@impact-up.org</a>.
-      </p>
     </div>
   </main>
 

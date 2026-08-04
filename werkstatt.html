@@ -26,20 +26,10 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <style>
-    /* Seitenspezifisches Styling Werkstatt (style.css bleibt unberührt) */
-    .werkzeug-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 560px;
-      margin-bottom: 48px;
-    }
-    .werkzeug-cards .card { display: block; text-decoration: none; }
-    .werkzeug-cards .card h3 { padding-right: 56px; }
-    .werkzeug-cards .card p + p { margin-top: 12px; }
-    .werkstatt-outro { font-size: 15px; opacity: .8; max-width: 62ch; }
+    /* Seitenspezifisch: die Werkstatt-Karten sind selbst Links */
+    .sammel-cards .card { text-decoration: none; }
   </style>
 </head>
 <body>
@@ -102,10 +92,10 @@
       <p class="eyebrow">Impact Up Werkstatt</p>
       <h1 class="page__title">Werkstatt</h1>
       <p class="page__lead">
-        Wir sind eine Werkstatt: Hier bauen wir an Werkzeugen, die ihr direkt benutzen könnt — zum Testen, Ausprobieren und Weiterdenken. Gearbeitet wird mit künstlicher Intelligenz. Im Moment ist alles kostenfrei; das kann sich mit der Zeit ändern. Das erste Werkzeug ist der Session-Builder, weitere entstehen.
+        Wir sind eine Werkstatt: Hier bauen wir an Werkzeugen, die ihr direkt benutzen könnt — zum Testen, Ausprobieren und Weiterdenken. Gearbeitet wird mit künstlicher Intelligenz. Im Moment ist alles kostenfrei; das kann sich mit der Zeit ändern. Das erste Werkzeug ist der Session-Builder, weitere entstehen. Rückmeldungen aus dem Ausprobieren helfen beim Bauen — <a href="kontakt.html">schreibt uns</a>.
       </p>
 
-      <div class="werkzeug-cards">
+      <div class="sammel-cards">
 
         <a href="session-werkstatt/index.html" class="card">
           <span class="card__num">01</span>
@@ -117,10 +107,6 @@
         </a>
 
       </div>
-
-      <p class="werkstatt-outro">
-        Wenn ihr den Session-Builder ausprobiert habt und uns sagen wollt, was gut lief und was fehlt — wir hören gern zu: <a href="mailto:info@impact-up.org">info@impact-up.org</a>.
-      </p>
     </div>
   </main>
 

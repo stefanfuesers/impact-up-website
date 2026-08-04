@@ -29,20 +29,23 @@
   <meta name="twitter:description" content="Zwanzig Jahre Friedens- und Entwicklungsarbeit in Kambodscha, im Kosovo und in Hamburg, Wirkungsorientierung und PM&amp;E, systemische Organisationsentwicklung." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=9" />
 
   <style>
     /* ============================================================
        Personenseite – seitenspezifisches Styling
        Nutzt die Tokens aus style.css: --gold --moss --moss-deep
        --leaf --stone --parchment --ink --purple --serif --sans
+
+       Grundhaltung: klein, eng, ruhig. Der Text laeuft ueber die
+       volle Inhaltsbreite, die Bilder bleiben zurueckhaltend.
        ============================================================ */
 
     /* ---------- Buehne oben ---------- */
     .stage {
       position: relative;
       background: var(--moss-deep);
-      padding: 132px 0 0;
+      padding: 104px 0 0;
       overflow: hidden;
     }
     .stage::before {
@@ -55,22 +58,22 @@
       height: 90%;
       transform: translateX(-50%);
       background: radial-gradient(ellipse at 50% 40%,
-                  rgba(201,169,97,.20) 0%,
-                  rgba(201,169,97,.07) 42%,
+                  rgba(201,169,97,.18) 0%,
+                  rgba(201,169,97,.06) 42%,
                   transparent 72%);
       pointer-events: none;
     }
     .stage__inner {
       position: relative;
-      max-width: 1180px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 0 32px 96px;
+      padding: 0 32px 52px;
     }
     /* Die Buehne traegt nur Wort – kein Bild. */
     .stage__kicker {
       font-family: var(--sans);
-      font-size: 13px;
-      letter-spacing: 3.5px;
+      font-size: 12px;
+      letter-spacing: 3.2px;
       text-transform: uppercase;
       color: var(--gold);
       opacity: 0;
@@ -78,10 +81,10 @@
     }
     .stage__name {
       font-family: var(--serif);
-      font-size: clamp(42px, 7vw, 82px);
-      line-height: 1.02;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.05;
       color: var(--parchment);
-      margin: 14px 0 0;
+      margin: 12px 0 0;
       font-weight: 400;
       opacity: 0;
       animation: einblenden 1s ease .25s forwards;
@@ -92,11 +95,11 @@
     }
     .stage__claim {
       font-family: var(--serif);
-      font-size: clamp(20px, 2.4vw, 30px);
-      line-height: 1.45;
+      font-size: clamp(17px, 1.8vw, 22px);
+      line-height: 1.5;
       color: rgba(244,236,216,.86);
-      max-width: 30ch;
-      margin: 22px 0 0;
+      max-width: 48ch;
+      margin: 16px 0 0;
       opacity: 0;
       animation: einblenden 1s ease .45s forwards;
     }
@@ -104,31 +107,30 @@
     @keyframes einblenden { to { opacity: 1; } }
 
     /* ---------- Fliesstext-Bereiche ---------- */
-    .pers { padding: 92px 0; }
+    .pers { padding: 54px 0; }
     .pers--warm { background: var(--parchment); }
     .pers--tief  { background: var(--moss); color: var(--parchment); }
     .pers__inner { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-    .pers__eng   { max-width: 660px; }
 
     .pers__label {
       font-family: var(--sans);
-      font-size: 12.5px;
-      letter-spacing: 3.5px;
+      font-size: 12px;
+      letter-spacing: 3.2px;
       text-transform: uppercase;
       color: var(--stone);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .pers--tief .pers__label { color: var(--gold); }
 
     .pers__h2 {
       font-family: var(--serif);
-      font-size: clamp(29px, 3.6vw, 44px);
-      line-height: 1.16;
+      font-size: clamp(24px, 2.6vw, 32px);
+      line-height: 1.2;
       font-weight: 400;
-      margin-bottom: 26px;
+      margin-bottom: 18px;
     }
-    .pers__text { font-size: 17.5px; line-height: 1.72; }
-    .pers__text p + p { margin-top: 18px; }
+    .pers__text { font-size: 16px; line-height: 1.66; }
+    .pers__text p + p { margin-top: 14px; }
     .pers--tief .pers__text { color: rgba(244,236,216,.88); }
     /* Links im Fliesstext sichtbar machen – wie .lead a in style.css */
     .pers__text a {
@@ -139,21 +141,23 @@
     }
     .pers__text a:hover { text-decoration-thickness: 2px; }
 
-    /* Einstieg mit Portrait ---------------------------------- */
-    .intro {
+    /* Haupttext mit kleinem Portrait daneben ------------------
+       Eigener Name .kopf, weil .intro in style.css schon die
+       Willkommens-Sektion der Startseite ist. */
+    .kopf {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 48px;
+      grid-template-columns: 140px 1fr;
+      gap: 34px;
       align-items: start;
     }
-    .intro__bild {
+    .kopf__bild {
       position: relative;
       border-radius: 3px;
       overflow: hidden;
-      box-shadow: 0 14px 32px rgba(31,26,20,.15);
+      box-shadow: 0 10px 24px rgba(31,26,20,.14);
     }
-    .intro__bild img { width: 100%; height: auto; display: block; }
-    .intro__bild::after {
+    .kopf__bild img { width: 100%; height: auto; display: block; }
+    .kopf__bild::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -162,43 +166,43 @@
       pointer-events: none;
     }
 
-    /* ---------- Wand-Bild als Zwischenbild ---------- */
+    /* ---------- Wand-Bilder als Zwischenband ---------- */
     .band {
       background: var(--moss-deep);
-      padding: 56px 0 58px;
+      padding: 44px 0 46px;
       position: relative;
     }
     /* Beide Workshopfotos aussen, der Satz steht zwischen ihnen –
        sie zeigen dieselbe Arbeit, der Satz sagt worum es dabei geht. */
     .band__inner {
-      max-width: 1100px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 0 32px;
       display: grid;
-      grid-template-columns: 1fr minmax(230px, 28%) 1fr;
-      gap: 34px;
+      grid-template-columns: 1fr minmax(200px, 26%) 1fr;
+      gap: 28px;
       align-items: center;
     }
     .band__bild {
-      max-width: 380px;
+      max-width: 300px;
       margin: 0;
     }
     .band__bild:last-of-type { margin-left: auto; }
     .band__bild img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 14px 28px rgba(0,0,0,.38));
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.36));
     }
     .band__note {
       font-family: var(--sans);
-      font-size: 12px;
+      font-size: 11.5px;
       line-height: 1.5;
       color: rgba(244,236,216,.45);
-      margin: 9px 0 0;
+      margin: 8px 0 0;
     }
     .band__satz {
       font-family: var(--serif);
-      font-size: clamp(18px, 1.7vw, 23px);
+      font-size: clamp(16px, 1.5vw, 20px);
       line-height: 1.5;
       color: var(--parchment);
       margin: 0;
@@ -209,84 +213,52 @@
     .band__satz::after {
       content: "";
       display: block;
-      width: 46px;
+      width: 40px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
     }
-    .band__satz::after { margin: 20px auto 0; }
+    .band__satz::after { margin: 16px auto 0; }
 
-    /* ---------- KI-Abschnitt ---------- */
-    .ki { background: var(--parchment); }
-    .ki__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-    /* Der laengere Gedanke steht unter dem Zweispalter, eng gesetzt zum Lesen */
-    .ki__weiter {
-      max-width: 700px;
-      margin-top: 64px;
-      padding-top: 44px;
-      border-top: 1px solid rgba(201,169,97,.3);
-    }
-    /* Drei Rollen: Gedaechtnis, Stimme, Repraesentanz – von innen nach aussen */
-    .ki__rollen { margin-top: 4px; }
-    .ki__rollen > div {
-      padding: 18px 0;
-      border-top: 1px solid rgba(201,169,97,.34);
-    }
-    .ki__rollen > div:last-child { border-bottom: 1px solid rgba(201,169,97,.34); }
-    .ki__rollen dt {
-      font-family: var(--serif);
-      font-size: 22px;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    .ki__rollen dd {
-      font-size: 16px;
-      line-height: 1.62;
-      margin: 0;
-    }
-
-    /* ---------- Herkunft ---------- */
+    /* ---------- Stationen und Studium ---------- */
     .weg { list-style: none; }
     .weg li {
       display: grid;
-      grid-template-columns: 108px 1fr;
-      gap: 22px;
-      padding: 17px 0;
+      grid-template-columns: 100px 1fr;
+      gap: 20px;
+      padding: 13px 0;
       border-top: 1px solid rgba(201,169,97,.24);
-      font-size: 16.5px;
+      font-size: 15.5px;
     }
     .weg li:last-child { border-bottom: 1px solid rgba(201,169,97,.24); }
     .weg__jahr {
       font-family: var(--sans);
-      font-size: 13.5px;
+      font-size: 13px;
       letter-spacing: 1.5px;
       color: var(--gold);
-      padding-top: 3px;
+      padding-top: 2px;
     }
 
     /* ---------- Stimmen ----------
        Kommt von der Startseite und steht hier zwischen den Stationen
        und dem Schluss – gleicher heller Grund, eigener Abstand. */
-    .stimmen { background: var(--parchment); padding: 0 0 96px; }
-    .stimmen__frame { margin-top: 0; }
+    .stimmen { background: var(--parchment); padding: 0 0 58px; }
+    /* Auf gleiche Kante wie die Textsektionen daruber ruecken */
+    .stimmen .stimmen__frame { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
 
     /* ---------- Schluss ---------- */
-    .ruf { background: var(--purple); color: var(--parchment); padding: 96px 0; }
-    .ruf__inner { max-width: 700px; margin: 0 auto; padding: 0 32px; text-align: center; }
+    .ruf { background: var(--purple); color: var(--parchment); padding: 62px 0; }
+    .ruf__inner { max-width: 840px; margin: 0 auto; padding: 0 32px; text-align: center; }
+    .ruf__p--eng { max-width: 620px; margin-left: auto; margin-right: auto; }
     .ruf__h2 {
       font-family: var(--serif);
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(26px, 3.2vw, 38px);
       font-weight: 400;
-      line-height: 1.16;
-      margin-bottom: 20px;
+      line-height: 1.18;
+      margin-bottom: 16px;
     }
-    .ruf__p { font-size: 17.5px; line-height: 1.7; color: rgba(244,236,216,.86); margin-bottom: 34px; }
-    .ruf__aktionen { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .ruf__p { font-size: 16px; line-height: 1.66; color: rgba(244,236,216,.86); margin-bottom: 26px; }
+    .ruf__aktionen { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .ruf .btn--ghost { border-color: rgba(201,169,97,.6); color: var(--parchment); }
     .ruf .btn--ghost:hover { background: var(--gold); color: var(--ink); }
 
@@ -297,7 +269,7 @@
        falls JS fehlt, blockiert wird oder ein Fehler auftritt. */
     .js-auf .auf {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(22px);
       transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.25,1);
     }
     .js-auf .auf.da { opacity: 1; transform: none; }
@@ -312,20 +284,21 @@
 
     /* ---------- Schmale Bildschirme ---------- */
     @media (max-width: 900px) {
-      .ki__grid { grid-template-columns: 1fr; gap: 34px; }
-      .pers { padding: 66px 0; }
-      .stage { padding-top: 108px; }
-      .weg li { grid-template-columns: 82px 1fr; gap: 14px; }
-      .intro { grid-template-columns: 1fr; gap: 26px; }
-      .intro__bild { max-width: 180px; }
+      .pers { padding: 44px 0; }
+      .stage { padding-top: 92px; }
+      .stage__inner { padding-bottom: 42px; }
+      .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
+      .kopf { grid-template-columns: 1fr; gap: 22px; }
+      .kopf__bild { max-width: 140px; }
       /* Untereinander: Satz zuerst, Bilder darunter, schmal gehalten */
-      .band__inner { grid-template-columns: 1fr; gap: 26px; }
-      .band__bild { max-width: 340px; }
+      .band__inner { grid-template-columns: 1fr; gap: 24px; }
+      .band__bild { max-width: 300px; }
       .band__bild:last-of-type { margin-left: 0; }
       .band__satz { order: -1; text-align: left; }
       .band__satz::before, .band__satz::after { margin-left: 0; margin-right: 0; }
       .band__satz::after { display: none; }
-      .stimmen { padding-bottom: 70px; }
+      .stimmen { padding-bottom: 46px; }
+      .ruf { padding: 52px 0; }
     }
     @media (max-width: 560px) {
       .stage__inner, .pers__inner, .band__inner { padding-left: 20px; padding-right: 20px; }
@@ -392,50 +365,43 @@
     <div class="stage__inner">
       <p class="stage__kicker">Coaching · Organisationsentwicklung · Wirkungsorientierung</p>
       <h1 class="stage__name">Stefan <em>Füsers</em></h1>
-      <p class="stage__claim">Ich begleite kleine Runden dabei, ihre Richtung zu finden – und dann tatsächlich dorthin zu gehen.</p>
+      <p class="stage__claim">Gründer von Impact Up. Zwanzig Jahre Friedens- und Entwicklungsarbeit — Kambodscha, Kosovo, Hamburg.</p>
     </div>
   </header>
 
-  <!-- ===================== Einstieg ===================== -->
+  <!-- ===================== Haupttext ===================== -->
   <section class="pers pers--warm">
     <div class="pers__inner">
-      <div class="intro auf">
-        <div class="intro__bild">
+      <div class="kopf auf">
+        <div class="kopf__bild">
           <img src="assets/portrait.webp" alt="Portrait von Stefan Füsers" width="720" height="900" />
         </div>
-        <div>
-          <p class="pers__label">Wer hier arbeitet</p>
-          <h2 class="pers__h2">Wirkung entsteht dort, wo eine Gruppe sich über ihre Richtung verständigt.</h2>
-          <div class="pers__text">
-            <p>Das ist die Erfahrung aus zwanzig Jahren in der Friedens- und Entwicklungsarbeit – in Kambodscha, im Kosovo, in Hamburg. Immer wieder derselbe Moment: Ein Team arbeitet engagiert und gut, und trotzdem läuft es an der eigentlichen Frage vorbei. Weil nie jemand laut gefragt hat, worauf das Ganze eigentlich zielt.</p>
-            <p>Genau da setze ich an. Mit der Leitung kläre ich, wohin es gehen soll. Mit dem Team arbeite ich daran, dass es dorthin auch findet – im Gespräch, an der Wand, in kleinen Schritten. Was dabei entsteht, gehört der Gruppe, nicht mir.</p>
-            <p>Unter dem Dach von <a href="index.html">Impact Up</a> denke ich das größer weiter — hier steht, woher ich komme und was ich mitbringe.</p>
-          </div>
+        <div class="pers__text">
+          <p>Stefan hat Impact Up, das Institut für systemische Wirkungsorientierung, 2026 gegründet. Bis 2025 war er sechs Jahre lang Berater für Planung, Monitoring und Evaluierung (PME) im Zivilen Friedensdienst (ZFD) der GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) in Kambodscha. Er hat Praxiserfahrung in der Wirkungsorientierung mit einem ZFD-Programm, mit internationalen Fachkräften und acht sehr diversen Partnerorganisationen gesammelt. Die Projektwirkungen in der Friedens- und Vergangenheitsarbeit waren immer Teil einer Programmwirkung des ZFD, aber auch Teil der Wirkung der Partnerorganisationen – also eines internationalen Gerichtshofs, psychologischer Dienstleister, Gedenkstätten, Jugendbewegungen oder Universitäten. Capacity Development war häufig ein Kernelement, und die Projektwirkung nicht selten auch Organisationsentwicklung.</p>
+
+          <p>Das ganze ZFD-Programm war mit anderen ZFD-Programmen in Kambodscha vernetzt, sodass ebenso Wirkungen auf das Land erwünscht waren; und nicht zuletzt gab es viele weitere PME-Berater:innen im ZFD der GIZ in anderen Ländern, die regelmäßig über die Methoden, den Aufbau und die Art und Weise reflektiert haben. So hat Stefan zahlreiche Akteur:innen im Feld in Kambodscha in Resonanz gebracht und ein Netzwerk aus Aktiven für ein friedliches Zusammenleben der Menschen gestärkt. Methoden aus der Friedensarbeit selbst, wie bspw. aus der Konflikttransformation, wurden in solche Planungs- und Reflexionsworkshops genauso immer wieder eingebracht wie die Erfahrung als Yogalehrer und aus der Gewaltfreien Kommunikation.</p>
+
+          <p>Seit seiner Rückkehr nach Deutschland beschäftigt sich Stefan sehr intensiv mit Theorien und Methoden, wie sich Partizipation und Kokreation umsetzen lassen, mit systemischen Ansätzen und systemischer Haltung. Zahlreiche Autor:innen bieten einen Reflexionsraum für unzählbar viel Reflexionsmaterial aus seiner Zeit in Kambodscha. Seit Dezember 2025 setzt er dies intensiviert in einer Ausbildung zum systemischen Organisationsentwickler bei der <a href="https://www.systemisches-zentrum.de/" target="_blank" rel="noopener">WISPO</a> fort. Literatur zum Systems Change und zur Kokreation hat viel Resonanz erzeugt. Mit Impact Up versucht er nun, die Methoden zum Planen, Monitoren und Reflektieren zusammen mit den Methoden der Friedensarbeit – Dialog, Konflikttransformation, Vergangenheits- und Traumaaufarbeitung – mit in das systemische Arbeiten zu nehmen und Ansätze für systemische Wirkungsorientierung zur Veränderung der Gesellschaft zu entwickeln. Kontextspezifisch, mit der Empathie und dem Gespür, die es braucht, um wirklich zu hören, zu sehen und zu fühlen, worum es geht.</p>
+
+          <p>Thematisch hat Stefan schon eine breite Vorerfahrung: vor der Friedensarbeit im Kosovo und in Kambodscha aus den Wirtschaftswissenschaften und Internationalen Studien an der Universität. Viele Jahre in der Veränderungsarbeit mit sozial-ökologischen Bewegungen, vor allem für ein Grundeinkommen und Degrowth, haben ihn zudem geprägt. Für das Climate Service Center in Hamburg hat er untersucht, wie die Beteiligung von Praxisakteur:innen an Wissenschaftsprozessen angemessen in Evaluationen berücksichtigt werden kann. In nahezu allen Rollen hat er immer wieder Veranstaltungen von kleinen Festivals über ausführliche Trainings bis hin zu großen Konferenzen initiiert und organisiert.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== Erfahrung ===================== -->
+  <!-- ===================== Künstliche Intelligenz und Handwerk ===================== -->
   <section class="pers pers--tief">
-    <div class="pers__inner pers__eng">
-      <p class="pers__label auf">Erfahrung</p>
-      <h2 class="pers__h2 auf" style="color: var(--parchment);">Was ich mitbringe.</h2>
+    <div class="pers__inner">
+      <p class="pers__label auf">Künstliche Intelligenz und Handwerk</p>
       <div class="pers__text auf">
-        <p>Impact Up, das Institut für systemische Wirkungsorientierung, habe ich 2026 gegründet. Bis 2025 war ich sechs Jahre lang Berater für Planung, Monitoring und Evaluierung (PME) im Zivilen Friedensdienst (ZFD) der GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit) in Kambodscha. Dort habe ich Wirkungsorientierung in der Praxis gelernt: mit einem ZFD-Programm, mit internationalen Fachkräften und acht sehr diversen Partnerorganisationen. Die Projektwirkungen in der Friedens- und Vergangenheitsarbeit waren immer Teil einer Programmwirkung des ZFD und zugleich Teil der Wirkung der Partnerorganisationen – eines internationalen Gerichtshofs, psychologischer Dienstleister, Gedenkstätten, Jugendbewegungen, Universitäten. Capacity Development war häufig ein Kernelement, und die Projektwirkung nicht selten auch Organisationsentwicklung.</p>
+        <p>Das letzte Jahr gehörte der künstlichen Intelligenz: Seit seiner Rückkehr nach Deutschland hat Stefan die systemische Organisationsentwicklung und Impact Up mit ihr aufgebaut — und dabei ein Kooperationsnetzwerk, das von IP-GO über das Hamburger Selbständigen-Netzwerk und die EH-Rückkehrer bis zur KURVE Wustrow reicht. Ihn interessiert weniger, was diese Systeme können, als woran sie sich binden: an die Sprache, die Wirkungslogik und die Maßstäbe einer Arbeit. Was in ihrem Inneren geschieht, versteht niemand ganz — Stefan verfolgt, wer die Entwicklung treibt und welche Gedankenkonstrukte dort entstehen. Die Arbeitsteilung ist für ihn klar: Die Sortierarbeit darf die Maschine machen; Urteil, Verantwortung und der Moment im Raum bleiben bei Menschen.</p>
 
-        <p>Das ZFD-Programm war mit den anderen ZFD-Programmen in Kambodscha vernetzt, sodass ebenso Wirkungen auf das Land erwünscht waren; dazu kamen viele weitere PME-Berater:innen des ZFD in anderen Ländern, mit denen wir regelmäßig über Methoden, Aufbau und Arbeitsweise reflektiert haben. So habe ich zahlreiche Akteur:innen im Feld in Kambodscha in Resonanz gebracht und ein Netzwerk aus Aktiven für ein friedliches Zusammenleben gestärkt. In Planungs- und Reflexionsworkshops kamen Methoden aus der Friedensarbeit selbst dazu, etwa aus der Konflikttransformation, ebenso die Erfahrung als Yogalehrer und aus der Gewaltfreien Kommunikation.</p>
-
-        <p>Seit meiner Rückkehr nach Deutschland beschäftige ich mich intensiv mit Theorien und Methoden, wie sich Partizipation und Kokreation umsetzen lassen, mit systemischen Ansätzen und systemischer Haltung. Zahlreiche Autor:innen geben mir dabei einen Reflexionsraum für das viele Material aus meiner Zeit in Kambodscha. Seit Dezember 2025 vertiefe ich das in der Ausbildung zum systemischen Organisationsentwickler bei der <a href="https://www.systemisches-zentrum.de/" target="_blank" rel="noopener">WISPO</a>. Literatur zu Systems Change und zur Kokreation hat viel Resonanz erzeugt. Mit Impact Up nehme ich nun die Methoden zum Planen, Monitoren und Reflektieren zusammen mit den Methoden der Friedensarbeit – Dialog, Konflikttransformation, Vergangenheits- und Traumaaufarbeitung – mit in das systemische Arbeiten und entwickle Ansätze für systemische Wirkungsorientierung zur Veränderung der Gesellschaft. Kontextspezifisch, mit der Empathie und dem Gespür, die es braucht, um wirklich zu hören, zu sehen und zu fühlen, worum es geht.</p>
-
-        <p>Thematisch bringe ich eine breite Vorerfahrung mit: vor der Friedensarbeit im Kosovo und in Kambodscha die Wirtschaftswissenschaften und Internationalen Studien an der Universität. Geprägt haben mich viele Jahre in der Veränderungsarbeit mit sozial-ökologischen Bewegungen, vor allem für ein Grundeinkommen und Degrowth. Für das Climate Service Center in Hamburg habe ich untersucht, wie die Beteiligung von Praxisakteur:innen an Wissenschaftsprozessen angemessen in Evaluationen berücksichtigt werden kann. Und in nahezu allen Rollen habe ich Veranstaltungen initiiert und organisiert – von kleinen Festivals über ausführliche Trainings bis hin zu großen Konferenzen.</p>
-
-        <p>Das letzte Jahr gehörte der künstlichen Intelligenz: Seit meiner Rückkehr nach Deutschland habe ich mit ihr die systemische Organisationsentwicklung und Impact Up aufgebaut — und dabei ein Kooperationsnetzwerk, das von IP-GO über das Hamburger Selbständigen-Netzwerk und die EH-Rückkehrer bis zur KURVE Wustrow reicht. Was daraus wächst, steht drüben unter <a href="index.html#about">Über Uns</a>.</p>
+        <p>Sein Handwerk hat Stefan im Coaching kleiner Runden und in Planungs- und Reflexionsworkshops gesammelt: mit der Leitung die Ausrichtung klären, mit der Gruppe den Weg dorthin gestalten — im Gespräch, an der Wand, in kleinen Schritten.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===================== Zwischenbild ===================== -->
+  <!-- ===================== Foto-Band ===================== -->
   <section class="band">
     <div class="band__inner">
       <figure class="band__bild auf">
@@ -445,7 +411,7 @@
         <figcaption class="band__note">Wirkungsplanung im Zivilen Friedensdienst, Kambodscha</figcaption>
       </figure>
 
-      <p class="band__satz auf">Was an der Wand hängt, hat die Gruppe gedacht. Meine Arbeit ist, dass es dort hinkommt.</p>
+      <p class="band__satz auf">Was an der Wand hängt, hat die Gruppe gedacht. Stefans Arbeit ist, dass es dort hinkommt.</p>
 
       <figure class="band__bild auf">
         <img src="assets/workshop-wand.webp"
@@ -456,54 +422,9 @@
     </div>
   </section>
 
-  <!-- ===================== KI-Praxis ===================== -->
-  <section class="pers ki">
-    <div class="pers__inner">
-      <div class="ki__grid">
-        <div class="auf">
-          <p class="pers__label">Künstliche Intelligenz</p>
-          <h2 class="pers__h2">Diese Systeme binden sich gerade an die Welt an.</h2>
-          <div class="pers__text">
-            <p>Künstlich heißt hergestellt. Das Wort kommt von Kunst, und es sagt etwas Genaues über diese Systeme: Sie sind aus dem gemacht, was Menschen gedacht, geschrieben und geordnet haben. Was uns da entgegenkommt, ist eine Verdichtung menschlichen Wissens – und wie bei allem Hergestellten entscheidet die Ausführung darüber, was es taugt.</p>
-            <p>Mich interessiert deshalb weniger, was diese Systeme können. Mich interessiert, woran sie sich binden. In einer Organisation heißt das ganz konkret: an ihre Sprache, ihre Wirkungslogik, ihre Entscheidungswege, ihre Maßstäbe dafür, was als gut gilt. Das passiert ohnehin, sobald jemand anfängt zu arbeiten. Ob es gut ausgeht, lässt sich gestalten.</p>
-            <p>Das Spannendste daran ist ehrlicherweise das Unverständnis: Was im Inneren dieser Systeme geschieht, versteht niemand ganz — auch die nicht, die sie bauen. Ich verfolge, wer die Entwicklung treibt, welche Gedankenkonstrukte dort entstehen und was die Menschen nahe an der Technik bereits begriffen haben. Und die Frage, wie man eine Arbeit wie meine an eine solche Black Box anbindet, halte ich für eine der interessantesten, die es gerade gibt.</p>
-            <p>Was dabei aufeinandertrifft, sind sehr verschiedene Ordnungen: die maschinelle Logik dieser Systeme, die materiellen und ökologischen Zusammenhänge, in denen wir stecken, die sozialen Systeme, in denen Menschen Identität und Beziehung aufbauen, und die psychischen Zustände, aus denen heraus sie das tun. Wie das zusammenhängt, habe ich <a href="impulse.html">in einem Impuls ausgeschrieben</a>.</p>
-            <p>Am meisten trage ich dort bei, wo diese Systeme in Veränderungsprozessen eine Rolle spielen. Wer Wirkungsorientierung aufbaut oder ein Monitoring einrichtet, kann dabei gleich mitentscheiden, was davon niemand von Hand tun muss. Wie Impact Up daran arbeitet, steht unter <a href="services.html#ki">Integration künstlicher Intelligenz</a>.</p>
-          </div>
-        </div>
-        <div class="auf">
-          <p class="pers__label">Was sie für meine Arbeit ist</p>
-          <dl class="ki__rollen">
-            <div>
-              <dt>Gedächtnis</dt>
-              <dd>Ein Wissensnetz, das mit jeder Woche wächst: Personen, Themen, Gespräche, offene Fäden. Es speichert nicht nur, es hält den Zusammenhang zwischen dem, was ich weiß.</dd>
-            </div>
-            <div>
-              <dt>Stimme</dt>
-              <dd>Was ich unterwegs denke, wird angebunden, geprüft und in Form gebracht – bis daraus ein Text wird, der nach außen gehen kann.</dd>
-            </div>
-            <div>
-              <dt>Repräsentanz</dt>
-              <dd>Am Ende der Kette steht, wie ich in der Welt vorkomme: Webseite, Anschreiben, Unterlagen. Kein Abbild von mir, aber getragen von dem, was ich für richtig halte.</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-
-      <div class="ki__weiter auf">
-        <p class="pers__label">Und was dabei bei den Menschen bleibt</p>
-        <div class="pers__text">
-          <p>Peter Kruse hat vor Jahren beschrieben, was ein hochvernetztes System braucht, damit aus vielen Beiträgen etwas Kluges wird statt nur viel Lärm: Prozesse, die qualitativ bewerten können. Diese Sortierarbeit ist heute maschinell zu haben, und das ist die eigentliche Neuigkeit. Was sich nicht abgeben lässt, ist die Kultur, in der Menschen ihre Beiträge überhaupt einbringen – die geteilte Grundlage, auf der nicht mehr alles verhandelt werden muss, damit Kraft für das Eigentliche bleibt.</p>
-          <p>Diese Kultur entsteht in Gesprächen, und sie entsteht langsam. Über sechs Jahre im Zivilen Friedensdienst in Kambodscha war das mein größter Beitrag, auch wenn er in keinem Bericht gut aussieht: derjenige zu sein, der lange genug da war, der mit allen Seiten im Gespräch blieb und die Auseinandersetzungen so geführt hat, dass aus einem Programm mit sehr unterschiedlichen Partnern eine gemeinsame Arbeitskultur wurde – staatliche Stellen, zivilgesellschaftliche Organisationen, Universität, Psycholog:innen, internationale Kolleg:innen. Das geht nicht nebenbei, und es geht nicht ohne Resonanz zwischen Menschen.</p>
-          <p>Genau deshalb ist die Arbeitsteilung für mich klar. Die Sortierarbeit darf die Maschine machen. Urteil, Verantwortung und der Moment im Raum bleiben bei Menschen. Was frei wird, ist Zeit für das, was nur dort entsteht.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== Woher ===================== -->
+  <!-- ===================== Stationen und Studium ===================== -->
   <section class="pers pers--warm">
-    <div class="pers__inner pers__eng">
+    <div class="pers__inner">
       <p class="pers__label auf">Woher das kommt</p>
       <h2 class="pers__h2 auf">Stationen</h2>
       <ul class="weg auf">
@@ -514,7 +435,7 @@
         <li><span class="weg__jahr">laufend</span><span>Ehrenamt in Netzwerken für Grundeinkommen, Gewaltfreiheit und Zukunftsgestaltung</span></li>
       </ul>
 
-      <p class="pers__label auf" style="margin-top: 46px;">Studium</p>
+      <p class="pers__label auf" style="margin-top: 38px;">Studium</p>
       <ul class="weg auf">
         <li><span class="weg__jahr">M.A.</span><span>International Studies</span></li>
         <li><span class="weg__jahr">M.A.</span><span>European Studies</span></li>
@@ -561,15 +482,15 @@
     </div>
   </section>
 
-  <!-- ===================== Kontakt ===================== -->
+  <!-- ===================== Schluss ===================== -->
   <section class="ruf">
     <div class="ruf__inner">
-      <h2 class="ruf__h2 auf">Am liebsten fange ich mit einem Gespräch an.</h2>
-      <p class="ruf__p auf">Eine Stunde, ohne Kosten und ohne Vorbereitung. Danach ist meistens klar, ob es etwas zu tun gibt – und was.</p>
+      <h2 class="ruf__h2 auf">Stefan unterstützt euch gerne.</h2>
+      <p class="ruf__p ruf__p--eng auf">Der Weg zu ihm führt über das Institut. Ein Erstgespräch ist der einfachste Anfang: eine Stunde, kostenfrei.</p>
       <div class="ruf__aktionen auf">
-        <a class="btn btn--primary" href="mailto:stefan@impact-up.org">stefan@impact-up.org</a>
+        <a class="btn btn--primary" href="kontakt.html">Zusammenarbeit mit Impact Up</a>
+        <a class="btn btn--ghost" href="mailto:stefan@impact-up.org">stefan@impact-up.org</a>
         <a class="btn btn--ghost" href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn--ghost" href="kontakt.html">Zusammenarbeit mit Impact Up</a>
       </div>
     </div>
   </section>

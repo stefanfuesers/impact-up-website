@@ -26,30 +26,12 @@
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/konstrukte.fr.html">
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/konstrukte.html">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <style>
-    /* Vista general de Constructos: cuadrícula de tarjetas en el layout editorial */
-    .konstrukte-cards {
-      display: grid;
-      gap: 28px;
-      margin-top: 16px;
-      max-width: 880px;
-    }
-    .konstrukte-cards .card {
-      display: block;
-      text-decoration: none;
-      padding: 36px 40px;
-    }
-    .konstrukte-cards .card:hover { color: inherit; }
-    .konstrukte-cards .card h3 { white-space: normal; }
-    .konstrukte-cards .card p {
-      text-align: left;
-      hyphens: none;
-      -webkit-hyphens: none;
-    }
-    @media (max-width: 640px) {
-      .konstrukte-cards .card { padding: 28px 24px; }
-    }
+    /* La forma base de las tarjetas viene de .sammel-cards en style.css.
+       Específico de esta página: aquí cada tarjeta es en sí un enlace. */
+    .sammel-cards .card { text-decoration: none; }
+    .sammel-cards .card:hover { color: inherit; }
   </style>
 </head>
 <body>
@@ -110,10 +92,10 @@
     <div class="container page__inner">
       <p class="eyebrow" style="margin:0 0 18px;">Constructos de Impact Up</p>
       <p class="page__lead">
-        Los constructos son los fundamentos teóricos de Impact Up: las herramientas de pensamiento de las que ha surgido nuestro trabajo. Los llamamos constructos porque están construidos por nosotros y por otras personas, para poder ver y hablar de las relaciones de impacto. Toda descripción del mundo es una construcción – y las buenas construcciones hacen posible el trabajo conjunto: le dan a todas las personas involucradas un lenguaje para lo que actúa entre ellas. Los contenidos importantes surgen primero de la colaboración – y con nuestros constructos construimos sobre ella. Aquí, primero, algunos puntos de partida para nosotros:
+        Los constructos son los fundamentos teóricos de Impact Up: las herramientas de pensamiento de las que ha surgido nuestro trabajo. Los llamamos constructos porque están construidos por nosotros y por otras personas, para poder ver y hablar de las relaciones de impacto. Toda descripción del mundo es una construcción – y las buenas construcciones hacen posible el trabajo conjunto: le dan a todas las personas involucradas un lenguaje para lo que actúa entre ellas. Los contenidos importantes surgen primero de la colaboración – y con nuestros constructos construimos sobre ella. El intercambio sobre los constructos siempre nos alegra — <a href="kontakt.es.html">escribidnos</a>. Aquí, primero, algunos puntos de partida para nosotros:
       </p>
 
-      <div class="konstrukte-cards">
+      <div class="sammel-cards">
 
         <a href="impact-up-philosophie.es.html" class="card">
           <span class="card__num">01</span>

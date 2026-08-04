@@ -26,19 +26,7 @@
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=8" />
-  <style>
-    .impulse-soon {
-      background: #fff;
-      border: 1px solid rgba(31, 26, 20, 0.08);
-      border-radius: 12px;
-      padding: 28px 32px;
-      box-shadow: 0 4px 20px rgba(31, 26, 20, 0.04);
-      margin-top: 16px;
-    }
-    .impulse-soon .eyebrow { margin-bottom: 8px; }
-    .impulse-soon p:last-child { margin: 0; line-height: 1.6; color: var(--ink); opacity: 0.85; }
-  </style>
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
 
@@ -99,19 +87,21 @@
     <div class="container page__inner">
       <p class="eyebrow">Impulses</p>
       <p class="page__lead">
-        Impulses are what we share from our work with the world: thoughts, methods, observations – sometimes just a question that won't let us go. From a project, from the literature, from a conversation that set something in motion. We share them because good impact grows when you make it visible and pass it on – and because the good things in this world multiply when many people keep thinking them further. Look around, take what speaks to you, and follow the thought wherever it leads.
+        Impulses are what we share from our work with the world: thoughts, methods, observations – sometimes just a question that won't let us go. From a project, from the literature, from a conversation that set something in motion. We share them because good impact grows when you make it visible and pass it on – and because the good things in this world multiply when many people keep thinking them further. Look around, take what speaks to you, and follow the thought wherever it leads. Resonance with an impulse is the finest of occasions — <a href="kontakt.en.html">write to us</a>.
       </p>
 
-      <div class="impulse-soon">
-        <p class="eyebrow">Coming soon</p>
-        <p>
-          The first impulse will appear right here soon. We also share every new impulse on LinkedIn – connect with Stefan there to catch them as they come: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan on LinkedIn</a>.
-        </p>
+      <!-- Order: newest on top. Add new impulses above and count the number up
+           (the newest carries the highest); impulse 01 moves down. The
+           placeholder goes as soon as the first impulse is here. -->
+      <div class="sammel-cards">
+
+        <section class="card">
+          <span class="card__num">01</span>
+          <h3>Coming soon</h3>
+          <p>The first impulse will appear right here soon. We also share every new impulse on LinkedIn – connect with Stefan there to catch them as they come: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan on LinkedIn</a>.</p>
+        </section>
+
       </div>
-
-      <p class="impulse-outro">
-        More impulses to follow. If you'd like to set off a thought – write to us: <a href="mailto:info@impact-up.org">info@impact-up.org</a>.
-      </p>
     </div>
   </main>
 

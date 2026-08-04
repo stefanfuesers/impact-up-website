@@ -26,19 +26,7 @@
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=8" />
-  <style>
-    .impulse-soon {
-      background: #fff;
-      border: 1px solid rgba(31, 26, 20, 0.08);
-      border-radius: 12px;
-      padding: 28px 32px;
-      box-shadow: 0 4px 20px rgba(31, 26, 20, 0.04);
-      margin-top: 16px;
-    }
-    .impulse-soon .eyebrow { margin-bottom: 8px; }
-    .impulse-soon p:last-child { margin: 0; line-height: 1.6; color: var(--ink); opacity: 0.85; }
-  </style>
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
 
@@ -99,19 +87,22 @@
     <div class="container page__inner">
       <p class="eyebrow">Impulsions</p>
       <p class="page__lead">
-        Les impulsions, c'est ce que nous partageons de notre travail avec le monde : des idées, des méthodes, des observations, parfois juste une question qui ne nous lâche pas. Tantôt issues d'un projet, tantôt de la littérature, tantôt d'une conversation qui a mis quelque chose en mouvement. Nous les partageons parce qu'un bon impact grandit quand on le rend visible et qu'on le transmet – et parce que les bonnes choses de ce monde se multiplient quand beaucoup de personnes continuent d'y réfléchir. Regardez autour de vous, prenez ce qui vous parle, et laissez votre pensée vous mener où elle veut.
+        Les impulsions, c'est ce que nous partageons de notre travail avec le monde : des idées, des méthodes, des observations, parfois juste une question qui ne nous lâche pas. Tantôt issues d'un projet, tantôt de la littérature, tantôt d'une conversation qui a mis quelque chose en mouvement. Nous les partageons parce qu'un bon impact grandit quand on le rend visible et qu'on le transmet – et parce que les bonnes choses de ce monde se multiplient quand beaucoup de personnes continuent d'y réfléchir. Regardez autour de vous, prenez ce qui vous parle, et laissez votre pensée vous mener où elle veut. La résonance avec une impulsion est la plus belle des occasions — <a href="kontakt.fr.html">écrivez-nous</a>.
       </p>
 
-      <div class="impulse-soon">
-        <p class="eyebrow">Bientôt ici</p>
-        <p>
-          La première impulsion paraîtra bientôt à cet endroit. Nous partageons aussi chaque nouvelle impulsion sur LinkedIn – connectez-vous avec Stefan pour ne rien manquer : <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan sur LinkedIn</a>.
-        </p>
+      <!-- Ordre : le plus récent en haut. Les nouvelles impulsions s'ajoutent en
+           haut et le numéro monte (la plus récente porte le plus élevé) ;
+           l'impulsion 01 descend. Le texte d'attente disparaît dès que la
+           première impulsion est là. -->
+      <div class="sammel-cards">
+
+        <section class="card">
+          <span class="card__num">01</span>
+          <h3>Bientôt ici</h3>
+          <p>La première impulsion paraîtra bientôt à cet endroit. Nous partageons aussi chaque nouvelle impulsion sur LinkedIn – connectez-vous avec Stefan pour ne rien manquer : <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan sur LinkedIn</a>.</p>
+        </section>
+
       </div>
-
-      <p class="impulse-outro">
-        D'autres impulsions suivront. Si vous voulez lancer une idée, écrivez-nous : <a href="mailto:info@impact-up.org">info@impact-up.org</a>.
-      </p>
     </div>
   </main>
 

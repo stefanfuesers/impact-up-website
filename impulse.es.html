@@ -26,19 +26,7 @@
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=8" />
-  <style>
-    .impulse-soon {
-      background: #fff;
-      border: 1px solid rgba(31, 26, 20, 0.08);
-      border-radius: 12px;
-      padding: 28px 32px;
-      box-shadow: 0 4px 20px rgba(31, 26, 20, 0.04);
-      margin-top: 16px;
-    }
-    .impulse-soon .eyebrow { margin-bottom: 8px; }
-    .impulse-soon p:last-child { margin: 0; line-height: 1.6; color: var(--ink); opacity: 0.85; }
-  </style>
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
 
@@ -99,19 +87,21 @@
     <div class="container page__inner">
       <p class="eyebrow">Impulsos</p>
       <p class="page__lead">
-        Los impulsos son lo que compartimos de nuestro trabajo con el mundo: ideas, métodos, observaciones – a veces solo una pregunta que no nos suelta. De un proyecto, de la literatura, de una conversación que puso algo en movimiento. Los compartimos porque el buen impacto crece cuando se hace visible y se transmite – y porque las cosas buenas de este mundo se multiplican cuando muchas personas siguen pensándolas. Miren a su alrededor, tomen lo que les hable, y sigan el pensamiento a donde los lleve.
+        Los impulsos son lo que compartimos de nuestro trabajo con el mundo: ideas, métodos, observaciones – a veces solo una pregunta que no nos suelta. De un proyecto, de la literatura, de una conversación que puso algo en movimiento. Los compartimos porque el buen impacto crece cuando se hace visible y se transmite – y porque las cosas buenas de este mundo se multiplican cuando muchas personas siguen pensándolas. Miren a su alrededor, tomen lo que les hable, y sigan el pensamiento a donde los lleve. La resonancia con un impulso es el mejor motivo — <a href="kontakt.es.html">escríbannos</a>.
       </p>
 
-      <div class="impulse-soon">
-        <p class="eyebrow">Próximamente</p>
-        <p>
-          El primer impulso aparecerá aquí pronto. También compartimos cada nuevo impulso en LinkedIn – conéctense con Stefan para no perdérselos: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan en LinkedIn</a>.
-        </p>
+      <!-- Orden: lo más nuevo arriba. Los impulsos nuevos se añaden arriba y el
+           número sube (el más nuevo lleva el más alto); el impulso 01 baja. El
+           marcador de posición desaparece en cuanto llegue el primer impulso. -->
+      <div class="sammel-cards">
+
+        <section class="card">
+          <span class="card__num">01</span>
+          <h3>Próximamente</h3>
+          <p>El primer impulso aparecerá aquí pronto. También compartimos cada nuevo impulso en LinkedIn – conéctense con Stefan para no perdérselos: <a href="https://www.linkedin.com/in/stefan-f%C3%BCsers-17bb07359/" target="_blank" rel="noopener">Stefan en LinkedIn</a>.</p>
+        </section>
+
       </div>
-
-      <p class="impulse-outro">
-        Vendrán más impulsos. Si quieren poner en marcha una idea, escríbannos: <a href="mailto:info@impact-up.org">info@impact-up.org</a>.
-      </p>
     </div>
   </main>
 
