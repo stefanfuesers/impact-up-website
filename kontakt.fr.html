@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact · Impact Up</title>
-  <meta name="description" content="Écrivez-nous par mail ou sur LinkedIn – nous nous réjouissons de l'échange. Institut d'Orientation vers l'Impact Systémique · impact-up.org" />
+  <title>Coopération · Impact Up</title>
+  <meta name="description" content="Nous sommes ouverts à de nombreuses formes de coopération et nous réjouissons de l'échange – idée de coopération, demande de service ou contact. Institut d'Orientation vers l'Impact Systémique · impact-up.org" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96.png">
@@ -18,8 +18,8 @@
   <link rel="alternate" hreflang="fr" href="https://impact-up.org/kontakt.fr.html" />
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/kontakt.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact · Impact Up" />
-  <meta property="og:description" content="Écrivez-nous par mail ou sur LinkedIn – nous nous réjouissons de l'échange. Institut d'Orientation vers l'Impact Systémique." />
+  <meta property="og:title" content="Coopération · Impact Up" />
+  <meta property="og:description" content="Nous sommes ouverts à de nombreuses formes de coopération et nous réjouissons de l'échange – idée de coopération, demande de service ou contact." />
   <meta property="og:url" content="https://impact-up.org/kontakt.fr.html" />
   <meta property="og:image" content="https://impact-up.org/assets/share.png" />
   <meta property="og:locale" content="fr_FR" />
@@ -55,6 +55,46 @@
       border-color: var(--gold);
     }
     .contact-form .erst-input::placeholder { color: rgba(31, 26, 20, 0.35); }
+
+    /* Auswahl „Worum geht es?" – schmale Pills im Stil der Eingabefelder */
+    .contact-form fieldset.form-group { border: 0; padding: 0; margin-inline: 0; }
+    .contact-form fieldset.form-group legend {
+      padding: 0;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .contact-form .form-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .contact-form .form-pill { display: inline-flex; }
+    .contact-form .form-pill input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .contact-form .form-pill span {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(201, 169, 97, 0.5);
+      border-radius: 999px;
+      background: #FFFFFF;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .contact-form .form-pill:hover span { border-color: var(--gold); }
+    .contact-form .form-pill input:focus-visible + span { border-color: var(--gold); outline: 2px solid rgba(201, 169, 97, 0.45); outline-offset: 2px; }
+    .contact-form .form-pill input:checked + span {
+      border-color: var(--gold);
+      background: rgba(201, 169, 97, 0.12);
+    }
 
     .contact-form .erst-consent { margin-top: 20px; }
     .contact-form .form-actions {
@@ -135,9 +175,10 @@
     <div class="container page__inner">
       <div class="contact-form-wrap">
 
+        <h1 class="eyebrow" style="margin:0 0 18px;">Coopération</h1>
+
         <p class="page__lead">
-          <strong>Nous nous réjouissons de l'échange !</strong>
-          Autour d'un projet concret, d'une demande de premier entretien, d'une idée ou simplement des questions qui vous occupent. Utilisez volontiers le formulaire ou envoyez un e-mail.
+          Nous sommes ouverts à de nombreuses formes de coopération et nous réjouissons de l'échange. Dites-nous de quoi il s'agit — une idée de coopération, une demande de service, une préoccupation, une question — et laissez-nous votre e-mail. Nous convenons volontiers d'un premier entretien pour faire connaissance ; une conversation reste de toute façon le début que nous souhaitons le plus.
         </p>
 
         <form id="contact-form" class="contact-form"
@@ -146,6 +187,15 @@
           <input type="hidden" name="access_key" value="3ff0267c-6f0c-48a5-b3b9-678c31751628">
           <input type="hidden" name="subject" value="Demande de contact via impact-up.org">
           <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <fieldset class="form-group">
+            <legend>De quoi s'agit-il ?</legend>
+            <div class="form-pills">
+              <label class="form-pill"><input type="radio" name="art" value="Coopération"><span>Coopération</span></label>
+              <label class="form-pill"><input type="radio" name="art" value="Demande de service"><span>Demande de service</span></label>
+              <label class="form-pill"><input type="radio" name="art" value="Contact"><span>Contact</span></label>
+            </div>
+          </fieldset>
 
           <div class="form-group">
             <label for="anfrage">Votre demande</label>
