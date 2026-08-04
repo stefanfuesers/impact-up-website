@@ -97,6 +97,54 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://impact-up.org/services.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/services.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/services.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/services.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/werkstatt.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/werkstatt.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/werkstatt.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/werkstatt.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/stefan.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/stefan.en.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/stefan.es.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/stefan.fr.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://impact-up.org/kontakt.html</loc>
     <priority>0.9</priority>
   </url>

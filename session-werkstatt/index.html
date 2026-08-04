@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Session-Werkstatt · Impact Up</title>
-<meta name="description" content="Die Session-Werkstatt von Impact Up plant aus wenigen gezielten Fragen einen Ablauf – vom schwierigen Gespräch bis zur zweitägigen Klausur. Ein Werkzeug des Instituts für systemische Wirkungsorientierung.">
+<title>Session-Builder · Impact Up</title>
+<meta name="description" content="Der Session-Builder von Impact Up plant aus wenigen gezielten Fragen einen Ablauf – vom schwierigen Gespräch bis zur zweitägigen Klausur. Ein Werkzeug des Instituts für systemische Wirkungsorientierung.">
 <link rel="canonical" href="https://impact-up.org/session-werkstatt/">
 <link rel="alternate" hreflang="de" href="https://impact-up.org/session-werkstatt/">
 <link rel="alternate" hreflang="en" href="https://impact-up.org/session-werkstatt/index.en.html">
@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="fr" href="https://impact-up.org/session-werkstatt/index.fr.html">
 <link rel="alternate" hreflang="x-default" href="https://impact-up.org/session-werkstatt/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Session-Werkstatt · Impact Up">
+<meta property="og:title" content="Session-Builder · Impact Up">
 <meta property="og:description" content="Plane deine nächste Session – vom schwierigen Gespräch bis zur zweitägigen Klausur. Ein Werkzeug des Instituts für systemische Wirkungsorientierung.">
 <meta property="og:url" content="https://impact-up.org/session-werkstatt/">
 <meta property="og:image" content="https://impact-up.org/assets/share.png">
@@ -225,7 +225,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 <script src="daten.js"></script>
 <script>
 "use strict";
-const FEATURE_NAME = "Session-Werkstatt";
+const FEATURE_NAME = "Session-Builder";
 const LS_RUNS = "iu_sw_runs";
 const LS_FREI = "iu_sw_frei";
 /* Freischalt-Link: ?frei=wirkungsraum schaltet diesen Browser dauerhaft
@@ -1027,10 +1027,11 @@ function progressHtml(){
 function renderStart(){
   M.innerHTML = `
   <div class="eyebrow">Ein Werkzeug von Impact Up</div>
-  <h1>Session-Werkstatt</h1>
-  <p class="lead breit">Gute Wirkung entsteht immer im Austausch mit Menschen, und systemisch arbeiten kann man auch nur mit Menschen. Hier in der Session-Werkstatt baust du dir in wenigen Minuten eine kleine, fiktive Session zu einem konkreten Anliegen. Du beantwortest ein paar Fragen – worum es geht, wo ihr steht, was ihr erreichen wollt – und am Ende bekommst du einige Methoden, Hinweise, worauf du achten kannst, und zwei, drei Links zum Weiterlesen.</p>
+  <h1>Session-Builder</h1>
+  <p class="lead breit">Gute Wirkung entsteht immer im Austausch mit Menschen, und systemisch arbeiten kann man auch nur mit Menschen. Hier im Session-Builder baust du dir in wenigen Minuten eine kleine, fiktive Session zu einem konkreten Anliegen. Du beantwortest ein paar Fragen – worum es geht, wo ihr steht, was ihr erreichen wollt – und am Ende bekommst du einige Methoden, Hinweise, worauf du achten kannst, und zwei, drei Links zum Weiterlesen.</p>
   ${introOffen?`<p class="lead breit">Dahinter steckt ein Stück unseres Arbeitswissens, übersetzt in Bausteine. Ein einfacher Mechanismus stellt sie für dich zusammen – bewusst etwas wild gewürfelt, sodass es „nur“ eine erste Inspiration zum Weiterdenken bleibt. Hier plant keine KI deine Session: Du bekommst Bausteine, und was daraus wird, entscheidest du.</p>
-  <p class="lead breit">Wenn dir das Werkzeug gefällt und weiterhilft, freuen wir uns über eine kurze Rückmeldung. Und wenn du hier nicht findest, was du brauchst, freuen wir uns erst recht – dann schauen wir als Menschen gemeinsam mit dir darauf. Schreib uns einfach.</p>`:""}
+  <p class="lead breit">Wenn dir das Werkzeug gefällt und weiterhilft, freuen wir uns über eine kurze Rückmeldung. Und wenn du hier nicht findest, was du brauchst, freuen wir uns erst recht – dann schauen wir als Menschen gemeinsam mit dir darauf. Schreib uns einfach.</p>
+  <p class="lead breit">Der Session-Builder ist das erste Werkzeug aus unserer <a href="../werkstatt.html">Werkstatt</a> – weitere entstehen gerade.</p>`:""}
   <div class="mehr-toggle"><button type="button" onclick="introOffen=!introOffen;render()">${introOffen?"Einklappen":"Weiterlesen"}</button></div>
   <p class="lead hint">Etwa 5 Minuten. Deine Eingaben bleiben auf deinem Gerät.</p>
   <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Session planen</button></div>
@@ -1157,7 +1158,7 @@ function renderBlockB(){
     <div class="card"><div class="frage"><span class="nr">F3</span>Mit wem hast du es zu tun? *</div>
       ${optButtons("ebene",EBENEN,false)}
       <div class="inline" style="margin-top:8px"><label>Wie viele Personen?</label><input type="text" class="kurzfeld" placeholder="z.B. 8 oder 12–15" value="${esc(A.groesse)}" oninput="A.groesse=this.value;speichern()" onchange="render()"></div>
-      ${g?`<p class="hint" style="margin-top:6px">Verstanden: ${g.von===g.bis?g.von+" Personen":g.von+" bis "+g.bis+" Personen"} – die Session-Werkstatt rechnet mit der ganzen Spanne.</p>`:(A.groesse?'<p class="hint" style="margin-top:6px;color:var(--c-monk)">Das konnte ich nicht als Zahl lesen – probier z.B. „8“, „3–4“ oder „ca. 20“.</p>':"")}
+      ${g?`<p class="hint" style="margin-top:6px">Verstanden: ${g.von===g.bis?g.von+" Personen":g.von+" bis "+g.bis+" Personen"} – der Session-Builder rechnet mit der ganzen Spanne.</p>`:(A.groesse?'<p class="hint" style="margin-top:6px;color:var(--c-monk)">Das konnte ich nicht als Zahl lesen – probier z.B. „8“, „3–4“ oder „ca. 20“.</p>':"")}
       <div class="sub" style="margin-top:10px">Wer genau sitzt da? Funktionen, Mischung, Besonderheiten.</div>
       ${feld("wer","Z.B.: Vorstand plus zwei neue Aktive, gemischt haupt-/ehrenamtlich …",3)}
     </div>
@@ -1204,7 +1205,7 @@ function renderBlockD(){
     <div class="card"><div class="frage"><span class="nr">F7</span>Wie viel Zeit habt ihr? *</div>
       ${optButtons("dauer",DAUERN,false)}
       <div class="inline" style="margin-top:8px"><label>Beginn (optional):</label><input type="time" value="${A.von}" oninput="A.von=this.value;speichern()"></div>
-      <div class="hint" style="margin-top:8px">Die Session-Werkstatt plant bewusst entspannt: wenige Methoden, echte Pausen – in Wirklichkeit dauert alles länger als gedacht.</div>
+      <div class="hint" style="margin-top:8px">Der Session-Builder plant bewusst entspannt: wenige Methoden, echte Pausen – in Wirklichkeit dauert alles länger als gedacht.</div>
     </div>
     <div class="card"><div class="frage"><span class="nr">F8</span>Online, vor Ort oder hybrid? *</div>
       ${optButtons("ort",{praesenz:"vor Ort",online:"online",hybrid:"hybrid"},false)}
@@ -1328,7 +1329,7 @@ function renderBogen(){
     if(e.kerngespraech){ blocks += kernGespraechBox(e); return; }
     if(e.offen){
       blocks+=`<div class="uebung offen"><div class="ukopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} Min</span><span class="uname">Noch offen: ${e.label}</span></div>
-      <p class="kurz">Für diesen Platz hat die Session-Werkstatt keine eindeutige Empfehlung – hier lohnt das Gespräch. ${e.kandidaten.length?"Zwei Kandidaten:":""}</p>
+      <p class="kurz">Für diesen Platz hat der Session-Builder keine eindeutige Empfehlung – hier lohnt das Gespräch. ${e.kandidaten.length?"Zwei Kandidaten:":""}</p>
       ${e.kandidaten.map(k=>`<p class="kurz">• <b>${k.name}</b> – ${esc(k.kurz)}</p>`).join("")}
       <p class="kurz">Gern denken wir das mit dir zu Ende – <a href="https://impact-up.org" target="_blank" rel="noopener">impact-up.org</a>.</p></div>`;
       return;
