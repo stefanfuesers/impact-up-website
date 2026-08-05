@@ -2511,7 +2511,7 @@ h2.eyebrow--xl,
    gewordenen Spalte sonst umbrechen. */
 @media (min-width: 901px) {
   .hero--band .hero__cta {
-    margin-left: 285px;
+    margin-left: 323px;
     white-space: nowrap;
   }
 }
