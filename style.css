@@ -3135,6 +3135,11 @@ body .stage + .pers { padding-top: 0; }
 /* Der Text laeuft drei Zeilen ueber die volle Breite, erst ab
    Zeile vier umfliesst er das Portrait. 3 x 26.6px Zeilenhoehe. */
 body .kopf__bild { margin-top: 80px; }
+@media (max-width: 760px) {
+  /* Schmal steht das Portrait zentriert ueber dem Text und wird
+     nicht umflossen - dort waere ein Vorlauf sinnlos. */
+  body .kopf__bild { margin-top: 0; }
+}
 
 /* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
    Silbentrennung, damit das zweite Workshopfoto sauber umflossen
