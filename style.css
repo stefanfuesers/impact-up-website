@@ -2480,7 +2480,15 @@ h2.eyebrow--xl,
    anschliesst. Das negative margin ist hier unbedenklich: die
    Sektion legt sich nur ueber die untersten Pixel des Bandes, und
    die sind bereits Pergament. */
-.intro { padding-top: 0; margin-top: -10px; }
+.intro { padding-top: 0; margin-top: -48px; }
+@media (max-width: 760px) {
+  /* Mobil ist das Band hoeher (gestapelt), zwischen Gruen-Ende und
+     Text blieb viel leerer Raum. Weiter hinein, damit das Netz
+     hinter dem Textanfang laeuft - bei 390px liegt der Text damit
+     rund 57px im Band, der helle Teil beginnt dort schon 105px vor
+     der Unterkante. */
+  .intro { margin-top: -60px; }
+}
 
 /* --- 0c · Claim-Spalte rechts steigt --------------------------
    Der Claim steht jetzt einzeilig (das <br> ist im Markup raus),
