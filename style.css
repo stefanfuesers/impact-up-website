@@ -2504,6 +2504,13 @@ h2.eyebrow--xl,
   margin-inline: auto;
 }
 
+/* --- 0d · Der Hero-Button rueckt zur Mitte des Lockups -------- */
+/* 2,5 cm nach rechts; unter 900px stapelt das Band, dort bleibt
+   er buendig unter der Marke. */
+@media (min-width: 901px) {
+  .hero--band .hero__cta { margin-left: 95px; }
+}
+
 /* --- 1 · Die Sektion steht jetzt auf Pergament --------------- */
 .weitergehen {
   background: var(--parchment);
