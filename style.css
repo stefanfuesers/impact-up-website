@@ -3072,7 +3072,9 @@ body .stage {
     var(--parchment) 100%);
   padding-bottom: 0;
 }
-body .stage__inner { padding-bottom: 170px; }
+/* 27px weniger als zuvor: das ist die eine Zeile, um die der
+   Bio-Text hoeher startet. */
+body .stage__inner { padding-bottom: 143px; }
 
 /* --- C4 - Der erste Text darf hoeher ruecken --------------- */
 /* Die Baender laufen jetzt hell aus und binden ohne Kante an
@@ -3129,9 +3131,11 @@ body .stage + .pers { padding-top: 30px; }
    WELLE 2f - Personenseite: Text und Bilder verzahnen
    ============================================================ */
 
-/* Der Bio-Text startet direkt unter der Buehne, eine Zeile hoeher
-   als die Sektion sonst beginnen wuerde. */
-body .stage + .pers { padding-top: 0; margin-top: -27px; }
+/* Der Bio-Text startet direkt unter der Buehne. KEIN negatives
+   margin hier - das schob die Sektion unter die Buehne, deren
+   Hintergrund die erste Zeile verdeckte. Der Raum kommt aus dem
+   Bodenpolster der Buehne (unten in C3). */
+body .stage + .pers { padding-top: 0; }
 
 /* Portrait links, aber MITTEN im Text: die ersten drei Zeilen
    laufen ueber die volle Breite, ab Zeile vier umfliesst der Text
