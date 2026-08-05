@@ -3130,7 +3130,13 @@ body .stage + .pers { padding-top: 30px; }
    ============================================================ */
 
 /* Der Bio-Text startet direkt unter der Buehne. */
-body .stage + .pers { padding-top: 14px; }
+body .stage + .pers { padding-top: 0; }
+
+/* Das Portrait bleibt, wo es war - der Text laeuft ihm nur zwei
+   bis drei Zeilen voraus. Dadurch sitzt das Bild IM Absatz statt
+   an seinem Anfang: die ersten Zeilen laufen ueber die volle
+   Breite, danach umfliesst der Text das Portrait. */
+body .kopf__bild { margin-top: 78px; }
 
 /* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
    Silbentrennung, damit das zweite Workshopfoto sauber umflossen
@@ -3146,9 +3152,12 @@ body .pers--tief .pers__text p {
    fuer beide, weil er an .mitbild__bild haengt. */
 body .mitbild__bild--links {
   float: left;
-  margin: 4px 32px 16px 0;
+  margin: 4px 0 16px 0;
   margin-left: -20px;
-  margin-right: 32px;
+  /* Der Schimmer laeuft weich ueber die Bildkante hinaus - der
+     Text braucht deshalb mehr Abstand als beim rechten Bild,
+     sonst liegen Buchstaben im Gruen. */
+  margin-right: 60px;
 }
 
 /* Stationen und Studium stehen nebeneinander statt untereinander:
