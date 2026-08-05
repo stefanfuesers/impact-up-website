@@ -3028,14 +3028,9 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
     linear-gradient(180deg,
       var(--moss) 0%,
-      /* Gleiche Kurve wie bei .hero--sub: frueher ansetzen, flach
-         beginnen. Auf Hoehe der letzten Textzeile ist das Gruen
-         schon sichtbar duenner, ohne dass Claim oder Unterzeile
-         ihren dunklen Grund verlieren. */
-      var(--moss-deepest) calc(100% - 265px),
-      #31502E calc(100% - 205px),
-      #6E7A5E calc(100% - 120px),
-      var(--parchment) calc(100% - 40px),
+      /* Dieselbe Rampe wie zuvor, zwei Zeilen (55 px) nach oben. */
+      var(--moss-deepest) calc(100% - 215px),
+      var(--parchment) calc(100% - 105px),
       var(--parchment) 100%);
   padding-bottom: 190px;
 }
@@ -3054,16 +3049,10 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
     linear-gradient(180deg,
       var(--moss) 0%,
-      /* Das Aufhellen setzt jetzt rund zwei Zeilen frueher an, aber
-         mit flachem Beginn: auf den ersten 55 px oeffnet sich das
-         Gruen nur leicht (#31502E), sodass es auf Hoehe der letzten
-         Textzeile bereits sichtbar weniger wird, ohne dass der helle
-         Text seinen Grund verliert (7.4:1 statt 8.4:1). Erst danach
-         kippt es schnell nach Pergament. */
+      /* Dieselbe Rampe wie zuvor, komplett zwei Zeilen (55 px)
+         nach oben geschoben. */
       var(--moss-deepest) calc(100% - 185px),
-      #31502E calc(100% - 130px),
-      #6E7A5E calc(100% - 70px),
-      var(--parchment) calc(100% - 5px),
+      var(--parchment) calc(100% - 60px),
       var(--parchment) 100%);
   padding-bottom: 105px;
 }
@@ -3077,11 +3066,9 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
 body .stage {
   background: linear-gradient(180deg,
     var(--moss-deepest) 0%,
-    /* Gleiche Kurve wie bei den anderen Baendern. */
-    var(--moss-deepest) calc(100% - 235px),
-    #31502E calc(100% - 175px),
-    #6E7A5E calc(100% - 95px),
-    var(--parchment) calc(100% - 30px),
+    /* Dieselbe Rampe wie zuvor, zwei Zeilen (55 px) nach oben. */
+    var(--moss-deepest) calc(100% - 185px),
+    var(--parchment) calc(100% - 89px),
     var(--parchment) 100%);
   padding-bottom: 0;
 }
