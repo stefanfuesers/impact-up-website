@@ -2505,11 +2505,14 @@ h2.eyebrow--xl,
 }
 
 /* --- 0d · Der Hero-Button rueckt zur Mitte des Lockups -------- */
-/* 2,5 cm nach rechts; unter 900px stapelt das Band, dort bleibt
-   er buendig unter der Marke. */
+/* 2,5 cm + 3 cm nach rechts; unter 900px stapelt das Band, dort
+   bleibt er buendig unter der Marke. */
 @media (min-width: 901px) {
-  .hero--band .hero__cta { margin-left: 95px; }
+  .hero--band .hero__cta { margin-left: 209px; }
 }
+
+/* Der Abschluss-Button unten rueckt vom rechten Rand weg. */
+.abschluss__wege .abschluss__cta { margin-right: 48px; }
 
 /* --- 1 · Die Sektion steht jetzt auf Pergament --------------- */
 .weitergehen {
