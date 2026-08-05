@@ -3132,12 +3132,12 @@ body .stage + .pers { padding-top: 30px; }
 /* Der Bio-Text startet direkt unter der Buehne. */
 body .stage + .pers { padding-top: 0; }
 
-/* Das Portrait schwimmt RECHTS, der Bio-Text laeuft linksbuendig
-   ab der ersten Zeile daran vorbei und unter ihm weiter. Vorher
-   stand es links und schob den Text vor sich her. */
+/* Portrait links, aber MITTEN im Text: die ersten drei Zeilen
+   laufen ueber die volle Breite, ab Zeile vier umfliesst der Text
+   das Bild. 80px = 3 x 26.6px Zeilenhoehe. */
 body .kopf__bild {
-  float: right;
-  margin: 5px 0 16px 32px;
+  float: left;
+  margin: 80px 26px 16px 0;
 }
 @media (max-width: 760px) {
   /* Schmal wieder zentriert ueber dem Text, ohne Umfluss. */
