@@ -3117,7 +3117,7 @@ body .stage + .pers { padding-top: 30px; }
 /* 4 · Die Kartenziffern nummerieren die Karten, sind also
    Inhalt und nicht Deko - bei 35 % Deckkraft auf Weiss waren
    sie praktisch unsichtbar. */
-.card__num { color: var(--gold-deep); opacity: 0.55; }
+.card__num { color: var(--gold-deep); opacity: 0.8; }   /* 3.2:1 bei 48px */
 
 /* 5 · Fokus-Ring im Schlussblock der Personenseite. Der
    Block steht als einzige Sektion dort auf Lila; die dunkle

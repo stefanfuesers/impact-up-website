@@ -18,6 +18,11 @@
      --gold-bright L 67%    -> 5.28:1 auf Moos #2D4A2B, 7.23:1 auf #1F3320 */
   --gold-ink:    #745C28;
   --gold-bright: #D4BB82;
+  /* Dunkelgold: Gold, abgedunkelt fuer helle Flaechen, wo reines
+     Gold zu blass waere. Stand in DESIGN.md, fehlte als Token -
+     und wurde bereits benutzt (Kartenziffern), fiel dort still
+     auf inherit zurueck. */
+  --gold-deep:   #A9843D;
   --moss:      #2D4A2B;
   /* Die tiefste Moos-Stufe hiess frueher --moss-deep; unter diesem Namen
      verstehen die Session-Builder-Seiten aber #2D4A2B. Kanonisch heisst sie
