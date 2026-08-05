@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    Impact Up – Webseite (Testlauf)
    Design Guide v1: Tempel/Wald/Gold
 
@@ -1154,6 +1154,8 @@ h2.eyebrow--xl,
 }
 .about__mail strong { font-weight: 700; }
 .about__intro .about__gap { margin-top: 2em; }
+/* Das „Wir" im Kooperations-Aufruf: dunkles Gold auf Pergament (5.45:1) */
+.about__wir { color: var(--gold-ink); font-weight: 600; }
 .about__bio {
   max-width: 1000px;
   display: flow-root;
