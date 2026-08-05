@@ -3203,21 +3203,11 @@ body .pers--warm .pers__inner:has(> .weg) > .weg:nth-of-type(2)     { grid-colum
 body .ruf {
   background: var(--parchment);
   color: var(--ink-soft);
-  padding-top: 0;
+  padding-top: 44px;
 }
-body .ruf::before {
-  content: "";
-  display: block;
-  height: 104px;
-  margin-bottom: 46px;
-  background:
-    radial-gradient(ellipse 56% 118% at 50% 50%,
-      rgba(45,74,43,0.62) 0%,
-      rgba(45,74,43,0.42) 40%,
-      rgba(45,74,43,0.16) 66%,
-      rgba(45,74,43,0) 84%);
-  pointer-events: none;
-}
+/* Der Trenner davor ist derselbe Skyline-Streifen mit Daechern
+   wie nach dem Bio-Text - er steht als Markup davor, nicht als
+   Pseudo-Element hier. */
 body .ruf .ruf__p--flow { color: var(--ink-soft); }      /* 10.6:1 */
 body .ruf :focus-visible { outline-color: var(--gold-ink); }
 
