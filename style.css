@@ -410,17 +410,7 @@ h2.eyebrow--xl,
   padding: 0 32px;
   color: rgba(244,236,216,0.85);
 }
-.netz-lead {
-  text-align: center;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 17px;
-  letter-spacing: 0.5px;
-  color: var(--parchment);
-  margin: 36px auto 12px;
-  max-width: 760px;
-  line-height: 1.3;
-}
+/* .netz-lead am 05.08.2026 geloescht – in keiner HTML-Datei mehr benutzt. */
 /* ---- Kopf der Wirkungsfelder = Zwilling des Perspektiven-Kopfs ----
    Gleicher Container (var(--maxw) + 32px Innenpolster wie in .weitergehen),
    gleiche .eyebrow, gleiche .lead-Typo, gleicher Blocksatz, helle Schrift
@@ -434,32 +424,8 @@ h2.eyebrow--xl,
 .quellen > .container .philo-more-btn { margin: -16px 0 0 auto; }
 .quellen > .container .philo-more.expanded { margin-top: 24px; }
 
-/* Caption-Bauform der EN/ES/FR-Startseiten (dort noch im Einsatz) */
-.quellen__caption {
-  max-width: var(--maxw);
-  margin: 12px auto 40px;
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  font-family: var(--serif);
-  font-size: 19px;
-  line-height: 1.45;
-  color: var(--parchment);
-  font-style: normal;
-}
-.quellen__caption em {
-  color: var(--gold);
-  font-style: italic;
-  font-weight: 600;
-}
-.quellen__label {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--gold);
-  text-align: left;
-  margin-bottom: 14px;
-}
+/* .quellen__caption (+ em) und .quellen__label am 05.08.2026 geloescht –
+   auch die EN/ES/FR-Startseiten benutzen sie nicht mehr. */
 .quellen__quellen {
   font-size: 12px;
   line-height: 1.5;
