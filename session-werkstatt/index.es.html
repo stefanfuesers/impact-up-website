@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Constructor de Sesiones · Impact Up</title>
-<meta name="description" content="El Constructor de Sesiones de Impact Up diseña un desarrollo a partir de unas pocas preguntas específicas – desde una conversación difícil hasta un retiro de dos días. Una herramienta del Instituto de Orientación al Impacto Sistémico.">
+<title>Session-Builder · Impact Up</title>
+<meta name="description" content="El Session-Builder de Impact Up diseña un desarrollo con unas pocas preguntas específicas – desde una conversación difícil hasta un retiro de dos días.">
 <link rel="canonical" href="https://impact-up.org/session-werkstatt/index.es.html">
 <link rel="alternate" hreflang="de" href="https://impact-up.org/session-werkstatt/">
 <link rel="alternate" hreflang="en" href="https://impact-up.org/session-werkstatt/index.en.html">
@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="fr" href="https://impact-up.org/session-werkstatt/index.fr.html">
 <link rel="alternate" hreflang="x-default" href="https://impact-up.org/session-werkstatt/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Constructor de Sesiones · Impact Up">
+<meta property="og:title" content="Session-Builder · Impact Up">
 <meta property="og:description" content="Planifica tu próxima sesión – desde una conversación difícil hasta un retiro de dos días. Una herramienta del Instituto de Orientación al Impacto Sistémico.">
 <meta property="og:url" content="https://impact-up.org/session-werkstatt/index.es.html">
 <meta property="og:image" content="https://impact-up.org/assets/share.png">
@@ -208,7 +208,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <li class="nav__item--has-dropdown">
       <a href="../werkstatt.es.html">Taller</a>
       <ul class="nav__dropdown">
-        <li><a class="is-active" href="index.es.html" aria-current="page">Constructor de Sesiones</a></li>
+        <li><a class="is-active" href="index.es.html" aria-current="page">Session-Builder</a></li>
       </ul>
     </li>
     <li class="nav__item--has-dropdown">
@@ -242,7 +242,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 <script src="daten.es.js"></script>
 <script>
 "use strict";
-const FEATURE_NAME = "Constructor de Sesiones";
+const FEATURE_NAME = "Session-Builder";
 const LS_RUNS = "iu_sw_runs";
 const LS_FREI = "iu_sw_frei";
 /* Enlace de desbloqueo: ?frei=wirkungsraum desbloquea este navegador
@@ -1044,11 +1044,11 @@ function progressHtml(){
 function renderStart(){
   M.innerHTML = `
   <div class="eyebrow">Una herramienta de Impact Up</div>
-  <h1>Constructor de Sesiones</h1>
-  <p class="lead breit">El buen impacto surge siempre en el intercambio con personas, y solo con personas se puede trabajar de forma sistémica. Aquí, en el Constructor de Sesiones, armas en pocos minutos un desarrollo tentativo para una necesidad concreta. Respondes unas pocas preguntas – de qué se trata, dónde se encuentran, qué quieren lograr – y al final obtienes algunos métodos, indicaciones de qué tener en cuenta, y dos o tres enlaces para profundizar.</p>
+  <h1>Session-Builder</h1>
+  <p class="lead breit">El buen impacto surge siempre en el intercambio con personas, y solo con personas se puede trabajar de forma sistémica. Aquí, en el Session-Builder, armas en pocos minutos un desarrollo tentativo para una necesidad concreta. Respondes unas pocas preguntas – de qué se trata, dónde se encuentran, qué quieren lograr – y al final obtienes algunos métodos, indicaciones de qué tener en cuenta, y dos o tres enlaces para profundizar.</p>
   ${introOffen?`<p class="lead breit">Detrás hay una parte de nuestro conocimiento de trabajo, traducido en bloques. Un mecanismo sencillo los combina para ti – deliberadamente mezclados con algo de libertad, de modo que siga siendo «solo» una primera inspiración para seguir pensando. Aquí no hay ninguna IA planificando tu sesión: recibes bloques de construcción, y lo que hagas con ellos depende de ti.</p>
   <p class="lead breit">Si te gusta la herramienta y te ayuda, nos encantaría recibir un poco de retroalimentación. Y si no encuentras aquí lo que necesitas, nos alegraría aún más – entonces podemos verlo juntos contigo, como personas. Solo escríbenos.</p>
-  <p class="lead breit">El Constructor de Sesiones es la primera herramienta de nuestro <a href="../werkstatt.es.html">Taller</a> – y hay más en camino.</p>`:""}
+  <p class="lead breit">El Session-Builder es la primera herramienta de nuestro <a href="../werkstatt.es.html">Taller</a> – y hay más en camino.</p>`:""}
   <div class="mehr-toggle"><button type="button" onclick="introOffen=!introOffen;render()">${introOffen?"Mostrar menos":"Leer más"}</button></div>
   <p class="lead hint">Unos 5 minutos. Tus respuestas se quedan en tu dispositivo.</p>
   <div class="wnav"><span></span><button class="primary" onclick="schritt=1;render()">Planificar una sesión</button></div>
@@ -1175,7 +1175,7 @@ function renderBlockB(){
     <div class="card"><div class="frage"><span class="nr">F3</span>¿Con quién estás tratando? *</div>
       ${optButtons("ebene",EBENEN,false)}
       <div class="inline" style="margin-top:8px"><label>¿Cuántas personas?</label><input type="text" class="kurzfeld" placeholder="p. ej. 8 o 12–15" value="${esc(A.groesse)}" oninput="A.groesse=this.value;speichern()" onchange="render()"></div>
-      ${g?`<p class="hint" style="margin-top:6px">Entendido: ${g.von===g.bis?g.von+" personas":g.von+" a "+g.bis+" personas"} – el Constructor de Sesiones planifica para todo el rango.</p>`:(A.groesse?'<p class="hint" style="margin-top:6px;color:var(--c-monk)">No pude leer eso como un número – intenta p. ej. "8", "3–4" o "unas 20".</p>':"")}
+      ${g?`<p class="hint" style="margin-top:6px">Entendido: ${g.von===g.bis?g.von+" personas":g.von+" a "+g.bis+" personas"} – el Session-Builder planifica para todo el rango.</p>`:(A.groesse?'<p class="hint" style="margin-top:6px;color:var(--c-monk)">No pude leer eso como un número – intenta p. ej. "8", "3–4" o "unas 20".</p>':"")}
       <div class="sub" style="margin-top:10px">¿Quién exactamente está en la sala? Roles, mezcla, algo especial.</div>
       ${feld("wer","P. ej.: la junta directiva más dos voluntarios nuevos, una mezcla de personal contratado y voluntariado …",3)}
     </div>
@@ -1222,7 +1222,7 @@ function renderBlockD(){
     <div class="card"><div class="frage"><span class="nr">F7</span>¿Cuánto tiempo tienen? *</div>
       ${optButtons("dauer",DAUERN,false)}
       <div class="inline" style="margin-top:8px"><label>Hora de inicio (opcional):</label><input type="time" value="${A.von}" oninput="A.von=this.value;speichern()"></div>
-      <div class="hint" style="margin-top:8px">El Constructor de Sesiones planifica deliberadamente del lado holgado: pocos métodos, descansos reales – en la realidad todo tarda más de lo esperado.</div>
+      <div class="hint" style="margin-top:8px">El Session-Builder planifica deliberadamente del lado holgado: pocos métodos, descansos reales – en la realidad todo tarda más de lo esperado.</div>
     </div>
     <div class="card"><div class="frage"><span class="nr">F8</span>¿En línea, presencial o híbrido? *</div>
       ${optButtons("ort",{praesenz:"presencial",online:"en línea",hybrid:"híbrido"},false)}
@@ -1346,7 +1346,7 @@ function renderBogen(){
     if(e.kerngespraech){ blocks += kernGespraechBox(e); return; }
     if(e.offen){
       blocks+=`<div class="uebung offen"><div class="ukopf"><span class="zeit">${e.von}–${e.bis}</span><span class="dauer">${e.min} min</span><span class="uname">Aún abierto: ${e.label}</span></div>
-      <p class="kurz">El Constructor de Sesiones no tiene una recomendación clara para este espacio – es un buen lugar para una conversación. ${e.kandidaten.length?"Dos candidatos:":""}</p>
+      <p class="kurz">El Session-Builder no tiene una recomendación clara para este espacio – es un buen lugar para una conversación. ${e.kandidaten.length?"Dos candidatos:":""}</p>
       ${e.kandidaten.map(k=>`<p class="kurz">• <b>${k.name}</b> – ${esc(k.kurz)}</p>`).join("")}
       <p class="kurz">Nos encantaría pensarlo contigo – <a href="https://impact-up.org" target="_blank" rel="noopener">impact-up.org</a>.</p></div>`;
       return;
@@ -1464,7 +1464,7 @@ function downloadPdf(btn){
   const datum = new Date().toISOString().slice(0,10);
   const opt = {
     margin: [10,10,12,10],
-    filename: `session-ablauf-${datum}.pdf`,
+    filename: `guion-de-sesion-${datum}.pdf`,
     image: {type:"jpeg", quality:0.96},
     html2canvas: {scale:2, useCORS:true, backgroundColor:"#ffffff"},
     jsPDF: {unit:"mm", format:"a4", orientation:"portrait"},
