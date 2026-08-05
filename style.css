@@ -3132,13 +3132,16 @@ body .stage + .pers { padding-top: 30px; }
 /* Der Bio-Text startet direkt unter der Buehne. */
 body .stage + .pers { padding-top: 0; }
 
-/* Der Text laeuft drei Zeilen ueber die volle Breite, erst ab
-   Zeile vier umfliesst er das Portrait. 3 x 26.6px Zeilenhoehe. */
-body .kopf__bild { margin-top: 80px; }
+/* Das Portrait schwimmt RECHTS, der Bio-Text laeuft linksbuendig
+   ab der ersten Zeile daran vorbei und unter ihm weiter. Vorher
+   stand es links und schob den Text vor sich her. */
+body .kopf__bild {
+  float: right;
+  margin: 5px 0 16px 32px;
+}
 @media (max-width: 760px) {
-  /* Schmal steht das Portrait zentriert ueber dem Text und wird
-     nicht umflossen - dort waere ein Vorlauf sinnlos. */
-  body .kopf__bild { margin-top: 0; }
+  /* Schmal wieder zentriert ueber dem Text, ohne Umfluss. */
+  body .kopf__bild { float: none; margin: 0 auto 22px; }
 }
 
 /* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
