@@ -2436,3 +2436,126 @@ h2.eyebrow--xl,
   .abschluss__wege .btn,
   .abschluss__cta { display: block; text-align: center; }
 }
+
+/* ============================================================
+   WELLE 2 (05.08.2026) – STUDIE: Gruen wird Element
+   ============================================================
+   Stefans Wunsch: deutlich weniger Gruen als Grundflaeche,
+   Gruen stattdessen als Karte und als Kreis – so wie Zoom sein
+   Blau setzt. Umgebaut ist die groesste Gruenflaeche der Seite,
+   die Perspektiven-Sektion (.weitergehen). Bewusst NICHT
+   angefasst: der Hero (traegt das helle Lockup-PNG) und die
+   Wirkungsfelder-Sektion hinter dem Netz (Stefans Ansage:
+   das Gruen dort liest sich als Umrandung).
+
+   Kompletter Block – zum Zuruecknehmen ersatzlos loeschen.
+   Kontrastwerte in Klammern sind gerechnet (WCAG AA = 4.5:1).
+   ============================================================ */
+
+/* --- 0 · Der Hero laeuft frueh aus dem Gruen heraus ----------
+   Die letzten ~180 px des Bandes gehen in Pergament ueber und
+   binden nahtlos an die Willkommens-Sektion an. Das zusaetzliche
+   Bodenpolster haelt Claim und Lockup aus der Auslaufzone —
+   heller Text landet nie auf hellem Grund. Die Feld-Grafiken
+   sind in Gold gezeichnet und loesen sich nach unten mit auf. */
+.hero--band {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
+    linear-gradient(180deg,
+      var(--moss) 0%,
+      /* Oben unveraendert dunkel. Der Auslauf ist genau so lang
+         wie in der ersten Fassung (200 px), setzt aber 90 px
+         frueher an – kurz unter dem Lockup – und ist unten
+         deshalb schon vollstaendig Pergament, statt es erst am
+         Rand zu erreichen. Kein Zwischenton mehr. */
+      var(--moss-deepest) calc(100% - 290px),
+      var(--parchment) calc(100% - 90px),
+      var(--parchment) 100%);
+  padding-bottom: 130px;
+}
+
+/* Die Willkommens-Sektion ruecken wir nach: der Hero laeuft jetzt
+   hell aus, ein grosser Deckel darueber waere doppelter Abstand. */
+.intro { padding-top: 28px; }
+
+/* --- 0c · Claim-Spalte rechts steigt --------------------------
+   Der Claim steht jetzt einzeilig (das <br> ist im Markup raus),
+   und die Spalte beginnt fast auf Hoehe des Lockups statt tief
+   darunter. Damit sitzt die Unterzeile hoeher und beide Saeulen
+   des Bandes stehen im dunklen Teil des Verlaufs.
+   Unter 900 px bleibt das alte Polster: dort stapelt das Band. */
+@media (min-width: 901px) {
+  /* Knapp unter der Lockup-Oberkante: das Lockup fuehrt, der
+     Claim folgt dicht darunter – nur so viel Versatz, dass die
+     Hierarchie der beiden Saeulen lesbar bleibt. */
+  .hero__claim-col { padding-top: clamp(12px, 2.2vw, 30px); }
+  .hero__claim { text-wrap: balance; }
+}
+
+/* --- 0b · Die zwei senkrechten Fugen in der Willkommens-
+   Sektion entfallen. Sie waren die Verlaengerung der Steinleiste
+   in eine Flaeche, die oben und unten an Dunkles grenzte; jetzt
+   stehen sie als zwei schwarze Striche auf Hellem. Ohne sie
+   braucht der Text seine Einspannung nicht mehr und rueckt
+   zurueck in die Mitte. */
+.intro__seam { display: none; }
+.intro__center {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* --- 1 · Die Sektion steht jetzt auf Pergament --------------- */
+.weitergehen {
+  background: var(--parchment);
+  color: var(--ink);
+}
+.weitergehen .eyebrow { color: var(--gold-ink); }        /* 5.4:1 */
+.weitergehen .section-title { color: var(--ink); }       /* 14.7:1 */
+.weitergehen .lead { color: var(--ink-soft); }           /* 10.6:1 */
+.weitergehen .lead em { color: var(--gold-ink); }
+.weitergehen .lead strong { color: var(--moss); }
+.weitergehen .philo-more-btn { color: var(--gold-ink); }
+.weitergehen :focus-visible { outline-color: var(--gold-ink); }
+
+/* Die Systemfeld-Zeichnung liegt in Moos vor: auf dem hellen
+   Grund traegt sie deutlich weiter als auf dem dunklen. */
+.weitergehen .sysfield--light { opacity: .10; }
+
+/* --- 2 · Die Karten bleiben, wie sie waren ------------------- */
+/* Papierzettel hier, gruene Kacheln bei den Wirkungsfeldern –
+   der Unterschied traegt. Gruen kommt nicht IN die Karte,
+   sondern als Schimmer DAHINTER. */
+
+/* --- 3 · Der gruene Schimmer hinter dem Kartenband ----------- */
+/* Kein Block, keine Kante: ein weicher Schein, der nach aussen
+   ausläuft. Er liegt nur unter den Karten – der Lesetext oben
+   steht frei auf Pergament. Die Karten bringen ihren eigenen
+   hellen Grund mit, ihre Kontraste bleiben unveraendert. */
+.prozess { isolation: isolate; }
+.prozess::before {
+  content: "";
+  position: absolute;
+  /* oben knapp gehalten: der "weiterlesen"-Knopf des Lesetextes
+     steht dicht darueber und braucht seinen Pergament-Grund. */
+  inset: -28px -7vw -40px;
+  background:
+    radial-gradient(ellipse 62% 74% at 50% 52%,
+      rgba(45,74,43,0.92) 0%,
+      rgba(45,74,43,0.78) 42%,
+      rgba(45,74,43,0.34) 68%,
+      rgba(45,74,43,0) 86%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Der Faden und die Kreis-Visuals liegen im Schimmer und
+   behalten deshalb ihr helles Gold. */
+.prozess__faden { z-index: 1; }
+
+/* --- 4 · Die Trenner ringsum drehen mit -----------------------
+   Die Silhouetten selbst sind Sandstein und lesen auf beiden
+   Gruenden; nur die Grundflaeche der Trennerbaender wechselt. */
+.intro + .trenner--steine { background: var(--parchment); }
+.weitergehen + .trenner--skyline-b {
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--moss) 100%);
+}
