@@ -3125,6 +3125,67 @@ body .stage + .pers { padding-top: 30px; }
    fuer Nicht-Text). */
 .ruf :focus-visible { outline-color: var(--gold); }      /* 5.2:1 auf Lila */
 
+/* ============================================================
+   WELLE 2f - Personenseite: Text und Bilder verzahnen
+   ============================================================ */
+
+/* Der Bio-Text startet direkt unter der Buehne. */
+body .stage + .pers { padding-top: 14px; }
+
+/* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
+   Silbentrennung, damit das zweite Workshopfoto sauber umflossen
+   wird statt an ausgefransten Zeilenenden zu stehen. */
+body .pers--tief .pers__text p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Das zweite Foto steht links im Text - Gegenstueck zum ersten,
+   das rechts umflossen wird. Der gruene Schimmer aus B3 gilt
+   fuer beide, weil er an .mitbild__bild haengt. */
+body .mitbild__bild--links {
+  float: left;
+  margin: 4px 32px 16px 0;
+  margin-left: -20px;
+  margin-right: 32px;
+}
+
+/* Stationen und Studium stehen nebeneinander statt untereinander:
+   die drei Studienzeilen brauchen keine volle Breite, und der
+   Block war dadurch unnoetig hoch. Zwei Spalten, oben buendig -
+   links die laengere Liste, rechts die kurze.
+   Angesprochen ueber :has(), weil die vier Elemente im Markup
+   Geschwister ohne Wrapper sind. */
+body .pers--warm .pers__inner:has(> .weg) {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  column-gap: 56px;
+  align-items: start;
+}
+body .pers--warm .pers__inner:has(> .weg) > .pers__h2:first-of-type { grid-column: 1; grid-row: 1; }
+body .pers--warm .pers__inner:has(> .weg) > .weg:nth-of-type(1)     { grid-column: 1; grid-row: 2; }
+body .pers--warm .pers__inner:has(> .weg) > .pers__h2:last-of-type  { grid-column: 2; grid-row: 1; }
+body .pers--warm .pers__inner:has(> .weg) > .weg:nth-of-type(2)     { grid-column: 2; grid-row: 2; margin-top: 0; }
+
+@media (max-width: 760px) {
+  /* Schmal wieder untereinander - zwei Spalten reissen die
+     Jahreszahlen sonst von ihren Zeilen. */
+  body .pers--warm .pers__inner:has(> .weg) { display: block; }
+  body .pers--warm .pers__inner:has(> .weg) > .pers__h2:last-of-type { margin-top: 36px; }
+}
+
+/* Der Schlusssatz laeuft als ein Absatz durch, im Blocksatz wie
+   der uebrige Text der Seite - nicht mehr als Ueberschrift plus
+   Nachsatz. */
+body .ruf__p--flow {
+  max-width: 640px;
+  margin: 0 auto 26px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
 /* 7 · Schimmer hinter den Quellen-Karten der Konstrukt-Seiten.
    Die Karte traegt Papier (#FFFBF0) mit goldener Oberkante und
    stand auf Pergament praktisch ohne Abgrenzung. Der Text liegt
