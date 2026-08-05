@@ -2244,22 +2244,49 @@ h2.eyebrow--xl,
    Kontrastwerte stehen jeweils in der Regel.
    ============================================================ */
 
-/* --- B2a · Grundwechsel Moos → Pergament ------------------------
-   Der Kapitelwechsel wird sichtbar: der Skyline-Trenner davor
-   laeuft ohnehin schon nach Pergament aus, jetzt traegt ihn die
-   Sektion weiter. 40px zusaetzliches Kopfpolster geben dem
-   Uebergang Luft (frueher trennte eine helle Sektion die beiden). */
+/* --- B2a · Kopf auf Pergament, Fuss zurueck ins Gruen -----------
+   Oben Pergament (Sektionskopf + die vier Feld-Karten), unter den
+   Karten laeuft der Grund wieder ins Moos, damit der Netz-Absatz
+   und die Netz-Grafik auf Gruen stehen.
+
+   Der Umschlag ist NICHT in Prozent gesetzt: die Sektionshoehe
+   schwankt ueber die vier Sprachen. Stattdessen zwei Bausteine,
+   die beide von unten bzw. vom Netz-Absatz aus rechnen:
+   1. eine Moos-Bank von der Unterkante aus, hoch genug fuer
+      Netz (440px) + Rand (14px) + Fusspolster (24px) + 12px Luft
+      zum Absatz darueber = 490px, mit etwas Reserve 496px;
+   2. der Netz-Absatz selbst traegt den Verlauf in seinem oberen
+      Polster (siehe B2f) – dadurch sitzt der Farbumschlag immer
+      direkt unter den Karten, egal wie lang der Absatz wird. */
 .quellen {
-  background: var(--parchment);
+  background:
+    linear-gradient(to top,
+      var(--moss) 0,
+      var(--moss) 496px,
+      rgba(45,74,43,0) 496px,
+      rgba(45,74,43,0) 100%),
+    var(--parchment);
   padding: 40px 16px 24px;
 }
-/* Der Trenner danach fuehrt jetzt Pergament → Pergament:
-   nur noch die gezeichneten Goldlinien, keine Farbkante. */
-.quellen + .trenner--skyline-c {
-  background: var(--parchment);
+@media (max-width: 900px) {
+  /* .netz ist hier 480px hoch → Bank entsprechend tiefer */
+  .quellen {
+    background:
+      linear-gradient(to top,
+        var(--moss) 0,
+        var(--moss) 536px,
+        rgba(45,74,43,0) 536px,
+        rgba(45,74,43,0) 100%),
+      var(--parchment);
+  }
 }
-/* Das Systemfeld ist in Moos gezeichnet – auf Pergament wird es
-   sichtbar, deshalb eine Spur zurueckgenommen. */
+/* Der Trenner danach fuehrt wieder Gruen → Hell. Startfarbe ist
+   --moss (die Sektion endet in Moos, nicht in Moos-Tief). */
+.quellen + .trenner--skyline-c {
+  background: linear-gradient(180deg, var(--moss) 0%, var(--parchment) 100%);
+}
+/* Das Systemfeld ist in Moos gezeichnet – auf dem hellen Kopfteil
+   wird es sichtbar, deshalb eine Spur zurueckgenommen. */
 .quellen .sysfield--light { opacity: .1; }
 
 /* --- B2b · Kopf der Sektion auf hellem Grund --------------------
@@ -2271,28 +2298,93 @@ h2.eyebrow--xl,
 .quellen > .container .lead strong { color: var(--gold-ink); }
 .quellen > .container .lead a { color: var(--gold-ink); }
 .quellen > .container .philo-more-btn { color: var(--gold-ink); }
-/* Ueberleitung zur Netz-Grafik (steht ausserhalb des Containers) */
-.quellen > .lead { color: #3A332A; }
 /* Quellenzeile: ruhiges Braun statt Pergament-Transparenz (5.47:1) */
 .quellen__quellen { color: #6b5d4d; opacity: 1; }
 
-/* --- B2c · Die vier Feld-Karten als Zettel ----------------------
-   Eigene Bauform, damit sie sich von den Perspektiven-Kacheln
-   direkt darueber unterscheiden: Papierflaeche statt Moos-Kachel,
-   Goldlinie oben statt Seitenstreifen, dunkle Ink-Schrift.
-   Ruhezustand traegt nur den Zettel-Schatten (Flat-Parchment). */
+/* --- B2f · Netz-Absatz traegt den Farbumschlag ------------------
+   Der Absatz zieht sich auf die volle Sektionsbreite (Textmass
+   bleibt 696px wie vorher: 760px Kasten minus 2x32px Polster) und
+   faerbt sein oberes Polster von Pergament nach Moos. So liegt der
+   Umschlag immer unmittelbar unter den Karten – unabhaengig davon,
+   wie viele Zeilen der Absatz in DE/EN/ES/FR braucht.
+   Schrift: rgba(244,236,216,0.88) auf #2D4A2B = 6.9:1. */
+.quellen > .lead {
+  max-width: none;
+  width: auto;
+  /* aus dem 16px-Seitenpolster der Sektion heraus, sonst blieben
+     links und rechts zwei helle Streifen neben dem Gruen stehen */
+  margin: 0 -16px 12px;
+  /* 664px statt 696px: die Prozentwerte rechnen gegen die Breite
+     des Sektions-Innenraums (32px schmaler als dieser Kasten),
+     dadurch steht der Text am Ende wieder auf 696px. */
+  padding: 110px max(32px, calc((100% - 664px) / 2)) 0;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--moss) 92%);
+  color: rgba(244,236,216,0.88);
+}
+/* Kein 760px-Sonderfall: die Kurzform `.quellen { padding: 40px 16px 24px }`
+   steht spaeter in der Datei als die 18px-Regel und gewinnt in jeder
+   Breite – das Seitenpolster ist also durchgehend 16px. */
+.quellen > .lead em,
+.quellen > .lead strong { color: var(--gold-bright); }
+.quellen > .lead a { color: var(--gold-bright); }
+
+/* --- B2c · Die vier Feld-Karten bleiben gruene Kacheln ----------
+   Sie stehen jetzt auf Pergament, tragen ihre Flaeche also selbst:
+   der Runde-3-Verlauf war eine Pergament-Transparenz ueber Moos –
+   hier ausgerechnet und als deckende Farbe gesetzt (7,5 % / 3,8 % /
+   3,2 % Pergament auf #2D4A2B, oben eine Spur zurueckgenommen,
+   damit auch das helle Gold seine 4,5:1 haelt).
+   Goldstreifen bleibt rechts, Weiterlesen gold-bright, zentriert. */
 .quelle {
-  background: var(--paper);
+  background: linear-gradient(180deg,
+    #395435 0,
+    #355032 170px,
+    #334F31 100%);
+  border: none;
+  border-radius: 4px;
+  box-shadow: var(--karte-schatten);
+  padding: var(--karte-padding);
+  overflow: hidden;
+}
+/* Gold-Edge-Rule: genau eine Kante – bei den Feldern rechts. */
+.quelle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 3px;
+  height: auto;
+  background: var(--karte-gold);
+  border-radius: 0 4px 4px 0;
+  pointer-events: none;
+}
+.quelle h3 { color: var(--parchment); }               /* 6.3:1 auf #395435 */
+.quelle p  { color: rgba(244,236,216,0.82); }         /* 5.5:1 auf #395435 */
+.quelle .philo-more-btn,
+.quelle .philo-more-btn.expanded { color: var(--gold-bright); }  /* 4.5:1 */
+.quelle .philo-more-btn:hover { opacity: 0.7; }
+
+/* --- B2c2 · Die vier Perspektiven-Karten werden Zettel ----------
+   Getauscht mit den Feld-Karten: Papierflaeche auf dem Moos-Grund,
+   Goldlinie oben statt Seitenstreifen, dunkle Ink-Schrift.
+   Visual, Nummer und der Goldfaden bleiben unveraendert ausserhalb
+   der Karte auf dem Moos. Die Achsenzeile steht im Markup INNERHALB
+   der Karte – sie bekommt daher das dunkle Gold (6.2:1 auf Papier)
+   statt --gold, das auf Papier nur 1.9:1 haette. */
+.prozess__card {
+  /* Papierton wie .card/.zettel. WICHTIG: es gibt KEIN Token --paper –
+     die Runde-3-Fassung schrieb hier var(--paper), das ist ungueltig
+     und liess die Karte transparent. Deshalb der Literalwert. */
+  background: #FFFBF0;
   border: 1px solid rgba(31,26,20,0.10);
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(31,26,20,0.06);
   padding: 24px 22px 18px;
   overflow: hidden;
 }
-/* Gold-Edge-Rule: genau eine Kante – hier oben. */
-.quelle::after {
-  content: "";
-  position: absolute;
+.prozess__card::before {
   top: 0;
   left: 0;
   right: 0;
@@ -2301,31 +2393,32 @@ h2.eyebrow--xl,
   height: 3px;
   background: linear-gradient(90deg, #B8923F 0%, #C9A961 55%, #E7D199 100%);
   border-radius: 4px 4px 0 0;
-  pointer-events: none;
 }
-.quelle h3 { color: var(--ink); }          /* 16.7:1 auf #FFFBF0 */
-.quelle p  { color: #3A332A; }             /* 11.9:1 auf #FFFBF0 */
-.quelle .philo-more-btn,
-.quelle .philo-more-btn.expanded { color: var(--gold-ink); }  /* 6.2:1 */
-.quelle .philo-more-btn:hover { opacity: 0.72; }
+.prozess__card .prozess__axis { color: var(--gold-ink); }   /* 6.2:1 auf #FFFBF0 */
+.prozess__card h3 { color: var(--ink); }                    /* 16.7:1 */
+.prozess__card .prozess__text { color: #3A332A; }           /* 11.9:1 */
+.weitergehen .prozess__card .prozess__more { color: var(--gold-ink); }  /* 6.2:1 */
+.prozess__card .prozess__more:hover { opacity: 0.72; }
+/* Fokus auf dem hellen Zettel: dunkles Gold */
+.prozess__card :focus-visible { outline-color: var(--gold-ink); }
 
-/* --- B2d · Netz-Fenster auf hellem Grund ------------------------
-   Der Canvas-Verlauf (#FAF4E2 → #EFE5CB) liegt dicht am Pergament.
-   Eine goldene Haarlinie haelt das Fenster als Flaeche zusammen. */
+/* --- B2d · Netz-Fenster auf gruenem Grund -----------------------
+   Der Canvas-Verlauf (#FAF4E2 → #EFE5CB) bleibt: auf Moos liest er
+   sich als belichtetes Fenster, die goldene Haarlinie fasst es. */
 .netz {
   border: 1px solid rgba(201,169,97,0.45);
   box-shadow: inset 0 0 80px rgba(201,169,97,0.10);
 }
 
 /* --- B2e · Fokus in der Sektion --------------------------------
-   Welle 1 setzt hier das helle Gold fuer Moos – auf Pergament
-   traegt wieder das dunkle. */
-.quellen > .container :focus-visible,
-.quellen__legende :focus-visible { outline-color: var(--gold-ink); }
+   Kopf steht auf Pergament (dunkles Gold), die Feld-Karten stehen
+   wieder auf Gruen (helles Gold). */
+.quellen > .container :focus-visible { outline-color: var(--gold-ink); }
+.quellen__legende :focus-visible { outline-color: var(--gold); }
 
 /* --- B1 · Abschlussblock vor dem Footer -------------------------
    Auf Pergament, im Fluss der Ueber-Uns-Sektion. Drei gleichrangige
-   Wege zu den Sammelseiten, darunter der eine Gold-Button. */
+   Wege zu den Sammelseiten, rechts daneben der eine Gold-Button. */
 .abschluss {
   background: var(--parchment);
   padding: 0 0 88px;
@@ -2342,12 +2435,18 @@ h2.eyebrow--xl,
   letter-spacing: -0.01em;
   color: var(--ink);                        /* 14.7:1 auf Pergament */
 }
+/* Eine Zeile: drei Ghost-Wege links, der Gold-Button rechtsbuendig.
+   Der CTA steht dafuer im Markup mit in .abschluss__wege. */
 .abschluss__wege {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 14px;
-  margin-bottom: 26px;
+  /* der CTA ist jetzt Teil der Zeile – die Zeile ist damit das
+     letzte Element im Block, das Fusspolster kommt aus .abschluss */
+  margin-bottom: 0;
 }
+.abschluss__wege .abschluss__cta { margin-left: auto; }
 /* Ghost-Variante fuer helle Gruende: .btn--ghost traegt Pergament-
    Schrift und funktioniert nur auf Moos. */
 .btn--outline {
@@ -2362,7 +2461,10 @@ h2.eyebrow--xl,
   border-color: var(--gold);
 }
 @media (max-width: 560px) {
+  /* gestapelt und vollbreit; der Gold-Button steht als letztes
+     Kind ohnehin unten, margin-left:auto wird zurueckgenommen. */
   .abschluss__wege { flex-direction: column; align-items: stretch; }
+  .abschluss__wege .abschluss__cta { margin-left: 0; }
   .abschluss__wege .btn,
   .abschluss__cta { display: block; text-align: center; }
 }
