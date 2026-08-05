@@ -2475,8 +2475,12 @@ h2.eyebrow--xl,
 }
 
 /* Die Willkommens-Sektion ruecken wir nach: der Hero laeuft jetzt
-   hell aus, ein grosser Deckel darueber waere doppelter Abstand. */
-.intro { padding-top: 28px; }
+   hell aus, ein grosser Deckel darueber waere doppelter Abstand.
+   Rund 1 cm hoeher, damit der Text an das Feld-Netz des Heros
+   anschliesst. Das negative margin ist hier unbedenklich: die
+   Sektion legt sich nur ueber die untersten Pixel des Bandes, und
+   die sind bereits Pergament. */
+.intro { padding-top: 0; margin-top: -10px; }
 
 /* --- 0c · Claim-Spalte rechts steigt --------------------------
    Der Claim steht jetzt einzeilig (das <br> ist im Markup raus),
