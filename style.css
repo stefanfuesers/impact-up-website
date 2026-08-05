@@ -2559,3 +2559,596 @@ h2.eyebrow--xl,
 .weitergehen + .trenner--skyline-b {
   background: linear-gradient(180deg, var(--parchment) 0%, var(--moss) 100%);
 }
+
+/* ============================================================
+   WELLE 2b (05.08.2026) – die uebrigen Hauptseiten
+   ============================================================
+   Dasselbe Prinzip wie auf der Startseite, jetzt fuer Konstrukte-,
+   Service- und Sammelseiten. Nicht angefasst: die Navigation
+   (bleibt als einziges konstantes Gruen der Rahmen oben) und die
+   Session-Werkstatt (eigenes Layout, spaeter separat).
+
+   Zwei Staerken von Schimmer, und der Unterschied ist keine
+   Geschmacksfrage, sondern Kontrast:
+   – SATT (bis 92 %) nur dort, wo eine helle Karte oder Grafik
+     darauf liegt. Der Text steht dann auf der Karte, nicht auf
+     dem Gruen.
+   – ZART (max. 14 %) dort, wo Text direkt darauf liegt. Der
+     Grund bleibt hell genug, dass Tinte ueber 10:1 behaelt.
+   ============================================================ */
+
+/* --- 5a · Der grosse Seitenkopf der Unterseiten -------------- */
+/* .hero--sub traegt auf 24 Seiten (6 Seiten x 4 Sprachen) den
+   vollen dunklen Hero-Verlauf. Gleiche Behandlung wie das
+   Startseiten-Band: oben dunkel, dann auslaufen. Das Polster
+   haelt Titel und Unterzeile im dunklen Teil. */
+.hero--sub {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
+    linear-gradient(180deg,
+      var(--moss) 0%,
+      var(--moss-deepest) calc(100% - 190px),
+      var(--parchment) calc(100% - 40px),
+      var(--parchment) 100%);
+  padding-bottom: 165px;
+}
+
+/* --- 5 · Kopfband der Unterseiten laeuft aus ----------------- */
+/* Das Band schliesst an die gruene Nav an und gibt die Farbe
+   nach unten ab, statt hart auf Pergament zu stossen. */
+.hero--mini {
+  min-height: 104px;
+  background: linear-gradient(180deg,
+    var(--moss-deepest) 0%,
+    var(--moss-deepest) 26%,
+    var(--parchment) 100%);
+}
+
+/* --- 6 · Die dunklen Sub-Sektionen werden hell --------------- */
+.sub-section--moss {
+  color: var(--ink-soft);
+  background:
+    radial-gradient(ellipse 78% 62% at 50% 46%,
+      rgba(45,74,43,0.14) 0%,
+      rgba(45,74,43,0.07) 52%,
+      rgba(45,74,43,0) 78%),
+    var(--parchment);
+}
+.sub-section--moss .eyebrow--light { color: var(--gold-ink); }      /* 5.4:1 */
+.sub-section--moss .section-title--light { color: var(--ink); }     /* 14.7:1 */
+.sub-section--moss .lead { color: var(--ink-soft); }                /* 10.6:1 */
+.sub-section--moss strong { color: var(--moss); }
+.sub-section--moss em { color: var(--gold-ink); }
+.sub-section--moss a { color: var(--gold-ink); }
+.sub-section--moss .philo-more-btn { color: var(--gold-ink); }
+.sub-section--moss :focus-visible { outline-color: var(--gold-ink); }
+/* Die Systemfeld-Zeichnung ist in Gold: auf hellem Grund traegt
+   sie kaum noch – dafuer uebernimmt jetzt der Schimmer. */
+.sub-section--moss .sysfield--gold { opacity: .12; }
+
+/* --- 7 · Satter Schimmer hinter den Zettel-Gruppen ------------ */
+/* Die Definitions-Zettel stehen auf Papier (#FFFBF0) und waeren
+   auf Pergament fast unsichtbar (1.1:1 Flaechenkontrast). Der
+   satte Schimmer gibt ihnen den Grund zurueck, den vorher das
+   Moos war – und ist genau die Stelle, an der Gruen wieder als
+   Element auftritt. */
+.def-quotes {
+  position: relative;
+  padding: 44px 32px;
+  margin-left: -32px;
+  margin-right: -32px;
+  background:
+    radial-gradient(ellipse 66% 76% at 50% 50%,
+      rgba(45,74,43,0.88) 0%,
+      rgba(45,74,43,0.72) 44%,
+      rgba(45,74,43,0.30) 70%,
+      rgba(45,74,43,0) 88%);
+}
+
+/* --- 8 · Die Philosophie-Sektion ----------------------------- */
+/* Sie traegt eine senkrechte Goldlinie als Auftakt (::before) –
+   die bleibt, bekommt auf hellem Grund aber das dunkle Gold. */
+.philosophie {
+  color: var(--ink-soft);
+  background:
+    radial-gradient(ellipse 72% 58% at 50% 42%,
+      rgba(45,74,43,0.13) 0%,
+      rgba(45,74,43,0.06) 54%,
+      rgba(45,74,43,0) 80%),
+    var(--parchment);
+}
+.philosophie::before { background: var(--gold-ink); }
+.philosophie .eyebrow,
+.philosophie .eyebrow--light { color: var(--gold-ink); }
+.philosophie .section-title,
+.philosophie .section-title--light { color: var(--ink); }
+.philosophie .lead { color: var(--ink-soft); }
+.philosophie strong { color: var(--moss); }
+.philosophie em { color: var(--gold-ink); }
+.philosophie a { color: var(--gold-ink); }
+.philosophie .philo-more-btn { color: var(--gold-ink); }
+.philosophie :focus-visible { outline-color: var(--gold-ink); }
+
+/* ============================================================
+   WELLE 2c – Personenseite
+   ============================================================
+   Ihre Stile liegen inline in stefan(.en/.es/.fr).html und werden
+   nach style.css geladen. Der body-Praefix hebt die Spezifitaet
+   an, damit die Studie an EINEM Ort bleibt und am Stueck
+   zuruecknehmbar ist – statt in vier Dateien verstreut.
+   ============================================================ */
+
+/* --- 9 · Die Buehne laeuft aus wie das Hero-Band ------------- */
+/* Name und Claim bleiben im dunklen Teil, der Rest gibt die
+   Farbe an den Bio-Text darunter ab. */
+body .stage {
+  background: linear-gradient(180deg,
+    var(--moss-deepest) 0%,
+    var(--moss-deepest) calc(100% - 240px),
+    var(--parchment) calc(100% - 60px),
+    var(--parchment) 100%);
+  padding-bottom: 0;
+}
+body .stage__inner { padding-bottom: 96px; }
+
+/* --- 10 · Die zwei dunklen Textsektionen werden hell --------- */
+body .pers--tief {
+  color: var(--ink-soft);
+  background:
+    radial-gradient(ellipse 76% 60% at 50% 48%,
+      rgba(45,74,43,0.13) 0%,
+      rgba(45,74,43,0.06) 54%,
+      rgba(45,74,43,0) 80%),
+    var(--parchment);
+}
+body .pers--tief .pers__label { color: var(--gold-ink); }     /* 5.4:1 */
+body .pers--tief .pers__text { color: var(--ink-soft); }      /* 10.6:1 */
+body .pers--tief .pers__h2 { color: var(--ink); }
+body .pers--tief .pers__text a { color: var(--gold-ink); }
+body .pers--tief strong { color: var(--moss); }
+body .pers--tief :focus-visible { outline-color: var(--gold-ink); }
+
+/* Die Bildnote stand auf 55 % Pergament – auf hellem Grund
+   waere sie unlesbar (1.2:1). Ruhiges Braun wie im Foto-Band. */
+body .pers--tief .mitbild__note { color: #6b5d4d; }           /* 5.5:1 */
+
+/* --- 11 · Satter Schimmer hinter dem Workshop-Foto ----------- */
+/* Das Foto ist ein abfotografierter Papierabzug, hell und leicht
+   unscharf. Auf Pergament verlaeuft es an den Raendern – der
+   Schimmer gibt ihm die Kante zurueck, die vorher das Moos war. */
+body .pers--tief .mitbild__bild {
+  position: relative;
+  padding: 22px 20px 16px;
+  margin-right: -20px;
+  background:
+    radial-gradient(ellipse 74% 80% at 50% 46%,
+      rgba(45,74,43,0.86) 0%,
+      rgba(45,74,43,0.68) 46%,
+      rgba(45,74,43,0.26) 72%,
+      rgba(45,74,43,0) 90%);
+}
+/* Die Note liegt jetzt im satten Schimmer, nicht auf Pergament. */
+body .pers--tief .mitbild__bild .mitbild__note { color: rgba(244,236,216,0.82); }
+
+/* --- 12 · Der Uebergang nach dem langen Bio-Text ------------- */
+/* Zwischengruen mit Skyline, wie auf der Startseite: der lange
+   Lesetext endet, das Kapitel wechselt. Das Band traegt den
+   Verlauf, die Silhouette steht als Inline-SVG im Markup. */
+.trenner--skyline-pers {
+  background: linear-gradient(180deg,
+    var(--parchment) 0%,
+    #3C5A38 52%,
+    var(--parchment) 100%);
+}
+
+/* ============================================================
+   WELLE 2d - Nachzug: Kontrast, Schimmer, Auslauf
+   ============================================================
+   Steht bewusst hinter WELLE 2 / 2b / 2c: bei gleicher
+   Spezifitaet gewinnt der spaetere Block. Drei Baustellen:
+
+   A  Kontrast - jede helle Schrift, die nach dem Wechsel auf
+      Pergament steht, bekommt ihre dunkle Entsprechung.
+      Ausgenommen bleibt Text, der auf einer gruenen Karte oder
+      im SATTEN Schimmer liegt.
+   B  Schimmer - helle Grafiken und Karten, die auf Pergament
+      ihre Flaeche verloren haben, bekommen den Gruen-Schein
+      dahinter (Muster von .def-quotes).
+   C  Auslauf - die Kopfbaender hellen erst auf, wenn der Text
+      zu Ende ist: Auslaufstrecke rund drei Textzeilen, davor
+      noch Luft. Heller Titel landet nie auf hellem Grund.
+
+   Kontrastwerte in den Kommentaren sind gerechnet (AA = 4.5:1).
+   Kompletter Block - zum Zuruecknehmen ersatzlos loeschen.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   A1 - Die Notiz-Absaetze der Sub-Sektionen
+   ------------------------------------------------------------
+   .six__notes traegt den Lesetext von vier jetzt hellen
+   Sektionen: systems-change #bedingungen, impact-up-philosophie
+   #phasenuebergang, systemische-wirkungsorientierung #wie und
+   #ueberbegriff. Die Regeln setzen color direkt am Element, die
+   geerbte Korrektur aus .sub-section--moss greift dort nicht -
+   und p strong / p em sind mit (0,1,2) sogar spezifischer als
+   .sub-section--moss strong. Deshalb hier ausdruecklich. */
+.six__notes p { color: var(--ink-soft); }          /* 10.6:1 auf Pergament */
+.six__notes p strong { color: var(--moss); }       /* 8.9:1  - wie .sub-section--moss strong */
+.six__notes p em { color: var(--gold-ink); }       /* 5.4:1  - wie .sub-section--moss em */
+
+/* Einleitungszeile und Quellenangabe ueber dem Diagramm stehen
+   frei auf Pergament, nicht im Schimmer der Grafik darunter. */
+.six__intro { color: var(--ink-soft); }            /* 10.6:1 */
+/* Quellenzeile: ruhiges Braun statt Pergament-Transparenz,
+   gleiche Behandlung wie .quellen__quellen in WELLE 2b. */
+.six__source { color: #6b5d4d; }                   /* 5.5:1 */
+
+/* Vier Absaetze in impact-up-philosophie #zuhause. Der Schimmer
+   liegt nur unter der Visual-Spalte (siehe B2), der Text bleibt
+   auf Pergament und damit dunkel. */
+.philo-home__text p { color: var(--ink-soft); }    /* 10.6:1 */
+
+/* ------------------------------------------------------------
+   A2 - Weiter-Links am Fuss der Sub-Sektionen
+   ------------------------------------------------------------
+   .praxis-links steht sowohl in --moss- als auch in
+   --parchment-Sektionen; beide sind jetzt hell. In den
+   Moos-Sektionen zog die WELLE-2-Regel .sub-section--moss a
+   bereits gold-ink, in den Pergament-Sektionen griff nichts.
+   Ein Wert fuer beide Kontexte. */
+.praxis-links a { color: var(--gold-ink); }        /* 5.4:1 */
+.praxis-links a:hover { color: var(--moss-deepest); }   /* 13.1:1 */
+
+/* Inline-Verweis im Fliesstext: derselbe Fall, .philo-link
+   steht in Philosophie- und Konstrukte-Texten auf Pergament. */
+.philo-link { color: var(--gold-ink); }            /* 5.4:1 */
+.philo-link:hover { color: var(--moss-deepest); }
+
+/* ------------------------------------------------------------
+   A3 - Startseite: Gold auf Pergament
+   ------------------------------------------------------------ */
+/* Das fettgesetzte "Impact Up" im Willkommens-Text. Faellt
+   staerker auf, seit der Hero hell auslaeuft und die Fugen weg
+   sind - die Sektion ist jetzt reine Pergamentflaeche. */
+.intro__brand { color: var(--gold-ink); }          /* 5.4:1 */
+
+/* Mailadresse und Name in der Ueber-Uns-Sektion. Der Nachbar
+   .about__wir ist schon auf gold-ink, diese drei blieben
+   zurueck - bei einem Link doppelt kritisch. */
+.about__mail,
+.about__mail strong,
+.about__text .about__name { color: var(--gold-ink); }   /* 5.4:1 */
+
+/* ------------------------------------------------------------
+   A4 - Sammelseiten: der Hover verschluckte den Link
+   ------------------------------------------------------------
+   .page steht auf Pergament. Beim Hover sprang jeder Inline-Link
+   von ink 14.7:1 auf gold 1.9:1 - der Link verschwand genau in
+   dem Moment, in dem die Maus darauf zeigte. */
+.page a:hover { color: var(--gold-ink); }          /* 5.4:1 */
+
+/* ------------------------------------------------------------
+   A5 - Bildunterschrift unter dem Diptychon
+   ------------------------------------------------------------
+   .dipt-cap liegt im <style> im Head von impact-up-philosophie
+   (alle vier Sprachen) und wird nach style.css geladen. Der
+   body-Praefix hebt die Spezifitaet, damit die Studie an EINEM
+   Ort bleibt - wie schon bei WELLE 2c. Die Zeile steht
+   ausserhalb von .six__diagram, also ausserhalb des Schimmers. */
+body .dipt-cap { color: #6b5d4d; }                 /* 5.5:1 */
+
+/* ------------------------------------------------------------
+   A6 - Kontaktformular
+   ------------------------------------------------------------
+   Ebenfalls Inline-Stile im Head, deshalb body-Praefix. */
+/* Pflichtfeld-Sternchen steht direkt auf Pergament, nicht auf
+   dem weissen Feld: gold-deep kam nur auf 2.96:1. */
+body .contact-form .form-required { color: var(--gold-ink); }   /* 5.4:1 */
+/* Klammerhinweis bei 13px: ink auf 60 % ergab 4.30:1, knapp
+   unter AA. Volle Deckkraft, dafuer die weichere Tinte. */
+body .contact-form .form-hint { color: var(--ink-soft); opacity: 1; }   /* 10.6:1 */
+/* Platzhalter im grossen Textfeld ist die einzige Erklaerung,
+   was dort hineingehoert - 35 % Tinte auf Weiss sind 2.2:1. */
+body .contact-form .erst-input::placeholder { color: rgba(31,26,20,0.58); }  /* 4.8:1 auf Weiss */
+/* Statt eines Schimmers hinter dem Formular (siehe B, verworfen)
+   die Feldkanten hochziehen: die weissen Felder halten sich
+   dann selbst gegen das Pergament. */
+body .contact-form .erst-input,
+body .contact-form .form-pill span { border-color: rgba(116,92,40,0.55); }
+
+/* ------------------------------------------------------------
+   A7 - Personenseite: die warme Haelfte zieht nach
+   ------------------------------------------------------------
+   WELLE 2c hat nur .pers--tief behandelt. .pers--warm stand
+   schon vorher auf Pergament, faellt jetzt aber auf, weil beide
+   Sektionen nebeneinander hell sind und zwei verschiedene
+   Labelfarben zeigten. */
+body .pers__label { color: var(--gold-ink); }      /* 5.4:1, war stone 2.7:1 */
+/* Die Links im langen Bio-Text stehen in .pers--warm; dort griff
+   die 2c-Regel nicht. Beide Faelle auf einen Wert. */
+body .pers__text a { color: var(--gold-ink); }     /* 5.4:1 */
+
+/* Zitat-Zettel: Quellenzeile und Uebersetzungshinweis standen in
+   hellem Gold auf Papier (1.9:1) - dort war nie Gruen darunter. */
+body .stimmen__quelle { color: var(--gold-ink); }  /* 5.8:1 auf #FFFBF0 */
+body .stimmen__note { color: #6b5d4d; opacity: 1; }   /* 5.8:1 auf #FFFBF0 */
+
+/* ============================================================
+   B - Satter Schimmer hinter den hellen Grafiken
+   ============================================================
+   Regel: SATT (bis 88 %) nur, wo eine helle Karte oder Grafik
+   darauf liegt. Wo Text direkt darauf steht, bleibt es beim
+   zarten Schleier aus WELLE 2b (max. 14 %).
+   ============================================================ */
+
+/* --- B1 - Die beiden grossen Diagramme --------------------- */
+/* Das Six-Conditions-Trapez ist in #F4ECD8 / #EFE3C5 / #E5D4A8
+   gezeichnet - das oberste Trapez ist exakt Pergament und war
+   auf Pergament unsichtbar (1.0:1 Flaechenkontrast). Dasselbe
+   beim Diptychon: Treppenbalken in #E7DCC0, Feld-Netz in Gold.
+   Der Schimmer deckt die ganze Diagramm-Box ab, also auch den
+   negativen viewBox-Bereich links mit den Ebenen-Labels -
+   dadurch bleiben alle Inline-fills der SVGs unveraendert
+   hell und richtig. Das erspart ein Nachziehen von rund zwanzig
+   fill-Attributen in vier Sprachfassungen. */
+.sub-section--moss .six__diagram {
+  position: relative;
+  padding: 34px 28px 30px;
+  margin-inline: -28px;
+  background:
+    radial-gradient(ellipse 66% 76% at 50% 50%,
+      rgba(45,74,43,0.88) 0%,
+      rgba(45,74,43,0.72) 44%,
+      rgba(45,74,43,0.30) 70%,
+      rgba(45,74,43,0) 88%);
+}
+/* Unter 600px scrollt die Box horizontal (Regel weiter oben) -
+   dort das seitliche Ausgreifen zuruecknehmen, sonst steht der
+   Schimmer neben dem Sektionspolster. */
+@media (max-width: 600px) {
+  .sub-section--moss .six__diagram {
+    margin-inline: 0;
+    padding-inline: 12px;
+  }
+}
+
+/* --- B2 - Das Netz-Piktogramm der Zuhause-Sektion ---------- */
+/* Rein in Gold gezeichnet, ohne eigene Flaeche: die 0.5px-Linien
+   bei 45 % verschwanden auf Pergament ganz. Der Schimmer liegt
+   NUR unter der Visual-Spalte - der Text daneben behaelt seinen
+   hellen Grund und damit seine dunkle Tinte (siehe A1). */
+.sub-section--moss .philo-home__visual {
+  position: relative;
+  padding: 26px 22px;
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse 70% 78% at 50% 50%,
+      rgba(45,74,43,0.88) 0%,
+      rgba(45,74,43,0.72) 44%,
+      rgba(45,74,43,0.30) 70%,
+      rgba(45,74,43,0) 88%);
+}
+
+/* --- B3 - Die Drei-Linsen-Grafik --------------------------- */
+/* Papier #FFFBF0 auf Pergament = 1.1:1; die Karte hielt sich nur
+   ueber ihren Goldrahmen. Keine Regression - die Sektion war
+   immer hell -, aber die Stelle, an der die Seite optisch
+   mitzieht. Die Figure bringt ihre eigene Flaeche mit, deshalb
+   hier kein Hintergrund, sondern ein Schein AUSSERHALB des
+   Kastens: gestaffelte Schatten statt Radial-Verlauf, damit die
+   Papierflaeche unangetastet bleibt. */
+.lenses {
+  box-shadow:
+    0 0 0 12px rgba(45,74,43,0.42),
+    0 0 34px 18px rgba(45,74,43,0.30),
+    0 0 72px 38px rgba(45,74,43,0.12);
+}
+
+/* --- B4 - Das Kartenband der Sammelseiten ------------------ */
+/* Weisse Karten auf Pergament = 1.09:1: sichtbar blieb nur die
+   4px-Goldkante oben, der Schatten existiert erst im Hover.
+   Muster wie .prozess::before - Schimmer im ::before, Karten
+   eine Ebene darueber. Gilt fuer konstrukte, impulse, services
+   und werkstatt in allen vier Sprachen; der Text steht auf der
+   weissen Karte, seine Kontraste bleiben unveraendert. */
+.sammel-cards {
+  position: relative;
+  isolation: isolate;
+}
+.sammel-cards::before {
+  content: "";
+  position: absolute;
+  inset: -34px -6vw;
+  background:
+    radial-gradient(ellipse 66% 76% at 50% 50%,
+      rgba(45,74,43,0.88) 0%,
+      rgba(45,74,43,0.72) 44%,
+      rgba(45,74,43,0.30) 70%,
+      rgba(45,74,43,0) 88%);
+  z-index: 0;
+  pointer-events: none;
+}
+.sammel-cards .card { z-index: 1; }
+
+/* --- B5 - Die Zitat-Zettel der Personenseite --------------- */
+/* Papier #FFFBF0 auf Pergament, gehalten nur von vier Gold-
+   Eckklammern und einem 3-Prozent-Schatten. Gleiche Loesung wie
+   bei .def-quotes. Die Zettelschrift bleibt dunkel auf Papier. */
+body .stimmen .zettel-board {
+  position: relative;
+  padding: 42px 32px;
+  margin-inline: -32px;
+  background:
+    radial-gradient(ellipse 66% 76% at 50% 50%,
+      rgba(45,74,43,0.88) 0%,
+      rgba(45,74,43,0.72) 44%,
+      rgba(45,74,43,0.30) 70%,
+      rgba(45,74,43,0) 88%);
+}
+@media (max-width: 720px) {
+  body .stimmen .zettel-board { padding: 34px 20px; margin-inline: -16px; }
+}
+
+/* --- B6 - Das Workshop-Foto im warmen Band ----------------- */
+/* Derselbe Fall wie .mitbild__bild in WELLE 2c: ein heller,
+   abfotografierter Papierabzug, dessen Schatten im warmen Band
+   zusaetzlich zurueckgenommen ist - das Bild verlief an den
+   Raendern ins Pergament. */
+body .band--warm .band__bild {
+  position: relative;
+  padding: 22px 20px 16px;
+  background:
+    radial-gradient(ellipse 74% 80% at 50% 46%,
+      rgba(45,74,43,0.86) 0%,
+      rgba(45,74,43,0.68) 46%,
+      rgba(45,74,43,0.26) 72%,
+      rgba(45,74,43,0) 90%);
+}
+/* Die Bildnote liegt damit im satten Schimmer und geht zurueck
+   auf Pergament-Schrift - wie bei .mitbild__note in WELLE 2c. */
+body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /* 6.4:1 auf dem Kern */
+
+/* --- B7 - Der Goldfaden im Perspektiven-Schimmer ----------- */
+/* Der Schimmer aus WELLE 2 sass mit at 50% 52% zu tief: am
+   oberen Rand der Box war er nur noch bei rund 30 % Deckkraft -
+   genau dort, wo der goldene Faden (top: 79px) laeuft. Ellipse
+   hoeher setzen, dann traegt das Gold wieder. Die Kreise sind
+   moss-deepest und hielten sich ohnehin. */
+.prozess::before {
+  background:
+    radial-gradient(ellipse 62% 78% at 50% 44%,
+      rgba(45,74,43,0.92) 0%,
+      rgba(45,74,43,0.78) 44%,
+      rgba(45,74,43,0.34) 70%,
+      rgba(45,74,43,0) 88%);
+}
+
+/* ============================================================
+   C - Auslauf-Timing der Kopfbaender
+   ============================================================
+   Faustregel, aus den drei Baendern abgeleitet:
+   Auslaufstrecke rund drei Textzeilen; der Auslauf beginnt
+   mindestens 20-30px UNTER der letzten Textzeile; das
+   Bodenpolster ist so bemessen, dass beides von der Unterkante
+   aus aufgeht - dann traegt die Rechnung auch bei laengeren
+   Sprachfassungen und auf schmalen Viewports, weil der Verlauf
+   von unten gerechnet wird.
+   ============================================================ */
+
+/* --- C1 - Das Startseiten-Band ----------------------------- */
+/* Bisher: 290px Auslaufstrecke gegen 130px Bodenpolster - 160px
+   Auslaufzone lagen zwangslaeufig IM Inhalt. Claim, goldenes em
+   und die zweizeilige Unterzeile standen im aufhellenden Teil.
+   Neu: 110px Auslauf (rund drei Zeilen der Unterzeile), voll
+   Pergament 50px vor der Unterkante - der nahtlose Anschluss an
+   .intro bleibt. Claim und Unterzeile behalten damit ihre
+   hellen Farben; korrigiert wird das Timing, nicht die Farbe. */
+.hero--band {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
+    linear-gradient(180deg,
+      var(--moss) 0%,
+      var(--moss-deepest) calc(100% - 160px),
+      var(--parchment) calc(100% - 50px),
+      var(--parchment) 100%);
+  padding-bottom: 190px;
+}
+
+/* --- C2 - Der grosse Seitenkopf der Unterseiten ------------ */
+/* .hero--sub traegt sechs Seiten mal vier Sprachen. Bisher
+   begann der Auslauf 3px unter der letzten Textzeile - der
+   Abstand war strukturell konstant, weil das Polster fix ist,
+   also auf allen sechs Seiten gleich falsch. Neu: 180px
+   Auslaufstrecke, 55px Bodenpolster, dadurch rund 78px - gut
+   drei Zeilen - zwischen letzter Textzeile und Auslaufbeginn.
+   Konservativ gerechnet nach der laengsten Fassung, damit der
+   Titel auf keiner Sprache in den hellen Teil rutscht. */
+.hero--sub {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
+    linear-gradient(180deg,
+      var(--moss) 0%,
+      var(--moss-deepest) calc(100% - 235px),
+      var(--parchment) calc(100% - 55px),
+      var(--parchment) 100%);
+  padding-bottom: 285px;
+}
+
+/* --- C3 - Die Buehne der Personenseite --------------------- */
+/* 180px Auslauf gegen 96px Polster: vier der fuenf Claim-Zeilen
+   standen im Verlauf, auf schmalen Viewports mehr. Neu: 130px
+   Auslauf (rund vier Claim-Zeilen a 33px), Beginn rund 40px
+   unter der letzten Zeile. body-Praefix, damit die Regel auch
+   das Inline-@media (max-width:900px) der Seite schlaegt. */
+body .stage {
+  background: linear-gradient(180deg,
+    var(--moss-deepest) 0%,
+    var(--moss-deepest) calc(100% - 130px),
+    var(--parchment) calc(100% - 34px),
+    var(--parchment) 100%);
+  padding-bottom: 0;
+}
+body .stage__inner { padding-bottom: 170px; }
+
+/* --- C4 - Der erste Text darf hoeher ruecken --------------- */
+/* Die Baender laufen jetzt hell aus und binden ohne Kante an
+   die erste Sektion an; ein volles 90px-Deckpolster darueber
+   waere doppelter Abstand. Das gibt zugleich einen Gutteil der
+   Bandhoehe aus C2 zurueck. Gilt mit und ohne Steinrelief
+   dazwischen. */
+.hero--sub + .sub-section,
+.hero--sub + .trenner + .sub-section { padding-top: 48px; }
+/* Auf der Personenseite dieselbe Bewegung nach der Buehne. */
+body .stage + .pers { padding-top: 30px; }
+
+/* ============================================================
+   WELLE 2e - Nachtrag aus der Pruefung
+   ============================================================
+   Sechs Punkte, die drei Pruefdurchgaenge nach dem Umbau
+   gefunden haben. Jeder am Quelltext nachgeprueft; was nur
+   tote Klassen betraf (.about__close, kommt in keiner HTML-
+   Datei vor), ist bewusst NICHT hier drin.
+   ============================================================ */
+
+/* 1 · Quellenangaben in den Definitions-Zetteln.
+   Der Zettel traegt seine eigene Papierflaeche (#FFFBF0) und
+   liegt damit NICHT im gruenen Schimmer - helles Gold hatte
+   dort 2.2:1. Betrifft 20 cite-Elemente auf drei Konstrukt-
+   Seiten in vier Sprachen. */
+.def-quote cite { color: var(--gold-ink); }              /* 6.2:1 */
+
+/* 2 · Inline-Links in Leads. Die Regeln aus Welle 1 (Zeile
+   2132-2134) setzen helles Gold und sind mit (0,2,1)
+   spezifischer als die Sektions-Korrekturen aus Welle 2b -
+   sie haetten jeden kuenftigen Link im Lead unsichtbar
+   gemacht (1.6:1 auf Pergament). */
+.weitergehen .lead a,
+.philosophie .lead a,
+.sub-section--moss .lead a { color: var(--gold-ink); }   /* 5.4:1 */
+
+/* 3 · Literaturlinks auf den Quellen-Karten: Dunkelgold auf
+   Papier ergibt bei 13px nur 3.35:1. */
+.quellen-karte .quellen a { color: var(--gold-ink); }    /* 6.2:1 */
+
+/* 4 · Die Kartenziffern nummerieren die Karten, sind also
+   Inhalt und nicht Deko - bei 35 % Deckkraft auf Weiss waren
+   sie praktisch unsichtbar. */
+.card__num { color: var(--gold-deep); opacity: 0.55; }
+
+/* 5 · Fokus-Ring im Schlussblock der Personenseite. Der
+   Block steht als einzige Sektion dort auf Lila; die dunkle
+   Fokus-Farbe erreichte darauf nur 1.8:1 (noetig sind 3:1
+   fuer Nicht-Text). */
+.ruf :focus-visible { outline-color: var(--gold); }      /* 5.2:1 auf Lila */
+
+/* 6 · Die Kante am Uebergang zu den Wirkungsfeldern. Das Band
+   endete unten in vollem Moos, die Sektion darunter beginnt
+   aber oben in Pergament - das stand als harte Farbkante auf
+   der Startseite in allen vier Sprachen. Jetzt traegt das Band
+   das Gruen in seiner Mitte und laeuft beidseitig aus. */
+.weitergehen + .trenner--skyline-b {
+  background: linear-gradient(180deg,
+    var(--parchment) 0%,
+    #3C5A38 54%,
+    var(--parchment) 100%);
+}

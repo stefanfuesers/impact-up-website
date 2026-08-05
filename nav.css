@@ -26,6 +26,11 @@
   --stone:     #B8855E;
   --parchment: #F4ECD8;
   --ink:       #1F1A14;
+  /* Weiche Tinte: der Body-Ton fuer lange Textstrecken auf hellem
+     Grund (10.6:1 auf Pergament). Stand als Farbe in DESIGN.md,
+     fehlte hier aber als Token - alle var(--ink-soft) fielen
+     deshalb still auf inherit zurueck. */
+  --ink-soft:  #3A332A;
   --purple:    #4A2B5C;
 
   --serif: 'Cormorant Garamond', Georgia, serif;
