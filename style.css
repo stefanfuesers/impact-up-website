@@ -2582,16 +2582,9 @@ h2.eyebrow--xl,
    vollen dunklen Hero-Verlauf. Gleiche Behandlung wie das
    Startseiten-Band: oben dunkel, dann auslaufen. Das Polster
    haelt Titel und Unterzeile im dunklen Teil. */
-.hero--sub {
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
-    linear-gradient(180deg,
-      var(--moss) 0%,
-      var(--moss-deepest) calc(100% - 190px),
-      var(--parchment) calc(100% - 40px),
-      var(--parchment) 100%);
-  padding-bottom: 165px;
-}
+/* (Die frueheren Werte fuer .hero--sub standen hier und wurden
+   weiter unten ohnehin ueberschrieben - geloescht, damit nur
+   eine Fassung existiert. Aktiv ist der Block in C2.) */
 
 /* --- 5 · Kopfband der Unterseiten laeuft aus ----------------- */
 /* Das Band schliesst an die gruene Nav an und gibt die Farbe
@@ -2951,24 +2944,11 @@ body .stimmen__note { color: #6b5d4d; opacity: 1; }   /* 5.8:1 auf #FFFBF0 */
    eine Ebene darueber. Gilt fuer konstrukte, impulse, services
    und werkstatt in allen vier Sprachen; der Text steht auf der
    weissen Karte, seine Kontraste bleiben unveraendert. */
-.sammel-cards {
-  position: relative;
-  isolation: isolate;
-}
-.sammel-cards::before {
-  content: "";
-  position: absolute;
-  inset: -34px -6vw;
-  background:
-    radial-gradient(ellipse 66% 76% at 50% 50%,
-      rgba(45,74,43,0.88) 0%,
-      rgba(45,74,43,0.72) 44%,
-      rgba(45,74,43,0.30) 70%,
-      rgba(45,74,43,0) 88%);
-  z-index: 0;
-  pointer-events: none;
-}
-.sammel-cards .card { z-index: 1; }
+/* Zurueckgenommen am 05.08.2026: hinter den Sammelkarten der vier
+   Dropdown-Startseiten (Konstrukte, Services, Werkstatt, Impulse)
+   wirkte der Schimmer nicht - die Karten sind dort gross, weiss und
+   stehen ohnehin frei. Gruen bleibt an den Stellen, wo es etwas
+   traegt: Zettel, Diagramme, Quellen. */
 
 /* --- B5 - Die Zitat-Zettel der Personenseite --------------- */
 /* Papier #FFFBF0 auf Pergament, gehalten nur von vier Gold-
@@ -3068,10 +3048,10 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
     linear-gradient(180deg,
       var(--moss) 0%,
-      var(--moss-deepest) calc(100% - 235px),
-      var(--parchment) calc(100% - 55px),
+      var(--moss-deepest) calc(100% - 130px),
+      var(--parchment) calc(100% - 5px),
       var(--parchment) 100%);
-  padding-bottom: 285px;
+  padding-bottom: 105px;
 }
 
 /* --- C3 - Die Buehne der Personenseite --------------------- */
@@ -3097,7 +3077,7 @@ body .stage__inner { padding-bottom: 170px; }
    Bandhoehe aus C2 zurueck. Gilt mit und ohne Steinrelief
    dazwischen. */
 .hero--sub + .sub-section,
-.hero--sub + .trenner + .sub-section { padding-top: 48px; }
+.hero--sub + .trenner + .sub-section { padding-top: 18px; }
 /* Auf der Personenseite dieselbe Bewegung nach der Buehne. */
 body .stage + .pers { padding-top: 30px; }
 
@@ -3140,6 +3120,22 @@ body .stage + .pers { padding-top: 30px; }
    Fokus-Farbe erreichte darauf nur 1.8:1 (noetig sind 3:1
    fuer Nicht-Text). */
 .ruf :focus-visible { outline-color: var(--gold); }      /* 5.2:1 auf Lila */
+
+/* 7 · Schimmer hinter den Quellen-Karten der Konstrukt-Seiten.
+   Die Karte traegt Papier (#FFFBF0) mit goldener Oberkante und
+   stand auf Pergament praktisch ohne Abgrenzung. Der Text liegt
+   auf der Karte, seine Kontraste bleiben unberuehrt. */
+/* Als Halo aus gestaffelten Schatten, nicht als Hintergrund:
+   die Karte behaelt ihr Papier, der Schein liegt aussen herum.
+   Ein Radial-Verlauf im background wuerde das Papier ersetzen
+   und den Text auf Gruen stellen. */
+.quellen-karte {
+  box-shadow:
+    0 2px 10px rgba(31, 26, 20, 0.08),
+    0 0 0 14px rgba(45, 74, 43, 0.30),
+    0 0 26px 22px rgba(45, 74, 43, 0.26),
+    0 0 60px 46px rgba(45, 74, 43, 0.12);
+}
 
 /* 6 · Die Kante am Uebergang zu den Wirkungsfeldern. Das Band
    endete unten in vollem Moos, die Sektion darunter beginnt
