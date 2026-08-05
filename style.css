@@ -2505,14 +2505,27 @@ h2.eyebrow--xl,
 }
 
 /* --- 0d · Der Hero-Button rueckt zur Mitte des Lockups -------- */
-/* 2,5 cm + 3 cm nach rechts; unter 900px stapelt das Band, dort
-   bleibt er buendig unter der Marke. */
+/* 2,5 + 3 + 1 cm nach rechts; unter 900px stapelt das Band, dort
+   bleibt er buendig unter der Marke. nowrap, weil die laengeren
+   Beschriftungen (FR "Coopérez avec nous") in der schmaler
+   gewordenen Spalte sonst umbrechen. */
 @media (min-width: 901px) {
-  .hero--band .hero__cta { margin-left: 209px; }
+  .hero--band .hero__cta {
+    margin-left: 247px;
+    white-space: nowrap;
+  }
 }
 
-/* Der Abschluss-Button unten rueckt vom rechten Rand weg. */
-.abschluss__wege .abschluss__cta { margin-right: 48px; }
+/* Der Abschluss-Button endet auf Hoehe der rechten Textkante des
+   Satzes darueber. Der Satz ist in jeder Sprache anders lang,
+   deshalb pro Sprache gemessen (bei 1440px Fensterbreite).
+   Unter 901px stapelt die Reihe ohnehin. */
+@media (min-width: 901px) {
+  .abschluss__wege .abschluss__cta            { margin-right: 109px; }  /* DE */
+  html[lang="en"] .abschluss__wege .abschluss__cta { margin-right: 64px; }
+  html[lang="es"] .abschluss__wege .abschluss__cta { margin-right: 93px; }
+  html[lang="fr"] .abschluss__wege .abschluss__cta { margin-right: 79px; }
+}
 
 /* --- 1 · Die Sektion steht jetzt auf Pergament --------------- */
 .weitergehen {
