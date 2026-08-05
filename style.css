@@ -3072,7 +3072,7 @@ body .stage {
     var(--parchment) 100%);
   padding-bottom: 0;
 }
-body .stage__inner { padding-bottom: 170px; }
+body .stage__inner { padding-bottom: 96px; }
 
 /* --- C4 - Der erste Text darf hoeher ruecken --------------- */
 /* Die Baender laufen jetzt hell aus und binden ohne Kante an
@@ -3132,11 +3132,10 @@ body .stage + .pers { padding-top: 30px; }
 /* Der Bio-Text startet direkt unter der Buehne. */
 body .stage + .pers { padding-top: 0; }
 
-/* Das Portrait bleibt, wo es war - der Text laeuft ihm nur zwei
-   bis drei Zeilen voraus. Dadurch sitzt das Bild IM Absatz statt
-   an seinem Anfang: die ersten Zeilen laufen ueber die volle
-   Breite, danach umfliesst der Text das Portrait. */
-body .kopf__bild { margin-top: 78px; }
+/* Portrait oben links, der Text umfliesst es ab der ersten Zeile.
+   Der Block startet hoeher, indem der Bodenraum der Buehne
+   schrumpft - nicht, indem das Bild verschoben wird. */
+body .kopf__bild { margin-top: 5px; }
 
 /* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
    Silbentrennung, damit das zweite Workshopfoto sauber umflossen
@@ -3157,7 +3156,7 @@ body .mitbild__bild--links {
   /* Der Schimmer laeuft weich ueber die Bildkante hinaus - der
      Text braucht deshalb mehr Abstand als beim rechten Bild,
      sonst liegen Buchstaben im Gruen. */
-  margin-right: 60px;
+  margin-right: 96px;
 }
 
 /* Stationen und Studium stehen nebeneinander statt untereinander:
