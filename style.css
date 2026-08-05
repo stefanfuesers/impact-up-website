@@ -3072,7 +3072,7 @@ body .stage {
     var(--parchment) 100%);
   padding-bottom: 0;
 }
-body .stage__inner { padding-bottom: 96px; }
+body .stage__inner { padding-bottom: 170px; }
 
 /* --- C4 - Der erste Text darf hoeher ruecken --------------- */
 /* Die Baender laufen jetzt hell aus und binden ohne Kante an
@@ -3132,10 +3132,9 @@ body .stage + .pers { padding-top: 30px; }
 /* Der Bio-Text startet direkt unter der Buehne. */
 body .stage + .pers { padding-top: 0; }
 
-/* Portrait oben links, der Text umfliesst es ab der ersten Zeile.
-   Der Block startet hoeher, indem der Bodenraum der Buehne
-   schrumpft - nicht, indem das Bild verschoben wird. */
-body .kopf__bild { margin-top: 5px; }
+/* Der Text laeuft drei Zeilen ueber die volle Breite, erst ab
+   Zeile vier umfliesst er das Portrait. 3 x 26.6px Zeilenhoehe. */
+body .kopf__bild { margin-top: 80px; }
 
 /* Die KI-Sektion liest sich wie der Bio-Text: Blocksatz mit
    Silbentrennung, damit das zweite Workshopfoto sauber umflossen
@@ -3149,14 +3148,19 @@ body .pers--tief .pers__text p {
 /* Das zweite Foto steht links im Text - Gegenstueck zum ersten,
    das rechts umflossen wird. Der gruene Schimmer aus B3 gilt
    fuer beide, weil er an .mitbild__bild haengt. */
-body .mitbild__bild--links {
+/* WICHTIG: Selektor mit .pers--tief davor. Die Schimmer-Regel in
+   Block 11 heisst "body .pers--tief .mitbild__bild" und ist damit
+   spezifischer (0,3,0) als "body .mitbild__bild--links" (0,2,0) -
+   sie hat den Textabstand hier zweimal still ueberschrieben. */
+body .pers--tief .mitbild__bild--links {
   float: left;
-  margin: 4px 0 16px 0;
+  margin-top: 4px;
+  margin-bottom: 16px;
   margin-left: -20px;
-  /* Der Schimmer laeuft weich ueber die Bildkante hinaus - der
-     Text braucht deshalb mehr Abstand als beim rechten Bild,
-     sonst liegen Buchstaben im Gruen. */
-  margin-right: 96px;
+  /* Der gruene Schimmer laeuft weich ueber die Bildkante hinaus -
+     der Text braucht deshalb deutlich mehr Abstand als beim
+     rechten Bild, sonst liegen Buchstaben im Gruen. */
+  margin-right: 104px;
 }
 
 /* Stationen und Studium stehen nebeneinander statt untereinander:
