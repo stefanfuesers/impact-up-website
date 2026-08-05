@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stefan Füsers · Impact Up</title>
-  <meta name="description" content="Stefan Füsers, founder of Impact Up: more than 15 years of peace work and civil-society project development and implementation in Cambodia, Kosovo and Hamburg, impact orientation and PM&amp;E, systemic organisational development." />
+  <meta name="description" content="Stefan Füsers, founder of Impact Up: more than 15 years of experience in project development in peace work and in sustainability, climate and other social organisations of civil society — Cambodia, Kosovo and Hamburg." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96.png">
@@ -19,14 +19,14 @@
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/stefan.html" />
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Stefan Füsers · Impact Up" />
-  <meta property="og:description" content="More than 15 years of peace work and civil-society project development and implementation in Cambodia, Kosovo and Hamburg, impact orientation and PM&amp;E, systemic organisational development." />
+  <meta property="og:description" content="More than 15 years of experience in project development in peace work and in sustainability, climate and other social organisations of civil society — Cambodia, Kosovo and Hamburg." />
   <meta property="og:url" content="https://impact-up.org/stefan.en.html" />
   <meta property="og:image" content="https://impact-up.org/assets/share.png" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="de_DE" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Stefan Füsers · Impact Up" />
-  <meta name="twitter:description" content="More than 15 years of peace work and civil-society project development and implementation in Cambodia, Kosovo and Hamburg, impact orientation and PM&amp;E, systemic organisational development." />
+  <meta name="twitter:description" content="More than 15 years of experience in project development in peace work and in sustainability, climate and other social organisations of civil society — Cambodia, Kosovo and Hamburg." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
   <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -145,15 +145,15 @@
 
     /* Haupttext mit kleinem Portrait daneben ------------------
        Eigener Name .kopf, weil .intro in style.css schon die
-       Willkommens-Sektion der Startseite ist. */
-    .kopf {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 34px;
-      align-items: start;
-    }
+       Willkommens-Sektion der Startseite ist.
+       Das Portrait steht klein links im Text und wird umflossen. */
+    .kopf { display: block; }
+    .kopf::after { content: ""; display: block; clear: both; }
     .kopf__bild {
       position: relative;
+      float: left;
+      width: 118px;
+      margin: 5px 26px 16px 0;
       border-radius: 3px;
       overflow: hidden;
       box-shadow: 0 10px 24px rgba(31,26,20,.14);
@@ -167,6 +167,33 @@
       border-radius: 3px;
       pointer-events: none;
     }
+    /* Blocksatz im umflossenen Bio-Text */
+    .kopf .pers__text p { text-align: justify; hyphens: auto; }
+
+    /* ---------- Bild im Fliesstext, rechts umflossen ----------
+       Das Workshopfoto steht rechts neben dem Text der Sektion,
+       die Bildnote klein darunter. */
+    .mitbild::after { content: ""; display: block; clear: both; }
+    .mitbild__bild {
+      float: right;
+      width: 40%;
+      max-width: 380px;
+      margin: 4px 0 14px 32px;
+    }
+    .mitbild__bild img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.36));
+    }
+    .mitbild__note {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: rgba(244,236,216,.55);
+      margin: 8px 0 0;
+    }
+    .mitbild p { text-align: justify; hyphens: auto; }
 
     /* ---------- Wand-Bilder als Zwischenband ----------
        Die beiden Workshopfotos stehen einzeln und verteilt: eines als
@@ -201,9 +228,6 @@
       margin: 8px 0 0;
     }
     .band--warm .band__note { color: #6b5d4d; }
-
-    /* Einzelbild, mittig gestellt */
-    .band--solo .band__bild { margin: 0 auto; }
 
     /* Bild und Satz nebeneinander */
     .band--satz .band__inner {
@@ -299,19 +323,23 @@
       .stage { padding-top: 92px; }
       .stage__inner { padding-bottom: 42px; }
       .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
-      .kopf { grid-template-columns: 1fr; gap: 22px; }
-      .kopf__bild { max-width: 140px; }
+      /* Portrait oben, kein Umfluss */
+      .kopf__bild { float: none; width: 190px; margin: 0 auto 22px; }
+      /* Bild ueber den Text, kein Umfluss */
+      .mitbild__bild { float: none; width: 100%; max-width: 300px; margin: 0 0 22px; }
       /* Untereinander: Bild, darunter der Satz */
       .band { padding: 34px 0 36px; }
       .band--satz .band__inner { grid-template-columns: 1fr; gap: 24px; }
       .band__bild { max-width: 300px; }
-      .band--solo .band__bild, .band--satz .band__bild { margin: 0; }
+      .band--satz .band__bild { margin: 0; }
       .band__satz { max-width: none; }
       .stimmen { padding-bottom: 46px; }
       .ruf { padding: 52px 0; }
     }
     @media (max-width: 560px) {
       .stage__inner, .pers__inner, .band__inner { padding-left: 20px; padding-right: 20px; }
+      /* Schmale Spalte: Blocksatz reisst Loecher – linksbuendig lesen */
+      .kopf .pers__text p, .mitbild p { text-align: left; hyphens: manual; }
     }
   </style>
 </head>
@@ -378,7 +406,7 @@
     <div class="stage__inner">
       <p class="stage__kicker">Coaching · Organisational Development · Impact Orientation</p>
       <h1 class="stage__name">Stefan <em>Füsers</em></h1>
-      <p class="stage__claim">Founder of Impact Up. More than 15 years of peace work and civil-society project development and implementation — Cambodia, Kosovo, Hamburg.</p>
+      <p class="stage__claim">Founder of Impact Up. More than 15 years of experience in project development in peace work and in sustainability, climate and other social organisations of civil society — Cambodia, Kosovo and Hamburg.</p>
     </div>
   </header>
 
@@ -402,24 +430,18 @@
     </div>
   </section>
 
-  <!-- ===================== Photo band I ===================== -->
-  <section class="band band--solo">
-    <div class="band__inner">
-      <figure class="band__bild auf">
-        <img src="assets/workshop-panorama.webp"
-             alt="Stefan Füsers facilitating a workshop in front of three large card walls on trauma, rights and political participation"
-             width="1800" height="1062" loading="lazy" decoding="async" />
-        <figcaption class="band__note">Impact planning in the Civil Peace Service, Cambodia</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- ===================== Systemic organisational development ===================== -->
   <section class="pers pers--tief">
     <div class="pers__inner">
       <p class="pers__label auf">Systemic Organisational Development</p>
-      <div class="pers__text auf">
-        <p>The time since returning went into Stefan's own development: alongside the training at WISPO, reflection seminars with IP-GO and the AGdD, which have visibly developed him further. His craft remains the coaching of small groups and the planning and reflection workshops: clarifying the direction with the leadership, shaping the way there with the group — in conversation, at the wall, in small steps. As services of the institute: <a href="coaching.en.html">Project Coaching</a> and <a href="wirkungsberatung.en.html">Impact Consulting</a>.</p>
+      <div class="pers__text mitbild auf">
+        <figure class="mitbild__bild">
+          <img src="assets/workshop-panorama.webp"
+               alt="Stefan Füsers facilitating a workshop in front of three large card walls on trauma, rights and political participation"
+               width="1800" height="1062" loading="lazy" decoding="async" />
+          <figcaption class="mitbild__note">Impact planning in the Civil Peace Service, Cambodia</figcaption>
+        </figure>
+        <p>The time since returning went into Stefan's own development: into the training in systemic organisational development at <a href="https://www.systemisches-zentrum.de/" target="_blank" rel="noopener">WISPO</a> — and into actively building a network, out of which much of Impact Up is emerging today (more on that under <a href="index.en.html#about">About Us</a>). His craft remains the coaching of small groups and the planning and reflection workshops: clarifying the direction with the leadership, shaping the way there with the group — in conversation, at the wall, in small steps. As services of the institute: <a href="coaching.en.html">Project Coaching</a> and <a href="wirkungsberatung.en.html">Impact Consulting</a>.</p>
       </div>
     </div>
   </section>
@@ -445,7 +467,7 @@
       <div class="pers__text auf">
         <p>The past year belonged to artificial intelligence — not as a topic of its own, but as collaboration. Within his self-employment, Stefan began working with it: he uses it to bring into the world the things that stand here — the constructs, the workshop, this website. That is exactly his aspiration: to use artificial intelligence for meaning and purpose, in collaboration — the way collaboration also grows between people. What stands on these pages came into being this way.</p>
 
-        <p>What interests him is less what these systems can do than what they bind themselves to: the language, the impact logic and the standards of a piece of work. What happens inside them, nobody fully understands — Stefan follows who drives the development and which constructs of thought emerge there. The division of labour is clear to him: the sorting work may go to the machine; judgement, responsibility and the moment in the room stay with people. And a cooperation network has grown along this year — from IP-GO via the Hamburg self-employed network and the EH returnees to KURVE Wustrow. As a service of the institute: <a href="ki-integration.en.html">Integrating Artificial Intelligence</a>.</p>
+        <p>What interests him is less what these systems can do than what they bind themselves to: the language, the impact logic and the standards of a piece of work. What happens inside them, nobody fully understands — Stefan follows who drives the development and which constructs of thought emerge there. The division of labour is clear to him: the sorting work may go to the machine; judgement, responsibility and the moment in the room stay with people. We offer the integration of AI into your processes as a service: <a href="ki-integration.en.html">Integrating Artificial Intelligence</a>.</p>
       </div>
     </div>
   </section>

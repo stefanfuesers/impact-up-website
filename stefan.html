@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stefan Füsers · Impact Up</title>
-  <meta name="description" content="Stefan Füsers, Gründer von Impact Up: mehr als 15 Jahre Friedensarbeit und zivilgesellschaftliche Projektentwicklung und -durchführung in Kambodscha, im Kosovo und in Hamburg, Wirkungsorientierung und PM&amp;E, systemische Organisationsentwicklung." />
+  <meta name="description" content="Stefan Füsers, Gründer von Impact Up: mehr als 15 Jahre Erfahrung in der Projektentwicklung in der Friedensarbeit und in Nachhaltigkeits-, Klima- und anderen sozialen Organisationen der Zivilgesellschaft — Kambodscha, Kosovo und Hamburg." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2" />
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96.png">
@@ -19,14 +19,14 @@
   <link rel="alternate" hreflang="x-default" href="https://impact-up.org/stefan.html" />
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Stefan Füsers · Impact Up" />
-  <meta property="og:description" content="Mehr als 15 Jahre Friedensarbeit und zivilgesellschaftliche Projektentwicklung und -durchführung in Kambodscha, im Kosovo und in Hamburg, Wirkungsorientierung und PM&amp;E, systemische Organisationsentwicklung." />
+  <meta property="og:description" content="Mehr als 15 Jahre Erfahrung in der Projektentwicklung in der Friedensarbeit und in Nachhaltigkeits-, Klima- und anderen sozialen Organisationen der Zivilgesellschaft — Kambodscha, Kosovo und Hamburg." />
   <meta property="og:url" content="https://impact-up.org/stefan.html" />
   <meta property="og:image" content="https://impact-up.org/assets/share.png" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Stefan Füsers · Impact Up" />
-  <meta name="twitter:description" content="Mehr als 15 Jahre Friedensarbeit und zivilgesellschaftliche Projektentwicklung und -durchführung in Kambodscha, im Kosovo und in Hamburg, Wirkungsorientierung und PM&amp;E, systemische Organisationsentwicklung." />
+  <meta name="twitter:description" content="Mehr als 15 Jahre Erfahrung in der Projektentwicklung in der Friedensarbeit und in Nachhaltigkeits-, Klima- und anderen sozialen Organisationen der Zivilgesellschaft — Kambodscha, Kosovo und Hamburg." />
   <meta name="twitter:image" content="https://impact-up.org/assets/share.png" />
   <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -145,19 +145,21 @@
 
     /* Haupttext mit kleinem Portrait daneben ------------------
        Eigener Name .kopf, weil .intro in style.css schon die
-       Willkommens-Sektion der Startseite ist. */
-    .kopf {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 34px;
-      align-items: start;
-    }
+       Willkommens-Sektion der Startseite ist.
+       Das Portrait steht klein links im Text und wird umflossen. */
+    .kopf { display: block; }
+    .kopf::after { content: ""; display: block; clear: both; }
     .kopf__bild {
       position: relative;
+      float: left;
+      width: 118px;
+      margin: 5px 26px 16px 0;
       border-radius: 3px;
       overflow: hidden;
       box-shadow: 0 10px 24px rgba(31,26,20,.14);
     }
+    /* Blocksatz im umflossenen Bio-Text */
+    .kopf .pers__text p { text-align: justify; hyphens: auto; }
     .kopf__bild img { width: 100%; height: auto; display: block; }
     .kopf__bild::after {
       content: "";
@@ -167,6 +169,31 @@
       border-radius: 3px;
       pointer-events: none;
     }
+
+    /* ---------- Bild im Fliesstext, rechts umflossen ----------
+       Das Workshopfoto steht rechts neben dem Text der Sektion,
+       die Bildnote klein darunter. */
+    .mitbild::after { content: ""; display: block; clear: both; }
+    .mitbild__bild {
+      float: right;
+      width: 40%;
+      max-width: 380px;
+      margin: 4px 0 14px 32px;
+    }
+    .mitbild__bild img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,.36));
+    }
+    .mitbild__note {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      line-height: 1.5;
+      color: rgba(244,236,216,.55);
+      margin: 8px 0 0;
+    }
+    .mitbild p { text-align: justify; hyphens: auto; }
 
     /* ---------- Wand-Bilder als Zwischenband ----------
        Die beiden Workshopfotos stehen einzeln und verteilt: eines als
@@ -201,9 +228,6 @@
       margin: 8px 0 0;
     }
     .band--warm .band__note { color: #6b5d4d; }
-
-    /* Einzelbild, mittig gestellt */
-    .band--solo .band__bild { margin: 0 auto; }
 
     /* Bild und Satz nebeneinander */
     .band--satz .band__inner {
@@ -299,19 +323,23 @@
       .stage { padding-top: 92px; }
       .stage__inner { padding-bottom: 42px; }
       .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
-      .kopf { grid-template-columns: 1fr; gap: 22px; }
-      .kopf__bild { max-width: 140px; }
+      /* Portrait oben, kein Umfluss */
+      .kopf__bild { float: none; width: 190px; margin: 0 auto 22px; }
+      /* Bild ueber den Text, kein Umfluss */
+      .mitbild__bild { float: none; width: 100%; max-width: 300px; margin: 0 0 22px; }
       /* Untereinander: Bild, darunter der Satz */
       .band { padding: 34px 0 36px; }
       .band--satz .band__inner { grid-template-columns: 1fr; gap: 24px; }
       .band__bild { max-width: 300px; }
-      .band--solo .band__bild, .band--satz .band__bild { margin: 0; }
+      .band--satz .band__bild { margin: 0; }
       .band__satz { max-width: none; }
       .stimmen { padding-bottom: 46px; }
       .ruf { padding: 52px 0; }
     }
     @media (max-width: 560px) {
       .stage__inner, .pers__inner, .band__inner { padding-left: 20px; padding-right: 20px; }
+      /* Schmale Spalte: Blocksatz reisst Loecher – linksbuendig lesen */
+      .kopf .pers__text p, .mitbild p { text-align: left; hyphens: manual; }
     }
   </style>
 </head>
@@ -378,7 +406,7 @@
     <div class="stage__inner">
       <p class="stage__kicker">Coaching · Organisationsentwicklung · Wirkungsorientierung</p>
       <h1 class="stage__name">Stefan <em>Füsers</em></h1>
-      <p class="stage__claim">Gründer von Impact Up. Mehr als 15 Jahre Friedensarbeit und zivilgesellschaftliche Projektentwicklung und -durchführung — Kambodscha, Kosovo, Hamburg.</p>
+      <p class="stage__claim">Gründer von Impact Up. Mehr als 15 Jahre Erfahrung in der Projektentwicklung in der Friedensarbeit und in Nachhaltigkeits-, Klima- und anderen sozialen Organisationen der Zivilgesellschaft — Kambodscha, Kosovo und Hamburg.</p>
     </div>
   </header>
 
@@ -402,24 +430,18 @@
     </div>
   </section>
 
-  <!-- ===================== Foto-Band I ===================== -->
-  <section class="band band--solo">
-    <div class="band__inner">
-      <figure class="band__bild auf">
-        <img src="assets/workshop-panorama.webp"
-             alt="Stefan Füsers moderiert einen Workshop vor drei großen Kartenwänden zu Trauma, Rechten und politischer Teilhabe"
-             width="1800" height="1062" loading="lazy" decoding="async" />
-        <figcaption class="band__note">Wirkungsplanung im Zivilen Friedensdienst, Kambodscha</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- ===================== Systemische Organisationsentwicklung ===================== -->
   <section class="pers pers--tief">
     <div class="pers__inner">
       <p class="pers__label auf">Systemische Organisationsentwicklung</p>
-      <div class="pers__text auf">
-        <p>Die Zeit seit der Rückkehr hat Stefan in die eigene Entwicklung gesteckt: neben der Ausbildung bei der WISPO Reflexionsseminare mit IP-GO und der AGdD, die ihn spürbar weiterentwickelt haben. Sein Handwerk bleibt das Coaching kleiner Runden und die Planungs- und Reflexionsworkshops: mit der Leitung die Ausrichtung klären, mit der Gruppe den Weg dorthin gestalten — im Gespräch, an der Wand, in kleinen Schritten. Als Services des Instituts: <a href="coaching.html">Projekt-Coaching</a> und <a href="wirkungsberatung.html">Wirkungsberatung</a>.</p>
+      <div class="pers__text mitbild auf">
+        <figure class="mitbild__bild">
+          <img src="assets/workshop-panorama.webp"
+               alt="Stefan Füsers moderiert einen Workshop vor drei großen Kartenwänden zu Trauma, Rechten und politischer Teilhabe"
+               width="1800" height="1062" loading="lazy" decoding="async" />
+          <figcaption class="mitbild__note">Wirkungsplanung im Zivilen Friedensdienst, Kambodscha</figcaption>
+        </figure>
+        <p>Die Zeit seit der Rückkehr hat Stefan in die eigene Entwicklung gesteckt: in die Ausbildung in systemischer Organisationsentwicklung bei der <a href="https://www.systemisches-zentrum.de/" target="_blank" rel="noopener">WISPO</a> — und in aktiven Netzwerkaufbau, aus dem heraus heute vieles von Impact Up entsteht (mehr dazu bei <a href="index.html#about">Über Uns</a>). Sein Handwerk bleibt das Coaching kleiner Runden und die Planungs- und Reflexionsworkshops: mit der Leitung die Ausrichtung klären, mit der Gruppe den Weg dorthin gestalten — im Gespräch, an der Wand, in kleinen Schritten. Als Services des Instituts: <a href="coaching.html">Projekt-Coaching</a> und <a href="wirkungsberatung.html">Wirkungsberatung</a>.</p>
       </div>
     </div>
   </section>
@@ -445,7 +467,7 @@
       <div class="pers__text auf">
         <p>Das letzte Jahr gehörte der künstlichen Intelligenz — nicht als Thema für sich, sondern als Zusammenarbeit. Im Rahmen seiner Selbständigkeit hat Stefan begonnen, mit ihr zu arbeiten: Er nutzt sie, um die Dinge in die Welt zu bringen, die hier stehen — die Konstrukte, die Werkstatt, diese Webseite. Genau darin liegt sein Anspruch: künstliche Intelligenz für Sinn und Zweck einzusetzen, in Zusammenarbeit — so, wie Zusammenarbeit auch zwischen Menschen entsteht. Was auf diesen Seiten steht, ist auf diese Weise entstanden.</p>
 
-        <p>Ihn interessiert dabei weniger, was diese Systeme können, als woran sie sich binden: an die Sprache, die Wirkungslogik und die Maßstäbe einer Arbeit. Was in ihrem Inneren geschieht, versteht niemand ganz — Stefan verfolgt, wer die Entwicklung treibt und welche Gedankenkonstrukte dort entstehen. Die Arbeitsteilung ist für ihn klar: Die Sortierarbeit darf die Maschine machen; Urteil, Verantwortung und der Moment im Raum bleiben bei Menschen. Und ein Kooperationsnetzwerk ist in diesem Jahr mitgewachsen — von IP-GO über das Hamburger Selbständigen-Netzwerk und die EH-Rückkehrer bis zur KURVE Wustrow. Als Service des Instituts: <a href="ki-integration.html">Integration künstlicher Intelligenz</a>.</p>
+        <p>Ihn interessiert dabei weniger, was diese Systeme können, als woran sie sich binden: an die Sprache, die Wirkungslogik und die Maßstäbe einer Arbeit. Was in ihrem Inneren geschieht, versteht niemand ganz — Stefan verfolgt, wer die Entwicklung treibt und welche Gedankenkonstrukte dort entstehen. Die Arbeitsteilung ist für ihn klar: Die Sortierarbeit darf die Maschine machen; Urteil, Verantwortung und der Moment im Raum bleiben bei Menschen. Die Integration von KI in eure Prozesse bieten wir als Service an: <a href="ki-integration.html">Integration künstlicher Intelligenz</a>.</p>
       </div>
     </div>
   </section>
