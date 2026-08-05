@@ -3028,8 +3028,14 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
     linear-gradient(180deg,
       var(--moss) 0%,
-      var(--moss-deepest) calc(100% - 160px),
-      var(--parchment) calc(100% - 50px),
+      /* Gleiche Kurve wie bei .hero--sub: frueher ansetzen, flach
+         beginnen. Auf Hoehe der letzten Textzeile ist das Gruen
+         schon sichtbar duenner, ohne dass Claim oder Unterzeile
+         ihren dunklen Grund verlieren. */
+      var(--moss-deepest) calc(100% - 265px),
+      #31502E calc(100% - 205px),
+      #6E7A5E calc(100% - 120px),
+      var(--parchment) calc(100% - 40px),
       var(--parchment) 100%);
   padding-bottom: 190px;
 }
@@ -3048,7 +3054,15 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
     radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
     linear-gradient(180deg,
       var(--moss) 0%,
-      var(--moss-deepest) calc(100% - 130px),
+      /* Das Aufhellen setzt jetzt rund zwei Zeilen frueher an, aber
+         mit flachem Beginn: auf den ersten 55 px oeffnet sich das
+         Gruen nur leicht (#31502E), sodass es auf Hoehe der letzten
+         Textzeile bereits sichtbar weniger wird, ohne dass der helle
+         Text seinen Grund verliert (7.4:1 statt 8.4:1). Erst danach
+         kippt es schnell nach Pergament. */
+      var(--moss-deepest) calc(100% - 185px),
+      #31502E calc(100% - 130px),
+      #6E7A5E calc(100% - 70px),
       var(--parchment) calc(100% - 5px),
       var(--parchment) 100%);
   padding-bottom: 105px;
@@ -3063,8 +3077,11 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
 body .stage {
   background: linear-gradient(180deg,
     var(--moss-deepest) 0%,
-    var(--moss-deepest) calc(100% - 130px),
-    var(--parchment) calc(100% - 34px),
+    /* Gleiche Kurve wie bei den anderen Baendern. */
+    var(--moss-deepest) calc(100% - 235px),
+    #31502E calc(100% - 175px),
+    #6E7A5E calc(100% - 95px),
+    var(--parchment) calc(100% - 30px),
     var(--parchment) 100%);
   padding-bottom: 0;
 }
