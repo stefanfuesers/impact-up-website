@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 580" role="img" aria-labelledby="titel beschreibung">
+  <title id="titel">Three problem fields, four impact fields</title>
+  <desc id="beschreibung">Ruth Seliger's three problem fields ecology, economy and democracy are connected and correspond to the Impact Up impact fields Ecosystem Earth, Social Participation and Democracy. Peace and Nonviolence is added at Impact Up as a fourth field. The four impact fields are networked with one another.</desc>
+
+  <rect width="880" height="580" fill="#F4ECD8"/>
+
+  <text x="60" y="46" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="1.6" fill="#8A5E3B">RUTH SELIGER</text>
+  <text x="60" y="74" font-family="Cormorant Garamond, Georgia, serif" font-size="27" fill="#2D4A2B">Three problem fields</text>
+
+  <text x="850" y="46" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="1.6" fill="#8A5E3B">IMPACT UP</text>
+  <text x="850" y="74" text-anchor="end" font-family="Cormorant Garamond, Georgia, serif" font-size="27" fill="#2D4A2B">Four impact fields</text>
+
+  <g fill="none" stroke="#C9A961" stroke-width="1.1" opacity="0.8">
+    <path d="M60 182 C 24 212, 24 284, 60 312"/>
+    <path d="M60 312 C 26 342, 26 412, 60 442"/>
+  </g>
+
+  <g fill="none" stroke="#C9A961" opacity="0.85">
+    <path d="M635 182 C 655 172, 668 192, 690 182" stroke-width="1.2"/>
+    <path d="M635 342 C 656 332, 668 352, 690 342" stroke-width="1.2"/>
+    <path d="M552 214 C 540 250, 566 278, 552 310" stroke-width="1.2"/>
+    <path d="M772 214 C 760 250, 786 278, 772 310" stroke-width="1.2"/>
+    <path d="M600 214 C 632 246, 692 282, 730 310" stroke-width="0.9" stroke-dasharray="2 2"/>
+    <path d="M724 214 C 692 246, 632 282, 596 310" stroke-width="0.9" stroke-dasharray="2 2"/>
+  </g>
+  <g fill="#C9A961">
+    <circle cx="662" cy="262" r="3.6"/>
+    <circle cx="662" cy="182" r="2.6"/>
+    <circle cx="662" cy="342" r="2.6"/>
+    <circle cx="552" cy="262" r="1.9"/>
+    <circle cx="772" cy="262" r="1.9"/>
+  </g>
+
+  <g fill="none" stroke="#C9A961" stroke-width="1.4">
+    <path d="M280 182 C 340 176, 400 190, 470 182"/>
+    <path d="M280 312 C 348 306, 402 336, 470 342"/>
+    <path d="M280 442 C 400 472, 566 470, 668 432 C 716 414, 754 396, 772 374"/>
+  </g>
+  <g fill="#C9A961">
+    <circle cx="375" cy="183" r="3.2"/>
+    <circle cx="375" cy="321" r="3.2"/>
+    <circle cx="470" cy="459" r="3.2"/>
+  </g>
+
+  <path d="M498 124 C 578 106, 676 112, 748 146" fill="none" stroke="#C9A961" stroke-width="1.3" stroke-dasharray="5 4" opacity="0.9"/>
+  <text x="486" y="128" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#8A5E3B">added with us</text>
+
+  <g font-family="Cormorant Garamond, Georgia, serif" font-size="24" fill="#1F1A14" text-anchor="middle">
+    <rect x="60" y="150" width="220" height="64" rx="2" fill="#FAF6EA" stroke="#B8855E" stroke-width="1"/>
+    <text x="170" y="190">Ecology</text>
+    <rect x="60" y="280" width="220" height="64" rx="2" fill="#FAF6EA" stroke="#B8855E" stroke-width="1"/>
+    <text x="170" y="320">Economy</text>
+    <rect x="60" y="410" width="220" height="64" rx="2" fill="#FAF6EA" stroke="#B8855E" stroke-width="1"/>
+    <text x="170" y="450">Democracy</text>
+  </g>
+
+  <g font-family="Cormorant Garamond, Georgia, serif" font-size="22" fill="#F4ECD8" text-anchor="middle">
+    <rect x="470" y="150" width="165" height="64" rx="2" fill="#2D4A2B" stroke="#C9A961" stroke-width="1.2"/>
+    <text x="552" y="190">Ecosystem Earth</text>
+
+    <rect x="690" y="150" width="165" height="64" rx="2" fill="#2D4A2B" stroke="#C9A961" stroke-width="1.2"/>
+    <text x="772" y="179">Peace &amp;</text>
+    <text x="772" y="203">Nonviolence</text>
+
+    <rect x="470" y="310" width="165" height="64" rx="2" fill="#2D4A2B" stroke="#C9A961" stroke-width="1.2"/>
+    <text x="552" y="339">Social</text>
+    <text x="552" y="363">Participation</text>
+
+    <rect x="690" y="310" width="165" height="64" rx="2" fill="#2D4A2B" stroke="#C9A961" stroke-width="1.2"/>
+    <text x="772" y="350">Democracy</text>
+  </g>
+
+  <text x="60" y="524" font-family="Inter, system-ui, sans-serif" font-size="14.5" fill="#1F1A14">Both of us name three fields, in different words. Peace &amp; Nonviolence comes out of our own work.</text>
+  <text x="60" y="548" font-family="Inter, system-ui, sans-serif" font-size="14.5" fill="#1F1A14">None becomes lastingly good unless the others do too – which is why they stand in a network, not in a list.</text>
+</svg>
