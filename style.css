@@ -343,16 +343,12 @@ h2.eyebrow--xl,
   margin-bottom: 16px;
 }
 /* Angebotsseiten: gemeinsamer Schlusssatz des Einstiegs —
-   schliesst direkt an den hero__sub-Absatz an (dessen 16px
-   margin-bottom wird groesstenteils aufgehoben) */
+   laeuft als Teil des hero__sub-Absatzes mit, in Gold */
 .hero__motto {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(19px, 2.2vw, 24px);
-  line-height: 1.3;
   color: var(--gold);
-  margin: -10px 0 0;
-  max-width: 540px;
+  font-size: 1.12em;
 }
 /* NICHT mit dem .hero-Block oben zusammenlegen (Welle 1 geprueft):
    .hero--sub setzt weiter oben padding-bottom:56px und hat dieselbe
