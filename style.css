@@ -338,17 +338,18 @@ h2.eyebrow--xl,
 .hero__sub {
   font-size: 16px;
   line-height: 1.55;
-  max-width: 540px;
+  max-width: 600px; /* 12.08.: ~1,5cm breiter, damit die Einstiege weniger Hoehe brauchen */
   color: rgba(244,236,216,0.85);
   margin-bottom: 16px;
 }
 /* Angebotsseiten: gemeinsamer Schlusssatz des Einstiegs —
-   laeuft als Teil des hero__sub-Absatzes mit, in Gold */
+   laeuft als Teil des hero__sub-Absatzes mit, in Gold und gross */
 .hero__motto {
   font-family: var(--serif);
   font-style: italic;
   color: var(--gold);
-  font-size: 1.12em;
+  font-size: clamp(19px, 2.2vw, 24px);
+  line-height: 1.3;
 }
 /* NICHT mit dem .hero-Block oben zusammenlegen (Welle 1 geprueft):
    .hero--sub setzt weiter oben padding-bottom:56px und hat dieselbe
