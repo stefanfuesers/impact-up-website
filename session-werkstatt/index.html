@@ -1365,7 +1365,7 @@ function renderBogen(){
   <div class="kontextzeile">
     <b>${ANLASS_KURZ[A.anlassTyp]||""}</b> · ${EBENEN[A.ebene]||""} · ${groesseLabel()} · ${DAUERN[A.dauer].label} · ${({praesenz:"vor Ort",online:"online",hybrid:"hybrid"})[A.ort]} · Phase: ${PHASEN[A.phase]||""}<br>
     Energie: ${ENERGIEN[A.energie]||""} · Stimmung: ${STIMMUNGEN[A.stimmung]||""}<br>
-    <b>Ziel:</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].label).join(", "):""}
+    <b>Ziel:</b> ${esc(A.ziel)}${A.ergebnistypen.length?" ("+A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].label).join(", ")+")":""}
   </div>
   ${brilleBox(brille)}
   ${begleit.length?`<div class="begleit"><h3>Begleitende Strukturen – einmal erklärt, gelten den ganzen Tag</h3><ul>${begleit.map(b=>`<li><b>${b.name}:</b> ${esc(b.text)}${b.quelle?` (<a href="${b.quelle.url}" target="_blank" rel="noopener">mehr</a>)`:""}</li>`).join("")}</ul></div>`:""}
@@ -1399,7 +1399,7 @@ function renderLeitfaden(){
   <h1>${esc(kurzTitel())}</h1>
   <div class="kontextzeile">
     <b>${L.T.titelLeitfaden.replace("Gesprächsleitfaden: ","")}</b> · ${G_DAUERN[A.g4Dauer]||A.g4Dauer+" Min"} · ${G_ORTE[A.g4Ort]||""} · Beziehung: ${G_BEZIEHUNG[A.g1Beziehung]||""} · Die Person ${({weiss:"weiß Bescheid",ahnt:"ahnt etwas",ueberrascht:"wird überrascht sein",unklar:"– unklar, was sie weiß"})[A.g2Wissen||"unklar"]}<br>
-    <b>Ziel:</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNIS_G[t]).map(t=>ERGEBNIS_G[t].label).join(", "):""}
+    <b>Ziel:</b> ${esc(A.ziel)}${A.ergebnistypen.length?" ("+A.ergebnistypen.filter(t=>ERGEBNIS_G[t]).map(t=>ERGEBNIS_G[t].label).join(", ")+")":""}
   </div>
   <div class="block"><div class="kopf"><span class="titel">Beziehung & Fairness</span></div>
     <p class="kurz">${esc(G_BEZIEHUNG_HINWEIS[A.g1Beziehung]||"")}</p>

@@ -1367,7 +1367,7 @@ function renderBogen(){
   <div class="kontextzeile">
     <b>${ANLASS_KURZ[A.anlassTyp]||""}</b> · ${EBENEN[A.ebene]||""} · ${groesseLabel()} · ${DAUERN[A.dauer].label} · ${({praesenz:"en présentiel",online:"en ligne",hybrid:"hybride"})[A.ort]} · Phase : ${PHASEN[A.phase]||""}<br>
     Énergie : ${ENERGIEN[A.energie]||""} · Ambiance : ${STIMMUNGEN[A.stimmung]||""}<br>
-    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].label).join(", "):""}
+    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" ("+A.ergebnistypen.filter(t=>ERGEBNISTYPEN[t]).map(t=>ERGEBNISTYPEN[t].label).join(", ")+")":""}
   </div>
   ${brilleBox(brille)}
   ${begleit.length?`<div class="begleit"><h3>Structures d'accompagnement – expliquées une fois, valables toute la journée</h3><ul>${begleit.map(b=>`<li><b>${b.name} :</b> ${esc(b.text)}${b.quelle?` (<a href="${b.quelle.url}" target="_blank" rel="noopener">plus</a>)`:""}</li>`).join("")}</ul></div>`:""}
@@ -1401,7 +1401,7 @@ function renderLeitfaden(){
   <h1>${esc(kurzTitel())}</h1>
   <div class="kontextzeile">
     <b>${L.T.titelLeitfaden.replace("Guide de conversation : ","")}</b> · ${G_DAUERN[A.g4Dauer]||A.g4Dauer+" min"} · ${G_ORTE[A.g4Ort]||""} · Relation : ${G_BEZIEHUNG[A.g1Beziehung]||""} · La personne ${({weiss:"le sait déjà",ahnt:"s'en doute",ueberrascht:"sera surprise",unklar:"– on ne sait pas ce qu'elle sait"})[A.g2Wissen||"unklar"]}<br>
-    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" — "+A.ergebnistypen.filter(t=>ERGEBNIS_G[t]).map(t=>ERGEBNIS_G[t].label).join(", "):""}
+    <b>Objectif :</b> ${esc(A.ziel)}${A.ergebnistypen.length?" ("+A.ergebnistypen.filter(t=>ERGEBNIS_G[t]).map(t=>ERGEBNIS_G[t].label).join(", ")+")":""}
   </div>
   <div class="block"><div class="kopf"><span class="titel">Relation & équité</span></div>
     <p class="kurz">${esc(G_BEZIEHUNG_HINWEIS[A.g1Beziehung]||"")}</p>
