@@ -54,6 +54,15 @@ h2.eyebrow--xl,
   line-height: 1.2;
   margin: 0 0 22px;
 }
+/* Mobil: "Wirkungsorientierung" (20 Grossbuchstaben) muss in eine
+   Zeile von ~318px passen, sonst wird rechts abgeschnitten. */
+@media (max-width: 480px) {
+  h2.eyebrow--xl,
+  .eyebrow--xl {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+}
 
 .section-title {
   font-family: var(--serif);
