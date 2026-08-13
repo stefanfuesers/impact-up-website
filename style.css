@@ -1890,7 +1890,7 @@ h2.eyebrow--xl,
   margin: 0 0 26px;
   font-family: var(--serif);
   font-weight: 600;
-  font-size: clamp(22px, 2.6vw, 28px);
+  font-size: clamp(23px, 2.8vw, 30px); /* 13.08.: einen Tick groesser zur laengeren Buttonzeile */
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--ink);                        /* 14.7:1 auf Pergament */
@@ -1906,7 +1906,7 @@ h2.eyebrow--xl,
      letzte Element im Block, das Fusspolster kommt aus .abschluss */
   margin-bottom: 0;
 }
-.abschluss__wege .abschluss__cta { margin-left: auto; }
+.abschluss__wege .abschluss__cta { margin-left: 0; } /* 13.08.: laeuft in der Zeile mit */
 /* Ghost-Variante fuer helle Gruende: .btn--ghost traegt Pergament-
    Schrift und funktioniert nur auf Moos. */
 .btn--outline {
@@ -2016,15 +2016,10 @@ h2.eyebrow--xl,
   }
 }
 
-/* Der Abschluss-Button endet auf Hoehe der rechten Textkante des
-   Satzes darueber. Der Satz ist in jeder Sprache anders lang,
-   deshalb pro Sprache gemessen (bei 1440px Fensterbreite).
-   Unter 901px stapelt die Reihe ohnehin. */@media (min-width: 901px) {
-  .abschluss__wege .abschluss__cta            { margin-right: 109px; }  /* DE */
-  html[lang="en"] .abschluss__wege .abschluss__cta { margin-right: 64px; }
-  html[lang="es"] .abschluss__wege .abschluss__cta { margin-right: 93px; }
-  html[lang="fr"] .abschluss__wege .abschluss__cta { margin-right: 79px; }
-}
+/* 13.08.2026: Mit dem fuenften Button (Impulse) laeuft die Reihe
+   durchgaengig in einer Zeile; die fruehere Rechtsbuendigkeit des
+   Gold-Buttons (margin-left:auto + gemessene margin-rights) brach
+   ihn in eine zweite Zeile und ist auf Stefans Ansage entfallen. */
 
 /* --- 1 · Die Sektion steht jetzt auf Pergament --------------- */
 .weitergehen {
