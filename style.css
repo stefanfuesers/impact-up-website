@@ -2915,3 +2915,14 @@ body .ruf__p--flow {
     max-width: 300px;
   }
 }
+
+/* --- WELLE 4e - Personenseite nutzt den Hero der Angebotsseiten ---
+   Die eigene Buehne (.stage) ist am 14.08. entfallen: Kicker-Zeile
+   und grosse Namens-Ueberschrift raus, der Name steht jetzt als
+   kleine Goldzeile ueber dem Text - gleiche Bauweise wie Coaching,
+   Wirkungsberatung und KI Integration.
+   Der erste Textblock der Personenseite heisst .pers und nicht
+   .sub-section, deshalb greift die bestehende Anschlussregel dort
+   nicht. Sie wird hier nachgezogen, sonst steht nach dem Band ein
+   doppeltes Polster. */
+.hero--sub + .pers { padding-top: 18px; }
