@@ -2788,3 +2788,89 @@ body .ruf__p--flow {
     #3C5A38 54%,
     var(--parchment) 100%);
 }
+
+/* ============================================================
+   WELLE 4 - Bild im Textfluss (.textbild)
+   ------------------------------------------------------------
+   Eigenstaendige Klasse, bewusst NICHT .mitbild: die haengt an
+   .pers--tief und traegt einen gruenen Schimmer, der die hellen
+   abfotografierten Papierabzuege der Stefan-Seite rettet. Diese
+   Bilder sind randscharf und brauchen ihn nicht.
+   Klein gehalten - das Bild begleitet den Text, es fuehrt ihn
+   nicht an. Radius 2px und die Goldhaarlinie nach Design Guide
+   Section 6/7, Schatten sparsam.                              */
+.textbild {
+  float: right;
+  width: min(300px, 38%);
+  margin: 6px 0 18px 32px;
+  padding: 0;
+}
+.textbild--links {
+  float: left;
+  margin: 6px 32px 18px 0;
+}
+.textbild img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  border: 1px solid rgba(201, 169, 97, 0.55);
+  box-shadow: 0 2px 12px rgba(31, 26, 20, 0.08);
+}
+.textbild figcaption {
+  margin-top: 8px;
+  font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: #6b5d4d;              /* 5.5:1 auf Pergament */
+}
+/* Auf dunklem Grund geht die Bildnote auf Pergament-Schrift. */
+.sub-section--moss .textbild figcaption,
+.pers--tief .textbild figcaption {
+  color: rgba(244, 236, 216, 0.82);
+}
+
+/* Unter 720px traegt der Umfluss nicht mehr: bei rund 38 % Breite
+   bleiben fuer den Text keine lesbaren Zeilen uebrig. Das Bild
+   stellt sich dann quer in den Fluss. */
+@media (max-width: 720px) {
+  .textbild,
+  .textbild--links {
+    float: none;
+    width: 100%;
+    max-width: 340px;
+    margin: 4px auto 22px;
+  }
+}
+
+/* ============================================================
+   WELLE 4b - Blocksatz auf den vier Dropdown-Startseiten
+   ------------------------------------------------------------
+   Gilt nur fuer Konstrukte, Impulse, Werkstatt und Services -
+   deshalb die eigene Klasse an <main> und nicht .page__lead
+   global. Impressum, Datenschutz und Kontakt bleiben im
+   Flattersatz.
+   Silbentrennung ist Pflicht, nicht Kosmetik: Blocksatz ohne
+   Trennung reisst bei 680px Lesebreite Loecher in die Zeile.
+   Das lang-Attribut der Seite steuert dabei die Trennregeln
+   je Sprache mit.
+   Die Pfeilzeile (.card__result) bleibt linksbuendig - eine
+   Zeile im Blocksatz waere nur ein auseinandergezogener Pfeil. */
+.page--blocksatz .page__lead,
+.page--blocksatz .sammel-cards .card > p:not(.card__result) {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Auf schmalen Schirmen traegt Blocksatz nicht mehr: bei rund
+   40 Zeichen Zeilenlaenge wird jede Luecke sichtbar. Dort
+   zurueck in den Flattersatz. */
+@media (max-width: 560px) {
+  .page--blocksatz .page__lead,
+  .page--blocksatz .sammel-cards .card > p:not(.card__result) {
+    text-align: left;
+  }
+}
