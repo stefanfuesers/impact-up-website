@@ -2874,3 +2874,24 @@ body .ruf__p--flow {
     text-align: left;
   }
 }
+
+/* --- WELLE 4c - .textbild--klein --------------------------------
+   Deutlich kleiner als das normale Textbild: es soll den Absatz
+   begleiten, nicht mit ihm konkurrieren.
+   120px statt 180px (Stefan, 14.08.): das Bild ist eine Randnotiz,
+   kein zweites Motiv. Das negative margin-right zieht es an die
+   Kante des Lesecontainers - es steht damit am Rand und nicht im
+   Satzspiegel. */
+.textbild--klein {
+  width: min(120px, 20%);
+  margin: 4px -18px 14px 24px;
+}
+.textbild--klein.textbild--links {
+  margin: 4px 26px 14px 0;
+}
+@media (max-width: 720px) {
+  .textbild--klein {
+    width: 60%;
+    max-width: 220px;
+  }
+}
