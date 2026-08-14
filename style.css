@@ -2895,3 +2895,23 @@ body .ruf__p--flow {
     max-width: 220px;
   }
 }
+
+/* --- WELLE 4d - .textbild--schmal -------------------------------
+   Zwischen .textbild (300px) und .textbild--klein (120px).
+   Auf Konstrukte laeuft der Einleitungstext im Blocksatz um das
+   Bild herum; bei 300px blieben nur noch rund 490px Spalte, und
+   Blocksatz reisst dann Loecher. Mit 230px atmet die Zeile
+   wieder. */
+.textbild--schmal {
+  width: min(230px, 30%);
+  margin: 6px 0 16px 28px;
+}
+.textbild--schmal.textbild--links {
+  margin: 6px 28px 16px 0;
+}
+@media (max-width: 720px) {
+  .textbild--schmal {
+    width: 100%;
+    max-width: 300px;
+  }
+}
