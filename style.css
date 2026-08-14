@@ -2888,3 +2888,8 @@ body .ruf__p--flow {
    nicht. Sie wird hier nachgezogen, sonst steht nach dem Band ein
    doppeltes Polster. */
 .hero--sub + .pers { padding-top: 18px; }
+
+/* Personenseite: der Name steht zweifarbig wie die Wortmarke —
+   Vorname im hellen Sandton, Nachname in Gold. */
+.eyebrow--name { color: #F4ECD8; }
+.eyebrow--name em { font-style: normal; color: var(--gold-bright); }
