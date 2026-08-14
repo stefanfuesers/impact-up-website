@@ -31,7 +31,7 @@
   <link rel="preload" href="assets/fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/cormorant-garamond-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=65" />
+  <link rel="stylesheet" href="style.css?v=66" />
 
   <style>
     /* ============================================================
@@ -42,71 +42,6 @@
        Grundhaltung: klein, eng, ruhig. Der Text laeuft ueber die
        volle Inhaltsbreite, die Bilder bleiben zurueckhaltend.
        ============================================================ */
-
-    /* ---------- Buehne oben ---------- */
-    .stage {
-      position: relative;
-      background: var(--moss-deepest);
-      padding: 104px 0 0;
-      overflow: hidden;
-    }
-    .stage::before {
-      /* weiches Licht hinter der Szene */
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 8%;
-      width: 120vw;
-      height: 90%;
-      transform: translateX(-50%);
-      background: radial-gradient(ellipse at 50% 40%,
-                  rgba(201,169,97,.18) 0%,
-                  rgba(201,169,97,.06) 42%,
-                  transparent 72%);
-      pointer-events: none;
-    }
-    .stage__inner {
-      position: relative;
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 0 32px 52px;
-    }
-    /* Die Buehne traegt nur Wort – kein Bild. */
-    .stage__kicker {
-      font-family: var(--sans);
-      font-size: 12px;
-      letter-spacing: 3.2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0;
-      animation: einblenden .9s ease .1s forwards;
-    }
-    .stage__name {
-      font-family: var(--serif);
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      color: var(--parchment);
-      margin: 12px 0 0;
-      font-weight: 400;
-      opacity: 0;
-      animation: einblenden 1s ease .25s forwards;
-    }
-    .stage__name em {
-      font-style: normal;
-      color: var(--gold);
-    }
-    .stage__claim {
-      font-family: var(--serif);
-      font-size: clamp(17px, 1.8vw, 22px);
-      line-height: 1.5;
-      color: rgba(244,236,216,.86);
-      max-width: 48ch;
-      margin: 16px 0 0;
-      opacity: 0;
-      animation: einblenden 1s ease .45s forwards;
-    }
-
-    @keyframes einblenden { to { opacity: 1; } }
 
     /* ---------- Fliesstext-Bereiche ---------- */
     .pers { padding: 54px 0; }
@@ -312,7 +247,7 @@
     .js-auf .auf:nth-child(3) { transition-delay: .18s; }
 
     @media (prefers-reduced-motion: reduce) {
-      .js-auf .auf, .stage__kicker, .stage__name, .stage__claim {
+      .js-auf .auf {
         opacity: 1 !important; transform: none !important; animation: none !important;
       }
     }
@@ -320,8 +255,6 @@
     /* ---------- Schmale Bildschirme ---------- */
     @media (max-width: 900px) {
       .pers { padding: 44px 0; }
-      .stage { padding-top: 92px; }
-      .stage__inner { padding-bottom: 42px; }
       .weg li { grid-template-columns: 78px 1fr; gap: 14px; }
       /* Portrait oben, kein Umfluss */
       .kopf__bild { float: none; width: 190px; margin: 0 auto 22px; }
@@ -337,7 +270,7 @@
       .ruf { padding: 52px 0; }
     }
     @media (max-width: 560px) {
-      .stage__inner, .pers__inner, .band__inner { padding-left: 20px; padding-right: 20px; }
+      .pers__inner, .band__inner { padding-left: 20px; padding-right: 20px; }
       /* Schmale Spalte: Blocksatz reisst Loecher – linksbuendig lesen */
       .kopf .pers__text p, .mitbild p { text-align: left; hyphens: manual; }
     }

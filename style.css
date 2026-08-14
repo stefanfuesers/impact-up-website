@@ -2188,19 +2188,6 @@ h2.eyebrow--xl,
    zuruecknehmbar ist – statt in vier Dateien verstreut.
    ============================================================ */
 
-/* --- 9 · Die Buehne laeuft aus wie das Hero-Band ------------- */
-/* Name und Claim bleiben im dunklen Teil, der Rest gibt die
-   Farbe an den Bio-Text darunter ab. */
-body .stage {
-  background: linear-gradient(180deg,
-    var(--moss-deepest) 0%,
-    var(--moss-deepest) calc(100% - 240px),
-    var(--parchment) calc(100% - 60px),
-    var(--parchment) 100%);
-  padding-bottom: 0;
-}
-body .stage__inner { padding-bottom: 96px; }
-
 /* --- 10 · Die zwei dunklen Textsektionen werden hell --------- */
 body .pers--tief {
   color: var(--ink-soft);
@@ -2572,25 +2559,6 @@ body .band--warm .band__bild .band__note { color: rgba(244,236,216,0.82); }   /*
   padding-bottom: 105px;
 }
 
-/* --- C3 - Die Buehne der Personenseite --------------------- */
-/* 180px Auslauf gegen 96px Polster: vier der fuenf Claim-Zeilen
-   standen im Verlauf, auf schmalen Viewports mehr. Neu: 130px
-   Auslauf (rund vier Claim-Zeilen a 33px), Beginn rund 40px
-   unter der letzten Zeile. body-Praefix, damit die Regel auch
-   das Inline-@media (max-width:900px) der Seite schlaegt. */
-body .stage {
-  background: linear-gradient(180deg,
-    var(--moss-deepest) 0%,
-    /* Dieselbe Rampe wie zuvor, zwei Zeilen (55 px) nach oben. */
-    var(--moss-deepest) calc(100% - 185px),
-    var(--parchment) calc(100% - 89px),
-    var(--parchment) 100%);
-  padding-bottom: 0;
-}
-/* 27px weniger als zuvor: das ist die eine Zeile, um die der
-   Bio-Text hoeher startet. */
-body .stage__inner { padding-bottom: 143px; }
-
 /* --- C4 - Der erste Text darf hoeher ruecken --------------- */
 /* Die Baender laufen jetzt hell aus und binden ohne Kante an
    die erste Sektion an; ein volles 90px-Deckpolster darueber
@@ -2599,8 +2567,8 @@ body .stage__inner { padding-bottom: 143px; }
    dazwischen. */
 .hero--sub + .sub-section,
 .hero--sub + .trenner + .sub-section { padding-top: 18px; }
-/* Auf der Personenseite dieselbe Bewegung nach der Buehne. */
-body .stage + .pers { padding-top: 30px; }
+/* Auf der Personenseite gilt dasselbe; die Regel steht als
+   .hero--sub + .pers weiter unten (WELLE 4e). */
 
 /* ============================================================
    WELLE 2e - Nachtrag aus der Pruefung
@@ -2645,12 +2613,6 @@ body .stage + .pers { padding-top: 30px; }
 /* ============================================================
    WELLE 2f - Personenseite: Text und Bilder verzahnen
    ============================================================ */
-
-/* Der Bio-Text startet direkt unter der Buehne. KEIN negatives
-   margin hier - das schob die Sektion unter die Buehne, deren
-   Hintergrund die erste Zeile verdeckte. Der Raum kommt aus dem
-   Bodenpolster der Buehne (unten in C3). */
-body .stage + .pers { padding-top: 0; }
 
 /* Portrait links, aber MITTEN im Text: die ersten drei Zeilen
    laufen ueber die volle Breite, ab Zeile vier umfliesst der Text
