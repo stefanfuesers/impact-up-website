@@ -33,65 +33,58 @@
   <style>
     /* Impuls-Layout: Fliesstext mit umfliessenden Bildern.
        Beim naechsten CSS-Durchgang nach style.css ueberfuehren. */
-    .impuls-fig { margin: 6px 0 20px; max-width: 430px; }
+    .impuls-fig { margin: 4px 0 16px; max-width: 400px; }
     .impuls-fig img {
       display: block; width: 100%; height: auto;
       border: 1px solid var(--stone, #B8855E); border-radius: 2px;
       background: #FAF6EA;
     }
-    .impuls-fig figcaption {
-      font-size: .875rem; line-height: 1.5; margin-top: 8px;
-      color: var(--ink-soft, #4a4238);
-    }
-    .sub-section--moss .impuls-fig {
-      background: #FAF6EA;
-      border-left: 3px solid var(--gold, #C9A961);
-      border-radius: 2px;
-      padding: 18px 20px 20px;
-      box-shadow: 0 2px 10px rgba(31, 26, 20, .08);
-    }
-    .sub-section--moss .impuls-fig img { border: none; }
-    .sub-section--moss .impuls-fig figcaption { color: #3A332A; }
-    .impuls-fig--right { float: right; margin-left: 40px; }
-    .impuls-fig--left  { float: left;  margin-right: 40px; }
-    .impuls-fig--wide  { max-width: 720px; margin: 30px auto 26px; float: none; }
+    .impuls-fig--right { float: right; margin-left: 34px; }
+    .impuls-fig--left  { float: left;  margin-right: 34px; }
     .impuls-clear::after { content: ""; display: block; clear: both; }
     .impuls-abbinder { clear: both; }
-    /* Die vier Arten stehen enger beieinander als normale Absaetze */
-    .impuls-stufe { margin-bottom: 10px; }
-    .impuls-stufe + .impuls-stufe { margin-top: 0; }
-    #wertschaetzung .impuls-fig--wide { max-width: 760px; }
-    #alltag .impuls-beispiele { margin-bottom: 14px; }
-    /* Buchtitel heben sich im Fliesstext heraus */
     .buchtitel {
       font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
-      font-size: 1.3em;
-      color: var(--gold, #C9A961);
+      font-size: 1.3em; color: #A9843D;
     }
-    .sub-section--parchment .buchtitel { color: #A9843D; }
+    /* Der Impuls laeuft eng: wenig Luft zwischen Abschnitten und Absaetzen. */
+    #inhalt .sub-section { padding-top: 40px; padding-bottom: 40px; }
+    #inhalt .hero--sub + .sub-section { padding-top: 30px; }
+    #inhalt .sub__inner { padding: 22px 0 8px; }
+    #inhalt .section-title { margin-bottom: 14px; }
+    #inhalt .lead { margin-bottom: 12px; }
+    #inhalt .trenner--skyline { min-height: 52px; }
+    #inhalt .philo-quellen { margin-top: 18px; }
+    #inhalt .praxis-links { margin-top: 20px; }
+    /* Der Einstieg braucht eine Zeile mehr Gruen, damit die letzte Zeile
+       nicht im Verlauf verschwindet. */
+    #top.hero--sub {
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(201,169,97,0.12) 0%, transparent 60%),
+        linear-gradient(180deg,
+          var(--moss) 0%,
+          var(--moss-deepest) calc(100% - 110px),
+          var(--parchment) calc(100% - 30px),
+          var(--parchment) 100%);
+      padding-bottom: 82px;
+    }
+    /* Grafiken klein halten */
+    #wertschaetzung .impuls-fig { width: 360px; max-width: 100%; }
+    #verbindungen .impuls-fig { width: 300px; max-width: 100%; }
+    /* Der Schluss steht dicker und in Gold-Tinte */
+    .impuls-schluss { font-weight: 600; color: #8A6D2F; }
     @media (max-width: 780px) {
       .impuls-fig--right, .impuls-fig--left {
         float: none; margin-left: 0; margin-right: 0; max-width: 100%;
       }
+      #wertschaetzung .impuls-fig, #verbindungen .impuls-fig { width: 100%; }
     }
-    /* Dieser Impuls laeuft enger als die Konstruktseiten: weniger Luft
-       zwischen den Abschnitten, kleinere Grafiken. */
-    #inhalt .sub-section { padding-top: 52px; padding-bottom: 52px; }
-    #inhalt .hero--sub { padding-bottom: 34px; }
-    #inhalt .sub__inner { padding: 26px 0 12px; }
-    #inhalt .section-title { margin-bottom: 18px; }
-    #inhalt .lead { margin-bottom: 14px; }
-    #inhalt .eyebrow { margin-bottom: 10px; }
-    #inhalt .trenner--skyline { min-height: 68px; }
-    .impuls-fig--wide { max-width: 560px; margin: 20px 0 18px; }
-    #wertschaetzung .impuls-fig--wide { max-width: 560px; }
-    #verbindungen .impuls-fig--left { width: 330px; max-width: 100%; margin: 4px 34px 14px 0; }
-    .impuls-fig figcaption { margin-top: 6px; }
-    .philo-quellen { margin-top: 22px; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Ir al contenido</a>
+
+
 
 
 
@@ -151,9 +144,6 @@
 
   <main id="inhalt">
 
-  <!-- ============================================ -->
-  <!-- SUB · Hero                                   -->
-  <!-- ============================================ -->
   <header id="top" class="hero hero--sub">
 
     <img class="markwm markwm--right" src="assets/favicon.svg" alt="" aria-hidden="true">
@@ -162,124 +152,89 @@
       <div class="hero__text">
         <h1 class="eyebrow eyebrow--light" style="margin:0 0 18px;">Impulso · Pensar la sociedad como una red: la democracia y la humanidad ya no son algo evidente</h1>
         <p class="hero__sub">
-          Las elecciones en Sajonia-Anhalt han mostrado lo cerca que estamos de la catástrofe. Por alarmante que sea el resultado, hay que alegrarse de que la AfD se haya quedado una vez más por debajo de la mayoría absoluta. Hemos ganado algo de tiempo y deberíamos aprovecharlo. Para nosotros, aprovecharlo significa formar un nosotros que vaya más allá de los temas concretos, de modo que volvamos a reforzar la base. Esa base la tenemos desde hace mucho, sencillamente hemos dejado de verla. Y el trabajo en red sobre ella empieza mucho antes de lo que pensamos.
+          Las elecciones en Sajonia-Anhalt han mostrado lo cerca que estamos de la catástrofe. Por alarmante que sea el resultado, hay que alegrarse de que la AfD se haya quedado una vez más por debajo de la mayoría absoluta. Hemos ganado algo de tiempo y deberíamos aprovecharlo. Para nosotros, aprovecharlo significa formar un nosotros que vaya más allá de los temas concretos, de modo que volvamos a reforzar la base. Esa base la tenemos desde hace mucho, sencillamente hemos dejado de verla. Y el trabajo en red sobre esta base empieza mucho antes de lo que pensamos.
         </p>
       </div>
     </div>
   </header>
 
-  <!-- ============================================ -->
-  <!-- 1 · Die Basis                                -->
-  <!-- ============================================ -->
   <section id="basis" class="sub-section sub-section--parchment has-sysbg">
     <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
     <div class="container">
-      <p class="eyebrow">La base</p>
-      <h2 class="section-title">Lo que compartimos sin verlo</h2>
+      <h2 class="section-title">La base: lo que compartimos sin verlo</h2>
 
       <p class="lead lead--full">
-        La base es una cierta forma de humanidad, es decir, la dignidad de la persona, junto con los derechos democráticos fundamentales. Humanidad y democracia, y eso debería bastar para pensar en redes.
+        La base es una cierta forma de humanidad, es decir, la dignidad de la persona, junto con los derechos democráticos fundamentales. Humanidad y democracia, y eso debería bastar para pensar en redes. Quien cumple con eso hace algo bueno. El banco de alimentos con su comedor, el grupo local de izquierdas con su repair café, el club deportivo, el comité de empresa o también la parroquia. La lista es larga.
       </p>
 
       <p class="lead lead--full">
-        Quien cumple con eso hace algo bueno. El banco de alimentos con su comedor, el grupo local de izquierdas con su repair café, el club deportivo, el comité de empresa o también la parroquia. La lista es larga.
+        Y aunque probablemente estemos de acuerdo con todo ello, ya no vemos cuál es la base y olvidamos que nos parece bien. Según nuestro propio punto de vista criticamos la religión, la actividad económica de la empresa, el club deportivo o que las personas sin hogar no trabajen. Lo que apenas vemos ya, porque durante mucho tiempo fue la base de la sociedad y por tanto algo evidente, es que podríamos reconocer y valorar mucho más a menudo lo que las personas hacen y pretenden, sin tener que estar de acuerdo con todo. En lugar de reconocer la intención y la actividad, criticamos. <em>Precisamente en la iglesia te implicas. Estás con la izquierda en el grupo local. Con el deporte no cambia nada. Para qué te ocupas de los aprendices si la empresa se va a pique de todos modos.</em> Esto ocurre sobre todo allí donde las personas no se encuentran en torno a un tema común, sino en la familia o en contextos más sueltos. Justo ahí falta el apoyo solidario a lo que hace el otro.
       </p>
 
       <p class="lead lead--full">
-        Y aunque probablemente estemos de acuerdo con todo ello, ya no vemos cuál es la base y olvidamos que nos parece bien. Según nuestro propio punto de vista criticamos la religión, la actividad económica de la empresa, el club deportivo o que las personas sin hogar no trabajen. Lo que apenas vemos ya, porque durante mucho tiempo fue la base de la sociedad y por tanto algo evidente, es que podríamos reconocer y valorar mucho más a menudo lo que las personas hacen y pretenden, sin tener que estar de acuerdo con todo.
-      </p>
-
-      <p class="lead lead--full">
-        En lugar de reconocer la intención y la actividad, criticamos. Precisamente en la iglesia te implicas. Estás con la izquierda en el grupo local. Con el deporte no cambia nada. Para qué te ocupas de los aprendices si la empresa se va a pique de todos modos. Esto ocurre sobre todo allí donde las personas no se encuentran en torno a un tema común, sino en la familia o en contextos más sueltos. Justo ahí falta el apoyo solidario a lo que hace el otro.
-      </p>
-
-      <p class="lead lead--full">
-        Todos deberíamos entender que aquello que durante 75 años pudimos dar por sentado aquí no seguirá estando garantizado, y que conservarlo es ahora trabajo. Si queremos que la democracia y la humanidad sigan formando parte de nuestro sistema social, entonces también deberíamos aprender a expresar tolerancia, reconocimiento y valoración. No tengo que querer lo que hace la otra persona. Tengo que reconocer que lo hace con buena intención y que respeta la democracia. La diferencia no hace falta discutirla hasta el final ni disolverla. Puede quedarse, y en el fondo es aquello sobre lo que se asienta nuestra democracia: la libertad.
+        Todos deberíamos entender que aquello que durante 75 años pudimos dar por sentado aquí no seguirá estando garantizado, y que conservarlo es ahora trabajo. Si queremos que la democracia y la humanidad sigan formando parte de nuestro sistema social, entonces también deberíamos aprender a expresar tolerancia, reconocimiento y valoración. No tengo que querer lo que hace la otra persona. Tengo que reconocer que lo hace con buena intención y que respeta la democracia. Las diferencias hace falta discutirlas o disolverlas mucho menos de lo que creemos. Las diferencias pueden quedarse, y en el fondo son aquello sobre lo que se asienta nuestro sistema: la libertad.
       </p>
 
     </div>
   </section>
 
-  <!-- Übergang -->
   <div class="trenner trenner--skyline trenner--skyline-c" aria-hidden="true">
     <img src="assets/skyline.svg" alt="">
   </div>
 
-  <!-- ============================================ -->
-  <!-- 2 · Die autoritäre Abkürzung                 -->
-  <!-- ============================================ -->
   <section id="autoritaer" class="sub-section sub-section--moss has-sysbg">
     <img class="sysfield sysfield--gold" src="assets/field.svg" alt="" aria-hidden="true">
     <div class="container impuls-clear">
-      <p class="eyebrow eyebrow--light">A qué nos enfrentamos</p>
-      <h2 class="section-title section-title--light">El atajo autoritario a través del miedo y la pertenencia</h2>
+      <h2 class="section-title section-title--light">El atajo autoritario: miedo y pertenencia</h2>
 
       <p class="lead lead--full">
-        La extrema derecha crece a una velocidad alarmante, y en parte se debe a sus estructuras autoritarias. Las personas a las que allí se arrastra emocionalmente una vez, casi siempre a través del miedo, ceden de golpe buena parte de esa libertad y confían en las personas. Lo que esas personas digan después pasa enseguida por opinión propia, y hacia fuera eso parece cohesionado. El sentimiento de pertenencia surge rápido, pero en la mayoría se basa todavía, eso espero, en una percepción falsa y no en la propia opinión. Ahora bien, si en el lado democrático la pertenencia no es una opción, ¿cómo pensamos invertir la tendencia? ¿Hay una alternativa?
+        La extrema derecha crece a una velocidad alarmante, y en parte se debe a sus estructuras autoritarias. Allí se arrastra a las personas emocionalmente, casi siempre a través del miedo y de la pertenencia, y con ello ceden de golpe buena parte de su libertad y confían en las personas. Lo que esas personas digan después pasa enseguida por opinión propia, y hacia fuera eso parece cohesionado. El sentimiento de pertenencia surge rápido, pero en la mayoría se basa todavía, eso espero, en una percepción falsa y no en la propia opinión. Ahora bien, si en el lado democrático la pertenencia no es una opción, ¿cómo pensamos invertir la tendencia? ¿Hay una alternativa?
       </p>
 
       <p class="lead lead--full">
-        Lo que deberíamos oponerle está formado por muchas personas que deciden por sí mismas y se apoyan entre ellas. Eso lleva más tiempo y es trabajo, y a cambio aguanta más, porque no depende de una sola persona. Para que esté ahí en el momento en que se necesita, tenemos que crear las conexiones activamente. Y ese sentimiento de pertenencia también deberíamos generarlo, sobre una base sólida. Sobre la base de la democracia y la humanidad, pertenecemos. Nosotros somos la sociedad.
+        Lo que deberíamos oponerle está formado por muchas personas que deciden por sí mismas y se apoyan entre ellas. Eso lleva más tiempo y es trabajo, y a cambio aguanta más, porque no depende de una sola persona. Para que esté ahí en el momento en que se necesita, tenemos que crear las conexiones activamente. Y ese sentimiento de pertenencia también deberíamos generarlo, sobre una base sólida. Sobre la base de la democracia y la humanidad, pertenecemos. Nosotros somos la sociedad, y la sociedad es una red que hay que cuidar.
       </p>
 
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- 3 · Wertschätzung + vier Arten               -->
-  <!-- ============================================ -->
   <section id="wertschaetzung" class="sub-section sub-section--parchment has-sysbg">
     <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
     <div class="container impuls-clear">
-      <p class="eyebrow">Cuatro formas de participar</p>
       <h2 class="section-title">El trabajo en red empieza con la valoración</h2>
+
+      <figure class="impuls-fig impuls-fig--right">
+        <a href="assets/netzwerk-vier-stufen.es.svg" target="_blank" rel="noopener">
+          <img src="assets/netzwerk-vier-stufen.es.svg" alt="Cuatro bandas que se ensanchan hacia abajo: liderar, colaborar, seguir y, resaltada, valorar.">
+        </a>
+      </figure>
 
       <p class="lead lead--full">
         En <span class="buchtitel">Impact Networks</span>, David Ehrlichman describe cómo surgen las redes que quieren mover algo en la sociedad. Una de sus observaciones es que en las redes hay distintos niveles. Las personas participan de cuatro formas distintas, y una red vive de que las cuatro cuenten.
       </p>
 
-      <p class="lead lead--full impuls-stufe"><strong>Liderar.</strong> Asumo la responsabilidad de que esto exista.</p>
-      <p class="lead lead--full impuls-stufe"><strong>Colaborar.</strong> Trabajo activamente con quienes van por delante.</p>
-      <p class="lead lead--full impuls-stufe"><strong>Seguir.</strong> Quiero estar al tanto de cómo avanza.</p>
-      <p class="lead lead--full impuls-stufe"><strong>Valorar.</strong> Me parece bien lo que hacéis, y ahora mismo no es lo mío.</p>
-
-      <figure class="impuls-fig impuls-fig--wide">
-        <a href="assets/netzwerk-vier-stufen.es.svg" target="_blank" rel="noopener">
-          <img src="assets/netzwerk-vier-stufen.es.svg" alt="Liderar, Colaborar, Seguir und Valorar als vier Bänder, die nach unten hin breiter werden.">
-        </a>
-        <figcaption>Cuanto más abajo, más personas pueden participar. El nivel inferior no cuesta nada y aun así es el que menos se expresa.</figcaption>
-      </figure>
-
       <p class="lead lead--full">
-        Aquí se trata de valorar. Las dos primeras cuestan tiempo, y casi nadie tiene tiempo para más de una o dos causas. La tercera también tiene su límite, porque nadie puede mantenerse informado de todo ni suscribirse a todos los boletines.
+        Aquí se trata de valorar. Las dos primeras exigen mucho tiempo, y casi nadie tiene tiempo para más de una o dos causas. La tercera también tiene su límite, porque nadie puede mantenerse informado de todo ni suscribirse a todos los boletines.
       </p>
 
       <p class="lead lead--full">
-        La cuarta es la que pasamos por alto. No cuesta tiempo, ni dinero, ni afiliación, y es el comienzo de todo lo demás. Lo que hoy ocupa su lugar es la crítica desde los niveles superiores. A quien pone algo en marcha se le dice por qué es lo equivocado o por qué es poco. Eso quita las ganas, y por eso lo dejan muchos que habrían seguido. La valoración los mantiene en el trabajo, y ese es el refuerzo que hace falta. ¡Qué bien que te impliques en tu causa! Aquí surge la red que llamamos sociedad, que durante tanto tiempo fue algo evidente y por desgracia ya no lo es. Aquí empieza el fortalecimiento de la sociedad civil. Eso es hoy antifascismo.
+        La cuarta es la que pasamos por alto. Apenas cuesta tiempo, no cuesta dinero ni afiliación, no es más que una pequeña atención, y es el comienzo de todo lo demás. Lo que hoy ocupa su lugar es la crítica desde los niveles superiores. A quien pone algo en marcha se le dice por qué es lo equivocado o por qué es poco. Eso quita las ganas, y por eso lo dejan muchos que habrían seguido. La valoración los mantiene en el trabajo, y ese es el refuerzo que hace falta. <em>¡Qué bien que te impliques en tu causa!</em> Aquí surge la red que llamamos sociedad, que durante tanto tiempo fue algo evidente y por desgracia ya no lo es. Aquí empieza el fortalecimiento de la sociedad civil. Eso es hoy antifascismo.
       </p>
 
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- 4 · Alltag                                   -->
-  <!-- ============================================ -->
   <section id="alltag" class="sub-section sub-section--moss has-sysbg">
     <img class="sysfield sysfield--gold" src="assets/field.svg" alt="" aria-hidden="true">
     <div class="container impuls-clear">
-      <p class="eyebrow eyebrow--light">En la práctica</p>
       <h2 class="section-title section-title--light">Cómo se ve esto en el día a día</h2>
 
       <p class="lead lead--full">
-        Como votante conservadora, escribir al repair café del grupo local de izquierdas que está bien todo lo que allí se repara. Como persona de izquierdas, decirle al tío del club de boxeo lo fuerte que es que se ocupe de los jóvenes. Como jefa, decirle al presidente del comité de empresa que está bien que se implique, con lo agotador que esto resulta ahora para todos.
+        Como votante conservadora, escribir al repair café del grupo local de izquierdas que está bien todo lo que allí se repara. Como persona de izquierdas, decirle al tío del club de boxeo lo fuerte que es que se ocupe de los jóvenes. Como jefa, decirle al presidente del comité de empresa que está bien que se implique, con lo agotador que esto resulta ahora para todos. Como activista climática, decirle al club de tiro que reúne en el pueblo a más gente que cualquier otro acto. Como persona de ciudad, decirle a los bomberos voluntarios del campo que está bien que alguien salga de noche. Como empresario, decirle al banco de alimentos que está bien que exista.
       </p>
 
       <p class="lead lead--full">
-        Como alguien a quien la iglesia no le dice nada, decirle a la parroquia que su comedor da de comer a personas cada semana. Como activista climática, decirle al club de tiro que reúne en el pueblo a más gente que cualquier otro acto. Como persona de ciudad, decirle a los bomberos voluntarios del campo que está bien que alguien salga de noche. Como empresario, decirle al banco de alimentos que está bien que exista.
-      </p>
-
-      <p class="lead lead--full">
-        Basta un correo breve, un «qué bueno» en la conversación de sobremesa. Me parece bien lo que hacéis, seguid así. Quien lo recibe sigue trabajando de otra manera al día siguiente, y quien lo escribe tiene una conexión que antes no existía.
+        Basta un correo breve, un «qué bueno» en la conversación de sobremesa. <em>Me parece bien lo que hacéis, seguid así.</em> Quien lo escucha sigue trabajando de otra manera al día siguiente, y quien lo dice tiene una conexión que antes no existía.
       </p>
 
       <p class="lead lead--full">
@@ -289,20 +244,15 @@
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- 5 · Verbindungen                             -->
-  <!-- ============================================ -->
   <section id="verbindungen" class="sub-section sub-section--parchment has-sysbg">
     <img class="sysfield sysfield--light" src="assets/field_light.svg" alt="" aria-hidden="true">
     <div class="container impuls-clear">
-      <p class="eyebrow">Conservar la sociedad</p>
       <h2 class="section-title">Conexiones a lo ancho del espectro democrático</h2>
 
       <figure class="impuls-fig impuls-fig--left">
         <a href="assets/netzwerk-verbindungen.es.svg" target="_blank" rel="noopener">
-          <img src="assets/netzwerk-verbindungen.es.svg" alt="Sechs Kreise für Kirchengemeinde, Sportverein, Repair-Café, Betriebsrat, Tafel und Feuerwehr, durch geschwungene Goldlinien kreuz und quer verbunden, darunter eine durchgehende Linie.">
+          <img src="assets/netzwerk-verbindungen.es.svg" alt="Seis círculos para una parroquia, un club deportivo, un repair café, un comité de empresa, un banco de alimentos y los bomberos voluntarios, conectados entre sí por líneas doradas curvas, con una línea continua debajo.">
         </a>
-        <figcaption>Las conexiones surgen allí donde las personas se encuentran de verdad, y cruzan los bandos.</figcaption>
       </figure>
 
       <p class="lead lead--full">
@@ -310,22 +260,22 @@
       </p>
 
       <p class="lead lead--full">
-        Hoy necesitamos esas conexiones a lo ancho de todo el espectro democrático, de la izquierda hasta la democracia cristiana. Surgen con más facilidad en la sociedad civil que entre los partidos. De los partidos poco cabe esperar ahora mismo, porque la polarización hace tiempo que pasa entre ellos. Cuando las conexiones están abajo, arriba se vuelve posible más cosas. Entonces un partido democristiano en Sajonia-Anhalt puede decir que gobernará los próximos cuatro años junto con los demás partidos democráticos y verá qué se puede mover en común.
+        Hoy necesitamos esas conexiones a lo ancho de todo el espectro democrático, de la izquierda hasta la democracia cristiana. Surgen con más facilidad en la sociedad civil que entre los partidos. De los partidos poco cabe esperar ahora mismo, porque la polarización hace tiempo que pasa entre ellos. Cuando las conexiones están abajo, arriba se vuelve posible más cosas. Entonces le resultaría más fácil a un partido democristiano en Sajonia-Anhalt decir: miremos juntos, durante los próximos cuatro años, qué podemos mover en común.
       </p>
 
       <p class="lead lead--full">
-        De eso se trata al conservar la sociedad. La polarización dentro del espectro democrático es lo que nos está dañando ahora, y empuja a la gente hacia la derecha. El reconocimiento y la valoración de la acción democrática y humana, posible en tantísimos sitios, le quitan el terreno.
+        De eso se trata cuando trabajamos en red para conservar la sociedad. La polarización dentro del espectro democrático es lo que nos está dañando ahora. El reconocimiento y la valoración de la acción democrática y humana, posible en tantísimos sitios, le quitan el terreno.
       </p>
 
       <p class="lead lead--full">
         Fortalecer de verdad a la sociedad civil en toda su amplitud, sobre la base de la humanidad y la democracia, conserva la sociedad tal como la conocemos. Eso es lo que todos podemos hacer. Está claro que hay trabajo más allá de esto para impedir mayorías de la extrema derecha, pero esta debería ser la base en la que todos colaboremos. Si no es ahora, ¿cuándo?
       </p>
 
-      <p class="lead lead--full">
-        Expresemos todos más reconocimiento y valoración, y hagámoslo allí donde nos cuesta, donde las conexiones son críticas y donde deberíamos admitir: esto es democrático, detrás hay una causa que quiere algo positivo para las personas. Seguid así, esto es lo que necesitamos.
+      <p class="lead lead--full impuls-schluss impuls-abbinder">
+        Expresemos todos más reconocimiento y valoración, y hagámoslo allí donde nos cuesta, donde las conexiones son críticas y donde deberíamos admitir: esto es democrático, detrás hay una causa que quiere algo positivo para las personas. <em>Seguid así, esto es lo que necesitamos.</em>
       </p>
 
-      <p class="praxis-links impuls-abbinder">
+      <p class="praxis-links">
         <a href="systems-change.es.html">→ Systems Change</a>
         <a href="kontakt.es.html">→ Coopera con nosotros</a>
       </p>
