@@ -97,6 +97,38 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://impact-up.org/impuls-ruth-seliger.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-ruth-seliger.en.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-ruth-seliger.es.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-ruth-seliger.fr.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-netzwerke.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-netzwerke.en.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-netzwerke.es.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://impact-up.org/impuls-netzwerke.fr.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://impact-up.org/services.html</loc>
     <priority>0.8</priority>
   </url>

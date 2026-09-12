@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" role="img" aria-labelledby="titel beschreibung">
+  <title id="titel">Connections that run across</title>
+  <desc id="beschreibung">Six circles stand side by side for a church parish, a sports club, a repair cafe, a works council, a food bank and a volunteer fire brigade. Curved gold lines connect them across each other. Beneath them runs humanity and democracy as a continuous base.</desc>
+  <rect width="880" height="500" fill="#F4ECD8"/>
+  <text x="60" y="52" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="1.6" fill="#8A5E3B">WHEATLEY &amp; FRIEZE · CRITICAL CONNECTIONS</text>
+  <text x="60" y="88" font-family="Cormorant Garamond, Georgia, serif" font-size="30" fill="#2D4A2B">Connections that run across</text>
+  <g fill="none" stroke="#C9A961" stroke-linecap="round">
+    <path d="M118 198 C 190.0 152, 190.0 222, 262 268" stroke-width="1.5" opacity="0.95"/>
+    <path d="M262 268 C 331.0 312, 331.0 226, 400 182" stroke-width="1.5" opacity="0.95"/>
+    <path d="M400 182 C 470.0 136, 470.0 226, 540 272" stroke-width="1.5" opacity="0.95"/>
+    <path d="M540 272 C 608.0 316, 608.0 240, 676 196" stroke-width="1.5" opacity="0.95"/>
+    <path d="M676 196 C 734.0 150, 734.0 230, 792 276" stroke-width="1.5" opacity="0.95"/>
+    <path d="M118 198 C 259.0 242, 259.0 226, 400 182" stroke-width="1.1" opacity="0.7"/>
+    <path d="M262 268 C 401.0 222, 401.0 226, 540 272" stroke-width="1.1" opacity="0.7" stroke-dasharray="2 2.4"/>
+    <path d="M400 182 C 538.0 226, 538.0 240, 676 196" stroke-width="1.1" opacity="0.7" stroke-dasharray="2 2.4"/>
+    <path d="M540 272 C 666.0 226, 666.0 230, 792 276" stroke-width="1.1" opacity="0.7" stroke-dasharray="2 2.4"/>
+    <path d="M118 198 C 397.0 242, 397.0 240, 676 196" stroke-width="0.9" opacity="0.7" stroke-dasharray="2 2.4"/>
+    <path d="M262 268 C 527.0 222, 527.0 230, 792 276" stroke-width="0.9" opacity="0.7" stroke-dasharray="2 2.4"/>
+  </g>
+  <circle cx="118" cy="198" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="118" y="194" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Church</text>
+    <text x="118" y="213" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">parish</text>
+  <circle cx="262" cy="268" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="262" y="264" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Sports</text>
+    <text x="262" y="283" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">club</text>
+  <circle cx="400" cy="182" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="400" y="178" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Repair</text>
+    <text x="400" y="197" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Café</text>
+  <circle cx="540" cy="272" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="540" y="268" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Works</text>
+    <text x="540" y="287" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">council</text>
+  <circle cx="676" cy="196" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="676" y="192" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Food</text>
+    <text x="676" y="211" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">bank</text>
+  <circle cx="792" cy="276" r="52" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.5"/>
+    <text x="792" y="272" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">Volunteer</text>
+    <text x="792" y="291" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14">fire brigade</text>
+  <path d="M60 382 C 260 370, 620 394, 820 382" fill="none" stroke="#C9A961" stroke-width="2.2"/>
+  <text x="440" y="416" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="25" fill="#2D4A2B">Humanity and democracy</text>
+  <text x="440" y="468" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13.5" fill="#1F1A14" opacity="0.8">Not more people convinced, but more connections between those who already are.</text>
+</svg>

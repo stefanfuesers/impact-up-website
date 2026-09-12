@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" role="img" aria-labelledby="titel beschreibung">
+  <title id="titel">Cuatro formas de participar en una red</title>
+  <desc id="beschreibung">Cuatro bandas superpuestas: liderar arriba, colaborar debajo, seguir mas abajo y, abajo del todo y mas ancha, la valoracion. Cuanto mas abajo, mas personas pueden participar. La valoracion esta resaltada.</desc>
+  <rect width="880" height="560" fill="#F4ECD8"/>
+  <text x="60" y="52" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" letter-spacing="1.6" fill="#8A5E3B">DAVID EHRLICHMAN · IMPACT NETWORKS</text>
+  <text x="60" y="88" font-family="Cormorant Garamond, Georgia, serif" font-size="30" fill="#2D4A2B">Cuatro formas de participar en una red</text>
+  <rect x="60" y="138" width="280" height="74" rx="2" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.2"/>
+  <text x="86" y="170" font-family="Cormorant Garamond, Georgia, serif" font-size="25" fill="#2D4A2B">Liderar</text>
+  <text x="86" y="194" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1F1A14" opacity="0.82">Asumo la responsabilidad de que esto exista.</text>
+  <rect x="60" y="228" width="400" height="74" rx="2" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.2"/>
+  <text x="86" y="260" font-family="Cormorant Garamond, Georgia, serif" font-size="25" fill="#2D4A2B">Colaborar</text>
+  <text x="86" y="284" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1F1A14" opacity="0.82">Trabajo activamente con quienes van por delante.</text>
+  <rect x="60" y="318" width="520" height="74" rx="2" fill="#FAF6EA" stroke="#C9A961" stroke-width="1.2"/>
+  <text x="86" y="350" font-family="Cormorant Garamond, Georgia, serif" font-size="25" fill="#2D4A2B">Seguir</text>
+  <text x="86" y="374" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1F1A14" opacity="0.82">Quiero estar al tanto de cómo avanza.</text>
+  <rect x="60" y="408" width="640" height="74" rx="2" fill="#F0E4C4" stroke="#C9A961" stroke-width="2.2"/>
+  <text x="86" y="440" font-family="Cormorant Garamond, Georgia, serif" font-size="25" fill="#2D4A2B">Valorar</text>
+  <text x="86" y="464" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1F1A14" opacity="0.82">Me parece bien lo que hacéis, y ahora mismo no es lo mío.</text>
+  <circle cx="674" cy="445.0" r="9" fill="#4A2B5C"/>
+  <circle cx="671" cy="442.0" r="2.4" fill="#8E6FA8" opacity="0.75"/>
+  <path d="M722 146 C 736 270.0, 708 350.0, 722 474" fill="none" stroke="#C9A961" stroke-width="1.1" opacity="0.85"/>
+  <circle cx="722" cy="146" r="3" fill="#C9A961"/>
+  <circle cx="722" cy="474" r="4.6" fill="#C9A961"/>
+  <text x="738" y="151" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#8A5E3B">cuesta tiempo</text>
+  <text x="738" y="479" font-family="Inter, system-ui, sans-serif" font-size="12.5" fill="#8A5E3B">no cuesta nada</text>
+  <text x="60" y="526" font-family="Cormorant Garamond, Georgia, serif" font-size="21" fill="#2D4A2B" opacity="0.9">Aquí empiezan las redes.</text>
+</svg>
