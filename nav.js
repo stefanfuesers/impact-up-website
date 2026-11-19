@@ -85,6 +85,7 @@
         subs.forEach(d => {
           const s = document.createElement('a');
           s.href = d.getAttribute('href');
+          if (d.target) { s.target = d.target; s.rel = d.rel; }
           s.textContent = d.textContent.trim();
           s.className = 'sub';
           wrap.appendChild(s);

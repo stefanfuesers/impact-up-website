@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taller · Impact Up</title>
-  <meta name="description" content="El taller de Impact Up: herramientas que pueden usar directamente – para probar, experimentar y seguir pensando. La primera es el Session-Builder.">
+  <meta name="description" content="El taller de Impact Up está en construcción. Prueben aquí gratis nuestras herramientas, el Session-Builder y el Mapping Editor.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon-96.png">
@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Taller · Impact Up">
-  <meta property="og:description" content="Herramientas que pueden usar directamente – para probar, experimentar y seguir pensando. La primera es el Session-Builder.">
+  <meta property="og:description" content="Herramientas para probar gratis, el Session-Builder y el Mapping Editor. El taller está en construcción.">
   <meta property="og:url" content="https://impact-up.org/werkstatt.es.html">
   <meta property="og:image" content="https://impact-up.org/assets/share.png">
   <meta property="og:locale" content="es_ES">
@@ -32,6 +32,11 @@
   <style>
     /* Específico de esta página: las tarjetas del taller son enlaces */
     .sammel-cards .card { text-decoration: none; }
+    /* Ausblick unter den Werkzeug-Karten */
+    .werkstatt-ausblick { margin-top: 56px; }
+    .werkstatt-ausblick p, .werkstatt-ausblick li { font-size: 18px; line-height: 1.6; color: var(--ink); }
+    .werkstatt-ausblick ul { margin: 8px 0 28px; padding-left: 1.2em; }
+    .werkstatt-ausblick li { margin-bottom: 10px; }
   </style>
 </head>
 <body>
@@ -69,6 +74,7 @@
         <a href="werkstatt.es.html">Taller</a>
         <ul class="nav__dropdown">
           <li><a href="session-werkstatt/index.es.html">Session-Builder</a></li>
+          <li><a href="mapping-editor.html?lang=es" target="_blank" rel="noopener">Mapping Editor</a></li>
         </ul>
       </li>
       <li class="nav__item--has-dropdown">
@@ -95,7 +101,7 @@
     <div class="container page__inner">
       <h1 class="eyebrow">Taller</h1>
       <p class="page__lead">
-        Aquí hay un taller. Intentamos ofrecerles herramientas que se basan en nuestra experiencia y que hoy pueden construirse más fácilmente con IA. Todo esto vive del feedback, es decir: tras una primera prueba, les pedimos primero su opinión. Si próximamente se ofrecen aquí herramientas que integran IA en su uso (estamos trabajando en ello), les trasladaremos directamente al menos los costes. La primera herramienta es el Session-Builder, y vienen más. Experiencias, feedback o también sus ideas sobre cómo usar, con apoyo de la IA, los impactos como base de red y desplegarlos y conectarlos en el mundo: <a href="kontakt.es.html">escríbannos</a>.
+        El taller está en construcción. Aquí ofrecemos herramientas que surgieron de nuestra experiencia con talleres y acompañamiento de procesos. Pueden probarlas de forma gratuita. Las seguimos desarrollando con sus comentarios y agradecemos cualquier feedback.
       </p>
 
       <div class="sammel-cards">
@@ -107,6 +113,29 @@
           <p class="card__result">→ Al Session-Builder</p>
         </a>
 
+        <a href="mapping-editor.html?lang=es" class="card" target="_blank" rel="noopener">
+          <span class="card__num">02</span>
+          <h2>Mapping Editor</h2>
+          <p>Con el Mapping Editor elaboran en grupo un mapa de su tema. Hay tres tipos de mapa para elegir. El Systems Map muestra cómo los factores se influyen entre sí y dónde se refuerzan o se equilibran. El Impact Map muestra cómo sus actividades deben llevar, a través de resultados, al impacto que buscan. El Actors Map muestra quién participa en un tema y qué relaciones existen entre las partes. El editor funciona directamente en el navegador y sus datos se quedan en su propio ordenador.</p>
+          <p class="card__result">→ Al Mapping Editor</p>
+        </a>
+
+      </div>
+      <div class="werkstatt-ausblick">
+        <h2>Lo que construimos cuando hace falta</h2>
+        <p>Dos ampliaciones generan costes continuos de funcionamiento. Por eso las construimos en cuanto exista la necesidad.</p>
+        <ul>
+          <li><strong>Live mapping para talleres en línea.</strong> Hoy una persona construye el mapa y comparte su pantalla con el grupo. Con el live mapping, todas las personas participantes trabajan al mismo tiempo en el mismo mapa, cada una desde su propio ordenador. Para ello hace falta un servidor.</li>
+          <li><strong>Apoyo de IA en el Session-Builder.</strong> Con IA, las planificaciones resultan bastante más detalladas y mejores. También esto cuesta dinero en funcionamiento.</li>
+        </ul>
+        <h2>Lo que nos ayuda</h2>
+        <p>Tres cosas nos ayudan especialmente.</p>
+        <ul>
+          <li>Avísennos si usarían alguna de estas ampliaciones y estarían dispuestos a pagar por ella.</li>
+          <li>Envíennos feedback. Las indicaciones sobre métodos que faltan en las herramientas nos ayudan tanto como los pequeños vacíos o errores que noten. Se lo agradecemos mucho.</li>
+          <li>Usen las herramientas junto con nosotros. Nos alegra poder utilizarlas con ustedes en sus talleres y procesos.</li>
+        </ul>
+        <p>Para los tres puntos pueden contactarnos a través de la <a href="kontakt.es.html">página de contacto</a>.</p>
       </div>
     </div>
   </main>
@@ -117,7 +146,7 @@
     <p class="foot__small">Este sitio se ha creado en colaboración con inteligencia artificial.</p>
   </footer>
 
-  <script src="nav.js?v=4" defer></script>
+  <script src="nav.js?v=5" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

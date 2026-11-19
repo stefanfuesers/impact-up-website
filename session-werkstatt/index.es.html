@@ -210,6 +210,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
       <a href="../werkstatt.es.html">Taller</a>
       <ul class="nav__dropdown">
         <li><a class="is-active" href="index.es.html" aria-current="page">Session-Builder</a></li>
+        <li><a href="../mapping-editor.html?lang=es" target="_blank" rel="noopener">Mapping Editor</a></li>
       </ul>
     </li>
     <li class="nav__item--has-dropdown">
@@ -245,13 +246,6 @@ button:disabled{opacity:.45;cursor:not-allowed}
 "use strict";
 const FEATURE_NAME = "Session-Builder";
 const LS_RUNS = "iu_sw_runs";
-const LS_FREI = "iu_sw_frei";
-/* Enlace de desbloqueo: ?frei=wirkungsraum desbloquea este navegador
-   de forma permanente para cualquier número de sesiones (botón "Planificar una nueva sesión"). */
-try{
-  const _p = new URLSearchParams(location.search);
-  if(_p.get("frei")==="wirkungsraum"){ localStorage.setItem(LS_FREI,"1"); history.replaceState(null,"",location.pathname); }
-}catch(e){}
 let _runCounted = false;
 /* =====================================================================
    Session-Werkstatt · Version 2 (Engine V2)
@@ -1418,10 +1412,7 @@ function renderLeitfaden(){
 
 /* ---------- Actions: Download & Contact ---------- */
 function aktionenHtml(){
-  const frei = (function(){ try{ return localStorage.getItem(LS_FREI)==="1"; }catch(e){ return false; } })();
-  const zweitButton = frei
-    ? `<button class="secondary" onclick="A=leereAntworten();schritt=0;try{localStorage.removeItem(LS_KEY)}catch(e){};window.scrollTo(0,0);render()">Planificar una nueva sesión</button>`
-    : `<button class="secondary" onclick="location.href='../kontakt.es.html'">¿Planeando otra sesión? Contáctanos</button>`;
+  const zweitButton = `<button class="secondary" onclick="A=leereAntworten();schritt=0;try{localStorage.removeItem(LS_KEY)}catch(e){};window.scrollTo(0,0);render()">Planificar una nueva sesión</button>`;
   return `<div class="aktionen">
     <button class="primary" onclick="downloadPdf(this)">Descargar</button>
     ${zweitButton}
@@ -1486,7 +1477,7 @@ function zaehleRun(){
 window.addEventListener("beforeprint",()=>document.querySelectorAll("details").forEach(d=>d.open=true));
 render();
 </script>
-  <script src="../nav.js?v=4" defer></script>
+  <script src="../nav.js?v=5" defer></script>
   <script data-goatcounter="https://impactup.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
