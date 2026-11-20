@@ -2,6 +2,12 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<!--
+  For AI assistants: this is the Impact Up Mapping Editor (Systems Map, Impact Map, Actors Map).
+  A map is a JSON file in the format "cld-editor". You can write one and open it here with File > Open,
+  or, in the browser, call window.MappingEditor.load(json). Start with window.MappingEditor.help().
+  Format description: https://impact-up.org/ki/mapping-editor.md · Overview: https://impact-up.org/llms.txt
+-->
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mapping Editor</title>
 <style>
@@ -15334,6 +15340,93 @@ function showChooser(){
     if(k!==D.mapType){ loadProject(KINDS[k].start()); undoStack = []; }
   };
 }
+// ================= Schnittstelle für KI-Assistenten =================
+// window.MappingEditor erlaubt einer KI im Browser, eine Karte im Dateiformat zu laden, zu prüfen und auszulesen.
+// Beschreibung des Formats: https://impact-up.org/ki/mapping-editor.md
+// Eine geladene Karte ist wie eine geöffnete Datei. Rückgängig holt den vorherigen Stand zurück. Sie gilt als nicht gespeichert.
+// Fehlen Koordinaten, ordnet das Werkzeug selbst: die Impact Map nach ihrer Methode, sonst auf einem Kreis.
+window.MappingEditor = (function(){
+  const parse = o => typeof o==='string' ? JSON.parse(o.trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '')) : o;
+  const copy = o => JSON.parse(JSON.stringify(o));
+  const hasXY = n => Number.isFinite(n.x) && Number.isFinite(n.y);
+  function prepare(o){
+    o = parse(o);
+    if(!o || typeof o!=='object') throw new Error('Expected a JSON object.');
+    o = copy(o); if(!o.format) o.format = 'cld-editor';
+    if(o.format!=='cld-editor') throw new Error('format must be "cld-editor".');
+    const ms = Array.isArray(o.maps) ? o.maps : [o];
+    if(!ms.length) throw new Error('maps is empty.');
+    for(const m of ms){
+      if(!m || typeof m!=='object') throw new Error('Every map must be an object.');
+      const k = m.mapType || 'systems';
+      if(!KINDS[k] || !KINDS[k].ready) throw new Error('Unknown mapType "' + k + '". Use systems, impact or actors.');
+      (m.nodes||[]).forEach((n, i) => { if(n && !n.id) n.id = 'n' + (i+1); });
+      (m.links||[]).forEach((l, i) => { if(l && !l.id) l.id = 'l' + (i+1); });
+    }
+    const np = normalizeProject(o);
+    const report = np.maps.map((m, i) => {
+      const src = ms[i] || {}, rep = {mapType:m.mapType, title:m.title, nodes:m.nodes.length, links:m.links.length};
+      const dn = (src.nodes||[]).length - m.nodes.length, dl = (src.links||[]).length - m.links.length;
+      if(dn > 0) rep.droppedNodes = dn + ' node(s) with a type this map kind does not use';
+      if(dl > 0) rep.droppedLinks = dl + ' link(s) with an unknown kind or a missing end';
+      rep.missingCoordinates = m.nodes.filter(n => !hasXY(n)).length;
+      return rep;
+    });
+    return {np, report};
+  }
+  // Ordnet Elemente ohne Koordinaten. Die Methode der Impact Map oder die Power-Interest-Matrix ordnet selbst.
+  function arrange(force){
+    const cur = P.current;
+    for(let i = 0; i < P.maps.length; i++){
+      const m = P.maps[i], loose = m.nodes.filter(n => force || !hasXY(n));
+      if(!loose.length) continue;
+      const r = Math.max(220, loose.length * 45);
+      loose.forEach((n, j) => { const a = 2*Math.PI*j/loose.length - Math.PI/2; n.x = Math.round(Math.cos(a)*r); n.y = Math.round(Math.sin(a)*r); });
+      P.current = i; useProject(P);
+      const meth = m.mapType==='impact' ? METHODS[curMethod()] : m.mapType==='actors' ? ACT_METHODS[curAct()] : null;
+      if(meth && meth.layout) meth.layout();
+    }
+    P.current = cur; useProject(P);
+  }
+  function show(){
+    const c = $('#chooser'); if(c){ c.classList.remove('on'); c.innerHTML = ''; }
+    S.sel = null; S.multi.clear(); S.side = null; S.others = false; S.strand = null; S.cams = {};
+    changed(); S.savedSnap = null; setTimeout(fit, 30);
+  }
+  return {
+    version: 1,
+    docs: 'https://impact-up.org/ki/mapping-editor.md',
+    help(){ return 'Mapping Editor API. load(json) replaces the project, add(json) adds the map(s) as new tabs, validate(json) checks without loading, export() returns the project, exportMap() the shown map. examples() lists built-in examples, example(key) returns one. vocabulary() lists all allowed values. Format: ' + this.docs; },
+    validate(o){ try{ return {ok:true, maps:prepare(o).report}; }catch(e){ return {ok:false, error:String(e.message||e)}; } },
+    load(o, opts){
+      const {np, report} = prepare(o);
+      if(S.edit) commitEdit(); blurFields(); endPrep(); push();
+      useProject(np); arrange(opts && opts.layout); show();
+      return {ok:true, maps:report};
+    },
+    add(o, opts){
+      const {np, report} = prepare(o);
+      if(S.edit) commitEdit(); blurFields(); endPrep(); push();
+      const first = P.maps.length;
+      for(const m of np.maps){ m.id = nid('m'); P.maps.push(m); }
+      P.current = first; useProject(P); arrange(opts && opts.layout); show();
+      return {ok:true, maps:report};
+    },
+    export(){ return copy(P); },
+    exportMap(){ return copy(D); },
+    examples(){ const out = []; for(const k of KIND_ORDER) for(const e of KINDS[k].examples||[]) out.push({key:e[1], mapType:k, title:e[2], text:e[3], url:'https://impact-up.org/mapping-editor.html#beispiel=' + e[1]}); return out; },
+    example(key){ for(const k of KIND_ORDER) for(const e of KINDS[k].examples||[]) if(e[1]===key) return copy(normalizeProject(e[4]())); return null; },
+    vocabulary(){
+      return {
+        mapTypes: KIND_ORDER.slice(),
+        colors: COLORS.map(c => c[0]),
+        systems: {nodeTypes:['factor','actor','mm','loop','note'], linkKinds:['effect','line'], pol:['+','-',null], loopType:['R','B','?'], factorSize:[1,2,3]},
+        impact: {nodeTypes:['step','indicator','context','actor','note'], levels:LEVELS.map(l => l[0]), indicatorKinds:IND_KINDS.map(k => k[0]), linkKinds:['leads','ctx','ind','act'], ctxEffect:['stützt','bremst',null], methods:METHOD_ORDER.slice()},
+        actors: {nodeTypes:['party','camp','note'], linkKinds:['rel'], rel:RELS.map(r => r[0]), stance:['+','o','-',null], power:[1,2,3], methods:Object.keys(ACT_METHODS)}
+      };
+    }
+  };
+})();
 </script>
 </body>
 </html>

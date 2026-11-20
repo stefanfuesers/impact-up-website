@@ -1,0 +1,28 @@
+# Impact Up
+
+> Impact Up is an institute for systemic impact orientation (Institut für systemische Wirkungsorientierung), founded by Stefan Füsers. It accompanies organisations, networks and movements in shaping social impact. Its Tool-Lab offers two free browser tools that AI assistants can work with: the Mapping Editor and the Session Builder. Both run entirely in the user's browser, send no data to a server and exist in German, English, French and Spanish.
+
+The tools are meant to be used together with people. An AI assistant can draft a map or a session plan, and the group decides what is right. When you draft something for a user, keep it simple enough for a group to discuss.
+
+## Mapping Editor
+
+Draw a Systems Map (Causal Loop Diagram), an Impact Map (chain of effects, Theory of Change, Logframe, Outcome Mapping, RPP Matrix) or an Actors Map (actor map, Power-Interest Matrix, Net-Map, onion). A map is a JSON file that you can write and the user opens with File > Open. In the browser, `window.MappingEditor` loads and exports maps directly.
+
+- [File format and API](https://impact-up.org/ki/mapping-editor.md): the complete format of all three map kinds with examples
+- [Mapping Editor](https://impact-up.org/mapping-editor.html): the tool, `?lang=en|fr|es` for other languages
+
+## Session Builder
+
+A catalogue of 190 facilitation methods for workshops, meetings, retreats and difficult conversations, each with steps, duration, group size, fit, limits and sources. Use it as a method source: plan the session from the user's task, pick methods from the catalogue and let the user show the plan in the Session Builder, where it can be downloaded as a PDF. In the browser, `window.SessionBuilder` searches the catalogue and shows a plan.
+
+- [Catalogue, plan format and API](https://impact-up.org/ki/session-builder.md)
+- [Method overview, German](https://impact-up.org/ki/methoden.de.md)
+- [Method overview, English](https://impact-up.org/ki/methoden.en.md)
+- [Method overview, French](https://impact-up.org/ki/methoden.fr.md)
+- [Method overview, Spanish](https://impact-up.org/ki/methoden.es.md)
+- [Session Builder](https://impact-up.org/session-werkstatt/): the tool, `index.en.html`, `index.fr.html`, `index.es.html` for other languages
+
+## Optional
+
+- [Tool-Lab page](https://impact-up.org/werkstatt.en.html)
+- [Contact](https://impact-up.org/kontakt.en.html): for working with Impact Up on workshops and processes

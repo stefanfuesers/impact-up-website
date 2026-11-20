@@ -4,6 +4,8 @@ KONTEXT.md
 TODO.md
 Spaene/
 *.md
+# Beschreibungen für KI-Assistenten gehen live (verlinkt aus llms.txt)
+!ki/*.md
 logo_vergleich.html
 
 # Diese Bilder braucht die Live-Seite (Ausnahme von *.png in der Root-.gitignore)
