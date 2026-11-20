@@ -95,7 +95,7 @@ function lesePlan(p){
       method: pick(b, "method", "methode") || null,
       text: pick(b, "text", "beschreibung") || "",
       questions: [].concat(pick(b, "questions", "fragen") || []),
-      materials: pick(b, "materials", "material") || "",
+      materials: [].concat(pick(b, "materials", "material") || []).join(", "),
       isBreak: !!pick(b, "break", "pause")
     }))
   };
