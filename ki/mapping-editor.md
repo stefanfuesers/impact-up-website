@@ -34,7 +34,7 @@ MappingEditor.vocabulary()           // all allowed values for types, levels, co
 
 Every element can carry `x` and `y` (pixels, the origin is arbitrary, y grows downwards). If they are missing, the tool arranges the elements itself:
 
-- In an **Impact Map** with a method (default `iooi`), the method places every element in its column. You never need coordinates there.
+- In an **Impact Map** with a method (default `iooi`), the method places every element in its level. You never need coordinates there.
 - In a **Systems Map** and an **Actors Map**, elements without coordinates are placed on a circle. The user then drags them into place. For a Systems Map with loops, set coordinates yourself if you can: causes on the left, effects on the right, loops arranged as circles.
 
 `MappingEditor.load(json, {layout:true})` rearranges all elements even if they have coordinates.
@@ -115,7 +115,7 @@ Example:
 
 ## Impact Map (`"mapType": "impact"`)
 
-The map carries a method in `"impact": {"method": "iooi"}`. Methods: `iooi` (Input, Output, Outcome, Impact in columns, the default), `treppe` (impact staircase with seven steps), `toc` (Backwards Mapping), `logframe`, `om` (Outcome Mapping), `rpp` (RPP Matrix, Reflecting on Peace Practice). The method only arranges and renames the building blocks. The data stays the same.
+The map carries a method in `"impact": {"method": "iooi"}`. Methods: `iooi` (Input, Output, Outcome, Impact in four levels, impact at the top, input at the bottom, the default), `treppe` (impact staircase with seven steps), `toc` (Backwards Mapping), `logframe`, `om` (Outcome Mapping), `rpp` (RPP Matrix, Reflecting on Peace Practice). The method only arranges and renames the building blocks. The data stays the same.
 
 Element types:
 
