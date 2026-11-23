@@ -165,26 +165,26 @@ body { background: var(--parchment); }
 .hero--sub .hero__sub a { color: var(--gold-ink); }
 .hero--sub + .sub-section,
 .hero--sub + .trenner + .sub-section { padding-top: 26px; }
-/* Marke oben links in der Ecke, Einleitung mittig und leicht nach rechts */
+/* Einstieg = erster Absatz des Textes: gleiche Spalte, Schrift und Farbe wie die Abschnitte.
+   Die Marke sitzt links oben direkt unter dem Logo der Navigation. */
+.hero--sub { padding-left: 0; padding-right: 0; }
+.hero--sub .hero__inner { display: block; max-width: var(--maxw); padding: 0 32px; box-sizing: border-box; }
+.hero--sub .hero__text { max-width: none; }
+.hero--sub .hero__sub { max-width: none; font-size: 17px; line-height: 1.55; color: #3A332A; margin-bottom: 0; }
 @media (min-width: 901px) {
   .hero--sub .markwm--right {
     opacity: 1;
     z-index: 1;
-    width: clamp(64px, 6vw, 84px);
+    width: 46px;
     right: auto;
-    left: max(24px, calc(50% - 560px));
-    top: 92px;
+    left: 22px;
+    top: 74px;
   }
-  .hero--sub .hero__inner { display: block; }
-  .hero--sub .hero__text {
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 80px;
-    box-sizing: content-box;
-  }
-  .hero--sub .hero__sub { max-width: none; }
-  .hero--sub .sub__inner { padding-top: 48px; }
+  .hero--sub .sub__inner { padding-top: 56px; }
+}
+@media (max-width: 760px) {
+  .hero--sub .hero__inner { padding: 0 22px; }
+  .hero--sub .hero__sub { text-align: left; hyphens: auto; }
 }
 @media (max-width: 900px) {
   .hero--sub .markwm--right { display: none; }

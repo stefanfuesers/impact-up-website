@@ -2946,4 +2946,6 @@ body .ruf__p--flow {
   .angebot-liste { grid-template-columns: 1fr; gap: 0; margin: 22px 0 34px; }
 }
 /* Folgeabschnitte der Angebotsseiten ruecken naeher an den vorigen */
-.sub-section.sub-section--folge { padding-top: 26px; }
+.sub-section.sub-section--folge { padding-top: 0; }
+.sub-section:has(+ .sub-section--folge) { padding-bottom: 48px; }
+.sub-section--folge .lead--full { margin-bottom: 18px; }
