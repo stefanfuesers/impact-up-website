@@ -2893,3 +2893,57 @@ body .ruf__p--flow {
    Vorname im hellen Sandton, Nachname in Gold. */
 .eyebrow--name { color: #F4ECD8; }
 .eyebrow--name em { font-style: normal; color: var(--gold-bright); }
+
+/* ============================================================
+   ANGEBOTS-LISTE (23.11.2026)
+   Die Themenliste auf den drei Angebotsseiten. Zweispaltig,
+   jeder Punkt mit dem Ring-Punkt der Visitenkarte (Kreis mit
+   Kern, wie vor den Leistungen auf der Kartenvorderseite) und
+   einer feinen Linie darueber. Titel Cormorant, Satz Inter.
+   ============================================================ */
+.angebot-liste {
+  list-style: none;
+  margin: 30px 0 46px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 52px;
+}
+.angebot-liste li {
+  position: relative;
+  padding: 16px 0 14px 28px;
+  border-top: 1px solid rgba(31, 26, 20, 0.12);
+}
+.angebot-liste li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 25px;
+  width: 11px;
+  height: 11px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1.3px solid var(--gold-deep);
+  background: radial-gradient(circle, var(--gold-deep) 0 2px, transparent 2.4px);
+}
+.angebot-liste h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.angebot-liste p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  hyphens: auto;
+}
+.angebot-liste a { color: var(--gold-ink); }
+@media (max-width: 760px) {
+  .angebot-liste { grid-template-columns: 1fr; gap: 0; margin: 22px 0 34px; }
+}
+/* Folgeabschnitte der Angebotsseiten ruecken naeher an den vorigen */
+.sub-section.sub-section--folge { padding-top: 26px; }
