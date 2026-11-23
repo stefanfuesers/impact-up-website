@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+<!-- Goldenes Netz, das von der Marke (Ursprung oben links = Mitte des Kreises) in den Text hineinlaeuft.
+     Gleiche Sprache wie field.svg: feine Goldkanten, hohle Ringknoten, wenige gefuellte Punkte. -->
+<style>
+ .e{fill:none;stroke:#CFA448;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s ease forwards;animation-delay:var(--d)}
+ @keyframes draw{to{stroke-dashoffset:0}}
+ .n{transform-box:fill-box;transform-origin:center;opacity:0;animation:pop .8s cubic-bezier(.2,.8,.3,1) forwards;animation-delay:var(--d)}
+ @keyframes pop{0%{opacity:0;transform:scale(0)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
+ @media (prefers-reduced-motion: reduce){.e{animation:none;stroke-dashoffset:0}.n{animation:none;opacity:1}}
+</style>
+<path class="e" pathLength="1" d="M 17 18 Q 34 66 70 95"   stroke-width="1.3" opacity=".62" style="--d:.1s"/>
+<path class="e" pathLength="1" d="M 70 95 Q 104 104 150 140" stroke-width="1.15" opacity=".55" style="--d:.6s"/>
+<path class="e" pathLength="1" d="M 70 95 Q 86 168 120 230"  stroke-width="1.05" opacity=".5"  style="--d:.7s"/>
+<path class="e" pathLength="1" d="M 150 140 Q 214 160 260 215" stroke-width="1" opacity=".45" style="--d:1.1s"/>
+<path class="e" pathLength="1" d="M 150 140 Q 236 112 330 120" stroke-width=".9" opacity=".4" style="--d:1.2s"/>
+<path class="e" pathLength="1" d="M 120 230 Q 150 280 210 310" stroke-width=".95" opacity=".42" style="--d:1.2s"/>
+<path class="e" pathLength="1" d="M 260 215 Q 248 268 210 310" stroke-width=".85" opacity=".36" style="--d:1.6s"/>
+<path class="e" pathLength="1" d="M 260 215 Q 330 238 380 290" stroke-width=".85" opacity=".34" style="--d:1.6s"/>
+<path class="e" pathLength="1" d="M 330 120 Q 396 128 450 160" stroke-width=".8"  opacity=".3"  style="--d:1.7s"/>
+<path class="e" pathLength="1" d="M 380 290 Q 470 300 545 340" stroke-width=".75" opacity=".26" style="--d:2s"/>
+<circle class="n" cx="70"  cy="95"  r="5"   fill="#CFA448" fill-opacity=".55" style="--d:.55s"/>
+<circle class="n" cx="150" cy="140" r="7.5" fill="none" stroke="#CFA448" stroke-width=".9" style="--d:1s"/>
+<circle class="n" cx="120" cy="230" r="4"   fill="#B9A7D6" style="--d:1.1s"/>
+<circle class="n" cx="260" cy="215" r="6"   fill="none" stroke="#CFA448" stroke-width=".85" style="--d:1.5s"/>
+<circle class="n" cx="330" cy="120" r="3"   fill="#CFA448" style="--d:1.6s"/>
+<circle class="n" cx="210" cy="310" r="9"   fill="none" stroke="#CFA448" stroke-width=".8" style="--d:1.9s"/>
+<circle class="n" cx="380" cy="290" r="4.5" fill="#CFA448" style="--d:1.9s"/>
+<circle class="n" cx="450" cy="160" r="5"   fill="none" stroke="#CFA448" stroke-width=".75" style="--d:2s"/>
+<circle class="n" cx="545" cy="340" r="3.5" fill="#CFA448" style="--d:2.3s"/>
+</svg>

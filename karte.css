@@ -181,6 +181,19 @@ body { background: var(--parchment); }
     top: 74px;
   }
   .hero--sub .sub__inner { padding-top: 56px; }
+  /* Von der Marke aus laeuft ein Stueck goldenes Netz bis an den Text heran, unter dem Kopf setzt das Netz des ersten Abschnitts an */
+  .hero--sub::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 45px;
+    top: 97px;
+    width: 360px;
+    height: 216px;
+    background: url("assets/mark-netz.svg") 0 0 / 360px 216px no-repeat;
+    opacity: 1;
+    pointer-events: none;
+  }
 }
 @media (max-width: 760px) {
   .hero--sub .hero__inner { padding: 0 22px; }
